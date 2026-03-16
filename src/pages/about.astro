@@ -3,24 +3,24 @@ import Layout from '../layouts/Layout.astro';
 
 const values = [
   {
-    title: 'AI-First Thinking',
-    description: 'Every solution we design starts with the question: how can AI make this 10x better? Not as an afterthought — as the foundation.',
-    icon: '🧠',
-  },
-  {
-    title: 'Prove It in 4 Weeks',
-    description: 'We don\'t sell decks. Our Proof of Tech methodology delivers working prototypes in 4 weeks with a Go/No-Go gate. You see results before you commit.',
+    title: 'Build First, Pitch Second',
+    description: 'We don\'t sell decks. We build working proofs in 4 weeks, then let the results do the talking. If it doesn\'t work, we tell you — not invoice you.',
     icon: '⚡',
   },
   {
-    title: 'Ship, Don\'t Theorize',
-    description: 'We\'re builders, not advisors. From custom domain LLMs to agentic systems, we write the code, deploy the infra, and measure the ROI.',
+    title: 'Everyone Ships',
+    description: 'No project managers who\'ve never written code. No architects who\'ve never debugged production. Every person on our team builds, deploys, and supports.',
     icon: '🚀',
   },
   {
-    title: 'Deep, Not Wide',
-    description: 'Six industry verticals. Mastered. We go deep into manufacturing, healthcare, lifesciences, engineering, insurance, and banking.',
+    title: 'Stay Small, Go Deep',
+    description: 'We could hire 200 people and dilute. Instead, we stay lean, choose hard problems, and outbuild teams ten times our size through craft and AI leverage.',
     icon: '🎯',
+  },
+  {
+    title: 'Own the Outcome',
+    description: 'We don\'t hand off requirements to offshore teams. The engineer who talks to you on day one is the same person deploying your solution on day thirty.',
+    icon: '🤝',
   },
 ];
 
@@ -44,10 +44,10 @@ const timeline = [
 ];
 
 const stats = [
-  { value: '100+', label: 'Years Combined Leadership Experience' },
-  { value: '25+', label: 'Skilled Engineers & AI Specialists' },
-  { value: '6', label: 'Industry Verticals' },
-  { value: '4 Weeks', label: 'From Idea to Working Proof' },
+  { value: '25', label: 'Engineers. That\'s it. That\'s the team.' },
+  { value: '3', label: 'Products built and shipping' },
+  { value: '6', label: 'Industries where we\'ve delivered' },
+  { value: '4 wks', label: 'From "can we?" to "here\'s the proof"' },
 ];
 ---
 
@@ -61,14 +61,15 @@ const stats = [
       <div class="max-w-3xl" data-animate>
         <span class="font-mono text-sm text-accent">// about_us</span>
         <h1 class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-          The synergy of<br />
-          <span class="gradient-text">technology & human expertise.</span>
+          25 engineers.<br />
+          <span class="gradient-text">Zero bluff.</span>
         </h1>
         <p class="mt-6 text-lg leading-relaxed text-text-secondary">
-          Syntegreti was founded on a simple belief: the most powerful outcomes happen
-          when cutting-edge AI meets deep domain expertise. We're a mid-sized, globally
-          capable team headquartered in Hyderabad, India — building AI products and
-          delivering enterprise services across six industries.
+          We're a small, opinionated team out of Hyderabad that builds AI products and
+          ships enterprise solutions to clients around the world. We don't have a sales
+          army or a partner ecosystem — we have engineers who know their craft, a toolkit
+          we built ourselves, and a 4-week sprint that proves whether something works
+          before anyone writes a big check.
         </p>
       </div>
     </div>
@@ -93,11 +94,11 @@ const stats = [
     <div class="mx-auto max-w-7xl px-6">
       <div class="rounded-2xl border border-accent/10 bg-gradient-to-br from-accent/5 via-surface/30 to-cyan/5 p-12 sm:p-16" data-animate>
         <div class="mx-auto max-w-3xl text-center">
-          <span class="font-mono text-sm text-accent">// our_mission</span>
+          <span class="font-mono text-sm text-accent">// our_bet</span>
           <blockquote class="mt-4 text-2xl font-bold leading-relaxed tracking-tight sm:text-3xl">
-            "To harness the power of synergy in technology and human expertise
-            to deliver exceptional, AI-first solutions for today's complex
-            business challenges."
+            "A small team with the right tools and the right attitude
+            can outbuild companies 100x their size. AI makes that bet
+            a sure thing."
           </blockquote>
           <div class="mt-6 flex items-center justify-center gap-4 text-sm text-text-muted">
             <span class="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1">
@@ -119,8 +120,8 @@ const stats = [
   <section class="py-20">
     <div class="mx-auto max-w-7xl px-6">
       <div class="mb-12" data-animate>
-        <span class="font-mono text-sm text-accent">// how_we_think</span>
-        <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Our Principles</h2>
+        <span class="font-mono text-sm text-accent">// how_we_operate</span>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">How a 25-Person Team Outbuilds the Big Guys</h2>
       </div>
 
       <div class="grid gap-6 sm:grid-cols-2" data-stagger>
@@ -173,23 +174,24 @@ const stats = [
   <section class="py-20">
     <div class="mx-auto max-w-7xl px-6">
       <div class="mb-12" data-animate>
-        <span class="font-mono text-sm text-accent">// our_team</span>
-        <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Leadership</h2>
+        <span class="font-mono text-sm text-accent">// the_team</span>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">The Whole Team</h2>
         <p class="mt-4 max-w-2xl text-lg text-text-secondary">
-          A team with 100+ years of combined experience across enterprise IT,
-          AI/ML, cloud infrastructure, and digital transformation.
+          No bench. No "resources." Just 25 people who chose to work here
+          because they want to build things that matter.
         </p>
       </div>
 
       <div class="rounded-2xl border border-border bg-surface/20 p-12 text-center" data-animate>
-        <div class="mx-auto max-w-md">
-          <div class="mb-6 inline-flex h-20 w-20 items-center justify-center rounded-2xl border border-border bg-elevated">
-            <span class="text-3xl">👥</span>
+        <div class="mx-auto max-w-lg">
+          <div class="mb-6 inline-flex h-20 w-20 items-center justify-center rounded-2xl border border-accent/20 bg-accent/5">
+            <span class="font-mono text-2xl font-bold text-accent">25</span>
           </div>
-          <h3 class="text-xl font-bold text-text-primary">25+ Engineers & Specialists</h3>
+          <h3 class="text-xl font-bold text-text-primary">That's it. That's the team.</h3>
           <p class="mt-3 text-sm leading-relaxed text-text-secondary">
-            Full-stack developers, AI/ML engineers, cloud architects, data scientists,
-            and domain experts — headquartered in Hyderabad with global delivery capability.
+            Full-stack developers, AI/ML engineers, cloud architects, data scientists.
+            Everyone codes. Everyone ships. Everyone talks to clients.
+            Hyderabad HQ, global timezone coverage.
           </p>
           <div class="mt-6 flex flex-wrap items-center justify-center gap-2">
             <span class="rounded-full border border-border px-3 py-1 text-xs text-text-muted">AI/ML Engineers</span>
@@ -208,9 +210,10 @@ const stats = [
   <section class="py-20">
     <div class="mx-auto max-w-7xl px-6">
       <div class="rounded-2xl border border-accent/20 bg-gradient-to-br from-accent/5 to-surface p-12 text-center" data-animate>
-        <h2 class="text-3xl font-bold tracking-tight">Want to work with us?</h2>
+        <h2 class="text-3xl font-bold tracking-tight">Got a hard problem?</h2>
         <p class="mx-auto mt-4 max-w-lg text-text-secondary">
-          We're always looking for challenging AI problems to solve. Let's talk.
+          We're a small team — so we're picky about what we take on. But if your
+          problem is interesting, we'll move faster than you expect.
         </p>
         <a
           href="/contact"

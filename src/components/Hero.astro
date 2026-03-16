@@ -1,100 +1,179 @@
 ---
 ---
 
-<section class="relative min-h-screen flex items-center overflow-hidden pt-24">
+<section class="relative min-h-screen flex items-center overflow-hidden pt-24 aurora">
   <!-- Background grid -->
-  <div class="absolute inset-0 grid-bg opacity-40"></div>
-
-  <!-- Gradient orbs -->
-  <div class="absolute top-1/4 -left-32 h-96 w-96 rounded-full bg-accent/5 blur-[120px]"></div>
-  <div class="absolute bottom-1/4 -right-32 h-96 w-96 rounded-full bg-cyan/5 blur-[120px]"></div>
+  <div class="absolute inset-0 grid-bg opacity-40 z-[1]"></div>
 
   <!-- Radial gradient fade at bottom -->
-  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-void"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-void z-[2]"></div>
 
   <div class="relative z-10 mx-auto max-w-7xl px-6 py-20">
-    <div class="max-w-4xl">
-      <!-- Tag -->
-      <div class="mb-8" data-animate>
-        <span class="inline-flex items-center gap-2 rounded-full border border-border bg-surface/50 px-4 py-1.5 text-sm backdrop-blur-sm">
-          <span class="h-2 w-2 rounded-full bg-accent animate-pulse"></span>
-          <span class="text-text-secondary">AI-First Company</span>
-          <span class="text-text-muted">·</span>
-          <span class="text-text-muted">Est. Hyderabad</span>
-        </span>
+    <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+      <div>
+        <!-- Tag -->
+        <div class="mb-8" data-animate>
+          <span class="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-sm">
+            <span class="h-2 w-2 rounded-full bg-accent animate-pulse"></span>
+            <span class="text-text-secondary">25 engineers</span>
+            <span class="text-text-muted">/</span>
+            <span class="text-text-secondary">3 products</span>
+            <span class="text-text-muted">/</span>
+            <span class="text-text-muted">Hyderabad → Global</span>
+          </span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="text-5xl font-bold leading-[1.1] tracking-tight sm:text-6xl lg:text-7xl" data-animate>
+          Small team.<br />
+          <span class="gradient-text">Big AI.</span><br />
+          <span class="text-text-secondary">Proven in</span>
+          <span class="gradient-text"> 4 weeks.</span>
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="mt-8 max-w-xl text-lg leading-relaxed text-text-secondary" data-animate>
+          We're 25 engineers who build AI products, ship enterprise solutions, and
+          prove ROI in 4-week sprints. No layers, no handoffs — the people who
+          architect it are the people who deploy it.
+        </p>
+
+        <!-- CTAs -->
+        <div class="mt-10 flex flex-wrap items-center gap-4" data-animate>
+          <a
+            href="/services/catalyst-studio"
+            class="group inline-flex items-center gap-2 rounded-xl bg-accent px-7 py-3.5 text-sm font-semibold text-void transition-all hover:bg-accent-glow hover:shadow-[0_0_30px_rgba(0,232,123,0.3)]"
+          >
+            Explore Catalyst Studio
+            <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a
+            href="/case-studies"
+            class="inline-flex items-center gap-2 rounded-xl glass px-7 py-3.5 text-sm font-medium text-text-secondary transition-all hover:text-text-primary"
+          >
+            See Case Studies
+          </a>
+        </div>
+
+        <!-- Social proof strip with counters -->
+        <div class="mt-16 flex flex-wrap items-center gap-8 border-t border-border pt-8" data-animate>
+          <div>
+            <div class="text-2xl font-bold text-text-primary" data-counter="25">0</div>
+            <div class="text-xs text-text-muted">Engineers who<br/>do everything</div>
+          </div>
+          <div class="h-10 w-px bg-border"></div>
+          <div>
+            <div class="text-2xl font-bold text-text-primary" data-counter="3">0</div>
+            <div class="text-xs text-text-muted">Products<br/>shipped</div>
+          </div>
+          <div class="h-10 w-px bg-border"></div>
+          <div>
+            <div class="text-2xl font-bold text-text-primary">4 Weeks</div>
+            <div class="text-xs text-text-muted">Idea to<br/>working proof</div>
+          </div>
+          <div class="h-10 w-px bg-border"></div>
+          <div>
+            <div class="text-2xl font-bold text-accent">$<span data-counter="120">0</span>k+</div>
+            <div class="text-xs text-text-muted">Saved per client<br/>annually</div>
+          </div>
+        </div>
       </div>
 
-      <!-- Headline -->
-      <h1 class="text-5xl font-bold leading-[1.1] tracking-tight sm:text-6xl lg:text-7xl" data-animate>
-        We build AI that<br />
-        <span class="gradient-text">works.</span>
-        <span class="text-text-secondary"> Then we</span><br />
-        <span class="text-text-secondary">prove it in</span>
-        <span class="gradient-text"> 4 weeks.</span>
-      </h1>
-
-      <!-- Subheadline -->
-      <p class="mt-8 max-w-2xl text-lg leading-relaxed text-text-secondary sm:text-xl" data-animate>
-        From custom LLMs and agentic systems to AI-ready infrastructure — we ship
-        solutions with measurable ROI for enterprises in healthcare, manufacturing,
-        insurance, and beyond.
-      </p>
-
-      <!-- CTAs -->
-      <div class="mt-10 flex flex-wrap items-center gap-4" data-animate>
-        <a
-          href="/services/catalyst-studio"
-          class="group inline-flex items-center gap-2 rounded-xl bg-accent px-7 py-3.5 text-sm font-semibold text-void transition-all hover:bg-accent-glow hover:shadow-[0_0_30px_rgba(0,232,123,0.3)]"
-        >
-          Explore Catalyst Studio
-          <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </a>
-        <a
-          href="/case-studies"
-          class="inline-flex items-center gap-2 rounded-xl border border-border px-7 py-3.5 text-sm font-medium text-text-secondary transition-all hover:border-border-light hover:bg-elevated hover:text-text-primary"
-        >
-          See Case Studies
-        </a>
-      </div>
-
-      <!-- Social proof strip -->
-      <div class="mt-16 flex flex-wrap items-center gap-8 border-t border-border pt-8" data-animate>
-        <div>
-          <div class="text-2xl font-bold text-text-primary">100+</div>
-          <div class="text-xs text-text-muted">Years Combined<br/>Leadership</div>
-        </div>
-        <div class="h-10 w-px bg-border"></div>
-        <div>
-          <div class="text-2xl font-bold text-text-primary">6</div>
-          <div class="text-xs text-text-muted">Industry<br/>Verticals</div>
-        </div>
-        <div class="h-10 w-px bg-border"></div>
-        <div>
-          <div class="text-2xl font-bold text-text-primary">4 Weeks</div>
-          <div class="text-xs text-text-muted">Proof of Tech<br/>Methodology</div>
-        </div>
-        <div class="h-10 w-px bg-border"></div>
-        <div>
-          <div class="text-2xl font-bold text-accent">$120k+</div>
-          <div class="text-xs text-text-muted">Saved per Client<br/>Annually</div>
+      <!-- Typing Terminal -->
+      <div class="hidden lg:block" data-animate>
+        <div class="glow-card-subtle">
+          <div class="flex items-center gap-2 px-5 py-3 border-b border-border/50">
+            <div class="h-3 w-3 rounded-full bg-rose/60"></div>
+            <div class="h-3 w-3 rounded-full bg-amber/60"></div>
+            <div class="h-3 w-3 rounded-full bg-accent/60"></div>
+            <span class="ml-2 font-mono text-xs text-text-muted">catalyst-studio — live</span>
+          </div>
+          <div class="p-6 font-mono text-sm leading-relaxed min-h-[320px]" id="terminal">
+            <div id="terminal-output"></div>
+            <span id="terminal-cursor" class="typing-cursor"></span>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
-  <!-- Decorative code block (right side, desktop only) -->
-  <div class="absolute right-12 top-1/2 -translate-y-1/2 hidden opacity-20 xl:block">
-    <pre class="font-mono text-xs leading-relaxed text-accent/60"><code>{"{"} <span class="text-cyan/60">agent</span>: "catalyst",
-  <span class="text-cyan/60">mode</span>: "autonomous",
-  <span class="text-cyan/60">models</span>: [
-    "domain-llm",
-    "agentic-rag",
-    "vision-yolo"
-  ],
-  <span class="text-cyan/60">sprint</span>: "4-weeks",
-  <span class="text-cyan/60">status</span>: <span class="text-accent">"shipping"</span>
-{"}"}</code></pre>
-  </div>
 </section>
+
+<script>
+  // Terminal typing animation
+  const lines = [
+    { text: '$ catalyst init --sprint 4-weeks', color: 'text-accent', delay: 40 },
+    { text: '', color: '', delay: 300 },
+    { text: '  Scanning enterprise systems...', color: 'text-text-muted', delay: 20 },
+    { text: '  ✓ Connected: Salesforce, ServiceNow, Snowflake', color: 'text-text-muted', delay: 20 },
+    { text: '', color: '', delay: 200 },
+    { text: '$ catalyst deploy --agent workweave', color: 'text-accent', delay: 40 },
+    { text: '', color: '', delay: 400 },
+    { text: '  Orchestrating agents...', color: 'text-text-muted', delay: 20 },
+    { text: '  ├─ ServiceNow Agent  [READY]', color: 'text-cyan', delay: 25 },
+    { text: '  ├─ RAG Agent         [READY]', color: 'text-cyan', delay: 25 },
+    { text: '  └─ Escalation Agent  [READY]', color: 'text-cyan', delay: 25 },
+    { text: '', color: '', delay: 200 },
+    { text: '  Tickets resolved:    847/mo', color: 'text-text-secondary', delay: 20 },
+    { text: '  Avg resolution:      2 min (was 4 hrs)', color: 'text-text-secondary', delay: 20 },
+    { text: '  Annual savings:      $72,000', color: 'text-accent', delay: 30 },
+    { text: '', color: '', delay: 300 },
+    { text: '  Status: SHIPPED ✓', color: 'text-accent', delay: 30 },
+  ];
+
+  const output = document.getElementById('terminal-output');
+  const cursor = document.getElementById('terminal-cursor');
+  if (!output || !cursor) throw new Error('Terminal elements not found');
+
+  let lineIdx = 0;
+  let charIdx = 0;
+  let currentLine: HTMLDivElement | null = null;
+
+  function type() {
+    if (lineIdx >= lines.length) {
+      // Restart after pause
+      setTimeout(() => {
+        output!.innerHTML = '';
+        lineIdx = 0;
+        charIdx = 0;
+        currentLine = null;
+        type();
+      }, 4000);
+      return;
+    }
+
+    const line = lines[lineIdx];
+
+    if (!currentLine) {
+      currentLine = document.createElement('div');
+      if (line.color) currentLine.className = line.color;
+      currentLine.style.minHeight = '1.5em';
+      output!.appendChild(currentLine);
+    }
+
+    if (charIdx < line.text.length) {
+      currentLine.textContent += line.text[charIdx];
+      charIdx++;
+      setTimeout(type, line.delay);
+    } else {
+      lineIdx++;
+      charIdx = 0;
+      currentLine = null;
+      setTimeout(type, line.delay);
+    }
+  }
+
+  // Start typing when terminal is visible
+  const terminalObserver = new IntersectionObserver(
+    (entries) => {
+      if (entries[0].isIntersecting) {
+        setTimeout(type, 800);
+        terminalObserver.disconnect();
+      }
+    },
+    { threshold: 0.3 }
+  );
+  const termEl = document.getElementById('terminal');
+  if (termEl) terminalObserver.observe(termEl);
+</script>

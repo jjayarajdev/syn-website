@@ -42,8 +42,9 @@ const {
     </main>
     <Footer />
 
-    <!-- Scroll animation observer -->
+    <!-- Scroll animation observer + number counters -->
     <script>
+      // Scroll reveal
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -57,6 +58,37 @@ const {
 
       document.querySelectorAll('[data-animate], [data-stagger]').forEach((el) => {
         observer.observe(el);
+      });
+
+      // Number counter animation
+      const counterObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const el = entry.target as HTMLElement;
+              const target = parseInt(el.dataset.counter || '0', 10);
+              const duration = 1500;
+              const start = performance.now();
+
+              const animate = (now: number) => {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / duration, 1);
+                // Ease out cubic
+                const eased = 1 - Math.pow(1 - progress, 3);
+                el.textContent = Math.round(eased * target).toString();
+                if (progress < 1) requestAnimationFrame(animate);
+              };
+
+              requestAnimationFrame(animate);
+              counterObserver.unobserve(el);
+            }
+          });
+        },
+        { threshold: 0.3 }
+      );
+
+      document.querySelectorAll('[data-counter]').forEach((el) => {
+        counterObserver.observe(el);
       });
     </script>
   </body>

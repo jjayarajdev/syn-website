@@ -86,10 +86,10 @@ const navLinks = [
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-      navInner!.classList.add('bg-surface/80', 'backdrop-blur-xl', 'border-border');
+      navInner!.classList.add('glass');
       navInner!.classList.remove('bg-transparent', 'border-transparent');
     } else {
-      navInner!.classList.remove('bg-surface/80', 'backdrop-blur-xl', 'border-border');
+      navInner!.classList.remove('glass');
       navInner!.classList.add('bg-transparent', 'border-transparent');
     }
   });

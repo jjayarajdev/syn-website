@@ -1,39 +1,4 @@
 ---
-const products = [
-  {
-    name: 'BetterSDLC',
-    tagline: 'Ship better software, faster',
-    description: 'AI-powered accelerator that supercharges your software development lifecycle. From planning to deployment, every phase is optimized.',
-    icon: '⚡',
-    href: '/products/bettersdlc',
-    color: 'accent',
-    features: ['AI Code Review', 'Automated Testing', 'Smart CI/CD', 'Dev Productivity Analytics'],
-  },
-  {
-    name: 'Workweave',
-    tagline: 'Agentic OS for Business',
-    description: 'An intelligent operating system that orchestrates AI agents across your business processes. Automate the complex, not just the simple.',
-    icon: '🔮',
-    href: '/products/workweave',
-    color: 'cyan',
-    features: ['Multi-Agent Orchestration', 'Process Automation', 'Knowledge Synthesis', 'Human-in-the-Loop'],
-  },
-  {
-    name: 'Datacenter Solutions',
-    tagline: 'AI-Ready Infrastructure',
-    description: 'Purpose-built infrastructure for AI workloads. GPU clusters, optimized networking, and managed operations — so you can focus on models, not machines.',
-    icon: '🏗️',
-    href: '/products/datacenter',
-    color: 'amber',
-    features: ['GPU Clusters', 'Optimized Networking', 'Managed Operations', 'Scalable Compute'],
-  },
-];
-
-const colorMap: Record<string, { border: string; bg: string; text: string; glow: string }> = {
-  accent: { border: 'border-accent/20', bg: 'bg-accent/5', text: 'text-accent', glow: 'hover:shadow-[0_0_40px_rgba(0,232,123,0.08)]' },
-  cyan: { border: 'border-cyan/20', bg: 'bg-cyan/5', text: 'text-cyan', glow: 'hover:shadow-[0_0_40px_rgba(0,212,255,0.08)]' },
-  amber: { border: 'border-amber/20', bg: 'bg-amber/5', text: 'text-amber', glow: 'hover:shadow-[0_0_40px_rgba(255,184,0,0.08)]' },
-};
 ---
 
 <section class="relative py-32" id="products">
@@ -42,57 +7,108 @@ const colorMap: Record<string, { border: string; bg: string; text: string; glow:
     <div class="mb-16" data-animate>
       <span class="font-mono text-sm text-accent">// what_we_build</span>
       <h2 class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
-        Products
+        We don't just consult.<br/>
+        <span class="gradient-text">We build.</span>
       </h2>
       <p class="mt-4 max-w-2xl text-lg text-text-secondary">
-        Purpose-built AI products that solve real enterprise problems.
-        Not prototypes — production systems.
+        Three products. Built in-house. Shipping to production.
+        Most companies our size pick one lane — we built the whole highway.
       </p>
     </div>
 
-    <!-- Product cards -->
-    <div class="grid gap-6 md:grid-cols-3" data-stagger>
-      {products.map((product) => {
-        const colors = colorMap[product.color];
-        return (
-          <a
-            href={product.href}
-            class={`group relative rounded-2xl border ${colors.border} ${colors.bg} p-8 transition-all duration-300 card-hover ${colors.glow}`}
-          >
-            <!-- Icon -->
-            <div class="mb-6 text-4xl">{product.icon}</div>
+    <!-- Bento Grid -->
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2" data-stagger>
 
-            <!-- Content -->
-            <h3 class={`text-xl font-bold ${colors.text}`}>
-              {product.name}
-            </h3>
-            <p class="mt-1 font-mono text-xs text-text-muted">
-              {product.tagline}
-            </p>
-            <p class="mt-4 text-sm leading-relaxed text-text-secondary">
-              {product.description}
-            </p>
+      <!-- BetterSDLC - Hero card (spans 2 rows) -->
+      <a
+        href="/products/bettersdlc"
+        class="group glow-card-subtle lg:row-span-2 p-8 flex flex-col justify-between"
+      >
+        <div>
+          <div class="flex items-center justify-between mb-6">
+            <span class="text-4xl">⚡</span>
+            <span class="rounded-full bg-accent/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-accent">Flagship</span>
+          </div>
+          <h3 class="text-2xl font-bold text-accent">BetterSDLC</h3>
+          <p class="mt-1 font-mono text-xs text-text-muted">Ship better software, faster</p>
+          <p class="mt-4 text-sm leading-relaxed text-text-secondary">
+            Enterprise AI coding workflow optimization. Structured SDLC questionnaires
+            replace ad-hoc prompting — from Business Analyst to Tester, every role gets
+            guided AI interactions that produce consistent, auditable code.
+          </p>
 
-            <!-- Features -->
-            <ul class="mt-6 space-y-2">
-              {product.features.map((feature) => (
-                <li class="flex items-center gap-2 text-xs text-text-muted">
-                  <span class={`h-1 w-1 rounded-full ${colors.text.replace('text-', 'bg-')}`} />
-                  {feature}
-                </li>
-              ))}
-            </ul>
+          <!-- Mini feature grid -->
+          <div class="mt-6 grid grid-cols-2 gap-2">
+            {['SDLC Workflows', 'Context Threading', 'Org Learning', 'Compliance Audit', 'VS Code + Desktop', 'MCP Server'].map((f) => (
+              <div class="flex items-center gap-2 text-xs text-text-muted">
+                <span class="h-1 w-1 rounded-full bg-accent shrink-0"></span>
+                {f}
+              </div>
+            ))}
+          </div>
+        </div>
 
-            <!-- Arrow -->
-            <div class={`mt-8 flex items-center gap-1 text-sm font-medium ${colors.text} opacity-0 transition-opacity group-hover:opacity-100`}>
-              Learn more
-              <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </div>
-          </a>
-        );
-      })}
+        <div class="mt-8 flex items-center gap-1 text-sm font-medium text-accent opacity-0 transition-opacity group-hover:opacity-100">
+          Explore BetterSDLC
+          <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </div>
+      </a>
+
+      <!-- Workweave -->
+      <a
+        href="/products/workweave"
+        class="group glow-card-subtle p-8"
+      >
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-3xl">🔮</span>
+        </div>
+        <h3 class="text-xl font-bold text-cyan">Workweave</h3>
+        <p class="mt-1 font-mono text-xs text-text-muted">Agentic OS for Business</p>
+        <p class="mt-3 text-sm leading-relaxed text-text-secondary">
+          Orchestrates AI agents across Salesforce, ServiceNow, Snowflake — resolving
+          enterprise problems in 30 seconds, not 15 minutes.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-1.5">
+          {['Multi-Agent', 'VoltAgent', 'RAG', 'Voice'].map((t) => (
+            <span class="rounded-md bg-cyan/10 px-2 py-0.5 text-[10px] text-cyan">{t}</span>
+          ))}
+        </div>
+        <div class="mt-6 flex items-center gap-1 text-sm font-medium text-cyan opacity-0 transition-opacity group-hover:opacity-100">
+          Explore Workweave
+          <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </div>
+      </a>
+
+      <!-- Datacenter -->
+      <a
+        href="/products/datacenter"
+        class="group glow-card-subtle p-8"
+      >
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-3xl">🏗️</span>
+        </div>
+        <h3 class="text-xl font-bold text-amber">Datacenter Solutions</h3>
+        <p class="mt-1 font-mono text-xs text-text-muted">ExaScale Thermal Intelligence</p>
+        <p class="mt-3 text-sm leading-relaxed text-text-secondary">
+          AI-powered thermal management built on real exascale data. 95% prediction
+          accuracy, 15% cooling cost reduction, $2-5M annual savings.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-1.5">
+          {['Ensemble ML', 'Digital Twin', 'IoT', 'ESG'].map((t) => (
+            <span class="rounded-md bg-amber/10 px-2 py-0.5 text-[10px] text-amber">{t}</span>
+          ))}
+        </div>
+        <div class="mt-6 flex items-center gap-1 text-sm font-medium text-amber opacity-0 transition-opacity group-hover:opacity-100">
+          Explore ExaScale
+          <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </div>
+      </a>
     </div>
   </div>
 </section>
