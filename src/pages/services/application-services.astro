@@ -1,0 +1,190 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const offerings = [
+  {
+    category: 'Packaged Applications',
+    items: [
+      { name: 'Implementation & Global Rollouts', desc: 'End-to-end enterprise platform deployments across geographies' },
+      { name: 'Migration & Upgrades', desc: 'Zero-downtime migrations with data integrity guarantees' },
+      { name: 'Middleware Integration', desc: 'Seamless system interconnection across your enterprise stack' },
+    ],
+  },
+  {
+    category: 'Custom Development',
+    items: [
+      { name: 'Full Stack & Mobile Apps', desc: 'Native and cross-platform applications built for scale' },
+      { name: 'Application Rationalization', desc: 'Consolidate, modernize, or retire — data-driven portfolio decisions' },
+      { name: 'Managed Services (AMS)', desc: 'Ongoing support, optimization, and evolution of your applications' },
+    ],
+  },
+];
+---
+
+<Layout title="Application Services — Syntegreti" description="End-to-end application development, modernization, and managed services across Salesforce, Workday, Java, .NET, and MERN stack.">
+
+  <!-- Hero with terminal aesthetic -->
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-20"></div>
+    <div class="absolute top-1/3 right-0 h-[500px] w-[500px] rounded-full bg-accent/4 blur-[150px]"></div>
+
+    <div class="relative z-10 mx-auto max-w-7xl px-6">
+      <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div data-animate>
+          <span class="font-mono text-sm text-accent">// application_services</span>
+          <h1 class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
+            Build it right.<br />
+            <span class="gradient-text">Ship it fast.</span>
+          </h1>
+          <p class="mt-6 text-lg leading-relaxed text-text-secondary">
+            From Salesforce implementations to custom full-stack development — we build,
+            modernize, and manage enterprise applications that your business actually
+            depends on. No throwaway code. No technical debt surprises.
+          </p>
+          <a href="/contact" class="mt-8 inline-flex items-center gap-2 rounded-xl bg-accent px-7 py-3.5 text-sm font-semibold text-void transition-all hover:bg-accent-glow hover:shadow-[0_0_30px_rgba(0,232,123,0.3)]">
+            Start a Project
+          </a>
+        </div>
+
+        <!-- Decorative terminal -->
+        <div class="hidden lg:block" data-animate>
+          <div class="rounded-2xl border border-border bg-deep p-1">
+            <div class="flex items-center gap-2 px-4 py-3 border-b border-border">
+              <div class="h-3 w-3 rounded-full bg-rose/60"></div>
+              <div class="h-3 w-3 rounded-full bg-amber/60"></div>
+              <div class="h-3 w-3 rounded-full bg-accent/60"></div>
+              <span class="ml-2 font-mono text-xs text-text-muted">application-services.ts</span>
+            </div>
+            <pre class="p-6 font-mono text-xs leading-relaxed" set:html={`<code><span class="text-text-muted">// What we transform</span>
+<span class="text-cyan">const</span> legacy = {
+  <span class="text-text-muted">monolith:</span> <span class="text-accent">"10 years old"</span>,
+  <span class="text-text-muted">deploys:</span> <span class="text-accent">"quarterly"</span>,
+  <span class="text-text-muted">uptime:</span> <span class="text-amber">0.95</span>,
+};
+
+<span class="text-cyan">const</span> modern = <span class="text-cyan">await</span> syntegreti.transform(legacy, {
+  <span class="text-text-muted">architecture:</span> <span class="text-accent">"microservices"</span>,
+  <span class="text-text-muted">deploys:</span> <span class="text-accent">"continuous"</span>,
+  <span class="text-text-muted">uptime:</span> <span class="text-accent">0.999</span>,
+  <span class="text-text-muted">aiPowered:</span> <span class="text-cyan">true</span>,
+});
+<span class="text-text-muted">// → Ready in weeks, not years</span></code>`} />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Two-pillar offering -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="grid gap-8 lg:grid-cols-2" data-stagger>
+        {offerings.map((group) => (
+          <div class="rounded-2xl border border-border bg-surface/20 p-8">
+            <h2 class="text-xl font-bold text-text-primary">{group.category}</h2>
+            <div class="mt-6 space-y-5">
+              {group.items.map((item) => (
+                <div class="group flex gap-4">
+                  <div class="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-accent/20 bg-accent/5 transition-colors group-hover:bg-accent/10">
+                    <svg class="h-4 w-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-sm font-semibold text-text-primary">{item.name}</h3>
+                    <p class="mt-1 text-xs leading-relaxed text-text-muted">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Platform expertise - the "panache" section -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mb-12" data-animate>
+        <span class="font-mono text-sm text-accent">// platforms_we_command</span>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+          Deep Platform Expertise
+        </h2>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-3" data-stagger>
+        {[
+          {
+            platform: 'Salesforce',
+            desc: 'Sales Cloud, Service Cloud, Marketing Cloud, CPQ, Mulesoft integrations, Lightning development.',
+            color: 'cyan',
+          },
+          {
+            platform: 'Workday',
+            desc: 'HCM, Financial Management, Adaptive Planning, integrations, and tenant configuration.',
+            color: 'accent',
+          },
+          {
+            platform: 'Custom Stack',
+            desc: 'Java, .NET, MERN, React Native — full-stack development for when off-the-shelf doesn\'t cut it.',
+            color: 'amber',
+          },
+        ].map((p) => (
+          <div class={`relative overflow-hidden rounded-2xl border border-${p.color}/20 bg-${p.color}/5 p-8`}>
+            <div class={`absolute -top-8 -right-8 h-32 w-32 rounded-full bg-${p.color}/5 blur-[60px]`}></div>
+            <div class="relative z-10">
+              <h3 class={`text-2xl font-bold text-${p.color}`}>{p.platform}</h3>
+              <p class="mt-3 text-sm leading-relaxed text-text-secondary">{p.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Full tech strip -->
+      <div class="mt-12 rounded-2xl border border-border bg-surface/20 p-8" data-animate>
+        <span class="block text-xs font-semibold uppercase tracking-wider text-text-muted mb-4">Full Technology Stack</span>
+        <div class="flex flex-wrap gap-2">
+          {['Java', '.NET', 'React', 'Node.js', 'TypeScript', 'React Native', 'MERN Stack', 'Salesforce', 'Workday', 'Mulesoft', 'REST APIs', 'GraphQL', 'PostgreSQL', 'MongoDB', 'Redis'].map((t) => (
+            <span class="rounded-lg border border-border bg-deep px-3 py-1.5 font-mono text-xs text-text-secondary transition-colors hover:border-accent/30 hover:text-accent">{t}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why us - differentiator -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="grid gap-1 md:grid-cols-4" data-stagger>
+        {[
+          { num: '01', title: 'AI-Augmented Dev', desc: 'We use BetterSDLC internally. Every developer on your project ships with structured AI workflows.' },
+          { num: '02', title: 'Full Lifecycle', desc: 'Not just build and hand over. We implement, integrate, test, deploy, and manage.' },
+          { num: '03', title: 'Enterprise Grade', desc: 'SOC2-aware. Audit-ready. We build for regulated industries because that\'s where we live.' },
+          { num: '04', title: 'Global Delivery', desc: 'Hyderabad HQ with timezone-flexible teams. You get depth without the enterprise price tag.' },
+        ].map((item) => (
+          <div class="border-l border-border p-6 first:border-l-0">
+            <span class="font-mono text-xs text-accent">{item.num}</span>
+            <h3 class="mt-2 text-sm font-bold text-text-primary">{item.title}</h3>
+            <p class="mt-2 text-xs leading-relaxed text-text-muted">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="rounded-2xl border border-accent/20 bg-gradient-to-br from-accent/5 to-surface p-12 text-center" data-animate>
+        <h2 class="text-3xl font-bold tracking-tight">Ready to modernize?</h2>
+        <p class="mx-auto mt-4 max-w-lg text-text-secondary">
+          Tell us about your application challenge. We'll scope it in a day.
+        </p>
+        <a href="/contact" class="mt-8 inline-flex items-center gap-2 rounded-xl bg-accent px-8 py-4 text-sm font-semibold text-void transition-all hover:bg-accent-glow hover:shadow-[0_0_30px_rgba(0,232,123,0.3)]">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

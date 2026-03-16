@@ -1,0 +1,307 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="AI Scheduling Assistant — Case Study | Syntegreti" description="How Syntegreti built an omni-channel AI scheduling assistant that saves $120k/year, eliminates wait times, and achieves 99% availability for a home services company.">
+
+  <!-- Hero -->
+  <section class="relative pt-32 pb-16 overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-20"></div>
+    <div class="absolute top-1/4 -right-32 h-96 w-96 rounded-full bg-accent/5 blur-[120px]"></div>
+
+    <div class="relative z-10 mx-auto max-w-7xl px-6">
+      <div class="max-w-3xl" data-animate>
+        <a href="/case-studies" class="inline-flex items-center gap-2 text-sm text-text-muted hover:text-text-secondary transition-colors mb-6">
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          All Case Studies
+        </a>
+
+        <div class="flex flex-wrap items-center gap-3 mb-4">
+          <span class="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm font-medium text-accent">
+            Home Services
+          </span>
+          <span class="rounded-full border border-border px-3 py-1 text-xs text-text-muted">AI Voice + Chat + SMS</span>
+        </div>
+
+        <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">
+          AI Scheduling Assistant
+        </h1>
+        <p class="mt-4 text-lg leading-relaxed text-text-secondary">
+          An omni-channel AI assistant deployed across Voice, Web Chat, and SMS that
+          replaced manual scheduling with intelligent, weather-aware automation —
+          saving $80-120K annually while eliminating customer wait times.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact metrics - hero strip -->
+  <section class="py-8">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="grid grid-cols-2 gap-3 sm:grid-cols-5" data-stagger>
+        {[
+          { value: '$80-120K', label: 'Annual Savings' },
+          { value: '3 min', label: 'Avg Call Duration', sub: 'vs 8 min manual' },
+          { value: '0 min', label: 'Wait Time', sub: 'vs 15 min manual' },
+          { value: '40%', label: 'Call Volume Reduction', sub: 'in human calls' },
+          { value: '99%', label: 'Availability', sub: 'vs 85% manual' },
+        ].map((m) => (
+          <div class="rounded-xl border border-accent/20 bg-accent/5 p-5 text-center">
+            <div class="text-2xl font-bold text-accent">{m.value}</div>
+            <div class="text-xs font-medium text-text-primary">{m.label}</div>
+            {m.sub && <div class="mt-0.5 text-[10px] text-text-muted">{m.sub}</div>}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- The Challenge -->
+  <section class="py-16">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-2" data-animate>
+          <span class="font-mono text-sm text-rose">// the_challenge</span>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight">
+            500+ calls a day.<br />
+            15-minute wait times.<br />
+            <span class="text-rose">Everything manual.</span>
+          </h2>
+        </div>
+        <div class="lg:col-span-3" data-animate>
+          <div class="grid gap-4 sm:grid-cols-2">
+            {[
+              {
+                stat: '500+',
+                title: 'Daily Calls',
+                desc: 'Overwhelming volume creating bottlenecks across the scheduling team.',
+              },
+              {
+                stat: '15 min',
+                title: 'Average Wait Time',
+                desc: 'Customer frustration leading to abandoned calls and lost revenue.',
+              },
+              {
+                stat: '15-20%',
+                title: 'No-Show Rate',
+                desc: 'Poor communication and manual errors causing missed appointments.',
+              },
+              {
+                stat: '$40K+',
+                title: 'Per Agent Per Year',
+                desc: 'Scaling with human agents was economically unsustainable.',
+              },
+            ].map((challenge) => (
+              <div class="rounded-xl border border-rose/20 bg-rose/5 p-6">
+                <div class="text-2xl font-bold text-rose">{challenge.stat}</div>
+                <h3 class="mt-1 text-sm font-semibold text-text-primary">{challenge.title}</h3>
+                <p class="mt-2 text-xs leading-relaxed text-text-muted">{challenge.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div class="mt-4 rounded-xl border border-border bg-surface/20 p-5">
+            <div class="flex items-start gap-3">
+              <span class="mt-0.5 text-amber">⚠</span>
+              <div>
+                <h3 class="text-sm font-semibold text-text-primary">Weather & Double-Booking Errors</h3>
+                <p class="text-xs text-text-muted">Outdoor jobs booked on rain days. Double-bookings from manual calendar management. No systematic way to prevent either.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Solution -->
+  <section class="py-16">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mb-12" data-animate>
+        <span class="font-mono text-sm text-accent">// the_solution</span>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight">
+          What We Built
+        </h2>
+      </div>
+
+      <div class="space-y-6" data-stagger>
+        <!-- Solution 1 -->
+        <div class="rounded-2xl border border-border bg-surface/20 overflow-hidden">
+          <div class="grid lg:grid-cols-3">
+            <div class="border-b border-border p-8 lg:border-b-0 lg:border-r">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-accent/20 bg-accent/5">
+                  <span class="font-mono text-sm font-bold text-accent">01</span>
+                </div>
+                <h3 class="text-lg font-bold text-text-primary">Omni-Channel AI Assistant</h3>
+              </div>
+              <p class="text-sm leading-relaxed text-text-secondary">
+                Unified assistant deployed across <strong>Voice, Web Chat, and SMS</strong> channels,
+                allowing customers to book anytime, anywhere — with one consistent experience.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-md bg-accent/10 px-2.5 py-1 font-mono text-xs text-accent">Claude Sonnet 3.5</span>
+                <span class="rounded-md bg-accent/10 px-2.5 py-1 font-mono text-xs text-accent">DSPy Optimization</span>
+              </div>
+            </div>
+            <div class="border-b border-border p-8 lg:border-b-0 lg:border-r">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-cyan/20 bg-cyan/5">
+                  <span class="font-mono text-sm font-bold text-cyan">02</span>
+                </div>
+                <h3 class="text-lg font-bold text-text-primary">High-Performance Voice</h3>
+              </div>
+              <p class="text-sm leading-relaxed text-text-secondary">
+                Voice-optimized flow delivering <strong>natural conversation with sub-2.5s latency</strong>,
+                replacing raw data reading with human-like speech patterns.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-md bg-cyan/10 px-2.5 py-1 font-mono text-xs text-cyan">Voice AI</span>
+                <span class="rounded-md bg-cyan/10 px-2.5 py-1 font-mono text-xs text-cyan">Sub-2.5s Latency</span>
+              </div>
+            </div>
+            <div class="p-8">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-amber/20 bg-amber/5">
+                  <span class="font-mono text-sm font-bold text-amber">03</span>
+                </div>
+                <h3 class="text-lg font-bold text-text-primary">Smart Logic</h3>
+              </div>
+              <p class="text-sm leading-relaxed text-text-secondary">
+                <strong>Weather-aware scheduling</strong> checks forecasts before booking outdoor jobs.
+                Mandatory "Review & Confirm" loop ensures zero double-bookings.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-md bg-amber/10 px-2.5 py-1 font-mono text-xs text-amber">Weather API</span>
+                <span class="rounded-md bg-amber/10 px-2.5 py-1 font-mono text-xs text-amber">Confirm Loop</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture -->
+  <section class="py-16">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="rounded-2xl border border-border bg-deep p-1" data-animate>
+        <div class="flex items-center gap-2 px-4 py-3 border-b border-border">
+          <div class="h-3 w-3 rounded-full bg-rose/60"></div>
+          <div class="h-3 w-3 rounded-full bg-amber/60"></div>
+          <div class="h-3 w-3 rounded-full bg-accent/60"></div>
+          <span class="ml-2 font-mono text-xs text-text-muted">architecture — ai-scheduling-assistant</span>
+        </div>
+        <div class="p-8">
+          <div class="grid gap-4 sm:grid-cols-3 lg:grid-cols-5">
+            {[
+              { label: 'Channels', items: ['Voice (Phone)', 'Web Chat', 'SMS'], color: 'accent' },
+              { label: 'AI Core', items: ['Claude Sonnet 3.5', 'DSPy Optimizer', 'NLU Pipeline'], color: 'cyan' },
+              { label: 'Intelligence', items: ['Weather API', 'Calendar Engine', 'Conflict Detection'], color: 'amber' },
+              { label: 'Integration', items: ['CRM Sync', 'Notification Engine', 'Audit Logging'], color: 'accent' },
+              { label: 'Voice Stack', items: ['TTS Engine', 'ASR Processing', 'Latency Optimizer'], color: 'cyan' },
+            ].map((group) => (
+              <div>
+                <span class={`block text-xs font-semibold uppercase tracking-wider text-${group.color} mb-3`}>{group.label}</span>
+                <div class="space-y-1.5">
+                  {group.items.map((item) => (
+                    <div class="rounded-md border border-border bg-void/50 px-3 py-2 font-mono text-xs text-text-muted">{item}</div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROI Breakdown -->
+  <section class="py-16">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mb-12" data-animate>
+        <span class="font-mono text-sm text-accent">// roi_breakdown</span>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight">The Math</h2>
+      </div>
+
+      <div class="rounded-2xl border border-accent/10 bg-gradient-to-br from-accent/5 via-surface/30 to-cyan/5 p-10" data-animate>
+        <div class="grid gap-8 lg:grid-cols-2">
+          <div>
+            <h3 class="text-lg font-bold text-text-primary mb-4">Before: The Cost of Manual</h3>
+            <div class="space-y-3">
+              {[
+                '500+ daily calls x 8 min average = 67 agent-hours/day',
+                '15 min average wait time = abandoned calls + lost bookings',
+                '15-20% no-show rate = wasted technician time',
+                '$40K+ per agent/year, and you need more every quarter',
+              ].map((item) => (
+                <div class="flex items-start gap-2 text-sm text-text-muted">
+                  <span class="mt-0.5 text-rose shrink-0">✕</span>
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-text-primary mb-4">After: The AI Dividend</h3>
+            <div class="space-y-3">
+              {[
+                '3 min avg call (AI) vs 8 min (human) = 62% faster',
+                '0 min wait time = zero abandoned calls',
+                'Weather-aware + confirm loop = near-zero no-shows',
+                '$80-120K annual savings = 2-3 agent salaries eliminated',
+              ].map((item) => (
+                <div class="flex items-start gap-2 text-sm text-text-secondary">
+                  <svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Methodology -->
+  <section class="py-16">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="rounded-2xl border border-border bg-surface/20 p-8" data-animate>
+        <span class="font-mono text-sm text-accent">// how_we_delivered</span>
+        <h3 class="mt-3 text-lg font-bold text-text-primary">Delivered Through Catalyst Studio</h3>
+        <p class="mt-3 text-sm text-text-secondary max-w-2xl">
+          This project used our 4-week Proof of Tech methodology. Week 1: stakeholder alignment
+          and use case definition. Week 2: architecture and model selection. Weeks 2-3: rapid
+          build with iterative demos. Week 4: Go/No-Go gate — it was a Go.
+        </p>
+        <a href="/services/catalyst-studio" class="mt-4 inline-flex items-center gap-1 text-sm font-medium text-accent hover:text-accent-glow transition-colors">
+          Learn about our POT methodology
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="rounded-2xl border border-accent/20 bg-gradient-to-br from-accent/5 to-surface p-12 text-center" data-animate>
+        <h2 class="text-3xl font-bold tracking-tight">
+          Have a similar challenge?
+        </h2>
+        <p class="mx-auto mt-4 max-w-lg text-text-secondary">
+          We can build a proof of concept for your scheduling, customer service, or
+          voice automation use case in 4 weeks.
+        </p>
+        <a href="/contact" class="mt-8 inline-flex items-center gap-2 rounded-xl bg-accent px-8 py-4 text-sm font-semibold text-void transition-all hover:bg-accent-glow hover:shadow-[0_0_30px_rgba(0,232,123,0.3)]">
+          Book a 4-Week Sprint
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,108 @@
+---
+const navLinks = [
+  { label: 'Products', href: '/products' },
+  { label: 'Services', href: '/services' },
+  { label: 'Case Studies', href: '/case-studies' },
+  { label: 'About', href: '/about' },
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="navbar">
+  <div class="mx-auto max-w-7xl px-6 py-4">
+    <nav class="flex items-center justify-between rounded-2xl border border-transparent bg-transparent px-6 py-3 transition-all duration-300" id="nav-inner">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2 group">
+        <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-accent/10 transition-colors group-hover:bg-accent/20">
+          <span class="font-mono text-sm font-bold text-accent">S</span>
+        </div>
+        <span class="text-lg font-semibold tracking-tight text-text-primary">
+          Syntegreti
+        </span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden items-center gap-1 md:flex">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="rounded-lg px-4 py-2 text-sm text-text-secondary transition-colors hover:bg-elevated hover:text-text-primary"
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+
+      <!-- CTA -->
+      <div class="hidden items-center gap-3 md:flex">
+        <a
+          href="/contact"
+          class="rounded-lg bg-accent px-5 py-2 text-sm font-semibold text-void transition-all hover:bg-accent-glow hover:shadow-[0_0_20px_rgba(0,232,123,0.3)]"
+        >
+          Get in Touch
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        class="flex h-10 w-10 items-center justify-center rounded-lg border border-border text-text-secondary transition-colors hover:bg-elevated md:hidden"
+        id="mobile-menu-btn"
+        aria-label="Toggle menu"
+      >
+        <svg class="h-5 w-5" id="menu-icon-open" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg class="h-5 w-5 hidden" id="menu-icon-close" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mt-2 hidden rounded-2xl border border-border bg-surface/95 p-4 backdrop-blur-xl md:hidden" id="mobile-menu">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="block rounded-lg px-4 py-3 text-text-secondary transition-colors hover:bg-elevated hover:text-text-primary"
+        >
+          {link.label}
+        </a>
+      ))}
+      <div class="mt-3 border-t border-border pt-3">
+        <a
+          href="/contact"
+          class="block rounded-lg bg-accent px-5 py-3 text-center text-sm font-semibold text-void"
+        >
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Scroll effect - add background on scroll
+  const navbar = document.getElementById('navbar');
+  const navInner = document.getElementById('nav-inner');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navInner!.classList.add('bg-surface/80', 'backdrop-blur-xl', 'border-border');
+      navInner!.classList.remove('bg-transparent', 'border-transparent');
+    } else {
+      navInner!.classList.remove('bg-surface/80', 'backdrop-blur-xl', 'border-border');
+      navInner!.classList.add('bg-transparent', 'border-transparent');
+    }
+  });
+
+  // Mobile menu toggle
+  const mobileBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+
+  mobileBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+    iconOpen?.classList.toggle('hidden');
+    iconClose?.classList.toggle('hidden');
+  });
+</script>

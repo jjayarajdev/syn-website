@@ -1,0 +1,93 @@
+---
+const caseStudies = [
+  {
+    tag: 'Home Services',
+    title: 'AI Scheduling Assistant',
+    description: 'Omni-channel AI assistant deployed across Voice, Web Chat, and SMS — replacing manual scheduling with intelligent, weather-aware automation.',
+    tech: ['Claude Sonnet 3.5', 'DSPy Optimization', 'Voice AI'],
+    metrics: [
+      { value: '$120k', label: 'Annual Savings' },
+      { value: '0 min', label: 'Wait Time', sub: 'vs 15 min' },
+      { value: '99%', label: 'Availability', sub: 'vs 85%' },
+      { value: '40%', label: 'Call Reduction' },
+    ],
+    href: '/case-studies/ai-scheduling-assistant',
+  },
+  {
+    tag: 'Enterprise IT',
+    title: 'AI IT Support Assistant',
+    description: 'Multi-agent orchestration system with specialized agents for ServiceNow, RAG search, and ticket escalation — resolving 60% of L1 tickets automatically.',
+    tech: ['GPT-4o', 'VoltAgent', 'ServiceNow', 'RAG'],
+    metrics: [
+      { value: '$72k', label: 'Annual Savings', sub: '1k users' },
+      { value: '2 min', label: 'Resolution', sub: 'vs 4 hours' },
+      { value: '24/7', label: 'Availability' },
+      { value: '60%', label: 'Ticket Reduction' },
+    ],
+    href: '/case-studies/ai-it-support',
+  },
+];
+---
+
+<section class="relative py-32" id="case-studies">
+  <div class="mx-auto max-w-7xl px-6">
+    <!-- Section header -->
+    <div class="mb-16" data-animate>
+      <span class="font-mono text-sm text-accent">// proof_not_promises</span>
+      <h2 class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
+        Case Studies
+      </h2>
+      <p class="mt-4 max-w-2xl text-lg text-text-secondary">
+        Real deployments. Real numbers. Every engagement starts with our
+        4-week Proof of Tech methodology.
+      </p>
+    </div>
+
+    <!-- Case study cards -->
+    <div class="grid gap-8 lg:grid-cols-2" data-stagger>
+      {caseStudies.map((study) => (
+        <a
+          href={study.href}
+          class="group rounded-2xl border border-border bg-surface/30 p-8 transition-all card-hover"
+        >
+          <!-- Tag -->
+          <span class="inline-block rounded-full border border-accent/20 bg-accent/5 px-3 py-1 text-xs font-medium text-accent">
+            {study.tag}
+          </span>
+
+          <!-- Title & Description -->
+          <h3 class="mt-4 text-2xl font-bold text-text-primary">{study.title}</h3>
+          <p class="mt-3 text-sm leading-relaxed text-text-secondary">{study.description}</p>
+
+          <!-- Tech stack -->
+          <div class="mt-4 flex flex-wrap gap-2">
+            {study.tech.map((t) => (
+              <span class="rounded-md bg-elevated px-2.5 py-1 font-mono text-xs text-text-muted">
+                {t}
+              </span>
+            ))}
+          </div>
+
+          <!-- Metrics -->
+          <div class="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
+            {study.metrics.map((metric) => (
+              <div class="rounded-xl border border-border bg-deep/50 p-3 text-center">
+                <div class="text-xl font-bold text-accent">{metric.value}</div>
+                <div class="text-xs text-text-muted">{metric.label}</div>
+                {metric.sub && <div class="text-[10px] text-text-muted/60">{metric.sub}</div>}
+              </div>
+            ))}
+          </div>
+
+          <!-- Read more -->
+          <div class="mt-6 flex items-center gap-1 text-sm font-medium text-accent opacity-0 transition-opacity group-hover:opacity-100">
+            Read full case study
+            <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

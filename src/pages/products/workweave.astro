@@ -1,0 +1,243 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const agents = [
+  {
+    name: 'Enterprise Intelligence Agent',
+    description: 'Processes P1/P2 critical incidents by automatically querying Salesforce, Snowflake, ServiceNow, and your knowledge base — then synthesizes everything into actionable work notes in 30 seconds.',
+    impact: '97% faster context gathering',
+    tech: ['VoltAgent', 'GPT-4o', 'RAG', 'LibSQL'],
+    systems: ['Salesforce', 'Snowflake', 'ServiceNow', 'Knowledge Base'],
+  },
+  {
+    name: 'Support Deflection Agent',
+    description: 'Multi-agent system that deflects IT support tickets with instant answers from ServiceNow KB and company documents. Unified parallel search across all knowledge sources with voice (VAPI) and web chat interfaces.',
+    impact: '40-60% ticket reduction',
+    tech: ['VoltAgent', 'GPT-4o', 'RAG', 'VAPI'],
+    systems: ['ServiceNow KMS', 'Company Docs', 'VectorDB', 'Voice/Chat'],
+  },
+  {
+    name: 'Global Mobility Agent',
+    description: 'Multi-agent system with domain specialists for Tax, Immigration, Payroll, Compliance, and Policy — orchestrating complex global mobility workflows for international employee assignments.',
+    impact: 'Cross-border compliance automation',
+    tech: ['VoltAgent', 'Multi-Agent Orchestration', 'Domain LLMs'],
+    systems: ['Tax Systems', 'Immigration', 'Payroll', 'HR Platforms'],
+  },
+];
+
+const beforeAfter = [
+  { metric: 'Context Gathering', before: '15+ minutes', after: '30 seconds', improvement: '97% faster' },
+  { metric: 'Systems Checked', before: '1-2 (incomplete)', after: '4+ (comprehensive)', improvement: '100% coverage' },
+  { metric: 'Pattern Detection', before: 'Rarely', after: 'Always', improvement: 'Prevents repeat issues' },
+  { metric: 'KB Discovery', before: '20% of the time', after: '95% of the time', improvement: '4.75x better' },
+  { metric: 'Priority Accuracy', before: 'Gut feel', after: 'Data-driven', improvement: 'No missed VIPs' },
+  { metric: 'Mean Time to Resolve', before: '6 hours', after: '3.6 hours', improvement: '40% reduction' },
+];
+---
+
+<Layout title="Workweave — Agentic OS for Business | Syntegreti" description="Workweave orchestrates AI agents across your enterprise systems. From incident resolution to compliance — automate the complex, not just the simple.">
+
+  <!-- Hero -->
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-20"></div>
+    <div class="absolute top-1/4 -left-32 h-96 w-96 rounded-full bg-cyan/5 blur-[120px]"></div>
+
+    <div class="relative z-10 mx-auto max-w-7xl px-6">
+      <div class="max-w-3xl" data-animate>
+        <div class="mb-6 flex items-center gap-3">
+          <span class="inline-flex items-center gap-2 rounded-full border border-cyan/20 bg-cyan/5 px-4 py-1.5 text-sm font-medium text-cyan">
+            Product
+          </span>
+          <span class="rounded-full border border-border px-3 py-1 text-xs text-text-muted">Agentic AI Platform</span>
+        </div>
+
+        <h1 class="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+          <span class="bg-gradient-to-r from-cyan to-accent bg-clip-text text-transparent">Workweave</span>
+        </h1>
+        <p class="mt-2 font-mono text-lg text-text-muted">
+          The Agentic OS for Business
+        </p>
+        <p class="mt-6 text-lg leading-relaxed text-text-secondary">
+          Workweave orchestrates specialized AI agents that work across your enterprise
+          systems — Salesforce, ServiceNow, Snowflake, and beyond. Built on the VoltAgent
+          framework with full TypeScript type safety, each agent understands your business
+          context, queries multiple systems in parallel, and delivers synthesized
+          intelligence in seconds instead of hours.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/contact" class="inline-flex items-center gap-2 rounded-xl bg-cyan px-7 py-3.5 text-sm font-semibold text-void transition-all hover:shadow-[0_0_30px_rgba(0,212,255,0.3)]">
+            Request Demo
+          </a>
+          <a href="/contact" class="inline-flex items-center gap-2 rounded-xl border border-border px-7 py-3.5 text-sm font-medium text-text-secondary transition-all hover:border-border-light hover:bg-elevated">
+            Talk to Sales
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="rounded-2xl border border-rose/20 bg-rose/5 p-10" data-animate>
+        <span class="font-mono text-sm text-rose">// the_problem</span>
+        <h2 class="mt-3 text-2xl font-bold">Your teams are drowning in context-switching.</h2>
+        <p class="mt-4 text-sm leading-relaxed text-text-secondary max-w-2xl">
+          When a P1 incident hits, support engineers spend 15+ minutes toggling between
+          4+ browser tabs just to understand the context — before they even start solving
+          the problem. Multiply that by hundreds of tickets a month.
+        </p>
+        <div class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
+          {[
+            { stat: '15+ min', label: 'Just to gather context' },
+            { stat: '4+', label: 'Systems to check manually' },
+            { stat: '$75/hr', label: 'Engineer cost wasted' },
+            { stat: '$112k', label: 'Annual waste (500 tickets/mo)' },
+          ].map((item) => (
+            <div class="rounded-lg border border-border bg-deep/50 p-4 text-center">
+              <div class="text-lg font-bold text-rose">{item.stat}</div>
+              <div class="text-xs text-text-muted">{item.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Agents -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mb-12" data-animate>
+        <span class="font-mono text-sm text-accent">// agent_fleet</span>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+          Purpose-Built AI Agents
+        </h2>
+        <p class="mt-4 max-w-2xl text-text-secondary">
+          Each Workweave agent is a specialist — trained on your domain, connected to
+          your systems, and designed for a specific business function.
+        </p>
+      </div>
+
+      <div class="space-y-6" data-stagger>
+        {agents.map((agent) => (
+          <div class="rounded-2xl border border-border bg-surface/20 p-8 transition-all card-hover">
+            <div class="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
+              <div class="max-w-2xl">
+                <h3 class="text-xl font-bold text-text-primary">{agent.name}</h3>
+                <p class="mt-3 text-sm leading-relaxed text-text-secondary">{agent.description}</p>
+
+                <div class="mt-4 flex flex-wrap gap-4">
+                  <div>
+                    <span class="block text-xs font-semibold uppercase tracking-wider text-text-muted mb-2">Connected Systems</span>
+                    <div class="flex flex-wrap gap-1.5">
+                      {agent.systems.map((sys) => (
+                        <span class="rounded-md bg-cyan/10 px-2.5 py-1 text-xs text-cyan">{sys}</span>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <span class="block text-xs font-semibold uppercase tracking-wider text-text-muted mb-2">Tech</span>
+                    <div class="flex flex-wrap gap-1.5">
+                      {agent.tech.map((t) => (
+                        <span class="rounded-md bg-elevated px-2.5 py-1 font-mono text-xs text-text-muted">{t}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="shrink-0 rounded-xl border border-accent/20 bg-accent/5 px-6 py-4 text-center">
+                <div class="text-lg font-bold text-accent">{agent.impact}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Before/After -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mb-12" data-animate>
+        <span class="font-mono text-sm text-accent">// measured_impact</span>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Before vs After</h2>
+      </div>
+
+      <div class="overflow-x-auto" data-animate>
+        <table class="w-full">
+          <thead>
+            <tr class="border-b border-border text-left">
+              <th class="pb-4 text-sm font-semibold text-text-primary">Metric</th>
+              <th class="pb-4 text-sm font-semibold text-text-muted">Before (Manual)</th>
+              <th class="pb-4 text-sm font-semibold text-accent">After (Workweave)</th>
+              <th class="pb-4 text-sm font-semibold text-text-primary">Improvement</th>
+            </tr>
+          </thead>
+          <tbody>
+            {beforeAfter.map((row) => (
+              <tr class="border-b border-border/50">
+                <td class="py-4 text-sm text-text-primary">{row.metric}</td>
+                <td class="py-4 text-sm text-text-muted">{row.before}</td>
+                <td class="py-4 text-sm font-semibold text-accent">{row.after}</td>
+                <td class="py-4 text-sm text-text-secondary">{row.improvement}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="rounded-2xl border border-border bg-surface/20 p-10" data-animate>
+        <span class="font-mono text-sm text-accent">// architecture</span>
+        <h2 class="mt-3 text-xl font-bold">How Workweave Works</h2>
+        <div class="mt-8 grid gap-6 lg:grid-cols-3">
+          <div class="rounded-xl border border-border bg-deep/50 p-6">
+            <div class="font-mono text-xs text-cyan mb-3">Step 1</div>
+            <h3 class="text-sm font-bold text-text-primary">Natural Language Input</h3>
+            <p class="mt-2 text-xs text-text-muted">
+              "Process the P1 ticket for Acme Corp" — one sentence triggers the entire workflow.
+            </p>
+          </div>
+          <div class="rounded-xl border border-border bg-deep/50 p-6">
+            <div class="font-mono text-xs text-cyan mb-3">Step 2</div>
+            <h3 class="text-sm font-bold text-text-primary">Multi-System Orchestration</h3>
+            <p class="mt-2 text-xs text-text-muted">
+              The agent queries all connected systems in parallel — CRM, data warehouse, ticketing, and knowledge base.
+            </p>
+          </div>
+          <div class="rounded-xl border border-border bg-deep/50 p-6">
+            <div class="font-mono text-xs text-cyan mb-3">Step 3</div>
+            <h3 class="text-sm font-bold text-text-primary">Synthesized Intelligence</h3>
+            <p class="mt-2 text-xs text-text-muted">
+              AI correlates data across systems, detects patterns, and generates comprehensive work notes with resolution paths.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="rounded-2xl border border-cyan/20 bg-gradient-to-br from-cyan/5 to-surface p-12 text-center" data-animate>
+        <h2 class="text-3xl font-bold tracking-tight">
+          From 15 minutes to 30 seconds.<br />
+          <span class="bg-gradient-to-r from-cyan to-accent bg-clip-text text-transparent">That's Workweave.</span>
+        </h2>
+        <p class="mx-auto mt-4 max-w-lg text-text-secondary">
+          See how AI agents can transform your enterprise operations.
+        </p>
+        <a href="/contact" class="mt-8 inline-flex items-center gap-2 rounded-xl bg-cyan px-8 py-4 text-sm font-semibold text-void transition-all hover:shadow-[0_0_30px_rgba(0,212,255,0.3)]">
+          Request a Demo
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

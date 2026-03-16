@@ -1,0 +1,233 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const phases = [
+  { num: '01', role: 'Business Analyst', desc: 'Requirements, acceptance criteria, user stories', icon: '📋' },
+  { num: '02', role: 'Architect', desc: 'Tech stack, patterns, data flow, security', icon: '🏗️' },
+  { num: '03', role: 'Senior Developer', desc: 'Code patterns, error handling, standards', icon: '⚙️' },
+  { num: '04', role: 'Developer', desc: 'Implementation details, edge cases, dependencies', icon: '💻' },
+  { num: '05', role: 'Tester', desc: 'Test strategy, coverage, key scenarios', icon: '🧪' },
+];
+
+const features = [
+  {
+    title: 'SDLC-First Questionnaires',
+    description: 'Structured questions for each role in the development lifecycle. No more ad-hoc prompting — every AI interaction is guided by proven workflows.',
+    detail: 'Phase-specific question sets capture the right context at the right time, from requirements through testing.',
+  },
+  {
+    title: 'Context Threading',
+    description: 'Information flows automatically between SDLC phases. Architects get BA requirements. Developers get architecture decisions. Testers get both.',
+    detail: 'Zero manual handoff. Every phase inherits the decisions and constraints from upstream.',
+  },
+  {
+    title: 'Organizational Learning',
+    description: 'Prompts improve based on team outcomes, not individual behavior. When a prompt structure reduces review iterations by 40%, the whole team benefits.',
+    detail: 'Powered by DSPy optimization — your AI prompts get smarter with every sprint.',
+  },
+  {
+    title: 'Compliance & Audit Trail',
+    description: 'Full traceability: code → prompt → requirement. Every AI-generated artifact is logged with who, when, what phase, and what outcome.',
+    detail: 'Enterprise-grade audit trail powered by Langfuse. Export to JSON, CSV, or PDF.',
+  },
+];
+
+const surfaces = [
+  { name: 'VS Code Extension', desc: 'IDE-native sidebar with guided questionnaires and AI chat', tech: 'Built on Continue.dev' },
+  { name: 'Desktop App', desc: 'Standalone Electron app with full feature set and local SQLite storage', tech: 'Electron + React + Vite' },
+  { name: 'CLI', desc: 'Interactive terminal UI for quick workflows and CI/CD integration', tech: 'Node.js TUI' },
+  { name: 'MCP Server', desc: 'Model Context Protocol server for Claude, Cursor, and any AI assistant', tech: 'Works with Claude Desktop' },
+];
+---
+
+<Layout title="BetterSDLC — AI-Powered SDLC Workflow Optimization | Syntegreti" description="Stop vibe coding. BetterSDLC provides structured AI workflows across the entire software development lifecycle — from BA to Tester.">
+
+  <!-- Hero -->
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-20"></div>
+    <div class="absolute top-1/4 -right-32 h-96 w-96 rounded-full bg-accent/5 blur-[120px]"></div>
+
+    <div class="relative z-10 mx-auto max-w-7xl px-6">
+      <div class="max-w-3xl" data-animate>
+        <div class="mb-6 flex items-center gap-3">
+          <span class="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm font-medium text-accent">
+            Product
+          </span>
+          <span class="rounded-full border border-border px-3 py-1 text-xs text-text-muted">VS Code + Desktop + CLI + MCP</span>
+        </div>
+
+        <h1 class="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+          <span class="gradient-text">BetterSDLC</span>
+        </h1>
+        <p class="mt-2 font-mono text-lg text-text-muted">
+          Stop vibe coding. Ship with structure.
+        </p>
+        <p class="mt-6 text-lg leading-relaxed text-text-secondary">
+          Enterprise AI coding workflow optimization that replaces ad-hoc prompting
+          with structured SDLC questionnaires. Every role — from Business Analyst to
+          Tester — gets guided AI interactions that produce consistent, auditable,
+          high-quality code. For a 50-developer team: 40% less rework, 60% faster
+          AI onboarding, and $780k+ in annual developer time saved.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/contact" class="inline-flex items-center gap-2 rounded-xl bg-accent px-7 py-3.5 text-sm font-semibold text-void transition-all hover:bg-accent-glow hover:shadow-[0_0_30px_rgba(0,232,123,0.3)]">
+            Request Demo
+          </a>
+          <a href="/contact" class="inline-flex items-center gap-2 rounded-xl border border-border px-7 py-3.5 text-sm font-medium text-text-secondary transition-all hover:border-border-light hover:bg-elevated">
+            Talk to Sales
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="rounded-2xl border border-rose/20 bg-rose/5 p-10" data-animate>
+        <span class="font-mono text-sm text-rose">// the_problem</span>
+        <h2 class="mt-3 text-2xl font-bold">Enterprise developers are vibe coding.</h2>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            'Coding without clear requirements or architecture',
+            'Each developer prompts AI differently — variable results',
+            'Knowledge doesn\'t flow between SDLC phases',
+            'AI learns per-developer, not per-team',
+            'No audit trail for AI-generated code',
+            'Compliance gaps that block enterprise adoption',
+          ].map((problem) => (
+            <div class="flex items-start gap-2 text-sm text-text-secondary">
+              <span class="mt-0.5 text-rose">✕</span>
+              {problem}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SDLC Phases -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mb-12" data-animate>
+        <span class="font-mono text-sm text-accent">// five_phases</span>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+          Structured Workflows for Every Role
+        </h2>
+        <p class="mt-4 max-w-2xl text-text-secondary">
+          BetterSDLC guides each role through phase-specific questions that capture
+          the right context at the right time.
+        </p>
+      </div>
+
+      <div class="grid gap-4 sm:grid-cols-5" data-stagger>
+        {phases.map((phase) => (
+          <div class="rounded-xl border border-border bg-surface/30 p-6 text-center transition-all card-hover">
+            <span class="text-2xl">{phase.icon}</span>
+            <div class="mt-3 font-mono text-xs text-accent">{phase.num}</div>
+            <h3 class="mt-1 text-sm font-bold text-text-primary">{phase.role}</h3>
+            <p class="mt-2 text-xs leading-relaxed text-text-muted">{phase.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Flow arrow -->
+      <div class="mt-6 text-center" data-animate>
+        <p class="font-mono text-xs text-text-muted">
+          Context flows automatically: BA → Architect → Senior Dev → Developer → Tester
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mb-12" data-animate>
+        <span class="font-mono text-sm text-accent">// core_features</span>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+          How It Works
+        </h2>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2" data-stagger>
+        {features.map((feature) => (
+          <div class="rounded-2xl border border-border bg-surface/20 p-8 transition-all card-hover">
+            <h3 class="text-lg font-bold text-text-primary">{feature.title}</h3>
+            <p class="mt-3 text-sm leading-relaxed text-text-secondary">{feature.description}</p>
+            <p class="mt-3 font-mono text-xs text-text-muted">{feature.detail}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Surfaces -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mb-12" data-animate>
+        <span class="font-mono text-sm text-accent">// available_on</span>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+          Works Where You Work
+        </h2>
+      </div>
+
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4" data-stagger>
+        {surfaces.map((surface) => (
+          <div class="rounded-xl border border-border bg-surface/20 p-6 transition-all card-hover">
+            <h3 class="text-sm font-bold text-text-primary">{surface.name}</h3>
+            <p class="mt-2 text-xs leading-relaxed text-text-secondary">{surface.desc}</p>
+            <span class="mt-3 inline-block rounded-md bg-deep px-2 py-0.5 font-mono text-[10px] text-text-muted">{surface.tech}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="rounded-2xl border border-border bg-surface/20 p-10" data-animate>
+        <span class="font-mono text-sm text-accent">// built_on</span>
+        <h2 class="mt-3 text-xl font-bold">Technology Stack</h2>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            { name: 'Continue.dev', role: 'VS Code integration, AI chat' },
+            { name: 'Langfuse', role: 'LLM observability & audit trails' },
+            { name: 'DSPy', role: 'Automatic prompt optimization' },
+            { name: 'Electron', role: 'Desktop app framework' },
+          ].map((tech) => (
+            <div class="rounded-lg bg-deep p-4">
+              <span class="font-mono text-sm font-bold text-accent">{tech.name}</span>
+              <p class="mt-1 text-xs text-text-muted">{tech.role}</p>
+            </div>
+          ))}
+        </div>
+        <div class="mt-6 flex flex-wrap gap-2">
+          {['TypeScript', 'React 18', 'Vite', 'Tailwind CSS', 'Zustand', 'Python', 'FastAPI', 'PostgreSQL', 'Redis', 'SQLite', 'Drizzle ORM', 'pnpm + Turborepo'].map((t) => (
+            <span class="rounded-md border border-border px-2.5 py-1 font-mono text-xs text-text-muted">{t}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="rounded-2xl border border-accent/20 bg-gradient-to-br from-accent/5 to-surface p-12 text-center" data-animate>
+        <h2 class="text-3xl font-bold tracking-tight">
+          Stop vibe coding.<br />
+          <span class="gradient-text">Start shipping with structure.</span>
+        </h2>
+        <p class="mx-auto mt-4 max-w-lg text-text-secondary">
+          See how BetterSDLC transforms your team's AI coding workflow in a live demo.
+        </p>
+        <a href="/contact" class="mt-8 inline-flex items-center gap-2 rounded-xl bg-accent px-8 py-4 text-sm font-semibold text-void transition-all hover:bg-accent-glow hover:shadow-[0_0_30px_rgba(0,232,123,0.3)]">
+          Request a Demo
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

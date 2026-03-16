@@ -1,0 +1,192 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const services = [
+  {
+    category: 'Core Infrastructure',
+    items: [
+      { name: 'Service Desk & Management', desc: 'L1-L3 support with SLA-driven escalation and AI-augmented resolution' },
+      { name: 'Network Ops & Optimization', desc: '24/7 NOC monitoring, performance tuning, and capacity planning' },
+      { name: 'Data Center Services', desc: 'Physical and virtual datacenter management, migration, and consolidation' },
+    ],
+  },
+  {
+    category: 'Security & Advisory',
+    items: [
+      { name: 'Cyber Security Solutions', desc: 'SOC operations, threat detection, vulnerability management, and incident response' },
+      { name: 'Database & Storage Management', desc: 'Performance optimization, backup/recovery, high availability, and scaling' },
+      { name: 'Infrastructure Advisory', desc: 'Architecture review, technology selection, and optimization roadmaps' },
+    ],
+  },
+];
+---
+
+<Layout title="Infrastructure Services — Syntegreti" description="Enterprise infrastructure management: Service Desk, NOC/SOC, Cybersecurity, Data Center Services, and Infrastructure Advisory.">
+
+  <!-- Hero with ops center vibe -->
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-30"></div>
+    <div class="absolute top-1/3 right-0 h-[500px] w-[500px] rounded-full bg-rose/3 blur-[150px]"></div>
+
+    <div class="relative z-10 mx-auto max-w-7xl px-6">
+      <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div data-animate>
+          <span class="font-mono text-sm text-accent">// infrastructure_services</span>
+          <h1 class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+            Keep it running.<br />
+            <span class="gradient-text-warm">Keep it safe.</span>
+          </h1>
+          <p class="mt-6 text-lg leading-relaxed text-text-secondary">
+            Enterprise infrastructure is the invisible foundation everything else
+            depends on. We operate service desks, security operations centers,
+            networks, and data centers — so your team can focus on what's next
+            instead of what's broken.
+          </p>
+          <a href="/contact" class="mt-8 inline-flex items-center gap-2 rounded-xl bg-accent px-7 py-3.5 text-sm font-semibold text-void transition-all hover:bg-accent-glow hover:shadow-[0_0_30px_rgba(0,232,123,0.3)]">
+            Talk to Our Team
+          </a>
+        </div>
+
+        <!-- Ops dashboard mockup -->
+        <div class="hidden lg:block" data-animate>
+          <div class="rounded-2xl border border-border bg-deep p-1">
+            <div class="flex items-center gap-2 px-4 py-3 border-b border-border">
+              <div class="h-3 w-3 rounded-full bg-rose/60"></div>
+              <div class="h-3 w-3 rounded-full bg-amber/60"></div>
+              <div class="h-3 w-3 rounded-full bg-accent/60"></div>
+              <span class="ml-2 font-mono text-xs text-text-muted">ops-center — live</span>
+            </div>
+            <div class="p-6 space-y-4">
+              <!-- Status rows -->
+              {[
+                { service: 'Network', status: 'OPERATIONAL', color: 'accent', metric: '99.99%' },
+                { service: 'Service Desk', status: 'OPERATIONAL', color: 'accent', metric: '< 2 min' },
+                { service: 'SOC', status: 'MONITORING', color: 'accent', metric: '0 alerts' },
+                { service: 'Database', status: 'OPERATIONAL', color: 'accent', metric: '< 5 ms' },
+                { service: 'Firewall', status: 'OPERATIONAL', color: 'accent', metric: '12.4K rps' },
+              ].map((row) => (
+                <div class="flex items-center justify-between rounded-lg border border-border/50 bg-void/50 px-4 py-3">
+                  <div class="flex items-center gap-3">
+                    <span class={`h-2 w-2 rounded-full bg-${row.color} animate-pulse`}></span>
+                    <span class="font-mono text-xs text-text-secondary">{row.service}</span>
+                  </div>
+                  <div class="flex items-center gap-4">
+                    <span class="font-mono text-xs text-text-muted">{row.metric}</span>
+                    <span class={`font-mono text-[10px] text-${row.color}`}>{row.status}</span>
+                  </div>
+                </div>
+              ))}
+              <div class="text-right font-mono text-[10px] text-text-muted">
+                Last updated: just now <span class="text-accent animate-pulse">●</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key numbers -->
+  <section class="py-16">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="grid grid-cols-2 gap-4 lg:grid-cols-4" data-stagger>
+        {[
+          { value: '24/7', label: 'NOC & SOC Coverage', sub: 'No gaps' },
+          { value: '< 2 min', label: 'Average Response Time', sub: 'L1 incidents' },
+          { value: '99.9%', label: 'Uptime SLA', sub: 'Guaranteed' },
+          { value: 'L0-L3', label: 'Full-Spectrum Support', sub: 'AI-augmented' },
+        ].map((stat) => (
+          <div class="rounded-2xl border border-border bg-surface/30 p-6 text-center">
+            <div class="text-2xl font-bold text-accent">{stat.value}</div>
+            <div class="mt-1 text-sm font-semibold text-text-primary">{stat.label}</div>
+            <div class="mt-0.5 text-xs text-text-muted">{stat.sub}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Service pillars -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="grid gap-8 lg:grid-cols-2" data-stagger>
+        {services.map((group) => (
+          <div class="rounded-2xl border border-border bg-surface/20 p-8">
+            <h2 class="text-xl font-bold text-text-primary">{group.category}</h2>
+            <div class="mt-6 space-y-5">
+              {group.items.map((item) => (
+                <div class="group flex gap-4">
+                  <div class="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-accent/20 bg-accent/5 transition-colors group-hover:bg-accent/10">
+                    <svg class="h-4 w-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-sm font-semibold text-text-primary">{item.name}</h3>
+                    <p class="mt-1 text-xs leading-relaxed text-text-muted">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- AI-augmented difference -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="rounded-2xl border border-accent/10 bg-gradient-to-br from-accent/5 via-surface/30 to-transparent p-10" data-animate>
+        <span class="font-mono text-sm text-accent">// ai_augmented_ops</span>
+        <h2 class="mt-3 text-2xl font-bold">Not Your Average Managed Services</h2>
+        <p class="mt-4 max-w-2xl text-sm leading-relaxed text-text-secondary">
+          Every infrastructure service we deliver is augmented by AI. Our Workweave agents
+          handle ticket triage, root cause analysis, and resolution recommendation —
+          so human engineers focus on the 20% that actually needs human judgment.
+        </p>
+        <div class="mt-8 grid gap-4 sm:grid-cols-3">
+          {[
+            { title: 'AI Ticket Triage', desc: 'Workweave classifies, prioritizes, and enriches every ticket with cross-system context in 30 seconds.' },
+            { title: 'Predictive Alerting', desc: 'ML models detect anomalies before they become incidents. Prevent, don\'t react.' },
+            { title: 'Automated Runbooks', desc: 'Common resolution patterns encoded as automated workflows. L0 handles what L1 used to.' },
+          ].map((item) => (
+            <div class="rounded-xl border border-border bg-deep/50 p-5">
+              <h3 class="text-sm font-bold text-accent">{item.title}</h3>
+              <p class="mt-2 text-xs leading-relaxed text-text-muted">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Infra tech stack -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="rounded-2xl border border-border bg-surface/20 p-8" data-animate>
+        <span class="block text-xs font-semibold uppercase tracking-wider text-text-muted mb-4">Infrastructure Technology Stack</span>
+        <div class="flex flex-wrap gap-2">
+          {['ITSM', 'ServiceNow', 'NOC/SOC', 'Splunk', 'CrowdStrike', 'Palo Alto', 'Cisco', 'VMware', 'Hyper-V', 'Zabbix', 'Nagios', 'Prometheus', 'Grafana', 'PagerDuty', 'Ansible', 'Puppet', 'Active Directory', 'UCC', 'VoIP'].map((t) => (
+            <span class="rounded-lg border border-border bg-deep px-3 py-1.5 font-mono text-xs text-text-secondary transition-colors hover:border-accent/30 hover:text-accent">{t}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="rounded-2xl border border-accent/20 bg-gradient-to-br from-accent/5 to-surface p-12 text-center" data-animate>
+        <h2 class="text-3xl font-bold tracking-tight">
+          Sleep better at night.<br />
+          <span class="gradient-text">We're watching the dashboard.</span>
+        </h2>
+        <a href="/contact" class="mt-8 inline-flex items-center gap-2 rounded-xl bg-accent px-8 py-4 text-sm font-semibold text-void transition-all hover:bg-accent-glow hover:shadow-[0_0_30px_rgba(0,232,123,0.3)]">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

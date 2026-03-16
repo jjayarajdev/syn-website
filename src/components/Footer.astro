@@ -1,0 +1,83 @@
+---
+const currentYear = new Date().getFullYear();
+
+const footerLinks = {
+  Products: [
+    { label: 'BetterSDLC', href: '/products/bettersdlc' },
+    { label: 'Workweave', href: '/products/workweave' },
+    { label: 'Datacenter Solutions', href: '/products/datacenter' },
+  ],
+  Services: [
+    { label: 'Catalyst Studio', href: '/services/catalyst-studio' },
+    { label: 'Application Services', href: '/services/application-services' },
+    { label: 'Cloud Transformation', href: '/services/cloud-transformation' },
+    { label: 'Data & AI', href: '/services/data-ai' },
+    { label: 'Infrastructure', href: '/services/infrastructure' },
+  ],
+  Company: [
+    { label: 'About', href: '/about' },
+    { label: 'Case Studies', href: '/case-studies' },
+    { label: 'Blog', href: '/blog' },
+    { label: 'Contact', href: '/contact' },
+  ],
+};
+---
+
+<footer class="border-t border-border bg-deep">
+  <div class="mx-auto max-w-7xl px-6 py-16">
+    <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-5">
+      <!-- Brand -->
+      <div class="lg:col-span-2">
+        <a href="/" class="flex items-center gap-2">
+          <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-accent/10">
+            <span class="font-mono text-sm font-bold text-accent">S</span>
+          </div>
+          <span class="text-lg font-semibold tracking-tight text-text-primary">
+            Syntegreti
+          </span>
+        </a>
+        <p class="mt-4 max-w-sm text-sm leading-relaxed text-text-secondary">
+          AI infrastructure, accelerators, and agents for enterprises that move fast. From proof of concept to production in 4 weeks.
+        </p>
+        <div class="mt-6 flex items-center gap-2">
+          <span class="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1 text-xs text-text-muted">
+            <span class="h-1.5 w-1.5 rounded-full bg-accent animate-pulse"></span>
+            HQ: Hyderabad, India
+          </span>
+          <span class="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1 text-xs text-text-muted">
+            Global Delivery
+          </span>
+        </div>
+      </div>
+
+      <!-- Link columns -->
+      {Object.entries(footerLinks).map(([title, links]) => (
+        <div>
+          <h4 class="mb-4 text-sm font-semibold text-text-primary">{title}</h4>
+          <ul class="space-y-3">
+            {links.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="text-sm text-text-muted transition-colors hover:text-text-secondary"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
+      <p class="text-xs text-text-muted">
+        &copy; {currentYear} Syntegreti. All rights reserved.
+      </p>
+      <p class="text-xs text-text-muted">
+        Privileged and Confidential
+      </p>
+    </div>
+  </div>
+</footer>

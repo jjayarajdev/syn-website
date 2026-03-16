@@ -1,0 +1,207 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const journey = [
+  {
+    phase: 'Assess',
+    title: 'Cloud Strategy & Roadmap',
+    desc: 'We audit your current state, map dependencies, and build a migration roadmap that accounts for risk, cost, and business continuity.',
+    icon: '🔍',
+  },
+  {
+    phase: 'Migrate',
+    title: 'Re-architect & Modernize',
+    desc: 'Lift-and-shift is a myth for complex systems. We re-architect for cloud-native — containers, serverless, managed services.',
+    icon: '🚀',
+  },
+  {
+    phase: 'Operate',
+    title: 'Security & Governance',
+    desc: 'IAM policies, encryption at rest and in transit, compliance frameworks, cost optimization — baked in, not bolted on.',
+    icon: '🛡️',
+  },
+  {
+    phase: 'Optimize',
+    title: 'Continuous Improvement',
+    desc: 'Cloud Testing & QA, performance tuning, cost anomaly detection, and architecture evolution as your needs grow.',
+    icon: '📈',
+  },
+];
+---
+
+<Layout title="Cloud Transformation — Syntegreti" description="Strategy-led cloud migration and modernization on AWS, Azure, and GCP. From lift-and-shift to cloud-native re-architecture.">
+
+  <!-- Hero -->
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-20"></div>
+    <!-- Animated gradient orbs -->
+    <div class="absolute top-20 left-1/4 h-72 w-72 rounded-full bg-cyan/5 blur-[100px] animate-pulse"></div>
+    <div class="absolute bottom-20 right-1/4 h-72 w-72 rounded-full bg-accent/5 blur-[100px] animate-pulse" style="animation-delay: 1s;"></div>
+
+    <div class="relative z-10 mx-auto max-w-7xl px-6">
+      <div class="max-w-3xl" data-animate>
+        <span class="font-mono text-sm text-cyan">// cloud_transformation</span>
+        <h1 class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+          Your cloud.<br />
+          <span class="bg-gradient-to-r from-cyan to-accent bg-clip-text text-transparent">Done right.</span>
+        </h1>
+        <p class="mt-6 text-lg leading-relaxed text-text-secondary">
+          Cloud migration isn't a lift-and-shift checkbox. It's a re-architecture of
+          how your business runs. We bring strategy-first thinking to every migration,
+          modernization, and optimization — across AWS, Azure, and GCP.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/contact" class="inline-flex items-center gap-2 rounded-xl bg-cyan px-7 py-3.5 text-sm font-semibold text-void transition-all hover:shadow-[0_0_30px_rgba(0,212,255,0.3)]">
+            Plan Your Migration
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cloud providers - visual impact -->
+  <section class="py-16">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="grid grid-cols-3 gap-4" data-stagger>
+        {[
+          { name: 'AWS', services: 'EC2, EKS, Lambda, RDS, S3, Bedrock, SageMaker', color: 'amber' },
+          { name: 'Azure', services: 'AKS, Functions, Cosmos DB, Cognitive Services, DevOps', color: 'cyan' },
+          { name: 'GCP', services: 'GKE, Cloud Run, BigQuery, Vertex AI, Anthos', color: 'accent' },
+        ].map((cloud) => (
+          <div class={`group relative overflow-hidden rounded-2xl border border-${cloud.color}/20 bg-${cloud.color}/5 p-8 transition-all card-hover`}>
+            <div class={`absolute -bottom-4 -right-4 font-mono text-[80px] font-black leading-none text-${cloud.color}/5 transition-colors group-hover:text-${cloud.color}/10`}>
+              {cloud.name}
+            </div>
+            <div class="relative z-10">
+              <h3 class={`text-3xl font-black text-${cloud.color}`}>{cloud.name}</h3>
+              <p class="mt-3 text-xs leading-relaxed text-text-muted">{cloud.services}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Journey -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mb-16" data-animate>
+        <span class="font-mono text-sm text-cyan">// the_journey</span>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+          Four Phases. Zero Guesswork.
+        </h2>
+      </div>
+
+      <div class="relative">
+        <!-- Connection line desktop -->
+        <div class="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-cyan/50 via-accent/30 to-transparent lg:hidden"></div>
+
+        <div class="space-y-8 lg:space-y-0 lg:grid lg:grid-cols-4 lg:gap-6" data-stagger>
+          {journey.map((step, i) => (
+            <div class="relative pl-16 lg:pl-0">
+              {/* Mobile dot */}
+              <div class="absolute left-8 top-2 -translate-x-1/2 lg:hidden">
+                <div class="flex h-4 w-4 items-center justify-center rounded-full border-2 border-cyan bg-void">
+                  <div class="h-1.5 w-1.5 rounded-full bg-cyan"></div>
+                </div>
+              </div>
+
+              <div class="rounded-2xl border border-border bg-surface/30 p-6 transition-all card-hover">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="text-2xl">{step.icon}</span>
+                  <div>
+                    <span class="font-mono text-xs text-cyan">Phase {i + 1}</span>
+                    <span class="ml-2 text-xs text-text-muted">·</span>
+                    <span class="ml-2 text-xs text-text-muted">{step.phase}</span>
+                  </div>
+                </div>
+                <h3 class="text-sm font-bold text-text-primary">{step.title}</h3>
+                <p class="mt-2 text-xs leading-relaxed text-text-muted">{step.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What we actually do differently -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="rounded-2xl border border-border bg-surface/20 overflow-hidden" data-animate>
+        <div class="grid lg:grid-cols-2">
+          <!-- Left: the anti-pattern -->
+          <div class="border-b border-border p-10 lg:border-b-0 lg:border-r">
+            <span class="font-mono text-sm text-rose">// what_others_do</span>
+            <h3 class="mt-3 text-xl font-bold text-text-primary">The Typical Migration</h3>
+            <ul class="mt-6 space-y-3">
+              {[
+                'Lift-and-shift VMs to the cloud',
+                'Same architecture, higher bill',
+                'Security bolted on after launch',
+                'Cost overruns within 6 months',
+                '"We\'ll optimize later" (they don\'t)',
+              ].map((item) => (
+                <li class="flex items-start gap-2 text-sm text-text-muted">
+                  <span class="mt-0.5 text-rose">✕</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Right: our approach -->
+          <div class="p-10">
+            <span class="font-mono text-sm text-accent">// our_approach</span>
+            <h3 class="mt-3 text-xl font-bold text-text-primary">The Syntegreti Way</h3>
+            <ul class="mt-6 space-y-3">
+              {[
+                'Re-architect for cloud-native from day one',
+                'Right-size from the start — IaC with Terraform',
+                'Security & governance built into the pipeline',
+                'Cost guardrails and anomaly detection',
+                'Continuous optimization as a service',
+              ].map((item) => (
+                <li class="flex items-start gap-2 text-sm text-text-secondary">
+                  <svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech stack -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="rounded-2xl border border-border bg-surface/20 p-8" data-animate>
+        <span class="block text-xs font-semibold uppercase tracking-wider text-text-muted mb-4">Cloud Technology Stack</span>
+        <div class="flex flex-wrap gap-2">
+          {['AWS', 'Azure', 'GCP', 'Kubernetes', 'Docker', 'Terraform', 'Helm', 'ArgoCD', 'Jenkins', 'GitHub Actions', 'Prometheus', 'Grafana', 'Istio', 'Consul', 'Vault', 'CloudFormation', 'Pulumi', 'Ansible'].map((t) => (
+            <span class="rounded-lg border border-border bg-deep px-3 py-1.5 font-mono text-xs text-text-secondary transition-colors hover:border-cyan/30 hover:text-cyan">{t}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="rounded-2xl border border-cyan/20 bg-gradient-to-br from-cyan/5 to-surface p-12 text-center" data-animate>
+        <h2 class="text-3xl font-bold tracking-tight">
+          Cloud done right<br />
+          <span class="bg-gradient-to-r from-cyan to-accent bg-clip-text text-transparent">costs less than cloud done twice.</span>
+        </h2>
+        <a href="/contact" class="mt-8 inline-flex items-center gap-2 rounded-xl bg-cyan px-8 py-4 text-sm font-semibold text-void transition-all hover:shadow-[0_0_30px_rgba(0,212,255,0.3)]">
+          Plan Your Migration
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

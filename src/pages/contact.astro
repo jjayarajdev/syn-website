@@ -1,0 +1,211 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact — Syntegreti" description="Get in touch with Syntegreti. Book a 4-week Proof of Tech sprint or talk to our team about AI solutions for your enterprise.">
+  <section class="relative min-h-screen pt-32 pb-20">
+    <!-- Background -->
+    <div class="absolute inset-0 grid-bg opacity-20"></div>
+    <div class="absolute top-1/4 -right-32 h-96 w-96 rounded-full bg-accent/5 blur-[120px]"></div>
+
+    <div class="relative z-10 mx-auto max-w-7xl px-6">
+      <div class="grid gap-16 lg:grid-cols-2">
+        <!-- Left: Info -->
+        <div>
+          <span class="font-mono text-sm text-accent">// get_in_touch</span>
+          <h1 class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
+            Let's build something<br />
+            <span class="gradient-text">extraordinary.</span>
+          </h1>
+          <p class="mt-6 max-w-lg text-lg leading-relaxed text-text-secondary">
+            Whether you're exploring AI for the first time or scaling existing
+            initiatives, we'll help you move from idea to production — fast.
+          </p>
+
+          <!-- Options -->
+          <div class="mt-12 space-y-6">
+            <div class="flex gap-4">
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-accent/20 bg-accent/5">
+                <svg class="h-5 w-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-text-primary">4-Week Proof of Tech Sprint</h3>
+                <p class="mt-1 text-sm text-text-secondary">
+                  Go from idea to working proof in 4 weeks. De-risk your AI investment
+                  with our battle-tested methodology.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-cyan/20 bg-cyan/5">
+                <svg class="h-5 w-5 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-text-primary">Product Demo</h3>
+                <p class="mt-1 text-sm text-text-secondary">
+                  See BetterSDLC, Workweave, or our Datacenter solutions in action.
+                  We'll tailor the demo to your use case.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-amber/20 bg-amber/5">
+                <svg class="h-5 w-5 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-text-primary">Partnership & Consulting</h3>
+                <p class="mt-1 text-sm text-text-secondary">
+                  Looking for a long-term AI partner? Let's discuss how Syntegreti
+                  can augment your team and accelerate delivery.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact info -->
+          <div class="mt-12 flex flex-wrap items-center gap-4">
+            <span class="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs text-text-muted">
+              <span class="h-1.5 w-1.5 rounded-full bg-accent animate-pulse"></span>
+              HQ: Hyderabad, India
+            </span>
+            <span class="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs text-text-muted">
+              Global Delivery Capability
+            </span>
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div>
+          <form
+            class="rounded-2xl border border-border bg-surface/30 p-8 backdrop-blur-sm"
+            id="contact-form"
+          >
+            <h2 class="mb-6 text-xl font-bold text-text-primary">Send us a message</h2>
+
+            <div class="space-y-5">
+              <div class="grid gap-5 sm:grid-cols-2">
+                <div>
+                  <label for="firstName" class="mb-1.5 block text-sm font-medium text-text-secondary">
+                    First Name
+                  </label>
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    required
+                    class="w-full rounded-lg border border-border bg-deep px-4 py-3 text-sm text-text-primary placeholder-text-muted outline-none transition-colors focus:border-accent/50 focus:ring-1 focus:ring-accent/20"
+                    placeholder="Jay"
+                  />
+                </div>
+                <div>
+                  <label for="lastName" class="mb-1.5 block text-sm font-medium text-text-secondary">
+                    Last Name
+                  </label>
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    required
+                    class="w-full rounded-lg border border-border bg-deep px-4 py-3 text-sm text-text-primary placeholder-text-muted outline-none transition-colors focus:border-accent/50 focus:ring-1 focus:ring-accent/20"
+                    placeholder="Jayaraj"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label for="email" class="mb-1.5 block text-sm font-medium text-text-secondary">
+                  Work Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="w-full rounded-lg border border-border bg-deep px-4 py-3 text-sm text-text-primary placeholder-text-muted outline-none transition-colors focus:border-accent/50 focus:ring-1 focus:ring-accent/20"
+                  placeholder="you@company.com"
+                />
+              </div>
+
+              <div>
+                <label for="company" class="mb-1.5 block text-sm font-medium text-text-secondary">
+                  Company
+                </label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  class="w-full rounded-lg border border-border bg-deep px-4 py-3 text-sm text-text-primary placeholder-text-muted outline-none transition-colors focus:border-accent/50 focus:ring-1 focus:ring-accent/20"
+                  placeholder="Acme Corp"
+                />
+              </div>
+
+              <div>
+                <label for="interest" class="mb-1.5 block text-sm font-medium text-text-secondary">
+                  I'm interested in
+                </label>
+                <select
+                  id="interest"
+                  name="interest"
+                  class="w-full rounded-lg border border-border bg-deep px-4 py-3 text-sm text-text-primary outline-none transition-colors focus:border-accent/50 focus:ring-1 focus:ring-accent/20"
+                >
+                  <option value="" class="text-text-muted">Select an option</option>
+                  <option value="pot">4-Week Proof of Tech Sprint</option>
+                  <option value="bettersdlc">BetterSDLC</option>
+                  <option value="workweave">Workweave</option>
+                  <option value="datacenter">Datacenter Solutions</option>
+                  <option value="catalyst">Catalyst Studio (MVP Factory)</option>
+                  <option value="consulting">AI Consulting & Strategy</option>
+                  <option value="other">Something else</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="message" class="mb-1.5 block text-sm font-medium text-text-secondary">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  class="w-full resize-none rounded-lg border border-border bg-deep px-4 py-3 text-sm text-text-primary placeholder-text-muted outline-none transition-colors focus:border-accent/50 focus:ring-1 focus:ring-accent/20"
+                  placeholder="Tell us about your project or challenge..."
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full rounded-lg bg-accent px-6 py-3.5 text-sm font-semibold text-void transition-all hover:bg-accent-glow hover:shadow-[0_0_20px_rgba(0,232,123,0.3)]"
+              >
+                Send Message
+              </button>
+
+              <p class="text-center text-xs text-text-muted">
+                We'll get back to you within 24 hours.
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    btn.textContent = 'Sent! We\'ll be in touch.';
+    btn.classList.remove('bg-accent', 'hover:bg-accent-glow');
+    btn.classList.add('bg-accent/50', 'cursor-default');
+    btn.disabled = true;
+  });
+</script>

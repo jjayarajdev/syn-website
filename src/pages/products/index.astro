@@ -1,0 +1,65 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const products = [
+  {
+    name: 'BetterSDLC',
+    tagline: 'Ship better software, faster',
+    description: 'AI-powered accelerator that transforms your entire software development lifecycle — from planning through deployment.',
+    href: '/products/bettersdlc',
+    color: 'accent',
+  },
+  {
+    name: 'Workweave',
+    tagline: 'Agentic OS for Business',
+    description: 'An intelligent operating system that orchestrates AI agents across your business processes.',
+    href: '/products/workweave',
+    color: 'cyan',
+  },
+  {
+    name: 'Datacenter Solutions',
+    tagline: 'AI-Ready Infrastructure',
+    description: 'Purpose-built infrastructure for AI workloads with intelligent thermal management and optimized operations.',
+    href: '/products/datacenter',
+    color: 'amber',
+  },
+];
+---
+
+<Layout title="Products — Syntegreti" description="Explore Syntegreti's AI products: BetterSDLC, Workweave, and Datacenter Solutions.">
+  <section class="relative pt-32 pb-20">
+    <div class="absolute inset-0 grid-bg opacity-20"></div>
+    <div class="relative z-10 mx-auto max-w-7xl px-6">
+      <div class="max-w-3xl mb-16" data-animate>
+        <span class="font-mono text-sm text-accent">// our_products</span>
+        <h1 class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+          Products that<br />
+          <span class="gradient-text">ship results.</span>
+        </h1>
+        <p class="mt-6 text-lg leading-relaxed text-text-secondary">
+          Not prototypes. Not demos. Production-grade AI products built from
+          real-world enterprise challenges.
+        </p>
+      </div>
+
+      <div class="grid gap-8 md:grid-cols-3" data-stagger>
+        {products.map((product) => (
+          <a
+            href={product.href}
+            class="group rounded-2xl border border-border bg-surface/20 p-10 transition-all card-hover"
+          >
+            <h2 class={`text-2xl font-bold text-${product.color}`}>{product.name}</h2>
+            <p class="mt-1 font-mono text-xs text-text-muted">{product.tagline}</p>
+            <p class="mt-4 text-sm leading-relaxed text-text-secondary">{product.description}</p>
+            <div class={`mt-6 flex items-center gap-1 text-sm font-medium text-${product.color} opacity-0 transition-opacity group-hover:opacity-100`}>
+              Explore
+              <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

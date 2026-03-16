@@ -1,0 +1,64 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const caseStudies = [
+  {
+    tag: 'Home Services',
+    title: 'AI Scheduling Assistant',
+    description: 'Omni-channel AI assistant across Voice, Web Chat, and SMS — replacing manual scheduling with weather-aware automation.',
+    tech: ['Claude Sonnet 3.5', 'DSPy', 'Voice AI'],
+    highlight: '$120k Annual Savings',
+    href: '/case-studies/ai-scheduling-assistant',
+  },
+  {
+    tag: 'Enterprise IT',
+    title: 'AI IT Support Assistant',
+    description: 'Multi-agent orchestration resolving 60% of L1 tickets automatically with 2-minute resolution times.',
+    tech: ['GPT-4o', 'VoltAgent', 'ServiceNow'],
+    highlight: '60% Ticket Reduction',
+    href: '/case-studies/ai-it-support',
+  },
+];
+---
+
+<Layout title="Case Studies — Syntegreti" description="Real AI deployments with measurable ROI. See how Syntegreti delivers results for enterprises.">
+  <section class="relative pt-32 pb-20">
+    <div class="absolute inset-0 grid-bg opacity-20"></div>
+    <div class="relative z-10 mx-auto max-w-7xl px-6">
+      <div class="max-w-3xl mb-16" data-animate>
+        <span class="font-mono text-sm text-accent">// proof_not_promises</span>
+        <h1 class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+          Case Studies
+        </h1>
+        <p class="mt-6 text-lg leading-relaxed text-text-secondary">
+          Every project starts with our 4-week Proof of Tech. Here's what happens after.
+        </p>
+      </div>
+
+      <div class="grid gap-8 lg:grid-cols-2" data-stagger>
+        {caseStudies.map((study) => (
+          <a href={study.href} class="group rounded-2xl border border-border bg-surface/20 p-8 transition-all card-hover">
+            <span class="inline-block rounded-full border border-accent/20 bg-accent/5 px-3 py-1 text-xs font-medium text-accent">
+              {study.tag}
+            </span>
+            <h2 class="mt-4 text-2xl font-bold text-text-primary">{study.title}</h2>
+            <p class="mt-3 text-sm leading-relaxed text-text-secondary">{study.description}</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              {study.tech.map((t) => (
+                <span class="rounded-md bg-elevated px-2.5 py-1 font-mono text-xs text-text-muted">{t}</span>
+              ))}
+            </div>
+            <div class="mt-6 inline-block rounded-lg border border-accent/20 bg-accent/5 px-4 py-2">
+              <span class="text-lg font-bold text-accent">{study.highlight}</span>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <!-- More coming -->
+      <div class="mt-12 text-center" data-animate>
+        <p class="text-text-muted">More case studies coming soon.</p>
+      </div>
+    </div>
+  </section>
+</Layout>

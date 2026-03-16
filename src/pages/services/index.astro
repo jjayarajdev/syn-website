@@ -1,0 +1,78 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const services = [
+  {
+    title: 'Catalyst Studio',
+    tagline: 'Our MVP Factory',
+    description: 'Proprietary AI accelerator platform. Go from idea to working proof in 4 weeks with our Proof of Tech methodology.',
+    href: '/services/catalyst-studio',
+    highlight: true,
+  },
+  {
+    title: 'Application Services',
+    tagline: 'Build & Modernize',
+    description: 'Packaged apps, custom development, and managed services across Salesforce, Workday, Java, .NET, and MERN stack.',
+    href: '/services/application-services',
+  },
+  {
+    title: 'Cloud Transformation',
+    tagline: 'Migrate & Scale',
+    description: 'Strategy-led cloud migration, re-architecting, and modernization on AWS, Azure, and GCP.',
+    href: '/services/cloud-transformation',
+  },
+  {
+    title: 'Data & AI',
+    tagline: 'Intelligence at Scale',
+    description: 'Data engineering, BI, GenAI/LLM solutions, and rapid AI prototyping for enterprise.',
+    href: '/services/data-ai',
+  },
+  {
+    title: 'Infrastructure Services',
+    tagline: 'Operate & Secure',
+    description: 'Service desk, NOC/SOC, cybersecurity, datacenter services, and infrastructure advisory.',
+    href: '/services/infrastructure',
+  },
+];
+---
+
+<Layout title="Services — Syntegreti" description="Enterprise AI and IT services: Catalyst Studio, Application Services, Cloud Transformation, Data & AI, Infrastructure.">
+  <section class="relative pt-32 pb-20">
+    <div class="absolute inset-0 grid-bg opacity-20"></div>
+    <div class="relative z-10 mx-auto max-w-7xl px-6">
+      <div class="max-w-3xl mb-16" data-animate>
+        <span class="font-mono text-sm text-accent">// service_portfolio</span>
+        <h1 class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+          Services
+        </h1>
+        <p class="mt-6 text-lg leading-relaxed text-text-secondary">
+          Five pillars of enterprise capability — each backed by real delivery
+          across six industry verticals.
+        </p>
+      </div>
+
+      <div class="space-y-6" data-stagger>
+        {services.map((service) => (
+          <a
+            href={service.href}
+            class={`group flex items-center justify-between rounded-2xl border ${service.highlight ? 'border-accent/30 bg-accent/5' : 'border-border bg-surface/20'} p-8 transition-all card-hover`}
+          >
+            <div>
+              <div class="flex items-center gap-3">
+                <h2 class="text-xl font-bold text-text-primary">{service.title}</h2>
+                {service.highlight && (
+                  <span class="rounded-full bg-accent/10 px-2.5 py-0.5 text-xs font-medium text-accent">Featured</span>
+                )}
+              </div>
+              <p class="mt-1 font-mono text-xs text-text-muted">{service.tagline}</p>
+              <p class="mt-3 max-w-xl text-sm leading-relaxed text-text-secondary">{service.description}</p>
+            </div>
+            <svg class="h-5 w-5 shrink-0 text-text-muted transition-transform group-hover:translate-x-1 group-hover:text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
