@@ -51,7 +51,7 @@ import Layout from '../../layouts/Layout.astro';
           <div class="rounded-xl border border-cyan/20 bg-cyan/5 p-5 text-center">
             <div class="text-2xl font-bold text-cyan">{m.value}</div>
             <div class="text-xs font-medium text-text-primary">{m.label}</div>
-            {m.sub && <div class="mt-0.5 text-[10px] text-text-muted">{m.sub}</div>}
+            {m.sub && <div class="mt-0.5 text-[11px] text-text-secondary">{m.sub}</div>}
           </div>
         ))}
       </div>
@@ -313,7 +313,7 @@ import Layout from '../../layouts/Layout.astro';
               <div class="text-center">
                 <div class="text-lg font-bold text-cyan">{calc.value}</div>
                 <div class="text-xs font-medium text-text-primary">{calc.label}</div>
-                <div class="text-[10px] text-text-muted">{calc.detail}</div>
+                <div class="text-[11px] text-text-secondary">{calc.detail}</div>
               </div>
             ))}
           </div>
