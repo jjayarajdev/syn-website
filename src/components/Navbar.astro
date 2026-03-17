@@ -1,4 +1,6 @@
 ---
+import Logo from './Logo.astro';
+
 const navLinks = [
   { label: 'Products', href: '/products' },
   { label: 'Services', href: '/services' },
@@ -12,13 +14,8 @@ const navLinks = [
   <div class="mx-auto max-w-7xl px-6 py-4">
     <nav class="flex items-center justify-between rounded-2xl border border-transparent bg-transparent px-6 py-3 transition-all duration-300" id="nav-inner">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-2 group">
-        <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-accent/10 transition-colors group-hover:bg-accent/20">
-          <span class="font-mono text-sm font-bold text-accent">S</span>
-        </div>
-        <span class="text-lg font-semibold tracking-tight text-text-primary">
-          Syntegreti
-        </span>
+      <a href="/" class="group">
+        <Logo size="sm" glow={false} />
       </a>
 
       <!-- Desktop Nav -->

@@ -8,12 +8,57 @@ import Footer from '../components/Footer.astro';
 interface Props {
   title: string;
   description?: string;
+  canonical?: string;
+  type?: 'website' | 'article';
+  image?: string;
+  publishDate?: string;
+  noindex?: boolean;
 }
 
 const {
   title,
-  description = 'Syntegreti — AI infrastructure, accelerators, and agents for enterprises that move fast.'
+  description = 'Syntegreti — 25 engineers building AI products and shipping enterprise solutions. BetterSDLC, Workweave, ExaScale Datacenter. Proof in 4 weeks.',
+  canonical,
+  type = 'website',
+  image = '/og-image.png',
+  publishDate,
+  noindex = false,
 } = Astro.props;
+
+const siteUrl = 'https://syntegreti.com';
+const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
+const ogImageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
+
+// Organization structured data (every page)
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Syntegreti',
+  url: siteUrl,
+  logo: `${siteUrl}/favicon.svg`,
+  description: 'AI-first company building products (BetterSDLC, Workweave, ExaScale Datacenter) and delivering enterprise AI, cloud, and infrastructure services.',
+  foundingLocation: { '@type': 'Place', name: 'Hyderabad, India' },
+  numberOfEmployees: { '@type': 'QuantitativeValue', value: 25 },
+  slogan: 'Intelligence Through Connection',
+  knowsAbout: [
+    'Artificial Intelligence', 'Machine Learning', 'Large Language Models', 'AI Agents',
+    'Multi-Agent Systems', 'Enterprise Software', 'Cloud Transformation', 'Data Engineering',
+    'SDLC Optimization', 'Thermal Management', 'Datacenter Intelligence'
+  ],
+  areaServed: 'Worldwide',
+  sameAs: [
+    'https://github.com/jjayarajdev/syn-website'
+  ]
+};
+
+// WebSite structured data (for sitelinks search)
+const siteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Syntegreti',
+  url: siteUrl,
+  description: description,
+};
 ---
 
 <!doctype html>
@@ -23,15 +68,45 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#06080d" />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <!-- Canonical -->
+    <link rel="canonical" href={canonicalUrl} />
 
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:site_name" content="Syntegreti" />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <!-- Article specific -->
+    {publishDate && <meta property="article:published_time" content={publishDate} />}
+    {publishDate && <meta property="article:author" content="Syntegreti Engineering" />}
+
+    <!-- Additional SEO -->
+    <meta name="author" content="Syntegreti" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="sitemap" href="/sitemap.xml" />
+
+    <!-- LLM discoverability -->
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable site summary" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(siteSchema)} />
 
     <title>{title}</title>
   </head>
@@ -73,7 +148,6 @@ const {
               const animate = (now: number) => {
                 const elapsed = now - start;
                 const progress = Math.min(elapsed / duration, 1);
-                // Ease out cubic
                 const eased = 1 - Math.pow(1 - progress, 3);
                 el.textContent = Math.round(eased * target).toString();
                 if (progress < 1) requestAnimationFrame(animate);

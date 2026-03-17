@@ -1,4 +1,6 @@
 ---
+import Logo from './Logo.astro';
+
 const currentYear = new Date().getFullYear();
 
 const footerLinks = {
@@ -28,13 +30,8 @@ const footerLinks = {
     <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-5">
       <!-- Brand -->
       <div class="lg:col-span-2">
-        <a href="/" class="flex items-center gap-2">
-          <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-accent/10">
-            <span class="font-mono text-sm font-bold text-accent">S</span>
-          </div>
-          <span class="text-lg font-semibold tracking-tight text-text-primary">
-            Syntegreti
-          </span>
+        <a href="/">
+          <Logo size="md" glow={true} />
         </a>
         <p class="mt-4 max-w-sm text-sm leading-relaxed text-text-secondary">
           25 engineers building AI products and shipping enterprise solutions from

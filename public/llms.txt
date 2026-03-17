@@ -1,0 +1,58 @@
+# Syntegreti — AI-First Enterprise Company
+
+> 25 engineers building AI products and shipping enterprise solutions from Hyderabad to the world.
+
+## About
+
+Syntegreti is an AI-first company that builds products and delivers enterprise services. We are a small, focused team of 25 engineers headquartered in Hyderabad, India, with global delivery capability. We serve six industries: Manufacturing, Lifesciences, Healthcare, Engineering, Insurance & Insurtech, and Banking.
+
+Our tagline: Intelligence Through Connection.
+
+## Products
+
+### BetterSDLC
+AI-powered software development lifecycle optimization. Replaces ad-hoc AI prompting with structured SDLC questionnaires across five roles: Business Analyst, Architect, Senior Developer, Developer, and Tester. Features context threading between phases, organizational learning via DSPy, and full compliance audit trails via Langfuse. Available as a VS Code extension, desktop app, CLI, and MCP server. For a 50-developer team: 40% less rework, 60% faster AI onboarding, $780k+ annual savings.
+
+### Workweave
+Agentic OS for Business. An intelligent operating system that orchestrates specialized AI agents across enterprise systems including Salesforce, ServiceNow, and Snowflake. Built on the VoltAgent framework with TypeScript. Features multi-agent orchestration, semantic RAG, voice and chat interfaces, smart escalation with human-in-the-loop. Delivers 97% faster context gathering, 40-60% ticket reduction, $72K annual savings per 1,000 users.
+
+### Datacenter Solutions (ExaScale Thermal Intelligence)
+AI-powered thermal management platform built on real exascale supercomputer operational data. Uses ensemble ML forecasting (ARIMA+Kalman, FFT Spectral, Holt-Winters, physics validation) delivering 95% prediction accuracy with 30-60 minute forecast horizons. Sub-products: ThermalVault (predictive thermal), HeatHarvest (waste heat recovery), ThermalTwin (digital twin), CarbonZero (ESG automation). Results: 15% cooling cost reduction, $2-5M annual savings per facility, 99.9% uptime guarantee.
+
+## Services
+
+### Catalyst Studio (MVP Factory)
+Proprietary AI accelerator platform with a 4-week Proof of Tech methodology. Includes custom domain LLMs (Tax, Legal, Finance), Agentic RAG for unstructured document extraction, YOLO-based vision models, and smart prompting strategies. Sprint phases: Ideation → Tech Stack → Rapid Build → Toll Gate (Go/No-Go).
+
+### Application Services
+End-to-end application development, modernization, and managed services. Platforms: Salesforce, Workday. Custom: Java, .NET, MERN Stack, React Native. Services include packaged app implementation, global rollouts, migration, middleware integration, and AMS.
+
+### Cloud Transformation
+Strategy-led cloud migration and modernization on AWS, Azure, and GCP. Includes cloud strategy & roadmap, re-architecting, public/hybrid hosting, cloud security & governance, and cloud testing & QA. Technologies: Kubernetes, Docker, Terraform, Helm, ArgoCD.
+
+### Data & AI
+Full-stack data engineering and AI capabilities. Includes BI & data warehousing, ETL & data pipelines, data quality & governance, GenAI & LLM solutions, classical ML models, and rapid prototyping. Technologies: Python, PyTorch, TensorFlow, OpenAI, Claude, AWS Bedrock, LangChain, DSPy, MLflow.
+
+### Infrastructure Services
+Enterprise infrastructure management including service desk & management, NOC/SOC operations, cybersecurity solutions, data center services, database & storage management, and infrastructure advisory. 24/7 coverage, SLA-driven L0-L3 support, AI-augmented ticket triage via Workweave.
+
+## Case Studies
+
+### AI Scheduling Assistant (Home Services)
+Omni-channel AI assistant deployed across Voice, Web Chat, and SMS. Built with Claude Sonnet 3.5 and DSPy optimization. Features weather-aware scheduling and mandatory review-confirm loops. Results: $80-120K annual savings, 3-minute avg call (vs 8 min manual), 0 wait time (vs 15 min), 40% human call volume reduction, 99% availability.
+
+### AI IT Support Assistant (Enterprise IT)
+Multi-agent orchestration system using VoltAgent framework and GPT-4o. Specialized agents for ServiceNow, RAG search, and ticket escalation. Omni-channel support via Voice (VAPI) and Web Chat. Results: $72K annual savings per 1,000 users, 40-60% L1 ticket reduction, 2-minute resolution (vs 4 hours), 24/7 availability, 6-8 week implementation.
+
+## Technology Stack
+
+AI/ML: Python, PyTorch, Keras, TensorFlow, OpenAI, Claude, AWS Bedrock, Llama, Falcon, LangChain, MLflow, DSPy
+Cloud: AWS, Azure, GCP, Kubernetes, Docker, Terraform
+Development: Java, .NET, React, Node.js, React Native, TypeScript
+Enterprise: Salesforce, Workday, ServiceNow, ITSM
+
+## Contact
+
+Website: https://syntegreti.com
+Contact: https://syntegreti.com/contact
+Location: Hyderabad, India (Global Delivery)

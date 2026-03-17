@@ -1,0 +1,12 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Syntegreti",
+  "name_for_model": "syntegreti",
+  "description_for_human": "AI-first enterprise company building products (BetterSDLC, Workweave, ExaScale Datacenter) and delivering AI, cloud, and infrastructure services.",
+  "description_for_model": "Syntegreti is an AI-first company with 25 engineers based in Hyderabad, India. They build three products: BetterSDLC (SDLC workflow optimization), Workweave (agentic OS for business), and ExaScale Datacenter Solutions (AI thermal intelligence). They offer services through Catalyst Studio (4-week MVP factory), plus application services, cloud transformation, data & AI, and infrastructure services. They serve manufacturing, lifesciences, healthcare, engineering, insurance, and banking industries.",
+  "auth": { "type": "none" },
+  "api": { "type": "none" },
+  "logo_url": "https://syntegreti.com/favicon.svg",
+  "contact_email": "info@syntegreti.com",
+  "legal_info_url": "https://syntegreti.com/about"
+}
