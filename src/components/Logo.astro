@@ -7,15 +7,15 @@ interface Props {
 
 const { size = 'md', showText = true, glow = false } = Astro.props;
 
-const dims: Record<string, { w: number; h: number; text: string }> = {
-  sm: { w: 24, h: 26, text: 'text-base' },
-  md: { w: 32, h: 35, text: 'text-lg' },
-  lg: { w: 48, h: 53, text: 'text-2xl' },
+const dims: Record<string, { w: number; h: number; text: string; gap: string }> = {
+  sm: { w: 32, h: 35, text: 'text-xl', gap: 'gap-2.5' },
+  md: { w: 40, h: 44, text: 'text-2xl', gap: 'gap-3' },
+  lg: { w: 56, h: 62, text: 'text-3xl', gap: 'gap-3' },
 };
 const d = dims[size];
 ---
 
-<div class="flex items-center gap-2">
+<div class={`flex items-center ${d.gap}`}>
   <svg width={d.w} height={d.h} viewBox="5 0 90 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Syntegreti logo">
     <defs>
       <linearGradient id={`lg-${size}`} x1="20" y1="8" x2="45" y2="55"><stop offset="0%" stop-color="#2dff94"/><stop offset="100%" stop-color="#00c466"/></linearGradient>
@@ -37,7 +37,7 @@ const d = dims[size];
     <path d={`M 43,48 A 25,25 0 1,1 46,84`} stroke={`url(#lc-${size})`} stroke-width={glow ? "11" : "12"} fill="none" stroke-linecap="round" mask={`url(#mc-${size})`}/>
   </svg>
   {showText && (
-    <span class={`${d.text} font-semibold tracking-tight text-text-primary`}>
+    <span class={`${d.text} font-bold tracking-tight text-text-primary`}>
       Syntegreti
     </span>
   )}
