@@ -36,15 +36,17 @@ const results = [
 ];
 
 const forecasting = [
-  { name: 'ARIMA + Kalman', desc: '74% better accuracy than linear regression for temperature' },
-  { name: 'FFT Spectral', desc: 'Frequency-domain pattern recognition for power consumption' },
-  { name: 'Holt-Winters', desc: 'Triple exponential smoothing for PUE efficiency' },
-  { name: 'Physics Validation', desc: 'Thermodynamic constraints ensure realistic predictions' },
-  { name: 'Ensemble Fusion', desc: 'Confidence-weighted integration for superior reliability' },
+  { name: 'ARIMA + Kalman Filtering', desc: '74% better accuracy than linear regression. Advanced temperature prediction with real-time state estimation.' },
+  { name: 'FFT Spectral Analysis', desc: 'Frequency-domain pattern recognition for power consumption. Detects cyclical patterns invisible to time-domain methods.' },
+  { name: 'Holt-Winters Smoothing', desc: 'Triple exponential smoothing for PUE efficiency. Captures trend and seasonal components simultaneously.' },
+  { name: 'Physics-Based Validation', desc: 'Thermodynamic constraints ensure every prediction is physically realistic. No hallucinated temperatures.' },
+  { name: 'Ensemble Fusion', desc: 'Confidence-weighted integration of all algorithms. Each method votes — the ensemble delivers superior reliability.' },
 ];
 ---
 
 <Layout title="ExaScale Datacenter Solutions | Syntegreti" description="AI thermal intelligence built on real exascale data. 95% prediction accuracy, 15% cooling cost reduction.">
+
+  <!-- Hero -->
   <section class="relative pt-32 pb-20 overflow-hidden">
     <div class="absolute inset-0 grid-bg opacity-20"></div>
     <div class="absolute top-1/4 -right-32 h-96 w-96 rounded-full bg-amber/5 blur-[120px]"></div>
@@ -68,11 +70,12 @@ const forecasting = [
     </div>
   </section>
 
+  <!-- Results strip -->
   <section class="py-16">
     <div class="mx-auto max-w-7xl px-6">
       <div class="grid grid-cols-2 gap-4 lg:grid-cols-4" data-stagger>
         {results.map((r) => (
-          <div class="rounded-2xl border border-amber/20 bg-amber/5 p-6 text-center">
+          <div class="glow-card-subtle p-6 text-center">
             <div class="text-3xl font-bold text-amber">{r.value}</div>
             <div class="mt-1 text-sm font-semibold text-text-primary">{r.label}</div>
           </div>
@@ -81,9 +84,10 @@ const forecasting = [
     </div>
   </section>
 
+  <!-- The opportunity -->
   <section class="py-20">
     <div class="mx-auto max-w-7xl px-6">
-      <div class="rounded-2xl border border-border bg-surface/20 p-10" data-animate>
+      <div class="glow-card-subtle p-10" data-animate>
         <span class="font-mono text-sm text-amber">// the_opportunity</span>
         <h2 class="mt-3 text-2xl font-bold">Data centers consume 3% of global electricity.</h2>
         <p class="mt-4 text-sm leading-relaxed text-text-secondary max-w-2xl">
@@ -97,38 +101,41 @@ const forecasting = [
     </div>
   </section>
 
+  <!-- Ensemble Forecasting — redesigned as pillar grid -->
   <section class="py-20">
     <div class="mx-auto max-w-7xl px-6">
       <div class="mb-12" data-animate>
         <span class="font-mono text-sm text-accent">// ensemble_ai</span>
         <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Multi-Algorithm Ensemble Forecasting</h2>
-        <p class="mt-4 max-w-2xl text-text-secondary">Five methods fused into one prediction engine.</p>
+        <p class="mt-4 max-w-2xl text-text-secondary">Five forecasting methods fused into one prediction engine. Each has strengths — our ensemble captures them all.</p>
       </div>
-      <div class="space-y-3" data-stagger>
-        {forecasting.map((algo) => (
-          <div class="flex items-start gap-4 rounded-xl border border-border bg-surface/20 p-5 transition-all card-hover">
-            <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-amber/20 bg-amber/5">
-              <span class="font-mono text-xs font-bold text-amber">AI</span>
+
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-5" data-stagger>
+        {forecasting.map((algo, i) => (
+          <div class="glow-card-subtle p-6 flex flex-col">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-amber/10">
+                <span class="font-mono text-xs font-bold text-amber">{String(i + 1).padStart(2, '0')}</span>
+              </div>
             </div>
-            <div>
-              <h3 class="text-sm font-bold text-text-primary">{algo.name}</h3>
-              <p class="mt-1 text-xs text-text-muted">{algo.desc}</p>
-            </div>
+            <h3 class="text-sm font-bold text-text-primary">{algo.name}</h3>
+            <p class="mt-2 text-xs leading-relaxed text-text-secondary flex-1">{algo.desc}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
+  <!-- Platform Products — glow cards -->
   <section class="py-20">
     <div class="mx-auto max-w-7xl px-6">
       <div class="mb-12" data-animate>
         <span class="font-mono text-sm text-accent">// platform_suite</span>
         <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Platform Products</h2>
       </div>
-      <div class="grid gap-6 md:grid-cols-2" data-stagger>
+      <div class="grid gap-4 md:grid-cols-2" data-stagger>
         {products.map((product) => (
-          <div class="rounded-2xl border border-border bg-surface/20 p-8 transition-all card-hover">
+          <div class="glow-card-subtle p-8">
             <h3 class="text-xl font-bold text-text-primary">{product.name}</h3>
             <p class="mt-1 font-mono text-xs text-amber">{product.tagline}</p>
             <p class="mt-4 text-sm leading-relaxed text-text-secondary">{product.description}</p>
@@ -143,9 +150,10 @@ const forecasting = [
     </div>
   </section>
 
+  <!-- CTA -->
   <section class="py-20">
     <div class="mx-auto max-w-7xl px-6">
-      <div class="rounded-2xl border border-amber/20 bg-gradient-to-br from-amber/5 to-surface p-12 text-center" data-animate>
+      <div class="glow-card-subtle p-12 text-center" data-animate>
         <h2 class="text-3xl font-bold tracking-tight">
           15% cooling cost reduction.<br />
           <span class="bg-gradient-to-r from-amber to-accent bg-clip-text text-transparent">Measured in weeks, not months.</span>

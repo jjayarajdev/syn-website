@@ -1,27 +1,4 @@
 ---
-const capabilities = [
-  {
-    name: 'Custom Domain LLMs',
-    description: 'Tailored models for Tax, Legal, and Finance domains. Customizable, secure, and production-ready.',
-    icon: '🧠',
-  },
-  {
-    name: 'Agentic RAG',
-    description: 'Home-grown accelerator for unstructured document extraction and retrieval-augmented generation.',
-    icon: '🔍',
-  },
-  {
-    name: 'Vision Models',
-    description: 'YOLO-based custom models for business-specific object detection and visual intelligence.',
-    icon: '👁️',
-  },
-  {
-    name: 'Smart Prompts',
-    description: 'Efficient behind-the-scenes prompting for better throughput and productivity at scale.',
-    icon: '⚙️',
-  },
-];
-
 const phases = [
   { num: '01', name: 'Ideation', desc: 'Stakeholder alignment & benefits identification' },
   { num: '02', name: 'Tech Stack', desc: 'Architecture finalization & developer deployment' },
@@ -30,57 +7,114 @@ const phases = [
 ];
 ---
 
-<section class="relative py-32 overflow-hidden" id="catalyst">
-  <!-- Background accent -->
+<section class="relative py-24 overflow-hidden" id="catalyst">
   <div class="absolute inset-0 bg-gradient-to-b from-void via-surface/30 to-void"></div>
 
   <div class="relative z-10 mx-auto max-w-7xl px-6">
-    <!-- Section header -->
-    <div class="mb-16" data-animate>
-      <span class="font-mono text-sm text-accent">// catalyst_studio</span>
-      <h2 class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
-        4 weeks. Working proof.<br/>
-        <span class="gradient-text">No excuses.</span>
-      </h2>
-      <p class="mt-4 max-w-2xl text-lg text-text-secondary">
-        Catalyst Studio is how we move faster than your procurement process.
-        Proprietary AI toolkit, battle-tested methodology, and a team that
-        doesn't need six months to figure out if something works.
-      </p>
-    </div>
+    <div class="grid gap-12 lg:grid-cols-2 lg:items-start">
 
-    <!-- Capabilities grid -->
-    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-20" data-stagger>
-      {capabilities.map((cap) => (
-        <div class="glow-card-subtle p-6">
-          <div class="mb-4 text-3xl">{cap.icon}</div>
-          <h3 class="text-sm font-semibold text-text-primary">{cap.name}</h3>
-          <p class="mt-2 text-xs leading-relaxed text-text-muted">{cap.description}</p>
+      <!-- Left: narrative -->
+      <div>
+        <div data-animate>
+          <span class="font-mono text-sm text-accent">// how_we_start</span>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+            Every engagement starts here.
+          </h2>
+          <p class="mt-4 text-text-secondary">
+            Catalyst Studio is our 4-week Proof of Tech sprint. One problem,
+            two to three systems, four weeks to a working proof — before anyone
+            writes a big check.
+          </p>
         </div>
-      ))}
-    </div>
 
-    <!-- POT Timeline -->
-    <div data-animate>
-      <h3 class="mb-8 text-center text-xl font-bold text-text-primary">
-        4-Week Innovation Sprint
-      </h3>
-      <div class="relative">
-        <!-- Connection line -->
-        <div class="absolute top-8 left-0 right-0 hidden h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent lg:block"></div>
-
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4" data-stagger>
+        <!-- Timeline -->
+        <div class="mt-10 space-y-4" data-stagger>
           {phases.map((phase) => (
-            <div class="relative text-center">
-              <div class="relative z-10 mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl border border-accent/20 bg-accent/5">
-                <span class="font-mono text-lg font-bold text-accent">{phase.num}</span>
+            <div class="flex items-start gap-4">
+              <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-accent/20 bg-accent/5">
+                <span class="font-mono text-sm font-bold text-accent">{phase.num}</span>
               </div>
-              <h4 class="text-sm font-semibold text-text-primary">{phase.name}</h4>
-              <p class="mt-1 text-xs text-text-muted">{phase.desc}</p>
+              <div>
+                <h4 class="text-sm font-bold text-text-primary">{phase.name}</h4>
+                <p class="text-xs text-text-secondary">{phase.desc}</p>
+              </div>
             </div>
           ))}
         </div>
+
+        <div class="mt-8" data-animate>
+          <a href="/services/catalyst-studio" class="inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-accent-glow transition-colors">
+            Full Catalyst Studio details
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
       </div>
+
+      <!-- Right: the commitment box -->
+      <div data-animate>
+        <div class="glow-card-subtle p-8">
+          <h3 class="text-lg font-bold text-text-primary mb-6">What you sign. What you get.</h3>
+
+          <div class="space-y-5">
+            <div class="flex items-start gap-3">
+              <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-accent/10">
+                <svg class="h-4 w-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-text-primary">Fixed-scope, fixed-fee</h4>
+                <p class="text-xs text-text-secondary">No open-ended engagements. One problem, one price, one timeline.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-accent/10">
+                <svg class="h-4 w-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-text-primary">1 problem, 2-3 systems, 4 weeks</h4>
+                <p class="text-xs text-text-secondary">Scoped tight enough to prove feasibility, broad enough to be meaningful.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-accent/10">
+                <svg class="h-4 w-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-text-primary">Co-owned by your lead + our architect</h4>
+                <p class="text-xs text-text-secondary">Your product/IT lead works directly with our principal. No telephone game.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-accent/10">
+                <svg class="h-4 w-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-text-primary">Go/No-Go at week 4</h4>
+                <p class="text-xs text-text-secondary">Working proof, real metrics, honest recommendation. If it won't work, we tell you.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-border/50">
+            <a href="/contact" class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-6 py-3.5 text-sm font-semibold text-void transition-all hover:bg-accent-glow hover:shadow-[0_0_30px_rgba(0,232,123,0.3)]">
+              Book a 4-Week Sprint
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
