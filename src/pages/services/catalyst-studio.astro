@@ -1,29 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
-const capabilities = [
-  {
-    name: 'Custom Domain LLMs',
-    description: 'Tailored language models for Tax, Legal, and Finance domains. Customizable, secure, and tuned for your industry vocabulary and compliance requirements.',
-    icon: '🧠',
-  },
-  {
-    name: 'Agentic RAG',
-    description: 'Home-grown accelerator for unstructured document extraction and retrieval-augmented generation. Process contracts, invoices, medical records, and more.',
-    icon: '🔍',
-  },
-  {
-    name: 'Vision Models',
-    description: 'YOLO-based custom models for business-specific object detection. Quality inspection, asset tracking, safety compliance — visual AI for your use case.',
-    icon: '👁️',
-  },
-  {
-    name: 'Smart Prompts',
-    description: 'Efficient behind-the-scenes prompting strategies for better throughput and productivity. Optimized token usage, structured outputs, chain-of-thought tuning.',
-    icon: '⚙️',
-  },
-];
-
 const phases = [
   {
     num: '01',
@@ -70,15 +47,9 @@ const phases = [
     ],
   },
 ];
-
-const techStack = [
-  { category: 'AI/ML', items: ['Python', 'PyTorch', 'Keras', 'TensorFlow', 'LangChain', 'MLflow'] },
-  { category: 'LLMs', items: ['OpenAI', 'Claude', 'AWS Bedrock', 'Llama', 'Falcon', 'DSPy'] },
-  { category: 'Infra', items: ['Kubernetes', 'Docker', 'AWS', 'Azure', 'GCP'] },
-];
 ---
 
-<Layout title="Catalyst Studio — AI MVP Factory | Syntegreti" description="Syntegreti's proprietary AI accelerator. Go from idea to working proof in 4 weeks with our Proof of Tech methodology.">
+<Layout title="Catalyst Studio — AI MVP Factory | Syntegreti" description="Fixed-scope, fixed-fee 4-week AI sprint. One problem, 2-3 systems, working proof with real metrics. Book a sprint.">
 
   <!-- Hero -->
   <section class="relative pt-32 pb-20 overflow-hidden">
@@ -91,7 +62,7 @@ const techStack = [
           <span class="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm font-medium text-accent">
             Service
           </span>
-          <span class="rounded-full border border-border px-3 py-1 text-xs text-text-muted">Proprietary AI Accelerator</span>
+          <span class="rounded-full border border-border px-3 py-1 text-xs text-text-muted">Every engagement starts here</span>
         </div>
 
         <h1 class="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
@@ -101,10 +72,9 @@ const techStack = [
           Our MVP Factory
         </p>
         <p class="mt-6 text-lg leading-relaxed text-text-secondary">
-          A proprietary accelerator platform that takes your AI idea from concept to
-          working proof in 4 weeks. We de-risk innovation through rigorous feasibility
-          validation — so you see results before you commit. Our toolkit includes custom
-          domain LLMs, agentic RAG, vision models, and optimized prompting strategies.
+          Fixed-scope, fixed-fee, 4 weeks. One problem, two to three systems,
+          a working proof with real metrics — and an honest Go/No-Go recommendation
+          before you commit to anything bigger.
         </p>
 
         <div class="mt-8 flex flex-wrap gap-4">
@@ -119,26 +89,77 @@ const techStack = [
     </div>
   </section>
 
-  <!-- POT Methodology -->
-  <section class="py-20">
+  <!-- What you sign / What you get — synced with homepage -->
+  <section class="py-16">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="grid gap-8 lg:grid-cols-2" data-stagger>
+
+        <!-- What you sign -->
+        <div class="glow-card-subtle p-8">
+          <h2 class="text-xl font-bold text-text-primary mb-6">What you sign.</h2>
+          <div class="space-y-5">
+            {[
+              { title: 'Fixed-scope, fixed-fee', desc: 'No open-ended engagements. One problem, one price, one timeline.' },
+              { title: '1 problem, 2-3 systems, 4 weeks', desc: 'Scoped tight enough to prove feasibility, broad enough to be meaningful.' },
+              { title: 'Co-owned by your lead + our architect', desc: 'Your product/IT lead works directly with our principal engineer. No telephone game.' },
+              { title: 'Go/No-Go at week 4', desc: 'Working proof, real metrics, honest recommendation. If it won\'t work, we tell you.' },
+            ].map((item) => (
+              <div class="flex items-start gap-3">
+                <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-accent/10">
+                  <svg class="h-4 w-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-text-primary">{item.title}</h4>
+                  <p class="text-xs text-text-secondary">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- What you get -->
+        <div class="glow-card-subtle p-8">
+          <h2 class="text-xl font-bold text-text-primary mb-6">What you get.</h2>
+          <div class="space-y-3">
+            {[
+              'Working prototype connected to your actual systems',
+              'Architecture document and technical roadmap',
+              'Performance benchmarks and accuracy metrics',
+              'Go/No-Go recommendation backed by evidence',
+              'Production scaling plan with timeline and cost',
+              'Full source code, documentation, and handover',
+            ].map((item) => (
+              <div class="flex items-start gap-3 rounded-lg border border-border/50 bg-deep/50 px-4 py-3">
+                <svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-sm text-text-secondary">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4-Week Timeline -->
+  <section class="py-16">
     <div class="mx-auto max-w-7xl px-6">
       <div class="mb-12" data-animate>
-        <span class="font-mono text-sm text-accent">// proof_of_tech</span>
+        <span class="font-mono text-sm text-accent">// the_sprint</span>
         <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-          4-Week Innovation Sprint
+          4-Week Sprint
         </h2>
-        <p class="mt-4 max-w-2xl text-text-secondary">
-          Our Proof of Tech methodology is a specialized approach for complex, deep-tech
-          problem solving. We de-risk innovation through rigorous feasibility validation
-          before you scale.
-        </p>
       </div>
 
-      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4" data-stagger>
+      <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4" data-stagger>
         {phases.map((phase) => (
-          <div class="rounded-2xl border border-border bg-surface/30 p-6 transition-all card-hover">
+          <div class="glow-card-subtle p-6">
             <div class="flex items-center gap-3 mb-4">
-              <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-accent/20 bg-accent/5">
+              <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10">
                 <span class="font-mono text-sm font-bold text-accent">{phase.num}</span>
               </div>
               <div>
@@ -162,75 +183,131 @@ const techStack = [
     </div>
   </section>
 
-  <!-- Capabilities -->
-  <section class="py-20">
+  <!-- What we've built with it — replaces generic capabilities -->
+  <section class="py-16">
     <div class="mx-auto max-w-7xl px-6">
       <div class="mb-12" data-animate>
-        <span class="font-mono text-sm text-accent">// our_toolkit</span>
+        <span class="font-mono text-sm text-accent">// built_with_catalyst</span>
         <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-          Built-In AI Capabilities
+          What we've built with it.
         </h2>
         <p class="mt-4 max-w-2xl text-text-secondary">
-          Every sprint leverages our proprietary toolkit — so we're not starting from
-          scratch. We're assembling proven components into your solution.
+          These aren't hypothetical capabilities. These are products and deployments
+          that came out of Catalyst Studio sprints.
         </p>
       </div>
 
-      <div class="grid gap-6 md:grid-cols-2" data-stagger>
-        {capabilities.map((cap) => (
-          <div class="rounded-2xl border border-border bg-surface/20 p-8 transition-all card-hover">
-            <span class="text-3xl">{cap.icon}</span>
-            <h3 class="mt-4 text-lg font-bold text-text-primary">{cap.name}</h3>
-            <p class="mt-3 text-sm leading-relaxed text-text-secondary">{cap.description}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- What You Get -->
-  <section class="py-20">
-    <div class="mx-auto max-w-7xl px-6">
-      <div class="rounded-2xl border border-accent/10 bg-gradient-to-br from-accent/5 via-surface/30 to-transparent p-10" data-animate>
-        <span class="font-mono text-sm text-accent">// deliverables</span>
-        <h2 class="mt-3 text-2xl font-bold">What You Get After 4 Weeks</h2>
-        <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            'Working prototype demonstrating feasibility',
-            'Architecture document and technical roadmap',
-            'Performance benchmarks and accuracy metrics',
-            'Go/No-Go recommendation with evidence',
-            'Production scaling plan with timeline',
-            'Full source code and documentation',
-          ].map((item) => (
-            <div class="flex items-start gap-3 rounded-xl border border-border bg-deep/50 p-4">
-              <svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              <span class="text-sm text-text-secondary">{item}</span>
+      <div class="space-y-4" data-stagger>
+        <!-- BetterSDLC -->
+        <div class="glow-card-subtle p-8">
+          <div class="grid gap-6 md:grid-cols-3 md:items-center">
+            <div class="md:col-span-2">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="text-xl">⚡</span>
+                <h3 class="text-lg font-bold text-accent">BetterSDLC</h3>
+                <span class="rounded-full bg-accent/10 px-2.5 py-0.5 text-[10px] text-accent">Product</span>
+              </div>
+              <p class="text-sm text-text-secondary">
+                AI-guided SDLC workflows with structured questionnaires, context threading,
+                organizational learning via DSPy, and compliance audit trails via Langfuse.
+                Started as a Catalyst sprint — now a full product.
+              </p>
             </div>
-          ))}
+            <div class="flex flex-wrap gap-2">
+              <span class="rounded-md bg-accent/10 px-2.5 py-1 text-xs text-accent">LLM Orchestration</span>
+              <span class="rounded-md bg-accent/10 px-2.5 py-1 text-xs text-accent">DSPy Optimization</span>
+              <span class="rounded-md bg-accent/10 px-2.5 py-1 text-xs text-accent">Langfuse Tracing</span>
+            </div>
+          </div>
         </div>
+
+        <!-- Workweave agents -->
+        <div class="glow-card-subtle p-8">
+          <div class="grid gap-6 md:grid-cols-3 md:items-center">
+            <div class="md:col-span-2">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="text-xl">🔮</span>
+                <h3 class="text-lg font-bold text-cyan">Workweave Agents</h3>
+                <span class="rounded-full bg-cyan/10 px-2.5 py-0.5 text-[10px] text-cyan">Product</span>
+              </div>
+              <p class="text-sm text-text-secondary">
+                Multi-agent orchestration across ServiceNow, Salesforce, and Snowflake.
+                Enterprise Intelligence Agent, Support Deflection Agent, Global Mobility Agent —
+                all prototyped in Catalyst sprints, now in production.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="rounded-md bg-cyan/10 px-2.5 py-1 text-xs text-cyan">Agentic RAG</span>
+              <span class="rounded-md bg-cyan/10 px-2.5 py-1 text-xs text-cyan">VoltAgent</span>
+              <span class="rounded-md bg-cyan/10 px-2.5 py-1 text-xs text-cyan">Multi-Agent</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI Scheduling -->
+        <div class="glow-card-subtle p-8">
+          <div class="grid gap-6 md:grid-cols-3 md:items-center">
+            <div class="md:col-span-2">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="text-xl">📞</span>
+                <h3 class="text-lg font-bold text-text-primary">AI Scheduling Assistant</h3>
+                <span class="rounded-full bg-elevated px-2.5 py-0.5 text-[10px] text-text-secondary">Client deployment</span>
+              </div>
+              <p class="text-sm text-text-secondary">
+                Omni-channel voice + chat + SMS scheduling with weather-aware logic.
+                Claude Sonnet 3.5, DSPy optimization, sub-2.5s voice latency.
+                $80-120K annual savings.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="rounded-md bg-elevated px-2.5 py-1 text-xs text-text-secondary">Claude 3.5</span>
+              <span class="rounded-md bg-elevated px-2.5 py-1 text-xs text-text-secondary">Voice AI</span>
+              <span class="rounded-md bg-elevated px-2.5 py-1 text-xs text-text-secondary">DSPy</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ExaScale -->
+        <div class="glow-card-subtle p-8">
+          <div class="grid gap-6 md:grid-cols-3 md:items-center">
+            <div class="md:col-span-2">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="text-xl">🏗️</span>
+                <h3 class="text-lg font-bold text-amber">ExaScale Thermal Intelligence</h3>
+                <span class="rounded-full bg-amber/10 px-2.5 py-0.5 text-[10px] text-amber">Product</span>
+              </div>
+              <p class="text-sm text-text-secondary">
+                Ensemble ML forecasting for data center thermal management. 5 algorithms
+                fused into one prediction engine. Built on real exascale supercomputer data.
+                95% accuracy, $2-5M annual savings.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="rounded-md bg-amber/10 px-2.5 py-1 text-xs text-amber">Ensemble ML</span>
+              <span class="rounded-md bg-amber/10 px-2.5 py-1 text-xs text-amber">Vision (YOLO)</span>
+              <span class="rounded-md bg-amber/10 px-2.5 py-1 text-xs text-amber">Digital Twin</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-6 text-center" data-animate>
+        <p class="text-sm text-text-muted">
+          Every capability we claim is backed by something we actually built and shipped.
+        </p>
       </div>
     </div>
   </section>
 
   <!-- Tech Stack -->
-  <section class="py-20">
+  <section class="py-16">
     <div class="mx-auto max-w-7xl px-6">
-      <div class="rounded-2xl border border-border bg-surface/20 p-10" data-animate>
+      <div class="glow-card-subtle p-8" data-animate>
         <span class="font-mono text-sm text-accent">// technology</span>
-        <h2 class="mt-3 text-xl font-bold">Technology Stack</h2>
-        <div class="mt-6 space-y-4">
-          {techStack.map((group) => (
-            <div>
-              <span class="block text-xs font-semibold uppercase tracking-wider text-text-muted mb-2">{group.category}</span>
-              <div class="flex flex-wrap gap-2">
-                {group.items.map((item) => (
-                  <span class="rounded-md border border-border px-3 py-1.5 font-mono text-xs text-text-secondary hover:border-accent/30 hover:text-accent transition-colors">{item}</span>
-                ))}
-              </div>
-            </div>
+        <h2 class="mt-3 text-lg font-bold">Technology Stack</h2>
+        <div class="mt-6 flex flex-wrap gap-2">
+          {['Python', 'PyTorch', 'TensorFlow', 'LangChain', 'DSPy', 'MLflow', 'OpenAI', 'Claude', 'AWS Bedrock', 'Llama', 'Falcon', 'VoltAgent', 'Kubernetes', 'Docker', 'AWS', 'Azure', 'GCP', 'TypeScript', 'React', 'FastAPI'].map((item) => (
+            <span class="rounded-md border border-border px-3 py-1.5 font-mono text-xs text-text-secondary hover:border-accent/30 hover:text-accent transition-colors">{item}</span>
           ))}
         </div>
       </div>
@@ -238,9 +315,9 @@ const techStack = [
   </section>
 
   <!-- CTA -->
-  <section class="py-20">
+  <section class="py-16">
     <div class="mx-auto max-w-7xl px-6">
-      <div class="rounded-2xl border border-accent/20 bg-gradient-to-br from-accent/5 to-surface p-12 text-center" data-animate>
+      <div class="glow-card-subtle p-12 text-center" data-animate>
         <h2 class="text-3xl font-bold tracking-tight">
           4 weeks. Zero guesswork.<br />
           <span class="gradient-text">Prove it before you scale it.</span>
