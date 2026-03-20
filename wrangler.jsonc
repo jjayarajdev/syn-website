@@ -3,6 +3,10 @@
 	"compatibility_flags": ["global_fetch_strictly_public"],
 	"name": "syn-website",
 	"main": "@astrojs/cloudflare/entrypoints/server",
+	"routes": [
+		{ "pattern": "syntegreti.com", "custom_domain": true },
+		{ "pattern": "www.syntegreti.com", "custom_domain": true }
+	],
 	"assets": {
 		"directory": "./dist",
 		"binding": "ASSETS"
