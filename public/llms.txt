@@ -1,10 +1,10 @@
 # Syntegreti — AI-First Enterprise Company
 
-> 25 engineers building AI products and shipping enterprise solutions from Hyderabad to the world.
+> AI-first company building products and shipping enterprise solutions from Hyderabad to the world.
 
 ## About
 
-Syntegreti is an AI-first company that builds products and delivers enterprise services. We are a small, focused team of 25 engineers headquartered in Hyderabad, India, with global delivery capability. We serve six industries: Manufacturing, Lifesciences, Healthcare, Engineering, Insurance & Insurtech, and Banking.
+Syntegreti is an AI-first company that builds products and delivers enterprise services. We are a lean, focused, and growing team headquartered in Hyderabad, India, with global delivery capability. We serve six industries: Manufacturing, Lifesciences, Healthcare, Engineering, Insurance & Insurtech, and Banking.
 
 Our tagline: Intelligence Through Connection.
 
