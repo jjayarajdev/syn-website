@@ -104,6 +104,7 @@ body {
   inset: 0;
   border-radius: inherit;
   padding: 1px;
+  pointer-events: none;
   background: conic-gradient(
     from var(--card-angle, 0deg),
     transparent 0%,
@@ -149,6 +150,7 @@ body {
   inset: 0;
   border-radius: inherit;
   padding: 1px;
+  pointer-events: none;
   background: conic-gradient(
     from var(--card-angle, 0deg),
     transparent 0%,
