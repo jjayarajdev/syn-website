@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 import logoWhite from '../assets/syntegreti-logo-white.png';
 
 interface Props {
@@ -16,15 +15,15 @@ const heights: Record<string, number> = {
   lg: 127,
 };
 const h = heights[size];
+const w = Math.round(h * (logoWhite.width / logoWhite.height));
 ---
 
 <div class="inline-flex items-center">
-  <Image
-    src={logoWhite}
+  <img
+    src={logoWhite.src}
     alt="Syntegreti"
     height={h}
-    width={h * (logoWhite.width / logoWhite.height)}
-    densities={[1, 2]}
+    width={w}
     class={glow ? 'drop-shadow-[0_0_16px_rgba(0,232,123,0.35)]' : ''}
   />
 </div>
