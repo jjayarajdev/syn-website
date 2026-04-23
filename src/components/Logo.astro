@@ -1,44 +1,30 @@
 ---
+import { Image } from 'astro:assets';
+import logoWhite from '../assets/syntegreti-logo-white.png';
+
 interface Props {
   size?: 'sm' | 'md' | 'lg';
   showText?: boolean;
   glow?: boolean;
 }
 
-const { size = 'md', showText = true, glow = false } = Astro.props;
+const { size = 'md', glow = false } = Astro.props;
 
-const dims: Record<string, { w: number; h: number; text: string; gap: string }> = {
-  sm: { w: 32, h: 35, text: 'text-xl', gap: 'gap-2.5' },
-  md: { w: 40, h: 44, text: 'text-2xl', gap: 'gap-3' },
-  lg: { w: 56, h: 62, text: 'text-3xl', gap: 'gap-3' },
+const heights: Record<string, number> = {
+  sm: 70,
+  md: 92,
+  lg: 127,
 };
-const d = dims[size];
+const h = heights[size];
 ---
 
-<div class={`flex items-center ${d.gap}`}>
-  <svg width={d.w} height={d.h} viewBox="5 0 90 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Syntegreti logo">
-    <defs>
-      <linearGradient id={`lg-${size}`} x1="20" y1="8" x2="45" y2="55"><stop offset="0%" stop-color="#2dff94"/><stop offset="100%" stop-color="#00c466"/></linearGradient>
-      <linearGradient id={`la-${size}`} x1="40" y1="10" x2="60" y2="90"><stop offset="0%" stop-color="#ffd24d"/><stop offset="100%" stop-color="#dda000"/></linearGradient>
-      <linearGradient id={`lc-${size}`} x1="55" y1="45" x2="80" y2="92"><stop offset="0%" stop-color="#40e8ff"/><stop offset="100%" stop-color="#00a0c4"/></linearGradient>
-      <mask id={`mg-${size}`}><rect x="0" y="0" width="100" height="100" fill="white"/><rect x="30" y="28" width="32" height="18" rx="6" fill="black"/></mask>
-      <mask id={`mc-${size}`}><rect x="0" y="0" width="100" height="100" fill="white"/><rect x="38" y="54" width="32" height="18" rx="6" fill="black"/></mask>
-      {glow && <filter id={`glo-${size}`}><feGaussianBlur stdDeviation="4"/></filter>}
-    </defs>
-    {glow && (
-      <g filter={`url(#glo-${size})`} opacity="0.4">
-        <path d="M 57,52 A 25,25 0 1,1 54,16" stroke="#00e87b" stroke-width="12" fill="none" stroke-linecap="round"/>
-        <path d="M 60,16 A 18,18 0 1,0 40,46 A 18,18 0 1,1 60,78" stroke="#ffb800" stroke-width="12" fill="none" stroke-linecap="round"/>
-        <path d="M 43,48 A 25,25 0 1,1 46,84" stroke="#00d4ff" stroke-width="12" fill="none" stroke-linecap="round"/>
-      </g>
-    )}
-    <path d={`M 57,52 A 25,25 0 1,1 54,16`} stroke={`url(#lg-${size})`} stroke-width={glow ? "11" : "12"} fill="none" stroke-linecap="round" mask={`url(#mg-${size})`}/>
-    <path d="M 60,16 A 18,18 0 1,0 40,46 A 18,18 0 1,1 60,78" stroke={`url(#la-${size})`} stroke-width={glow ? "11" : "12"} fill="none" stroke-linecap="round"/>
-    <path d={`M 43,48 A 25,25 0 1,1 46,84`} stroke={`url(#lc-${size})`} stroke-width={glow ? "11" : "12"} fill="none" stroke-linecap="round" mask={`url(#mc-${size})`}/>
-  </svg>
-  {showText && (
-    <span class={`${d.text} font-bold tracking-tight text-text-primary`}>
-      Syntegreti
-    </span>
-  )}
+<div class="inline-flex items-center">
+  <Image
+    src={logoWhite}
+    alt="Syntegreti"
+    height={h}
+    width={h * (logoWhite.width / logoWhite.height)}
+    densities={[1, 2]}
+    class={glow ? 'drop-shadow-[0_0_16px_rgba(0,232,123,0.35)]' : ''}
+  />
 </div>
