@@ -2,11 +2,11 @@
 import Layout from '../../layouts/Layout.astro';
 
 const phases = [
-  { num: '01', role: 'Business Analyst', desc: 'Requirements, acceptance criteria, user stories', icon: '📋' },
-  { num: '02', role: 'Architect', desc: 'Tech stack, patterns, data flow, security', icon: '🏗️' },
-  { num: '03', role: 'Senior Developer', desc: 'Code patterns, error handling, standards', icon: '⚙️' },
-  { num: '04', role: 'Developer', desc: 'Implementation details, edge cases, dependencies', icon: '💻' },
-  { num: '05', role: 'Tester', desc: 'Test strategy, coverage, key scenarios', icon: '🧪' },
+  { num: '01', role: 'Business Analyst', desc: 'Requirements, acceptance criteria, user stories' },
+  { num: '02', role: 'Architect', desc: 'Tech stack, patterns, data flow, security' },
+  { num: '03', role: 'Senior Developer', desc: 'Code patterns, error handling, standards' },
+  { num: '04', role: 'Developer', desc: 'Implementation details, edge cases, dependencies' },
+  { num: '05', role: 'Tester', desc: 'Test strategy, coverage, key scenarios' },
 ];
 
 const features = [
@@ -43,7 +43,7 @@ const surfaces = [
 <Layout title="AI-Assisted SDLC — Workflow Optimization | Syntegreti" description="Stop vibe coding. Our SDLC platform provides structured AI workflows across the entire software development lifecycle — from BA to Tester.">
 
   <!-- Hero -->
-  <section class="relative pt-32 pb-20 overflow-hidden">
+  <section class="relative pt-24 pb-10 overflow-hidden">
     <div class="absolute inset-0 grid-bg opacity-20"></div>
     <div class="absolute top-1/4 -right-32 h-96 w-96 rounded-full bg-accent/5 blur-[120px]"></div>
 
@@ -83,7 +83,7 @@ const surfaces = [
   </section>
 
   <!-- The Problem -->
-  <section class="py-20">
+  <section class="py-10">
     <div class="mx-auto max-w-7xl px-6">
       <div class="rounded-2xl border border-rose/20 bg-rose/5 p-10" data-animate>
         <span class="font-mono text-sm text-rose">// the_problem</span>
@@ -108,9 +108,9 @@ const surfaces = [
   </section>
 
   <!-- SDLC Phases -->
-  <section class="py-20">
+  <section class="py-10">
     <div class="mx-auto max-w-7xl px-6">
-      <div class="mb-12" data-animate>
+      <div class="mb-8" data-animate>
         <span class="font-mono text-sm text-accent">// five_phases</span>
         <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
           Structured Workflows for Every Role
@@ -124,7 +124,6 @@ const surfaces = [
       <div class="grid gap-4 sm:grid-cols-5" data-stagger>
         {phases.map((phase) => (
           <div class="rounded-xl border border-border bg-surface/30 p-6 text-center transition-all card-hover">
-            <span class="text-2xl">{phase.icon}</span>
             <div class="mt-3 font-mono text-xs text-accent">{phase.num}</div>
             <h3 class="mt-1 text-sm font-bold text-text-primary">{phase.role}</h3>
             <p class="mt-2 text-xs leading-relaxed text-text-muted">{phase.desc}</p>
@@ -142,9 +141,9 @@ const surfaces = [
   </section>
 
   <!-- Features -->
-  <section class="py-20">
+  <section class="py-10">
     <div class="mx-auto max-w-7xl px-6">
-      <div class="mb-12" data-animate>
+      <div class="mb-8" data-animate>
         <span class="font-mono text-sm text-accent">// core_features</span>
         <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
           How It Works
@@ -164,9 +163,9 @@ const surfaces = [
   </section>
 
   <!-- Surfaces -->
-  <section class="py-20">
+  <section class="py-10">
     <div class="mx-auto max-w-7xl px-6">
-      <div class="mb-12" data-animate>
+      <div class="mb-8" data-animate>
         <span class="font-mono text-sm text-accent">// available_on</span>
         <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
           Works Where You Work
@@ -186,7 +185,7 @@ const surfaces = [
   </section>
 
   <!-- Tech Stack -->
-  <section class="py-20">
+  <section class="py-10">
     <div class="mx-auto max-w-7xl px-6">
       <div class="rounded-2xl border border-border bg-surface/20 p-10" data-animate>
         <span class="font-mono text-sm text-accent">// built_on</span>
@@ -214,7 +213,7 @@ const surfaces = [
   </section>
 
   <!-- CTA -->
-  <section class="py-20">
+  <section class="py-10">
     <div class="mx-auto max-w-7xl px-6">
       <div class="rounded-2xl border border-accent/20 bg-gradient-to-br from-accent/5 to-surface p-12 text-center" data-animate>
         <h2 class="text-3xl font-bold tracking-tight">

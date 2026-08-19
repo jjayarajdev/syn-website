@@ -7,7 +7,6 @@ const pillars = [
     tagline: 'Our MVP Factory',
     description: 'Idea to working proof in 4 weeks. We de-risk your AI investment with a proprietary toolkit and a Go/No-Go gate before you scale.',
     href: '/services/catalyst-studio',
-    icon: '🔥',
     color: 'accent',
     features: [
       '4-Week Proof of Tech',
@@ -23,7 +22,6 @@ const pillars = [
     tagline: 'Apps + Cloud',
     description: 'Enterprise applications and cloud infrastructure — built right the first time. Salesforce, Workday, custom full-stack, plus strategy-led migration on AWS, Azure, and GCP.',
     href: '/services/application-services',
-    icon: '🏗️',
     color: 'cyan',
     features: [
       'Salesforce & Workday',
@@ -39,7 +37,6 @@ const pillars = [
     tagline: 'Intelligence at Scale',
     description: 'The heart of everything we do. From BI pipelines to production GenAI — we build the entire data infrastructure that makes AI work at enterprise scale.',
     href: '/services/data-ai',
-    icon: '🧠',
     color: 'accent',
     features: [
       'GenAI & LLM Solutions',
@@ -55,7 +52,6 @@ const pillars = [
     tagline: 'Infra + Cybersecurity',
     description: '24/7 operations, cybersecurity, and service desk — AI-augmented by our agent platform. We keep it running so your team can focus on what\'s next.',
     href: '/services/infrastructure',
-    icon: '🛡️',
     color: 'amber',
     features: [
       '24/7 NOC & SOC',
@@ -70,12 +66,12 @@ const pillars = [
 ---
 
 <Layout title="Services — Syntegreti" description="Enterprise AI and IT services: Catalyst Studio (4-week MVP factory), Build & Modernize, Data & AI, Operate & Secure.">
-  <section class="relative pt-32 pb-20">
+  <section class="relative pt-24 pb-10">
     <div class="absolute inset-0 grid-bg opacity-20"></div>
     <div class="absolute top-1/3 -right-32 h-96 w-96 rounded-full bg-accent/5 blur-[120px]"></div>
 
     <div class="relative z-10 mx-auto max-w-7xl px-6">
-      <div class="max-w-3xl mb-16" data-animate>
+      <div class="max-w-3xl mb-10" data-animate>
         <span class="font-mono text-sm text-accent">// service_portfolio</span>
         <h1 class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
           Four pillars.<br />
@@ -95,7 +91,6 @@ const pillars = [
             class="group glow-card-subtle p-7 flex flex-col"
           >
             <div class="mb-5">
-              <span class="text-3xl">{pillar.icon}</span>
             </div>
 
             <h2 class={`text-lg font-bold text-${pillar.color}`}>{pillar.title}</h2>

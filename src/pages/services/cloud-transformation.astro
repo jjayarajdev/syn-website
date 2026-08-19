@@ -6,25 +6,21 @@ const journey = [
     phase: 'Assess',
     title: 'Cloud Strategy & Roadmap',
     desc: 'We audit your current state, map dependencies, and build a migration roadmap that accounts for risk, cost, and business continuity.',
-    icon: '🔍',
   },
   {
     phase: 'Migrate',
     title: 'Re-architect & Modernize',
     desc: 'Lift-and-shift is a myth for complex systems. We re-architect for cloud-native — containers, serverless, managed services.',
-    icon: '🚀',
   },
   {
     phase: 'Operate',
     title: 'Security & Governance',
     desc: 'IAM policies, encryption at rest and in transit, compliance frameworks, cost optimization — baked in, not bolted on.',
-    icon: '🛡️',
   },
   {
     phase: 'Optimize',
     title: 'Continuous Improvement',
     desc: 'Cloud Testing & QA, performance tuning, cost anomaly detection, and architecture evolution as your needs grow.',
-    icon: '📈',
   },
 ];
 ---
@@ -32,7 +28,7 @@ const journey = [
 <Layout title="Cloud Transformation — Syntegreti" description="Strategy-led cloud migration and modernization on AWS, Azure, and GCP. From lift-and-shift to cloud-native re-architecture.">
 
   <!-- Hero -->
-  <section class="relative pt-32 pb-20 overflow-hidden">
+  <section class="relative pt-24 pb-10 overflow-hidden">
     <div class="absolute inset-0 grid-bg opacity-20"></div>
     <!-- Animated gradient orbs -->
     <div class="absolute top-20 left-1/4 h-72 w-72 rounded-full bg-cyan/5 blur-[100px] animate-pulse"></div>
@@ -60,7 +56,7 @@ const journey = [
   </section>
 
   <!-- Cloud providers - visual impact -->
-  <section class="py-16">
+  <section class="py-8">
     <div class="mx-auto max-w-7xl px-6">
       <div class="grid grid-cols-3 gap-4" data-stagger>
         {[
@@ -83,9 +79,9 @@ const journey = [
   </section>
 
   <!-- Journey -->
-  <section class="py-20">
+  <section class="py-10">
     <div class="mx-auto max-w-7xl px-6">
-      <div class="mb-16" data-animate>
+      <div class="mb-10" data-animate>
         <span class="font-mono text-sm text-cyan">// the_journey</span>
         <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
           Four Phases. Zero Guesswork.
@@ -108,7 +104,6 @@ const journey = [
 
               <div class="rounded-2xl border border-border bg-surface/30 p-6 transition-all card-hover">
                 <div class="flex items-center gap-3 mb-4">
-                  <span class="text-2xl">{step.icon}</span>
                   <div>
                     <span class="font-mono text-xs text-cyan">Phase {i + 1}</span>
                     <span class="ml-2 text-xs text-text-muted">·</span>
@@ -126,7 +121,7 @@ const journey = [
   </section>
 
   <!-- What we actually do differently -->
-  <section class="py-20">
+  <section class="py-10">
     <div class="mx-auto max-w-7xl px-6">
       <div class="rounded-2xl border border-border bg-surface/20 overflow-hidden" data-animate>
         <div class="grid lg:grid-cols-2">
@@ -177,7 +172,7 @@ const journey = [
   </section>
 
   <!-- Tech stack -->
-  <section class="py-20">
+  <section class="py-10">
     <div class="mx-auto max-w-7xl px-6">
       <div class="rounded-2xl border border-border bg-surface/20 p-8" data-animate>
         <span class="block text-xs font-semibold uppercase tracking-wider text-text-muted mb-4">Cloud Technology Stack</span>
@@ -191,7 +186,7 @@ const journey = [
   </section>
 
   <!-- CTA -->
-  <section class="py-20">
+  <section class="py-10">
     <div class="mx-auto max-w-7xl px-6">
       <div class="rounded-2xl border border-cyan/20 bg-gradient-to-br from-cyan/5 to-surface p-12 text-center" data-animate>
         <h2 class="text-3xl font-bold tracking-tight">

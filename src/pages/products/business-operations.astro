@@ -2,13 +2,13 @@
 import Layout from '../../layouts/Layout.astro';
 
 const modules = [
-  { icon: '📈', name: 'Sales', desc: 'Pipeline, deals and an autonomous sales agent working under your autonomy policy' },
-  { icon: '📣', name: 'Marketing', desc: 'Campaigns and content with AI drafting and analysis built in' },
-  { icon: '👥', name: 'HR', desc: 'People operations from onboarding to reviews' },
-  { icon: '💰', name: 'Finance', desc: 'Invoicing, expenses and financial visibility' },
-  { icon: '📋', name: 'Projects', desc: 'Delivery tracking with AI-assisted planning' },
-  { icon: '🎯', name: 'Recruitment', desc: 'Sourcing to offer, with AI screening assistance' },
-  { icon: '🛠️', name: 'ITSM', desc: 'Tickets and service management for your own stack' },
+  { name: 'Sales', desc: 'Pipeline, deals and an autonomous sales agent working under your autonomy policy' },
+  { name: 'Marketing', desc: 'Campaigns and content with AI drafting and analysis built in' },
+  { name: 'HR', desc: 'People operations from onboarding to reviews' },
+  { name: 'Finance', desc: 'Invoicing, expenses and financial visibility' },
+  { name: 'Projects', desc: 'Delivery tracking with AI-assisted planning' },
+  { name: 'Recruitment', desc: 'Sourcing to offer, with AI screening assistance' },
+  { name: 'ITSM', desc: 'Tickets and service management for your own stack' },
 ];
 
 const autonomyLevels = [
@@ -22,7 +22,7 @@ const autonomyLevels = [
 <Layout title="Business Operations Platform — AI-Native, Seven Modules | Syntegreti" description="Sales, Marketing, HR, Finance, Projects, Recruitment and ITSM in one multi-tenant SaaS — with a built-in AI assistant, 160 AI actions and four graduated autonomy levels.">
 
   <!-- Hero -->
-  <section class="relative pt-32 pb-20 overflow-hidden">
+  <section class="relative pt-24 pb-10 overflow-hidden">
     <div class="absolute inset-0 grid-bg opacity-20"></div>
     <div class="absolute top-1/4 -right-32 h-96 w-96 rounded-full bg-cyan/5 blur-[120px]"></div>
 
@@ -61,7 +61,7 @@ const autonomyLevels = [
   </section>
 
   <!-- The Problem -->
-  <section class="py-20">
+  <section class="py-10">
     <div class="mx-auto max-w-7xl px-6">
       <div class="rounded-2xl border border-rose/20 bg-rose/5 p-10" data-animate>
         <span class="font-mono text-sm text-rose">// the_problem</span>
@@ -86,9 +86,9 @@ const autonomyLevels = [
   </section>
 
   <!-- Modules -->
-  <section class="py-20">
+  <section class="py-10">
     <div class="mx-auto max-w-7xl px-6">
-      <div class="mb-12" data-animate>
+      <div class="mb-8" data-animate>
         <span class="font-mono text-sm text-cyan">// seven_modules</span>
         <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
           Everything a business runs on
@@ -102,13 +102,11 @@ const autonomyLevels = [
       <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4" data-stagger>
         {modules.map((m) => (
           <div class="glow-card-subtle p-6">
-            <span class="text-2xl">{m.icon}</span>
             <h3 class="mt-3 text-base font-bold text-cyan">{m.name}</h3>
             <p class="mt-2 text-sm leading-relaxed text-text-secondary">{m.desc}</p>
           </div>
         ))}
         <div class="rounded-2xl border border-cyan/20 bg-cyan/5 p-6">
-          <span class="text-2xl">✨</span>
           <h3 class="mt-3 text-base font-bold text-text-primary">The built-in AI assistant</h3>
           <p class="mt-2 text-sm leading-relaxed text-text-secondary">
             160 AI actions across every module, plus an MCP server so external AI
@@ -120,9 +118,9 @@ const autonomyLevels = [
   </section>
 
   <!-- Graduated autonomy -->
-  <section class="py-20">
+  <section class="py-10">
     <div class="mx-auto max-w-7xl px-6">
-      <div class="mb-12" data-animate>
+      <div class="mb-8" data-animate>
         <span class="font-mono text-sm text-cyan">// graduated_autonomy</span>
         <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
           AI that earns trust one level at a time
@@ -167,7 +165,7 @@ const autonomyLevels = [
   </section>
 
   <!-- CTA -->
-  <section class="py-20">
+  <section class="py-10">
     <div class="mx-auto max-w-4xl px-6 text-center" data-animate>
       <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
         Run your business on <span class="gradient-text">one platform</span>

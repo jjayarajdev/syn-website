@@ -1,15 +1,15 @@
 ---
 const industries = [
-  { name: 'Manufacturing', icon: '🏭' },
-  { name: 'Lifesciences', icon: '🧬' },
-  { name: 'Healthcare', icon: '🏥' },
-  { name: 'Engineering', icon: '⚙️' },
-  { name: 'Insurance & Insurtech', icon: '🛡️' },
-  { name: 'Banking', icon: '🏦' },
+  { name: 'Manufacturing' },
+  { name: 'Lifesciences' },
+  { name: 'Healthcare' },
+  { name: 'Engineering' },
+  { name: 'Insurance & Insurtech' },
+  { name: 'Banking' },
 ];
 ---
 
-<section class="relative py-24">
+<section class="relative py-12">
   <div class="mx-auto max-w-7xl px-6">
     <div class="rounded-2xl border border-border bg-surface/20 p-12" data-animate>
       <div class="text-center">
@@ -26,7 +26,6 @@ const industries = [
       <div class="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6" data-stagger>
         {industries.map((industry) => (
           <div class="flex flex-col items-center gap-3 rounded-xl border border-border/50 bg-deep/30 p-6 text-center transition-all hover:border-border-light hover:bg-elevated/30">
-            <span class="text-3xl">{industry.icon}</span>
             <span class="text-xs font-medium text-text-secondary">{industry.name}</span>
           </div>
         ))}
