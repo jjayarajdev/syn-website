@@ -1,37 +1,56 @@
+/* ── Editorial fonts — must come before all other statements ── */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap');
+
 @import "tailwindcss";
 
-/* ===== SYNTEGRETI BRAND SYSTEM ===== */
+/* ═══════════════════════════════════════════════════════════════
+   SYNTEGRETI DESIGN SYSTEM — EDITORIAL
+   Warm paper · ink · vermillion accent · Fraunces display
+   Token NAMES are unchanged from the previous system so that no
+   component markup needs to change — only their VALUES differ.
+   ═══════════════════════════════════════════════════════════════ */
 
 @theme {
-  /* Primary Palette - Deep space meets electric energy */
-  --color-void: #06080d;
-  --color-deep: #0b0e17;
-  --color-surface: #111622;
-  --color-elevated: #1a2035;
-  --color-border: #252d42;
-  --color-border-light: #2f3a55;
+  /* Ground — paper replaces the dark void scale */
+  --color-void: #f7f5f0;      /* page background (paper)          */
+  --color-deep: #f2f0ea;      /* slightly recessed panels         */
+  --color-surface: #efede8;   /* cards, zebra rows                */
+  --color-elevated: #e8e5dd;  /* deeper recessed surfaces         */
+  --color-border: #d5d1c8;    /* 1px hairline rules               */
+  --color-border-light: #bcb7ab; /* hover / emphasized rules      */
 
-  /* Accent - Electric Emerald */
-  --color-accent: #00e87b;
-  --color-accent-dim: #00c466;
-  --color-accent-glow: #00ff88;
+  /* Accent — vermillion, used sparingly */
+  --color-accent: #ff3b00;
+  --color-accent-dim: #e03000;
+  --color-accent-glow: #e03000;
 
-  /* Secondary - Cyan Signal */
-  --color-cyan: #00d4ff;
-  --color-cyan-dim: #00a8cc;
+  /* Former secondary hues collapse to ink — one accent only */
+  --color-cyan: #0a0908;
+  --color-cyan-dim: #55524b;
+  --color-amber: #0a0908;
+  --color-rose: #ff3b00;
 
-  /* Tertiary - Warm highlights */
-  --color-amber: #ffb800;
-  --color-rose: #ff3d71;
-
-  /* Text — high contrast for readability */
-  --color-text-primary: #f4f5f9;
-  --color-text-secondary: #b0b8cd;
-  --color-text-muted: #7a84a0;
+  /* Text — ink on paper */
+  --color-text-primary: #0a0908;
+  --color-text-secondary: #4a4741;
+  --color-text-muted: #8a877f;
 
   /* Typography */
-  --font-sans: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono Variable', 'JetBrains Mono', 'Fira Code', monospace;
+  --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'DM Mono', 'JetBrains Mono', monospace;
+  --font-display: 'Fraunces', Georgia, serif;
+
+  /* Sharp corners everywhere — zero the whole radius scale */
+  --radius-xs: 0;
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+  --radius-2xl: 0;
+  --radius-3xl: 0;
+  --radius-4xl: 0;
 }
 
 /* ===== BASE STYLES ===== */
@@ -46,196 +65,104 @@ body {
   font-family: var(--font-sans);
   background-color: var(--color-void);
   color: var(--color-text-primary);
-  line-height: 1.6;
+  line-height: 1.7;
   overflow-x: hidden;
 }
 
+/* Display type: Fraunces for all headings */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  letter-spacing: -0.03em;
+}
+
+h1 { line-height: 0.95; }
+
 ::selection {
-  background-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
+  background-color: color-mix(in srgb, var(--color-accent) 25%, transparent);
   color: var(--color-text-primary);
+}
+
+/* Editorial: no glows, no drop shadows, no pills — anywhere */
+*, *::before, *::after {
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+[class*="rounded"] {
+  border-radius: 0 !important;
 }
 
 /* ===== UTILITIES ===== */
 
-.gradient-text {
-  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-cyan) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
+/* Highlighted words: italic serif in vermillion (was gradient text) */
+.gradient-text,
 .gradient-text-warm {
-  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-amber) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--color-accent);
 }
 
-.glow-accent {
-  box-shadow: 0 0 20px color-mix(in srgb, var(--color-accent) 20%, transparent),
-              0 0 60px color-mix(in srgb, var(--color-accent) 10%, transparent);
-}
+.glow-accent { /* glow removed by design */ }
 
-.glow-text {
-  text-shadow: 0 0 40px color-mix(in srgb, var(--color-accent) 30%, transparent);
-}
+.glow-text { /* glow removed by design */ }
 
 /* ===== GRID BACKGROUNDS ===== */
 
-/* Dot grid - modern alternative */
+/* Faint dot grid on paper */
 .grid-bg {
-  background-image: radial-gradient(circle, color-mix(in srgb, var(--color-border) 40%, transparent) 1px, transparent 1px);
+  background-image: radial-gradient(circle, color-mix(in srgb, var(--color-border) 55%, transparent) 1px, transparent 1px);
   background-size: 32px 32px;
 }
 
-/* ===== ANIMATED GRADIENT BORDER CARDS ===== */
+/* ===== CARDS — hairline panels, sharp corners ===== */
 
 .glow-card {
   position: relative;
-  border-radius: 1rem;
-  background: var(--color-surface);
-  overflow: hidden;
-  transition: transform 0.3s ease;
-}
-
-.glow-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  pointer-events: none;
-  background: conic-gradient(
-    from var(--card-angle, 0deg),
-    transparent 0%,
-    var(--color-accent) 5%,
-    var(--color-cyan) 10%,
-    transparent 15%
-  );
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.glow-card:hover::before {
-  opacity: 1;
-  animation: glow-spin 3s linear infinite;
-}
-
-.glow-card:hover {
-  transform: translateY(-2px);
-}
-
-/* Glow card with always-visible subtle border */
-.glow-card-subtle {
-  position: relative;
-  border-radius: 1rem;
-  background: linear-gradient(
-    145deg,
-    color-mix(in srgb, var(--color-surface) 95%, var(--color-accent)),
-    var(--color-surface) 50%,
-    color-mix(in srgb, var(--color-surface) 95%, var(--color-cyan))
-  );
+  background: var(--color-void);
   border: 1px solid var(--color-border);
   overflow: hidden;
-  backdrop-filter: blur(12px);
-  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  transition: border-color 0.2s ease;
+}
+.glow-card:hover {
+  border-color: var(--color-text-primary);
 }
 
-.glow-card-subtle::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  pointer-events: none;
-  background: conic-gradient(
-    from var(--card-angle, 0deg),
-    transparent 0%,
-    var(--color-accent) 4%,
-    var(--color-cyan) 8%,
-    transparent 12%
-  );
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  animation: glow-spin 4s linear infinite;
+.glow-card-subtle {
+  position: relative;
+  background: var(--color-void);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  transition: border-color 0.2s ease, background 0.2s ease;
 }
-
 .glow-card-subtle:hover {
-  transform: translateY(-3px);
-  border-color: var(--color-border-light);
-  box-shadow:
-    0 8px 32px color-mix(in srgb, var(--color-accent) 6%, transparent),
-    0 0 0 1px color-mix(in srgb, var(--color-border-light) 50%, transparent);
+  border-color: var(--color-text-primary);
 }
 
-.glow-card-subtle:hover::before {
-  opacity: 1;
-}
-
-@keyframes glow-spin {
-  to { --card-angle: 360deg; }
-}
-
-@property --card-angle {
-  syntax: '<angle>';
-  initial-value: 0deg;
-  inherits: false;
-}
-
-/* ===== CLASSIC CARD HOVER (fallback) ===== */
+/* ===== CLASSIC CARD HOVER ===== */
 
 .card-hover {
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: border-color 0.2s ease, background 0.2s ease;
 }
 .card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px color-mix(in srgb, var(--color-accent) 8%, transparent);
-  border-color: var(--color-border-light);
+  border-color: var(--color-text-primary);
+  background: var(--color-surface);
 }
 
-/* ===== GLASSMORPHISM ===== */
+/* ===== NAV PANEL (was glassmorphism) ===== */
 
 .glass {
-  background: color-mix(in srgb, var(--color-surface) 60%, transparent);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+  background: var(--color-void);
+  border: 1px solid var(--color-border);
 }
 
-/* ===== ANIMATED AURORA BACKGROUND ===== */
+/* ===== AURORA — removed by design ===== */
 
 .aurora {
   position: relative;
   overflow: hidden;
 }
-
 .aurora::after {
-  content: '';
-  position: absolute;
-  inset: -50%;
-  background: conic-gradient(
-    from 0deg at 50% 50%,
-    transparent 0deg,
-    color-mix(in srgb, var(--color-accent) 8%, transparent) 60deg,
-    transparent 120deg,
-    color-mix(in srgb, var(--color-cyan) 6%, transparent) 180deg,
-    transparent 240deg,
-    color-mix(in srgb, var(--color-accent) 4%, transparent) 300deg,
-    transparent 360deg
-  );
-  animation: aurora-rotate 20s linear infinite;
-  pointer-events: none;
-  z-index: 0;
-}
-
-@keyframes aurora-rotate {
-  to { transform: rotate(360deg); }
+  content: none;
 }
 
 /* ===== TYPING CURSOR ===== */
@@ -279,15 +206,11 @@ body {
 /* ===== SCROLLBAR ===== */
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 3px;
 }
 ::-webkit-scrollbar-track {
   background: var(--color-void);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-border);
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-border-light);
+  background: var(--color-text-primary);
 }

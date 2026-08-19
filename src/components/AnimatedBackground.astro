@@ -19,13 +19,16 @@
 <canvas id="particle-canvas" class="pointer-events-none fixed inset-0 z-[1]" aria-hidden="true"></canvas>
 
 <style>
+  /* Editorial design: no ambient blobs or particles — paper stays calm */
   .mesh-blob {
+    display: none;
     position: absolute;
     border-radius: 50%;
     filter: blur(120px);
     opacity: 0.09;
     will-change: transform;
   }
+  #particle-canvas { display: none; }
 
   .mesh-blob-1 {
     width: 700px;
