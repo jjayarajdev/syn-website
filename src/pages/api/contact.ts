@@ -87,6 +87,42 @@ export const POST: APIRoute = async ({ request }) => {
     return bad(500, 'Something went wrong saving your message. Please email us directly.');
   }
 
+  // Email alert — best-effort: a mail failure must never fail the submission
+  const apiKey = (env as any)?.RESEND_API_KEY;
+  if (apiKey) {
+    try {
+      const esc = (s: string | null | undefined) =>
+        (s ?? '—').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      const res = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${apiKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          from: (env as any)?.ALERT_FROM || 'Syntegreti Website <onboarding@resend.dev>',
+          to: [(env as any)?.ALERT_TO || 'jay.jayakeerthy@syntegreti.com'],
+          reply_to: email,
+          subject: `New website lead: ${firstName} ${lastName}${data.company ? ' — ' + data.company.trim() : ''}`,
+          html: `
+            <h2 style="margin:0 0 12px">New contact form submission</h2>
+            <table style="border-collapse:collapse;font-family:sans-serif;font-size:14px">
+              <tr><td style="padding:4px 12px 4px 0;color:#666">Name</td><td>${esc(firstName)} ${esc(lastName)}</td></tr>
+              <tr><td style="padding:4px 12px 4px 0;color:#666">Email</td><td>${esc(email)}</td></tr>
+              <tr><td style="padding:4px 12px 4px 0;color:#666">Company</td><td>${esc(data.company)}</td></tr>
+              <tr><td style="padding:4px 12px 4px 0;color:#666">Interest</td><td>${esc(data.interest)}</td></tr>
+              <tr><td style="padding:4px 12px 4px 0;color:#666">Country</td><td>${esc((request as any).cf?.country ?? request.headers.get('cf-ipcountry'))}</td></tr>
+            </table>
+            <p style="font-family:sans-serif;font-size:14px;white-space:pre-wrap">${esc(data.message)}</p>
+            <p style="font-family:sans-serif;font-size:12px;color:#999">Stored in D1 · reply goes straight to the sender</p>`,
+        }),
+      });
+      if (!res.ok) console.error('resend alert failed:', res.status, await res.text());
+    } catch (err) {
+      console.error('resend alert failed:', err);
+    }
+  }
+
   return new Response(JSON.stringify({ ok: true }), {
     headers: { 'Content-Type': 'application/json' },
   });
