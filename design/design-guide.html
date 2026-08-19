@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Syntegreti — Design Guide</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap');
+
+:root {
+  --paper: #EFECE4; --recessed: #EAE6DD; --surface: #E6E2D8; --elevated: #DED9CD;
+  --rule: #CCC7BA; --rule-strong: #B2AC9D;
+  --ink: #0A0908; --secondary: #4A4741; --muted: #67635A;
+  --forest: #0A250A; --forest-hover: #144A1E; --sage: #77896F;
+  --brass: #9C7A2F; --terracotta: #A34A2A; --slate: #3E4A52;
+  --display: 'Fraunces', Georgia, serif; --body: 'DM Sans', sans-serif; --mono: 'DM Mono', monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; border-radius: 0 !important; }
+body { background: var(--paper); color: var(--ink); font-family: var(--body); line-height: 1.7; }
+.page { max-width: 1100px; margin: 0 auto; padding: 64px 40px; }
+section { border-top: 1px solid var(--rule); padding: 48px 0; }
+.kicker { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 12px; }
+h1 { font-family: var(--display); font-weight: 900; font-size: clamp(3rem, 7vw, 5.5rem); letter-spacing: -0.04em; line-height: 0.9; }
+h1 em, .accent-word { font-style: italic; color: var(--forest); }
+h2 { font-family: var(--display); font-weight: 900; font-size: 2rem; letter-spacing: -0.03em; margin-bottom: 24px; }
+h3 { font-family: var(--display); font-weight: 700; font-size: 1.25rem; letter-spacing: -0.015em; }
+p.body { color: var(--secondary); max-width: 640px; font-size: 15px; }
+
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+.swatch { border: 1px solid var(--rule); }
+.swatch .chip { height: 84px; border-bottom: 1px solid var(--rule); }
+.swatch .meta { padding: 10px 12px; background: #fff0; }
+.swatch .name { font-weight: 600; font-size: 13px; }
+.swatch .hex { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--muted); }
+.swatch .role { font-size: 11px; color: var(--muted); line-height: 1.45; margin-top: 4px; }
+
+.spec { border: 1px solid var(--rule); padding: 28px 32px; margin-bottom: 12px; }
+.spec .label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 10px; }
+
+.btn { display: inline-block; padding: 14px 32px; font-weight: 700; font-size: 15px; text-decoration: none; }
+.btn-primary { background: var(--forest); color: var(--paper); }
+.btn-secondary { border: 1px solid var(--rule); color: var(--ink); font-weight: 500; }
+.badge { display: inline-block; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 12px; border: 1px solid; margin-right: 6px; }
+.b-brass { color: var(--brass); border-color: color-mix(in srgb, var(--brass) 35%, transparent); background: color-mix(in srgb, var(--brass) 7%, transparent); }
+.b-terra { color: var(--terracotta); border-color: color-mix(in srgb, var(--terracotta) 35%, transparent); background: color-mix(in srgb, var(--terracotta) 7%, transparent); }
+.b-forest { color: var(--forest); border-color: color-mix(in srgb, var(--forest) 30%, transparent); background: color-mix(in srgb, var(--forest) 6%, transparent); }
+.b-slate { color: var(--slate); border-color: color-mix(in srgb, var(--slate) 35%, transparent); background: color-mix(in srgb, var(--slate) 7%, transparent); }
+
+.card { border: 1px solid var(--rule); padding: 28px; max-width: 380px; background: var(--paper); }
+.card:hover { border-color: var(--ink); }
+.card .foot { border-top: 1px solid var(--rule); margin-top: 18px; padding-top: 14px; font-size: 12px; color: var(--muted); display: flex; gap: 14px; }
+
+.metric { font-family: var(--display); font-weight: 900; font-size: 4rem; letter-spacing: -0.04em; line-height: 1; }
+.metric span { color: var(--brass); }
+
+ul.marks { list-style: none; font-size: 14px; color: var(--secondary); }
+ul.marks li { padding: 4px 0; }
+ul.marks .x { color: var(--terracotta); margin-right: 8px; }
+ul.marks .c { color: var(--ink); margin-right: 8px; }
+ul.marks .w { color: var(--brass); margin-right: 8px; }
+
+.term { background: var(--ink); color: var(--paper); font-family: var(--mono); font-size: 13px; padding: 0; max-width: 520px; }
+.term .bar { display: flex; gap: 6px; padding: 10px 14px; border-bottom: 1px solid #1E1D1B; align-items: center; }
+.term .dot { width: 10px; height: 10px; border-radius: 50% !important; }
+.term pre { padding: 18px; line-height: 1.8; }
+.term .p { color: #7FA37F; } .term .o { color: #8DA0AC; } .term .m { color: rgba(239,236,228,0.45); }
+
+.ordinal { font-family: var(--display); font-weight: 300; font-style: italic; font-size: 4rem; color: var(--rule); line-height: 1; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+@media (max-width: 800px) { .grid2 { grid-template-columns: 1fr; } }
+table.t { border-collapse: collapse; width: 100%; font-size: 13px; }
+table.t th { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--rule-strong); }
+table.t td { padding: 10px 12px; border-bottom: 1px solid var(--rule); color: var(--secondary); }
+table.t tr:nth-child(even) td { background: var(--surface); }
+.ink-block { background: var(--ink); color: var(--paper); padding: 40px; }
+.ink-block .k { color: rgba(239,236,228,0.4); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header style="padding: 24px 0 56px">
+    <span class="kicker">// syntegreti — design guide — editorial system</span>
+    <h1>Paper, ink &amp;<br><em>one green</em>.</h1>
+    <p class="body" style="margin-top: 24px">Warm paper ground, near-black ink, forest green as the only brand color — with brass, terracotta and slate reserved for meaning, never decoration. Sharp corners, hairline rules, no shadows.</p>
+  </header>
+
+  <section>
+    <span class="kicker">01 — ground</span>
+    <h2>Backgrounds &amp; rules</h2>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#EFECE4"></div><div class="meta"><div class="name">Paper</div><div class="hex">#EFECE4</div><div class="role">Page / slide background</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#EAE6DD"></div><div class="meta"><div class="name">Recessed</div><div class="hex">#EAE6DD</div><div class="role">Sunken panels</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#E6E2D8"></div><div class="meta"><div class="name">Surface</div><div class="hex">#E6E2D8</div><div class="role">Cards, zebra rows</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#DED9CD"></div><div class="meta"><div class="name">Elevated</div><div class="hex">#DED9CD</div><div class="role">Deep panels, chips</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#CCC7BA"></div><div class="meta"><div class="name">Rule</div><div class="hex">#CCC7BA</div><div class="role">1px hairlines</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#B2AC9D"></div><div class="meta"><div class="name">Rule · strong</div><div class="hex">#B2AC9D</div><div class="role">Emphasized rules</div></div></div>
+    </div>
+  </section>
+
+  <section>
+    <span class="kicker">02 — ink &amp; accents</span>
+    <h2>Text &amp; semantic color</h2>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#0A0908"></div><div class="meta"><div class="name">Ink</div><div class="hex">#0A0908</div><div class="role">Headlines, primary text</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#4A4741"></div><div class="meta"><div class="name">Secondary</div><div class="hex">#4A4741</div><div class="role">Body copy</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#67635A"></div><div class="meta"><div class="name">Muted</div><div class="hex">#67635A</div><div class="role">Captions, labels</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#0A250A"></div><div class="meta"><div class="name">Forest ★</div><div class="hex">#0A250A</div><div class="role">Brand. CTAs, highlights — "us"</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#144A1E"></div><div class="meta"><div class="name">Forest · hover</div><div class="hex">#144A1E</div><div class="role">Interactive states</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#77896F"></div><div class="meta"><div class="name">Sage</div><div class="hex">#77896F</div><div class="role">Green tints, chip fills</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#9C7A2F"></div><div class="meta"><div class="name">Brass</div><div class="hex">#9C7A2F</div><div class="role">Measured metrics, proof, status</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#A34A2A"></div><div class="meta"><div class="name">Terracotta</div><div class="hex">#A34A2A</div><div class="role">Problems, warnings, ✕</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#3E4A52"></div><div class="meta"><div class="name">Slate</div><div class="hex">#3E4A52</div><div class="role">Code, terminals, tech metadata</div></div></div>
+    </div>
+    <p class="body" style="margin-top:20px">Ink carries ~90% of any layout. Forest appears a handful of times. Brass, terracotta and slate appear <em>only when their meaning applies</em> — no measured number on the slide, no brass on the slide.</p>
+  </section>
+
+  <section>
+    <span class="kicker">03 — typography</span>
+    <h2>Three families, three jobs</h2>
+    <div class="spec">
+      <span class="label">Fraunces · display · black 900 · tracking −4% · one italic word in forest</span>
+      <div style="font-family: var(--display); font-weight: 900; font-size: 3.4rem; letter-spacing: -0.04em; line-height: 0.92">Lean team. Big AI.<br><em class="accent-word">Proven</em> in 4 weeks.</div>
+    </div>
+    <div class="spec">
+      <span class="label">DM Sans · body · 15–18px · line-height 1.7 · color Secondary</span>
+      <p style="color: var(--secondary); font-size: 15px; max-width: 560px">We build AI platforms that run in production at real clients — and the same engineers deliver your projects and extend your teams. No layers, no handoffs.</p>
+    </div>
+    <div class="spec">
+      <span class="label">DM Mono · micro-labels · caps · tracking +14% · color Muted</span>
+      <span style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted)">// the_platform&nbsp;&nbsp;&nbsp;&nbsp;hyderabad — global delivery&nbsp;&nbsp;&nbsp;&nbsp;est. 2012</span>
+    </div>
+  </section>
+
+  <section>
+    <span class="kicker">04 — components</span>
+    <h2>Buttons, badges, cards</h2>
+    <div class="grid2">
+      <div>
+        <div class="spec">
+          <span class="label">Buttons — solid forest / hairline secondary</span>
+          <a class="btn btn-primary" href="#">Book a 4-Week Sprint →</a>&nbsp;
+          <a class="btn btn-secondary" href="#">See the Proof</a>
+        </div>
+        <div class="spec">
+          <span class="label">Status badges — color = meaning</span>
+          <span class="badge b-brass">In production</span>
+          <span class="badge b-brass">RFP win</span>
+          <span class="badge b-terra">In development</span>
+          <span class="badge b-forest">Platform</span>
+          <span class="badge b-slate">v1.4.9</span>
+        </div>
+        <div class="spec">
+          <span class="label">Functional glyphs — no emojis, no icon sets</span>
+          <ul class="marks">
+            <li><span class="c">✓</span>Works / after — ink, not green</li>
+            <li><span class="x">✕</span>Problem / before — terracotta</li>
+            <li><span class="w">⚠</span>Caution — brass</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="card">
+          <span class="kicker">// ai_governance</span>
+          <h3 style="color: var(--forest)">Govern every AI call your enterprise makes</h3>
+          <p style="font-size: 13px; color: var(--secondary); margin-top: 8px">One gateway with policy enforcement, local DLP and a full audit log — AI adoption without losing the audit trail.</p>
+          <div class="foot"><span>Local ML DLP</span><span>Policy</span><span>Full audit</span></div>
+        </div>
+        <div class="spec" style="margin-top: 12px">
+          <span class="label">Metric callout — number in ink, unit in brass</span>
+          <div class="metric">60<span>%</span></div>
+          <span class="kicker" style="margin-top: 6px">fewer L1 tickets — measured in production</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <span class="kicker">05 — structural idioms</span>
+    <h2>Rules, ordinals, terminals, tables</h2>
+    <div class="grid2">
+      <div>
+        <div class="spec">
+          <span class="label">Oversized ordinals — Fraunces light italic, rule color</span>
+          <div style="display:flex; gap:40px">
+            <div><div class="ordinal">I</div><h3 style="margin-top:10px">Discovery</h3></div>
+            <div><div class="ordinal">II</div><h3 style="margin-top:10px">Proposal</h3></div>
+            <div><div class="ordinal">III</div><h3 style="margin-top:10px">Build</h3></div>
+          </div>
+        </div>
+        <table class="t">
+          <tr><th>Table style</th><th>Value</th></tr>
+          <tr><td>Row separators</td><td>1px rule #CCC7BA</td></tr>
+          <tr><td>Zebra rows</td><td>Surface #E6E2D8</td></tr>
+          <tr><td>Header</td><td>DM Mono caps, muted</td></tr>
+          <tr><td>Corners &amp; shadows</td><td>None. Ever.</td></tr>
+        </table>
+      </div>
+      <div>
+        <div class="term">
+          <div class="bar">
+            <span class="dot" style="background:#A34A2A99"></span>
+            <span class="dot" style="background:#9C7A2F99"></span>
+            <span class="dot" style="background:#0A250A"></span>
+            <span class="m" style="margin-left:8px; font-size:11px">catalyst — live</span>
+          </div>
+          <pre><span class="p">$ catalyst init --sprint 4-weeks</span>
+<span class="m">  Scanning enterprise systems...</span>
+<span class="o">  ├─ ServiceNow Agent  [READY]</span>
+<span class="o">  └─ Escalation Agent  [READY]</span>
+<span class="p">  Status: SHIPPED ✓</span></pre>
+        </div>
+        <div class="ink-block" style="margin-top:12px">
+          <span class="kicker k">inverse mode — 1–2 per deck, max</span>
+          <div style="font-family: var(--display); font-weight: 900; font-size: 2rem; letter-spacing: -0.03em; line-height: 0.95">Four weeks to<br>working <em class="accent-word" style="color:#77896F">software.</em></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="border-top: 1px solid var(--rule); padding: 24px 0; display: flex; justify-content: space-between">
+    <span class="kicker" style="margin:0">syntegreti design guide — v1 — extracted from feature/editorial-design</span>
+    <span class="kicker" style="margin:0">fonts: fraunces · dm sans · dm mono (google fonts)</span>
+  </footer>
+
+</div>
+</body>
+</html>
