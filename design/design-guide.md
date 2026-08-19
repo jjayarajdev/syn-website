@@ -135,6 +135,8 @@ The wordmark is an **embedded-S lockup**: the interlocking S mark (forest / bras
 
 **Mark alone** (`syntegreti-mark-editorial.png`): use for favicons, avatars, watermarks, slide corners. The favicon (`public/favicon.svg`) is the same S drawn in flat forest `#144A1E` / brass `#9C7A2F` / slate `#3E4A52` strokes.
 
+**The mark's colors are inviolable.** The three strokes — forest, brass, slate — are the only version of the mark that exists. Never recolor it: no single-color versions, no white/paper knockouts, no accent-color tints, no inversion for dark backgrounds. If a background would swallow the mark, change the background (or omit the mark), never the mark.
+
 **Don't**: use the old neon-gradient or white-wordmark versions; apply glows or shadows; place on busy imagery; round corners; separate the mark from the word with a visible gap in the primary lockup (that gap is the old lockup — retired).
 
 ---
