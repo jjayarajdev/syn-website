@@ -21,16 +21,16 @@
   --color-border: #ccc7ba;    /* 1px hairline rules               */
   --color-border-light: #b2ac9d; /* hover / emphasized rules      */
 
-  /* Accent — deep pine (near-black green), used sparingly */
-  --color-accent: #0a250a;
-  --color-accent-dim: #144a1e;
-  --color-accent-glow: #144a1e;
+  /* Accent — sage, used sparingly */
+  --color-accent: #77896f;
+  --color-accent-dim: #5c6d55;
+  --color-accent-glow: #5c6d55;
 
   /* Former secondary hues collapse to ink — one accent only */
   --color-cyan: #0a0908;
   --color-cyan-dim: #55524b;
   --color-amber: #0a0908;
-  --color-rose: #0a250a;
+  --color-rose: #77896f;
 
   /* Text — ink on paper */
   --color-text-primary: #0a0908;
