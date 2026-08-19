@@ -53,22 +53,118 @@ h1 em { font-style:italic; color:var(--forest); }
 
 .print { border-top:1px solid var(--rule-strong); margin-top:24px; padding-top:20px; max-width:1080px; font-size:13px; color:var(--secondary); line-height:1.8; }
 .print b { font-family:var(--m); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:6px; }
-
-/* ── print: keep each concept whole on a page, keep the inks ── */
-@media print {
-  body { background: #fff; padding: 16px 8px; }
-  .cw, .concept { break-inside: avoid; page-break-inside: avoid; }
-  .pair, .card { break-inside: avoid; page-break-inside: avoid; }
-  .card, .card * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  .print { break-inside: avoid; }
-  h1, .sub { break-after: avoid; }
-}
 </style>
 </head>
 <body>
+
+<h1>Card 07, in every <em>voice</em>.</h1>
+<p class="sub">The Interlock Receipt across six colorways. One rule above all: the mark is never altered — every front is identical, canonical, on paper. Only the receipt back (pure typography) changes ink.</p>
+
+<!-- A · PAPER (shortlisted original) -->
+<div class="cw">
+  <div class="chead"><span>A — paper · the shortlisted original</span><span>tri-color mark · benchmark</span></div>
+  <div class="pair">
+    <div>
+      <div class="card f">
+        <span class="kicker">// syntegreti</span>
+        <img class="big" src="../src/assets/syntegreti-mark-editorial.png" alt="">
+        <div class="info">
+          <div class="n">Jay Jayakeerthy</div>
+          <div class="e">jay.jayakeerthy@syntegreti.com · +91 00000 00000</div>
+        </div>
+      </div>
+      <div class="side">front</div>
+    </div>
+    <div>
+      <div class="card r">
+        <div class="h">Syntegreti</div>
+        <div class="hh">Catalyst Studio · Hyderabad → Global · Est. 2024</div>
+        <div class="dash"></div>
+        <div class="row"><span>Platforms engineered in-house</span><b>× 8</b></div>
+        <div class="row"><span>Systems live in client production</span><b>× 3</b></div>
+        <div class="row"><span>Project delivery, end to end</span><b>fixed scope</b></div>
+        <div class="row"><span>Engineers embedded with your team</span><b>on demand</b></div>
+        <div class="row"><span>Idea → working proof</span><b>4–6 wks</b></div>
+        <div class="dash"></div>
+        <div class="hh">Syntegreti.com&ensp;|&ensp;Lean Teams&ensp;|&ensp;Proven Delivery</div>
+      </div>
+      <div class="side">back</div>
+    </div>
+  </div>
+  <p class="cnote">The baseline you picked. Warm paper, ink type, the mark carrying all three brand strokes. Judge every variant against this one.</p>
+</div>
+
+<!-- B · INK NOIR -->
+<div class="cw">
+  <div class="chead"><span>b — ink noir · inverse back</span><span>front canonical, always</span></div>
+  <div class="pair">
+    <div>
+      <div class="card f">
+        <span class="kicker">// syntegreti</span>
+        <img class="big" src="../src/assets/syntegreti-mark-editorial.png" alt="">
+        <div class="info">
+          <div class="n">Jay Jayakeerthy</div>
+          <div class="e">jay.jayakeerthy@syntegreti.com · +91 00000 00000</div>
+        </div>
+      </div>
+      <div class="side">front</div>
+    </div>
+    <div>
+      <div class="card r" style="--bg:var(--ink); --fg:var(--paper); --fg2:rgba(239,236,228,0.75); --fgm:rgba(239,236,228,0.45); --line:#26241f; --line2:#3a372f; --tot:var(--sage)">
+        <div class="h">Syntegreti</div>
+        <div class="hh">Catalyst Studio · Hyderabad → Global · Est. 2024</div>
+        <div class="dash"></div>
+        <div class="row"><span>Platforms engineered in-house</span><b>× 8</b></div>
+        <div class="row"><span>Systems live in client production</span><b>× 3</b></div>
+        <div class="row"><span>Project delivery, end to end</span><b>fixed scope</b></div>
+        <div class="row"><span>Engineers embedded with your team</span><b>on demand</b></div>
+        <div class="row"><span>Idea → working proof</span><b>4–6 wks</b></div>
+        <div class="dash"></div>
+        <div class="hh">Syntegreti.com&ensp;|&ensp;Lean Teams&ensp;|&ensp;Proven Delivery</div>
+      </div>
+      <div class="side">back</div>
+    </div>
+  </div>
+  <p class="cnote">The receipt flips to the site's inverse mode — paper type on near-black. The front stays untouched: canonical mark on paper, as everywhere.</p>
+</div>
+
+<!-- C · FOREST -->
+<div class="cw">
+  <div class="chead"><span>c — forest · the brand color as ground</span><span>ownable</span></div>
+  <div class="pair">
+    <div>
+      <div class="card f">
+        <span class="kicker">// syntegreti</span>
+        <img class="big" src="../src/assets/syntegreti-mark-editorial.png" alt="">
+        <div class="info">
+          <div class="n">Jay Jayakeerthy</div>
+          <div class="e">jay.jayakeerthy@syntegreti.com · +91 00000 00000</div>
+        </div>
+      </div>
+      <div class="side">front</div>
+    </div>
+    <div>
+      <div class="card r" style="--bg:var(--forest); --fg:var(--paper); --fg2:rgba(239,236,228,0.75); --fgm:rgba(239,236,228,0.5); --line:#1d3a20; --line2:#2c4d2f; --tot:var(--brass-l)">
+        <div class="h">Syntegreti</div>
+        <div class="hh">Catalyst Studio · Hyderabad → Global · Est. 2024</div>
+        <div class="dash"></div>
+        <div class="row"><span>Platforms engineered in-house</span><b>× 8</b></div>
+        <div class="row"><span>Systems live in client production</span><b>× 3</b></div>
+        <div class="row"><span>Project delivery, end to end</span><b>fixed scope</b></div>
+        <div class="row"><span>Engineers embedded with your team</span><b>on demand</b></div>
+        <div class="row"><span>Idea → working proof</span><b>4–6 wks</b></div>
+        <div class="dash"></div>
+        <div class="hh">Syntegreti.com&ensp;|&ensp;Lean Teams&ensp;|&ensp;Proven Delivery</div>
+      </div>
+      <div class="side">back</div>
+    </div>
+  </div>
+  <p class="cnote">The receipt on solid forest green — the one color no competitor is holding. Front unchanged.</p>
+</div>
+
 <!-- D · LEDGER BRASS -->
 <div class="cw">
-  <div class="chead"><span>I— ledger brass · old accounts book</span><span>proof = gold</span></div>
+  <div class="chead"><span>d — ledger brass · old accounts book</span><span>proof = gold</span></div>
   <div class="pair">
     <div>
       <div class="card f">
@@ -102,7 +198,7 @@ h1 em { font-style:italic; color:var(--forest); }
 
 <!-- E · TILL RED -->
 <div class="cw">
-  <div class="chead"><span>II — till red · the corner-shop receipt</span><span>terracotta, wittiest</span></div>
+  <div class="chead"><span>e — till red · the corner-shop receipt</span><span>terracotta, wittiest</span></div>
   <div class="pair">
     <div>
       <div class="card f">
@@ -136,7 +232,7 @@ h1 em { font-style:italic; color:var(--forest); }
 
 <!-- F · ONE-INK LETTERPRESS -->
 <div class="cw">
-  <div class="chead"><span>III — ink &amp; paper · letterpress purist</span><span>quietest back</span></div>
+  <div class="chead"><span>f — ink &amp; paper · letterpress purist</span><span>quietest back</span></div>
   <div class="pair">
     <div>
       <div class="card f">
@@ -167,5 +263,11 @@ h1 em { font-style:italic; color:var(--forest); }
   </div>
   <p class="cnote">The back in plain ink on paper — no color at all. Letterpressed on heavy cotton, the deboss does the talking; the only color on the whole card is the mark itself.</p>
 </div>
+
+<div class="print">
+  <b>// production notes</b>
+  The front is identical in every variant — the canonical mark's three spot inks (forest, brass, slate) plus ink type on paper — and is never altered. Backs: A/F add no extra inks · D reuses brass · E adds terracotta · C needs a forest flood + light brass · B needs a Pantone Black 6 C flood, matte uncoated, no lamination · All: 89 × 51 mm + 3 mm bleed, hairlines ≥ 0.25 pt, sharp corners.
+</div>
+
 </body>
 </html>

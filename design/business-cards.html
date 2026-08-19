@@ -117,6 +117,16 @@ h1 em { font-style:italic; color:var(--forest); }
 
 .print { border-top:1px solid var(--rule-strong); margin-top:24px; padding-top:20px; max-width:1080px; font-size:13px; color:var(--secondary); line-height:1.8; }
 .print b { font-family:var(--m); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:6px; }
+
+/* ── print: keep each concept whole on a page, keep the inks ── */
+@media print {
+  body { background: #fff; padding: 16px 8px; }
+  .cw, .concept { break-inside: avoid; page-break-inside: avoid; }
+  .pair, .card { break-inside: avoid; page-break-inside: avoid; }
+  .card, .card * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .print { break-inside: avoid; }
+  h1, .sub { break-after: avoid; }
+}
 </style>
 </head>
 <body>
