@@ -124,9 +124,18 @@ Gridlines: `#CCC7BA` at 1px. Chart background: paper, never white.
 
 ## 7. Logo
 
-- Use the **editorial lockup** (`syntegreti-logo-editorial.png`): interlocking S in forest/brass/slate with ink wordmark. It wears the brand palette by design.
-- Sizes on web: 42px (nav) / 56px (footer) / 80px (large). In decks: keep it small and confident — title slide and closing slide; don't repeat on every slide.
-- **Don't**: use the old neon-colored or white version on paper backgrounds; apply glows or shadows; place on busy imagery; round its corners.
+The wordmark is an **embedded-S lockup**: the interlocking S mark (forest / brass / slate strokes) *is* the capital S of the word, leaning tightly into the "y" — followed by live text "yntegreti".
+
+**Recipe** (reproduce anywhere, any size):
+- Mark: `src/assets/syntegreti-mark-editorial.png` (transparent PNG, 128×182)
+- Text: "yntegreti" in **DM Sans Bold (700)**, ink `#0A0908`, letter-spacing −2.5%
+- Geometry: mark height = **0.88×** the font size, baseline-shifted down ~5% of the font size, negative gap (~−6% of font size) so the mark leans into the y
+- Web sizes: 26px font (nav) / 34px (footer) / 48px (large)
+- Accessibility/copy: if built in HTML, the mark image carries `alt="S"` so the name still reads "Syntegreti"
+
+**Mark alone** (`syntegreti-mark-editorial.png`): use for favicons, avatars, watermarks, slide corners. The favicon (`public/favicon.svg`) is the same S drawn in flat forest `#144A1E` / brass `#9C7A2F` / slate `#3E4A52` strokes.
+
+**Don't**: use the old neon-gradient or white-wordmark versions; apply glows or shadows; place on busy imagery; round corners; separate the mark from the word with a visible gap in the primary lockup (that gap is the old lockup — retired).
 
 ---
 
