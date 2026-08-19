@@ -127,13 +127,13 @@ Gridlines: `#CCC7BA` at 1px. Chart background: paper, never white.
 The wordmark is an **embedded-S lockup**: the interlocking S mark (forest / brass / slate strokes) *is* the capital S of the word, leaning tightly into the "y" — followed by live text "yntegreti".
 
 **Recipe** (reproduce anywhere, any size):
-- Mark: `src/assets/syntegreti-mark-editorial.png` (transparent PNG, 128×182)
+- Mark: `src/assets/syntegreti-mark-editorial.svg` (vector master, 128×182 viewBox; PNG fallback exists at the same path with .png)
 - Text: "yntegreti" in **DM Sans Bold (700)**, ink `#0A0908`, letter-spacing −2.5%
 - Geometry: mark height = **0.88×** the font size, baseline-shifted down ~5% of the font size, negative gap (~−6% of font size) so the mark leans into the y
 - Web sizes: 26px font (nav) / 34px (footer) / 48px (large)
 - Accessibility/copy: if built in HTML, the mark image carries `alt="S"` so the name still reads "Syntegreti"
 
-**Mark alone** (`syntegreti-mark-editorial.png`): use for favicons, avatars, watermarks, slide corners. The favicon (`public/favicon.svg`) is the same S drawn in flat forest `#144A1E` / brass `#9C7A2F` / slate `#3E4A52` strokes.
+**Mark alone** (`syntegreti-mark-editorial.svg`): use for favicons, avatars, watermarks, slide corners. The favicon (`public/favicon.svg`) is the same vector mark on a square canvas — one drawing everywhere.
 
 **The mark's colors are inviolable.** The three strokes — forest, brass, slate — are the only version of the mark that exists. Never recolor it: no single-color versions, no white/paper knockouts, no accent-color tints, no inversion for dark backgrounds. If a background would swallow the mark, change the background (or omit the mark), never the mark.
 
