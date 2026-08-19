@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Syntegreti — Business Card Concepts</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap');
+
+:root {
+  --paper: #EFECE4; --surface: #E6E2D8; --rule: #CCC7BA; --rule-strong: #B2AC9D;
+  --ink: #0A0908; --secondary: #4A4741; --muted: #67635A;
+  --forest: #0A250A; --forest-2: #144A1E; --sage: #77896F;
+  --brass: #9C7A2F; --terra: #A34A2A; --slate: #3E4A52;
+  --rule-inv: #26241f; --paper-40: rgba(239,236,228,0.45);
+  --d: 'Fraunces', Georgia, serif; --b: 'DM Sans', sans-serif; --m: 'DM Mono', monospace;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#E2DED2; color:var(--ink); font-family:var(--b); padding:56px 48px; }
+h1 { font-family:var(--d); font-weight:900; letter-spacing:-0.03em; font-size:2.6rem; }
+h1 em { font-style:italic; color:var(--forest); }
+.sub { color:var(--muted); font-size:14px; margin:8px 0 48px; max-width:640px; }
+.concept { margin-bottom:56px; }
+.chead { font-family:var(--m); font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin-bottom:14px; display:flex; justify-content:space-between; max-width:1100px; }
+.pair { display:flex; gap:28px; flex-wrap:wrap; }
+.card { width:525px; height:300px; position:relative; overflow:hidden; flex-shrink:0; }
+.side { font-family:var(--m); font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin-top:8px; }
+.cnote { font-size:12.5px; color:var(--secondary); max-width:1080px; margin-top:14px; line-height:1.6; }
+
+/* shared bits */
+.kick { font-family:var(--m); text-transform:uppercase; letter-spacing:0.16em; }
+.mark { height:44px; width:auto; }
+
+/* ══ 01 MASTHEAD ══ */
+.c1f { background:var(--paper); border:1px solid var(--rule); display:flex; flex-direction:column; }
+.c1f .top { flex:1; display:flex; align-items:center; padding:0 36px; }
+.c1f .lock { display:inline-flex; align-items:baseline; font-weight:700; letter-spacing:-0.025em; font-size:44px; }
+.c1f .lock img { height:0.88em; transform:translateY(0.05em); margin-right:-0.06em; }
+.c1f .foot { border-top:1px solid var(--rule); display:grid; grid-template-columns:1fr auto 1fr auto 1fr; align-items:center; }
+.c1f .foot span { font-family:var(--m); font-size:8.5px; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); padding:12px 0; text-align:center; }
+.c1f .foot i { width:1px; height:100%; background:var(--rule); }
+.c1b { background:var(--paper); border:1px solid var(--rule); padding:34px 36px; display:flex; flex-direction:column; justify-content:space-between; }
+.c1b .name { font-family:var(--d); font-weight:900; font-size:34px; letter-spacing:-0.03em; }
+.c1b .name em { font-style:italic; color:var(--forest); }
+.c1b table { border-collapse:collapse; width:100%; }
+.c1b td { border-top:1px solid var(--rule); padding:7px 0; font-size:12.5px; }
+.c1b td:first-child { font-family:var(--m); font-size:8.5px; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); width:90px; }
+
+/* ══ 02 TERMINAL ══ */
+.c2f { background:var(--ink); color:var(--paper); display:flex; flex-direction:column; }
+.c2f .bar { display:flex; gap:7px; align-items:center; padding:14px 20px; border-bottom:1px solid var(--rule-inv); }
+.c2f .dot { width:11px; height:11px; border-radius:50%; }
+.c2f pre { font-family:var(--m); font-size:13.5px; line-height:2.05; padding:24px 28px; }
+.c2f .p { color:var(--sage); } .c2f .o { color:#8DA0AC; } .c2f .mu { color:var(--paper-40); } .c2f .w { color:var(--paper); }
+.c2b { background:var(--paper); border:1px solid var(--rule); display:flex; align-items:center; justify-content:center; flex-direction:column; gap:14px; }
+.c2b .lock { display:inline-flex; align-items:baseline; font-weight:700; letter-spacing:-0.025em; font-size:40px; }
+.c2b .lock img { height:0.88em; transform:translateY(0.05em); margin-right:-0.06em; }
+.c2b .tag { font-family:var(--m); font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); }
+
+/* ══ 03 RECEIPT ══ */
+.c3f { background:var(--paper); border:1px solid var(--rule); font-family:var(--m); padding:26px 34px; display:flex; flex-direction:column; }
+.c3f .h { text-align:center; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; font-weight:500; }
+.c3f .hh { text-align:center; font-size:8.5px; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin-top:3px; }
+.c3f .dash { border-top:1px dashed var(--rule-strong); margin:12px 0; }
+.c3f .row { display:flex; justify-content:space-between; font-size:11px; line-height:2; color:var(--secondary); }
+.c3f .row b { color:var(--ink); font-weight:500; }
+.c3f .tot { display:flex; justify-content:space-between; font-size:12px; font-weight:500; line-height:2.2; }
+.c3b { background:var(--paper); border:1px solid var(--rule); padding:30px 34px; display:flex; flex-direction:column; justify-content:space-between; }
+.c3b .name { font-family:var(--d); font-weight:900; font-size:30px; letter-spacing:-0.03em; }
+.c3b .mono-rows { font-family:var(--m); font-size:11px; line-height:2.1; color:var(--secondary); }
+.c3b .mono-rows span { color:var(--muted); display:inline-block; width:64px; text-transform:uppercase; font-size:8.5px; letter-spacing:0.14em; }
+
+/* ══ 04 SPEC PLATE ══ */
+.c4f { background:var(--paper); border:1px solid var(--rule); padding:22px; }
+.c4f .plate { border:1px solid var(--ink); height:100%; display:flex; flex-direction:column; }
+.c4f .prow { display:flex; border-bottom:1px solid var(--rule); flex:1; align-items:stretch; }
+.c4f .prow:last-child { border-bottom:none; }
+.c4f .pl { font-family:var(--m); font-size:8px; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); width:96px; border-right:1px solid var(--rule); display:flex; align-items:center; padding-left:14px; flex-shrink:0; }
+.c4f .pv { display:flex; align-items:center; padding-left:14px; font-size:13.5px; font-weight:500; }
+.c4f .pv.big { font-family:var(--d); font-weight:900; font-size:21px; letter-spacing:-0.02em; }
+.c4f .stamp { font-family:var(--m); font-size:8.5px; letter-spacing:0.16em; text-transform:uppercase; color:var(--brass); border:1px solid var(--brass); padding:3px 8px; margin-left:12px; }
+.c4b { background:var(--ink); color:var(--paper); display:flex; align-items:center; padding:0 44px; }
+.c4b .st { font-family:var(--d); font-weight:900; font-style:italic; font-size:44px; letter-spacing:-0.035em; line-height:1.02; }
+.c4b .st span { color:var(--sage); }
+
+/* ══ 05 INTERLOCK BLEED ══ */
+.c5f { background:var(--paper); border:1px solid var(--rule); }
+.c5f img.big { position:absolute; right:-70px; top:50%; transform:translateY(-50%); height:275px; width:auto; }
+.c5f .info { position:absolute; left:34px; bottom:30px; }
+.c5f .info .n { font-family:var(--d); font-weight:900; font-size:26px; letter-spacing:-0.025em; }
+.c5f .info .e { font-family:var(--m); font-size:10.5px; color:var(--muted); margin-top:4px; letter-spacing:0.06em; }
+.c5f .kicker { position:absolute; left:34px; top:28px; font-family:var(--m); font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); }
+.c5b { background:var(--ink); color:var(--paper); display:flex; flex-direction:column; justify-content:center; padding:0 44px; gap:10px; }
+.c5b .slogan { font-family:var(--d); font-weight:300; font-style:italic; font-size:33px; letter-spacing:-0.02em; }
+.c5b .slogan b { font-weight:900; font-style:normal; color:var(--sage); }
+.c5b .u { font-family:var(--m); font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:var(--paper-40); }
+
+/* ══ 06 LEDGER STRIP ══ */
+.c6f { background:var(--paper); border:1px solid var(--rule); display:flex; flex-direction:column; }
+.c6f .main { flex:1; padding:30px 36px; display:flex; flex-direction:column; justify-content:center; }
+.c6f .k { font-family:var(--m); font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); }
+.c6f .n { font-family:var(--d); font-weight:900; font-size:37px; letter-spacing:-0.03em; margin-top:6px; }
+.c6f .n em { font-style:italic; color:var(--forest); }
+.c6f .c { font-size:12.5px; color:var(--secondary); margin-top:10px; }
+.c6f .strip { border-top:1px solid var(--rule); display:grid; grid-template-columns:1fr 1fr 1fr 1fr; }
+.c6f .cell { padding:12px 0 12px 22px; border-right:1px solid var(--rule); }
+.c6f .cell:last-child { border-right:none; }
+.c6f .v { font-family:var(--d); font-weight:900; font-size:16px; }
+.c6f .v.a { color:var(--forest); }
+.c6f .l { font-family:var(--m); font-size:7.5px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin-top:2px; }
+.c6b { background:var(--paper); border:1px solid var(--rule); position:relative; display:flex; align-items:center; justify-content:center; }
+.c6b .ticker { position:absolute; top:0; left:0; right:0; background:var(--ink); padding:9px 0; overflow:hidden; white-space:nowrap; font-family:var(--m); font-size:8px; letter-spacing:0.18em; text-transform:uppercase; color:var(--paper-40); text-align:center; }
+.c6b .ticker2 { position:absolute; bottom:0; top:auto; }
+.c6b .lock { display:inline-flex; align-items:baseline; font-weight:700; letter-spacing:-0.025em; font-size:46px; }
+.c6b .lock img { height:0.88em; transform:translateY(0.05em); margin-right:-0.06em; }
+
+.print { border-top:1px solid var(--rule-strong); margin-top:24px; padding-top:20px; max-width:1080px; font-size:13px; color:var(--secondary); line-height:1.8; }
+.print b { font-family:var(--m); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:6px; }
+</style>
+</head>
+<body>
+
+<h1>The card is the <em>brand</em>.</h1>
+<p class="sub">Six concepts on the editorial system — paper &amp; ink, forest green, hairline rules, sharp corners. Standard 89&thinsp;×&thinsp;51&thinsp;mm, front and back. Phone number is a placeholder throughout.</p>
+
+<!-- 01 -->
+<div class="concept">
+  <div class="chead"><span>01 — the masthead · newspaper front page</span><span>quiet confidence</span></div>
+  <div class="pair">
+    <div>
+      <div class="card c1f">
+        <div class="top">
+          <span class="lock"><img src="../src/assets/syntegreti-mark-editorial.png" alt="S">yntegreti</span>
+        </div>
+        <div class="foot">
+          <span>Est. 2012</span><i></i><span>AI Platforms · Projects · Teams</span><i></i><span>Hyderabad → Global</span>
+        </div>
+      </div>
+      <div class="side">front</div>
+    </div>
+    <div>
+      <div class="card c1b">
+        <div class="name">Jay <em>Jayakeerthy</em></div>
+        <table>
+          <tr><td>email</td><td>jay.jayakeerthy@syntegreti.com</td></tr>
+          <tr><td>phone</td><td>+91 00000 00000</td></tr>
+          <tr><td>web</td><td>syntegreti.com</td></tr>
+        </table>
+      </div>
+      <div class="side">back</div>
+    </div>
+  </div>
+  <p class="cnote">The safest and most premium: logo alone on the front like a newspaper masthead, contact as a ruled ledger on the back. Letterpress the hairlines and this feels expensive.</p>
+</div>
+
+<!-- 02 -->
+<div class="concept">
+  <div class="chead"><span>02 — the terminal · a card that ships</span><span>engineers will keep it</span></div>
+  <div class="pair">
+    <div>
+      <div class="card c2f">
+        <div class="bar">
+          <span class="dot" style="background:#A34A2A99"></span>
+          <span class="dot" style="background:#9C7A2F99"></span>
+          <span class="dot" style="background:#144A1E"></span>
+          <span style="font-family:var(--m);font-size:9.5px;color:var(--paper-40);margin-left:8px">syntegreti — live</span>
+        </div>
+        <pre><span class="p">$ whoami</span>
+<span class="w">Jay Jayakeerthy</span>
+<span class="p">$ syntegreti contact</span>
+<span class="o">  email  jay.jayakeerthy@syntegreti.com</span>
+<span class="o">  phone  +91 00000 00000</span>
+<span class="mu">  web    syntegreti.com</span>
+<span class="p">  Status: SHIPPED ✓</span></pre>
+      </div>
+      <div class="side">front</div>
+    </div>
+    <div>
+      <div class="card c2b">
+        <span class="lock"><img src="../src/assets/syntegreti-mark-editorial.png" alt="S">yntegreti</span>
+        <span class="tag">No layers · No handoffs · Just AI that ships</span>
+      </div>
+      <div class="side">back</div>
+    </div>
+  </div>
+  <p class="cnote">The website's hero terminal, printed. The card introduces you the way the site does — as running software. Strongest conversation-starter of the six.</p>
+</div>
+
+<!-- 03 -->
+<div class="concept">
+  <div class="chead"><span>03 — the receipt · "we keep receipts"</span><span>wittiest</span></div>
+  <div class="pair">
+    <div>
+      <div class="card c3f">
+        <div class="h">Syntegreti</div>
+        <div class="hh">AI Studio · Hyderabad → Global · Est. 2012</div>
+        <div class="dash"></div>
+        <div class="row"><span>Platforms, built in-house</span><b>× 8</b></div>
+        <div class="row"><span>Client systems in production</span><b>× 3</b></div>
+        <div class="row"><span>Idea → working proof</span><b>4–6 wks</b></div>
+        <div class="row"><span>Layers, handoffs, decks</span><b>× 0</b></div>
+        <div class="dash"></div>
+        <div class="tot"><span>TOTAL</span><span>PROOF, NOT PROMISES</span></div>
+        <div class="dash"></div>
+        <div class="hh">Thank you — please come again · syntegreti.com</div>
+      </div>
+      <div class="side">front</div>
+    </div>
+    <div>
+      <div class="card c3b">
+        <div class="name">Jay Jayakeerthy</div>
+        <div class="mono-rows">
+          <div><span>email</span>jay.jayakeerthy@syntegreti.com</div>
+          <div><span>phone</span>+91 00000 00000</div>
+          <div><span>web</span>syntegreti.com</div>
+        </div>
+      </div>
+      <div class="side">back</div>
+    </div>
+  </div>
+  <p class="cnote">The homepage says "We keep receipts" — so the card is one. Every line is a true number from the site. People photograph cards like this; it does your follow-up for you.</p>
+</div>
+
+<!-- 04 -->
+<div class="concept">
+  <div class="chead"><span>04 — the spec plate · engineered nameplate</span><span>most "regulated industries"</span></div>
+  <div class="pair">
+    <div>
+      <div class="card c4f">
+        <div class="plate">
+          <div class="prow"><div class="pl">Unit</div><div class="pv big">Jay Jayakeerthy<span class="stamp">In production</span></div></div>
+          <div class="prow"><div class="pl">Manufacturer</div><div class="pv">Syntegreti · AI Studio · Est. 2012</div></div>
+          <div class="prow"><div class="pl">Contact</div><div class="pv" style="font-family:var(--m);font-size:12px">jay.jayakeerthy@syntegreti.com · +91 00000 00000</div></div>
+          <div class="prow"><div class="pl">Deploys to</div><div class="pv">Your cloud, under your controls — AWS · Azure</div></div>
+        </div>
+      </div>
+      <div class="side">front</div>
+    </div>
+    <div>
+      <div class="card c4b">
+        <div class="st">Audit trails<br>by default,<br><span>not optional.</span></div>
+      </div>
+      <div class="side">back</div>
+    </div>
+  </div>
+  <p class="cnote">A machine's rating plate, but for a person — with the brass "In production" stamp from the case studies. Speaks fluently to compliance and infrastructure buyers.</p>
+</div>
+
+<!-- 05 -->
+<div class="concept">
+  <div class="chead"><span>05 — the interlock bleed · mark as hero</span><span>most sculptural</span></div>
+  <div class="pair">
+    <div>
+      <div class="card c5f">
+        <span class="kicker">// syntegreti</span>
+        <img class="big" src="../src/assets/syntegreti-mark-editorial.png" alt="">
+        <div class="info">
+          <div class="n">Jay Jayakeerthy</div>
+          <div class="e">jay.jayakeerthy@syntegreti.com · +91 00000 00000</div>
+        </div>
+      </div>
+      <div class="side">front</div>
+    </div>
+    <div>
+      <div class="card c5b">
+        <div class="slogan">Intelligence<br>through <b>connection.</b></div>
+        <div class="u">syntegreti.com</div>
+      </div>
+      <div class="side">back</div>
+    </div>
+  </div>
+  <p class="cnote">The interlocking S at full scale, bleeding off the edge — the three strokes (forest, brass, slate) become the whole design. Back carries the company slogan in light italic Fraunces.</p>
+</div>
+
+<!-- 06 -->
+<div class="concept">
+  <div class="chead"><span>06 — the proof strip · the hero section, printed</span><span>closest to the website</span></div>
+  <div class="pair">
+    <div>
+      <div class="card c6f">
+        <div class="main">
+          <div class="k">// enterprise_ai</div>
+          <div class="n">Jay <em>Jayakeerthy</em></div>
+          <div class="c">jay.jayakeerthy@syntegreti.com &nbsp;·&nbsp; +91 00000 00000</div>
+        </div>
+        <div class="strip">
+          <div class="cell"><div class="v">100+</div><div class="l">Yrs experience</div></div>
+          <div class="cell"><div class="v">8</div><div class="l">Platforms</div></div>
+          <div class="cell"><div class="v">4-6wk</div><div class="l">To proof</div></div>
+          <div class="cell"><div class="v a">3</div><div class="l">In production</div></div>
+        </div>
+      </div>
+      <div class="side">front</div>
+    </div>
+    <div>
+      <div class="card c6b">
+        <div class="ticker">AI-first engineering &nbsp;·&nbsp; Fixed-fee sprints &nbsp;·&nbsp; Regulated industries &nbsp;·&nbsp; Hyderabad → Global &nbsp;·&nbsp; AI-first engineering</div>
+        <span class="lock"><img src="../src/assets/syntegreti-mark-editorial.png" alt="S">yntegreti</span>
+        <div class="ticker ticker2">Proof, not promises &nbsp;·&nbsp; syntegreti.com &nbsp;·&nbsp; No layers, no handoffs &nbsp;·&nbsp; Proof, not promises</div>
+      </div>
+      <div class="side">back</div>
+    </div>
+  </div>
+  <p class="cnote">Your homepage as a card: mono kicker, Fraunces name with the italic-forest accent, and the one-line proof strip along the bottom edge. Back frames the lockup between two ink ticker bands.</p>
+</div>
+
+<div class="print">
+  <b>// print specification</b>
+  Size 89 × 51 mm + 3 mm bleed · Stock: uncoated warm-white cotton 400–600 gsm (GF Smith Colorplan "Mist" or Mohawk Superfine Eggshell are close to #EFECE4) · Ink: match forest #0A250A, brass #9C7A2F, slate #3E4A52, terracotta #A34A2A — spot colors if budget allows · Hairlines 0.25 pt minimum · Finish: letterpress or debossed rules elevate concepts 01/04/05; the ink-heavy sides (02, 04-back, 05-back) print best as solid Pantone Black 6 C · No lamination, no gloss, no rounded corners — ever.
+</div>
+
+</body>
+</html>
