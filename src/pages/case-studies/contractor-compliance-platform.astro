@@ -33,7 +33,7 @@ const scope = [
   <!-- Hero -->
   <section class="relative pt-24 pb-8 overflow-hidden">
     <div class="absolute inset-0 grid-bg opacity-20"></div>
-    <div class="absolute top-1/4 -right-32 h-96 w-96 rounded-full bg-cyan/5 blur-[120px]"></div>
+    <div class="absolute top-1/4 -right-32 h-96 w-96 rounded-full bg-accent/5 blur-[120px]"></div>
 
     <div class="relative z-10 mx-auto max-w-7xl px-6">
       <div class="max-w-3xl" data-animate>
@@ -45,7 +45,7 @@ const scope = [
         </a>
 
         <div class="flex flex-wrap items-center gap-3 mb-4">
-          <span class="inline-flex items-center gap-2 rounded-full border border-cyan/20 bg-cyan/5 px-4 py-1.5 text-sm font-medium text-cyan">
+          <span class="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm font-medium text-accent">
             Home Improvement · Nationwide US
           </span>
           <span class="rounded-full border border-border px-3 py-1 text-xs text-text-muted">Contractor Compliance</span>
@@ -76,8 +76,8 @@ const scope = [
           { value: '3-level', label: 'Jurisdiction coverage', sub: 'state · county · city' },
           { value: 'In SOW', label: 'AI accuracy SLA', sub: 'contractual, not claimed' },
         ].map((m) => (
-          <div class="rounded-xl border border-cyan/20 bg-cyan/5 p-5 text-center">
-            <div class="text-2xl font-bold text-cyan">{m.value}</div>
+          <div class="rounded-xl border border-amber/20 bg-amber/5 p-5 text-center">
+            <div class="text-2xl font-bold text-amber">{m.value}</div>
             <div class="text-xs font-medium text-text-primary">{m.label}</div>
             {m.sub && <div class="mt-0.5 text-[13px] text-text-secondary">{m.sub}</div>}
           </div>
@@ -121,7 +121,7 @@ const scope = [
   <section class="py-8">
     <div class="mx-auto max-w-7xl px-6">
       <div class="mb-8" data-animate>
-        <span class="font-mono text-sm text-cyan">// the_platform</span>
+        <span class="font-mono text-sm text-accent">// the_platform</span>
         <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
           Compliance as a lookup, not a project
         </h2>
@@ -129,7 +129,7 @@ const scope = [
       <div class="grid gap-6 md:grid-cols-2" data-stagger>
         {scope.map((s) => (
           <div class="glow-card-subtle p-7">
-            <h3 class="text-lg font-bold text-cyan">{s.title}</h3>
+            <h3 class="text-lg font-bold text-accent">{s.title}</h3>
             <p class="mt-3 text-sm leading-relaxed text-text-secondary">{s.desc}</p>
           </div>
         ))}
@@ -167,7 +167,7 @@ const scope = [
   <section class="py-8">
     <div class="mx-auto max-w-7xl px-6">
       <div class="rounded-2xl border border-border bg-surface/50 p-10" data-animate>
-        <span class="font-mono text-sm text-amber">// accountability</span>
+        <span class="font-mono text-sm text-accent">// accountability</span>
         <h2 class="mt-3 text-2xl font-bold">Results will be reported when they're real</h2>
         <p class="mt-4 max-w-3xl text-sm leading-relaxed text-text-secondary">
           This platform is in delivery, so you won't find outcome numbers on this

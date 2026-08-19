@@ -30,12 +30,12 @@ const features = [
   <!-- Hero -->
   <section class="relative pt-24 pb-10 overflow-hidden">
     <div class="absolute inset-0 grid-bg opacity-20"></div>
-    <div class="absolute top-1/4 -right-32 h-96 w-96 rounded-full bg-rose/5 blur-[120px]"></div>
+    <div class="absolute top-1/4 -right-32 h-96 w-96 rounded-full bg-accent/5 blur-[120px]"></div>
 
     <div class="relative z-10 mx-auto max-w-7xl px-6">
       <div class="max-w-3xl" data-animate>
         <div class="mb-6 flex items-center gap-3">
-          <span class="inline-flex items-center gap-2 rounded-full border border-rose/20 bg-rose/5 px-4 py-1.5 text-sm font-medium text-rose">
+          <span class="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm font-medium text-accent">
             Platform
           </span>
           <span class="rounded-full border border-border px-3 py-1 text-xs text-text-muted">For regulated enterprises</span>
@@ -95,7 +95,7 @@ const features = [
   <section class="py-10">
     <div class="mx-auto max-w-7xl px-6">
       <div class="mb-8" data-animate>
-        <span class="font-mono text-sm text-rose">// what_it_does</span>
+        <span class="font-mono text-sm text-accent">// what_it_does</span>
         <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
           Enable AI. Keep control.
         </h2>
@@ -104,7 +104,7 @@ const features = [
       <div class="grid gap-6 md:grid-cols-2" data-stagger>
         {features.map((f) => (
           <div class="glow-card-subtle p-7">
-            <h3 class="text-lg font-bold text-rose">{f.title}</h3>
+            <h3 class="text-lg font-bold text-accent">{f.title}</h3>
             <p class="mt-3 text-sm leading-relaxed text-text-secondary">{f.description}</p>
             <p class="mt-3 border-t border-border/50 pt-3 text-xs leading-relaxed text-text-muted">{f.detail}</p>
           </div>
@@ -117,7 +117,7 @@ const features = [
   <section class="py-12">
     <div class="mx-auto max-w-7xl px-6">
       <div class="glow-card-subtle p-8" data-animate>
-        <span class="font-mono text-sm text-rose">// under_the_hood</span>
+        <span class="font-mono text-sm text-accent">// under_the_hood</span>
         <div class="mt-6 grid grid-cols-2 gap-8 md:grid-cols-4">
           {[
             { value: 'Go', label: 'High-throughput gateway' },
@@ -126,7 +126,7 @@ const features = [
             { value: 'Live', label: 'Time-series analytics dashboard' },
           ].map((s) => (
             <div class="text-center">
-              <div class="text-3xl font-bold text-rose">{s.value}</div>
+              <div class="text-3xl font-bold text-accent">{s.value}</div>
               <div class="mt-1 text-xs text-text-muted">{s.label}</div>
             </div>
           ))}

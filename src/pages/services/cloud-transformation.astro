@@ -31,15 +31,15 @@ const journey = [
   <section class="relative pt-24 pb-10 overflow-hidden">
     <div class="absolute inset-0 grid-bg opacity-20"></div>
     <!-- Animated gradient orbs -->
-    <div class="absolute top-20 left-1/4 h-72 w-72 rounded-full bg-cyan/5 blur-[100px] animate-pulse"></div>
+    <div class="absolute top-20 left-1/4 h-72 w-72 rounded-full bg-accent/5 blur-[100px] animate-pulse"></div>
     <div class="absolute bottom-20 right-1/4 h-72 w-72 rounded-full bg-accent/5 blur-[100px] animate-pulse" style="animation-delay: 1s;"></div>
 
     <div class="relative z-10 mx-auto max-w-7xl px-6">
       <div class="max-w-3xl" data-animate>
-        <span class="font-mono text-sm text-cyan">// cloud_transformation</span>
+        <span class="font-mono text-sm text-accent">// cloud_transformation</span>
         <h1 class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
           Your cloud.<br />
-          <span class="bg-gradient-to-r from-cyan to-accent bg-clip-text text-transparent">Done right.</span>
+          <span class="gradient-text">Done right.</span>
         </h1>
         <p class="mt-6 text-lg leading-relaxed text-text-secondary">
           Cloud migration isn't a lift-and-shift checkbox. It's a re-architecture of
@@ -47,7 +47,7 @@ const journey = [
           modernization, and optimization — across AWS, Azure, and GCP.
         </p>
         <div class="mt-8 flex flex-wrap gap-4">
-          <a href="/contact" class="inline-flex items-center gap-2 rounded-xl bg-cyan px-7 py-3.5 text-sm font-semibold text-void transition-all hover:shadow-[0_0_30px_rgba(0,212,255,0.3)]">
+          <a href="/contact" class="inline-flex items-center gap-2 rounded-xl bg-accent px-7 py-3.5 text-sm font-semibold text-void transition-all hover:bg-accent-glow hover:shadow-[0_0_30px_rgba(0,232,123,0.3)]">
             Plan Your Migration
           </a>
         </div>
@@ -60,8 +60,8 @@ const journey = [
     <div class="mx-auto max-w-7xl px-6">
       <div class="grid grid-cols-3 gap-4" data-stagger>
         {[
-          { name: 'AWS', services: 'EC2, EKS, Lambda, RDS, S3, Bedrock, SageMaker', color: 'amber' },
-          { name: 'Azure', services: 'AKS, Functions, Cosmos DB, Cognitive Services, DevOps', color: 'cyan' },
+          { name: 'AWS', services: 'EC2, EKS, Lambda, RDS, S3, Bedrock, SageMaker', color: 'accent' },
+          { name: 'Azure', services: 'AKS, Functions, Cosmos DB, Cognitive Services, DevOps', color: 'accent' },
           { name: 'GCP', services: 'GKE, Cloud Run, BigQuery, Vertex AI, Anthos', color: 'accent' },
         ].map((cloud) => (
           <div class={`group relative overflow-hidden rounded-2xl border border-${cloud.color}/20 bg-${cloud.color}/5 p-8 transition-all card-hover`}>
@@ -82,7 +82,7 @@ const journey = [
   <section class="py-10">
     <div class="mx-auto max-w-7xl px-6">
       <div class="mb-10" data-animate>
-        <span class="font-mono text-sm text-cyan">// the_journey</span>
+        <span class="font-mono text-sm text-accent">// the_journey</span>
         <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
           Four Phases. Zero Guesswork.
         </h2>
@@ -90,22 +90,22 @@ const journey = [
 
       <div class="relative">
         <!-- Connection line desktop -->
-        <div class="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-cyan/50 via-accent/30 to-transparent lg:hidden"></div>
+        <div class="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-accent/50 via-accent/30 to-transparent lg:hidden"></div>
 
         <div class="space-y-8 lg:space-y-0 lg:grid lg:grid-cols-4 lg:gap-6" data-stagger>
           {journey.map((step, i) => (
             <div class="relative pl-16 lg:pl-0">
               {/* Mobile dot */}
               <div class="absolute left-8 top-2 -translate-x-1/2 lg:hidden">
-                <div class="flex h-4 w-4 items-center justify-center rounded-full border-2 border-cyan bg-void">
-                  <div class="h-1.5 w-1.5 rounded-full bg-cyan"></div>
+                <div class="flex h-4 w-4 items-center justify-center rounded-full border-2 border-accent bg-void">
+                  <div class="h-1.5 w-1.5 rounded-full bg-accent"></div>
                 </div>
               </div>
 
               <div class="rounded-2xl border border-border bg-surface/30 p-6 transition-all card-hover">
                 <div class="flex items-center gap-3 mb-4">
                   <div>
-                    <span class="font-mono text-xs text-cyan">Phase {i + 1}</span>
+                    <span class="font-mono text-xs text-accent">Phase {i + 1}</span>
                     <span class="ml-2 text-xs text-text-muted">·</span>
                     <span class="ml-2 text-xs text-text-muted">{step.phase}</span>
                   </div>
@@ -178,7 +178,7 @@ const journey = [
         <span class="block text-xs font-semibold uppercase tracking-wider text-text-muted mb-4">Cloud Technology Stack</span>
         <div class="flex flex-wrap gap-2">
           {['AWS', 'Azure', 'GCP', 'Kubernetes', 'Docker', 'Terraform', 'Helm', 'ArgoCD', 'Jenkins', 'GitHub Actions', 'Prometheus', 'Grafana', 'Istio', 'Consul', 'Vault', 'CloudFormation', 'Pulumi', 'Ansible'].map((t) => (
-            <span class="rounded-lg border border-border bg-deep px-3 py-1.5 font-mono text-xs text-text-secondary transition-colors hover:border-cyan/30 hover:text-cyan">{t}</span>
+            <span class="rounded-lg border border-border bg-deep px-3 py-1.5 font-mono text-xs text-text-secondary transition-colors hover:border-accent/30 hover:text-accent">{t}</span>
           ))}
         </div>
       </div>
@@ -188,12 +188,12 @@ const journey = [
   <!-- CTA -->
   <section class="py-10">
     <div class="mx-auto max-w-7xl px-6">
-      <div class="rounded-2xl border border-cyan/20 bg-gradient-to-br from-cyan/5 to-surface p-12 text-center" data-animate>
+      <div class="rounded-2xl border border-accent/20 bg-gradient-to-br from-accent/5 to-surface p-12 text-center" data-animate>
         <h2 class="text-3xl font-bold tracking-tight">
           Cloud done right<br />
-          <span class="bg-gradient-to-r from-cyan to-accent bg-clip-text text-transparent">costs less than cloud done twice.</span>
+          <span class="gradient-text">costs less than cloud done twice.</span>
         </h2>
-        <a href="/contact" class="mt-8 inline-flex items-center gap-2 rounded-xl bg-cyan px-8 py-4 text-sm font-semibold text-void transition-all hover:shadow-[0_0_30px_rgba(0,212,255,0.3)]">
+        <a href="/contact" class="mt-8 inline-flex items-center gap-2 rounded-xl bg-accent px-8 py-4 text-sm font-semibold text-void transition-all hover:bg-accent-glow hover:shadow-[0_0_30px_rgba(0,232,123,0.3)]">
           Plan Your Migration
         </a>
       </div>

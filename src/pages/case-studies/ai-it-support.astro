@@ -7,7 +7,7 @@ import Layout from '../../layouts/Layout.astro';
   <!-- Hero -->
   <section class="relative pt-24 pb-8 overflow-hidden">
     <div class="absolute inset-0 grid-bg opacity-20"></div>
-    <div class="absolute top-1/4 -left-32 h-96 w-96 rounded-full bg-cyan/5 blur-[120px]"></div>
+    <div class="absolute top-1/4 -left-32 h-96 w-96 rounded-full bg-accent/5 blur-[120px]"></div>
 
     <div class="relative z-10 mx-auto max-w-7xl px-6">
       <div class="max-w-3xl" data-animate>
@@ -19,7 +19,7 @@ import Layout from '../../layouts/Layout.astro';
         </a>
 
         <div class="flex flex-wrap items-center gap-3 mb-4">
-          <span class="inline-flex items-center gap-2 rounded-full border border-cyan/20 bg-cyan/5 px-4 py-1.5 text-sm font-medium text-cyan">
+          <span class="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm font-medium text-accent">
             Enterprise IT
           </span>
           <span class="rounded-full border border-border px-3 py-1 text-xs text-text-muted">Multi-Agent Orchestration</span>
@@ -48,8 +48,8 @@ import Layout from '../../layouts/Layout.astro';
           { value: '24/7', label: 'Availability', sub: 'zero downtime' },
           { value: '6-8 wks', label: 'Implementation', sub: 'discovery to launch' },
         ].map((m) => (
-          <div class="rounded-xl border border-cyan/20 bg-cyan/5 p-5 text-center">
-            <div class="text-2xl font-bold text-cyan">{m.value}</div>
+          <div class="rounded-xl border border-amber/20 bg-amber/5 p-5 text-center">
+            <div class="text-2xl font-bold text-amber">{m.value}</div>
             <div class="text-xs font-medium text-text-primary">{m.label}</div>
             {m.sub && <div class="mt-0.5 text-[13px] text-text-secondary">{m.sub}</div>}
           </div>
@@ -211,8 +211,8 @@ import Layout from '../../layouts/Layout.astro';
 
         <div class="rounded-2xl border border-border bg-surface/20 p-8 transition-all card-hover">
           <div class="flex items-center gap-3 mb-4">
-            <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-cyan/20 bg-cyan/5">
-              <span class="font-mono text-sm font-bold text-cyan">02</span>
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-accent/20 bg-accent/5">
+              <span class="font-mono text-sm font-bold text-accent">02</span>
             </div>
             <h3 class="text-lg font-bold text-text-primary">Omni-Channel Support</h3>
           </div>
@@ -230,8 +230,8 @@ import Layout from '../../layouts/Layout.astro';
 
         <div class="rounded-2xl border border-border bg-surface/20 p-8 transition-all card-hover">
           <div class="flex items-center gap-3 mb-4">
-            <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-amber/20 bg-amber/5">
-              <span class="font-mono text-sm font-bold text-amber">03</span>
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-accent/20 bg-accent/5">
+              <span class="font-mono text-sm font-bold text-accent">03</span>
             </div>
             <h3 class="text-lg font-bold text-text-primary">Smart Escalation</h3>
           </div>
@@ -257,7 +257,7 @@ import Layout from '../../layouts/Layout.astro';
         <h2 class="mt-3 text-3xl font-bold tracking-tight">The Math</h2>
       </div>
 
-      <div class="rounded-2xl border border-cyan/10 bg-gradient-to-br from-cyan/5 via-surface/30 to-accent/5 p-10" data-animate>
+      <div class="rounded-2xl border border-accent/10 bg-gradient-to-br from-accent/5 via-surface/30 to-accent/5 p-10" data-animate>
         <div class="grid gap-8 lg:grid-cols-2">
           <div>
             <h3 class="text-lg font-bold text-text-primary mb-4">Before: The Hidden Cost</h3>
@@ -285,7 +285,7 @@ import Layout from '../../layouts/Layout.astro';
                 '$72K annual savings per 1,000 users — scales linearly',
               ].map((item) => (
                 <div class="flex items-start gap-2 text-sm text-text-secondary">
-                  <svg class="mt-0.5 h-4 w-4 shrink-0 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                   </svg>
                   <span>{item}</span>
@@ -306,7 +306,7 @@ import Layout from '../../layouts/Layout.astro';
               { label: 'Annual savings', value: '$72,000', detail: 'Per 1K users' },
             ].map((calc) => (
               <div class="text-center">
-                <div class="text-lg font-bold text-cyan">{calc.value}</div>
+                <div class="text-lg font-bold text-amber">{calc.value}</div>
                 <div class="text-xs font-medium text-text-primary">{calc.label}</div>
                 <div class="text-[13px] text-text-secondary">{calc.detail}</div>
               </div>
@@ -344,17 +344,17 @@ import Layout from '../../layouts/Layout.astro';
   <!-- Agent platform connection -->
   <section class="py-8">
     <div class="mx-auto max-w-7xl px-6">
-      <a href="/products/agent-platform" class="group block rounded-2xl border border-cyan/20 bg-cyan/5 p-8 transition-all hover:border-cyan/40 hover:bg-cyan/10" data-animate>
+      <a href="/products/agent-platform" class="group block rounded-2xl border border-accent/20 bg-accent/5 p-8 transition-all hover:border-accent/40 hover:bg-accent/10" data-animate>
         <div class="flex items-center justify-between">
           <div>
-            <span class="font-mono text-xs text-cyan">Built on our agent platform</span>
+            <span class="font-mono text-xs text-accent">Built on our agent platform</span>
             <h3 class="mt-1 text-xl font-bold text-text-primary">This solution runs on our agent platform</h3>
             <p class="mt-2 max-w-lg text-sm text-text-secondary">
               Our agentic OS for business — purpose-built for multi-agent
               orchestration across enterprise systems. See what else it can do.
             </p>
           </div>
-          <svg class="h-6 w-6 shrink-0 text-cyan transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="h-6 w-6 shrink-0 text-accent transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
         </div>
@@ -365,16 +365,16 @@ import Layout from '../../layouts/Layout.astro';
   <!-- CTA -->
   <section class="py-8">
     <div class="mx-auto max-w-7xl px-6">
-      <div class="rounded-2xl border border-cyan/20 bg-gradient-to-br from-cyan/5 to-surface p-12 text-center" data-animate>
+      <div class="rounded-2xl border border-accent/20 bg-gradient-to-br from-accent/5 to-surface p-12 text-center" data-animate>
         <h2 class="text-3xl font-bold tracking-tight">
           Your L1 team deserves<br />
-          <span class="bg-gradient-to-r from-cyan to-accent bg-clip-text text-transparent">better problems to solve.</span>
+          <span class="bg-gradient-to-r from-accent to-accent-glow bg-clip-text text-transparent">better problems to solve.</span>
         </h2>
         <p class="mx-auto mt-4 max-w-lg text-text-secondary">
           Let AI handle the repetitive 60%. Free your engineers for the work that
           actually needs a human brain.
         </p>
-        <a href="/contact" class="mt-8 inline-flex items-center gap-2 rounded-xl bg-cyan px-8 py-4 text-sm font-semibold text-void transition-all hover:shadow-[0_0_30px_rgba(0,212,255,0.3)]">
+        <a href="/contact" class="mt-8 inline-flex items-center gap-2 rounded-xl bg-accent px-8 py-4 text-sm font-semibold text-void transition-all hover:shadow-[0_0_30px_rgba(0,232,123,0.3)]">
           Book a 4-Week Sprint
         </a>
       </div>
