@@ -108,7 +108,7 @@ const platforms = [
           <div class="grid gap-8 md:grid-cols-2 md:items-center">
             <div>
               <div class="flex items-center gap-3 mb-5">
-                <span class="rounded-full bg-accent/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-accent">Platform · Live demo</span>
+                <span class="rounded-full bg-accent/10 px-3 py-1 text-[12px] font-semibold uppercase tracking-wider text-accent">Platform · Live demo</span>
               </div>
               <h2 class="text-2xl font-bold text-accent sm:text-3xl">Contract Intelligence</h2>
               <p class="mt-1 font-mono text-xs text-text-muted">Contract lifecycle intelligence + relationship governance</p>
@@ -138,7 +138,7 @@ const platforms = [
               ].map((f) => (
                 <div class="rounded-lg border border-border/50 bg-deep/50 px-3 py-2.5">
                   <div class="text-xs font-medium text-text-primary">{f.label}</div>
-                  <div class="text-[11px] leading-relaxed text-text-secondary">{f.desc}</div>
+                  <div class="text-[13px] leading-relaxed text-text-secondary">{f.desc}</div>
                 </div>
               ))}
             </div>
@@ -150,7 +150,7 @@ const platforms = [
           <div class="grid gap-8 md:grid-cols-2 md:items-center">
             <div>
               <div class="flex items-center gap-3 mb-5">
-                <span class="rounded-full bg-cyan/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-cyan">Platform</span>
+                <span class="rounded-full bg-cyan/10 px-3 py-1 text-[12px] font-semibold uppercase tracking-wider text-cyan">Platform</span>
               </div>
               <h2 class="text-2xl font-bold text-cyan sm:text-3xl">Business Operations</h2>
               <p class="mt-1 font-mono text-xs text-text-muted">The AI-native business operations platform</p>
@@ -179,7 +179,7 @@ const platforms = [
               ].map((f) => (
                 <div class="rounded-lg border border-border/50 bg-deep/50 px-3 py-2.5">
                   <div class="text-xs font-medium text-text-primary">{f.label}</div>
-                  <div class="text-[11px] leading-relaxed text-text-secondary">{f.desc}</div>
+                  <div class="text-[13px] leading-relaxed text-text-secondary">{f.desc}</div>
                 </div>
               ))}
             </div>
@@ -204,14 +204,14 @@ const platforms = [
           return (
             <Tag href={p.href ?? undefined} id={p.id} class="group glow-card-subtle p-7 flex flex-col scroll-mt-28">
               <div class="flex items-center justify-between mb-4">
-                <span class:list={['rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-wider', p.chip]}>{p.badge}</span>
+                <span class:list={['rounded-full px-3 py-1 text-[12px] font-semibold uppercase tracking-wider', p.chip]}>{p.badge}</span>
               </div>
               <h3 class:list={['text-lg font-bold leading-snug', p.text]}>{p.tagline}</h3>
-              <p class="mt-1 font-mono text-[11px] text-text-muted">{p.name}</p>
+              <p class="mt-1 font-mono text-[13px] text-text-muted">{p.name}</p>
               <p class="mt-3 text-sm leading-relaxed text-text-secondary flex-1">{p.description}</p>
               <ul class="mt-4 space-y-1.5 border-t border-border/50 pt-4">
                 {p.facts.map((fact) => (
-                  <li class="flex items-start gap-2 text-[11px] text-text-secondary">
+                  <li class="flex items-start gap-2 text-[13px] text-text-secondary">
                     <span class:list={['mt-0.5', p.text]}>▸</span>
                     {fact}
                   </li>
@@ -236,7 +236,7 @@ const platforms = [
         <div class="grid gap-8 md:grid-cols-2 md:items-center">
           <div>
             <div class="flex items-center gap-3 mb-5">
-              <span class="rounded-full bg-amber/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-amber">Product</span>
+              <span class="rounded-full bg-amber/10 px-3 py-1 text-[12px] font-semibold uppercase tracking-wider text-amber">Product</span>
             </div>
             <h2 class="text-2xl font-bold text-amber sm:text-3xl">Datacenter Solutions</h2>
             <p class="mt-1 font-mono text-xs text-text-muted">Thermal intelligence for data centers</p>
@@ -266,7 +266,7 @@ const platforms = [
             ].map((f) => (
               <div class="rounded-lg border border-border/50 bg-deep/50 px-3 py-2.5">
                 <div class="text-xs font-medium text-text-primary">{f.label}</div>
-                <div class="text-[11px] leading-relaxed text-text-secondary">{f.desc}</div>
+                <div class="text-[13px] leading-relaxed text-text-secondary">{f.desc}</div>
               </div>
             ))}
           </div>

@@ -83,15 +83,15 @@ const patterns = [
             {pattern.metrics.map((metric) => (
               <div class="rounded-lg border border-border/50 bg-deep/50 p-3 text-center">
                 <div class="text-lg font-bold text-accent">{metric.value}</div>
-                <div class="text-[11px] text-text-secondary">{metric.label}</div>
+                <div class="text-[13px] text-text-secondary">{metric.label}</div>
               </div>
             ))}
           </div>
 
           <!-- Replicable pattern callout -->
           <div class="mt-5 rounded-lg bg-accent/5 border border-accent/10 px-4 py-3">
-            <span class="text-[11px] font-semibold text-accent">Replicable at your org →</span>
-            <span class="text-[11px] text-text-secondary ml-1">{pattern.replicable}</span>
+            <span class="text-[13px] font-semibold text-accent">Replicable at your org →</span>
+            <span class="text-[13px] text-text-secondary ml-1">{pattern.replicable}</span>
           </div>
         </a>
       ))}
