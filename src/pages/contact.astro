@@ -91,6 +91,12 @@ import Layout from '../layouts/Layout.astro';
             <h2 class="mb-6 text-xl font-bold text-text-primary">Send us a message</h2>
 
             <div class="space-y-5">
+              <!-- Honeypot — hidden from humans, bots fill it -->
+              <div class="hidden" aria-hidden="true">
+                <label for="website">Website</label>
+                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+              </div>
+
               <div class="grid gap-5 sm:grid-cols-2">
                 <div>
                   <label for="firstName" class="mb-1.5 block text-sm font-medium text-text-secondary">
@@ -188,7 +194,7 @@ import Layout from '../layouts/Layout.astro';
                 Send Message
               </button>
 
-              <p class="text-center text-xs text-text-muted">
+              <p class="text-center text-xs text-text-muted" id="form-status">
                 We'll get back to you within 24 hours.
               </p>
             </div>
@@ -201,12 +207,45 @@ import Layout from '../layouts/Layout.astro';
 
 <script>
   const form = document.getElementById('contact-form') as HTMLFormElement;
-  form?.addEventListener('submit', (e) => {
+  const status = document.getElementById('form-status') as HTMLParagraphElement;
+
+  form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
-    btn.textContent = 'Sent! We\'ll be in touch.';
-    btn.classList.remove('bg-accent', 'hover:bg-accent-glow');
-    btn.classList.add('bg-accent/50', 'cursor-default');
+    const payload = Object.fromEntries(new FormData(form).entries());
+
     btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const body = await res.json().catch(() => ({ ok: false }));
+
+      if (res.ok && body.ok) {
+        btn.textContent = 'Sent! We\'ll be in touch.';
+        btn.classList.remove('bg-accent', 'hover:bg-accent-glow');
+        btn.classList.add('bg-accent/50', 'cursor-default');
+        form.querySelectorAll('input, select, textarea').forEach((el) => {
+          (el as HTMLInputElement).disabled = true;
+        });
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Send Message';
+        status.textContent =
+          body.error || 'Could not send — please email us at hello@syntegreti.com.';
+        status.classList.remove('text-text-muted');
+        status.classList.add('text-rose');
+      }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = 'Send Message';
+      status.textContent = 'Network error — please email us at hello@syntegreti.com.';
+      status.classList.remove('text-text-muted');
+      status.classList.add('text-rose');
+    }
   });
 </script>
