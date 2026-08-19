@@ -73,7 +73,7 @@ Gridlines: `#CCC7BA` at 1px. Chart background: paper, never white.
 - Tight tracking: **−3% to −4%** letter-spacing on anything large.
 - Tight leading: **0.9–0.95** line-height on display sizes.
 - **The signature move:** one or two words per headline set in *italic*, colored forest. Never more.
-  - e.g. Lean team. **Big AI.** *Proven* in 4 weeks.
+  - e.g. Lean team. **Big AI.** *Proven* in 4-6 weeks.
 
 ### Body rules (DM Sans)
 

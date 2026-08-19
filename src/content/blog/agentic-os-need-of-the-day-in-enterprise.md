@@ -158,7 +158,7 @@ Most enterprises in 2026 are at Level 1-2. The jump from 2 to 3 is where the exp
 
 If this resonates, you don't need a 6-month strategy engagement to find out if an Agentic OS works for you.
 
-Our Catalyst Studio runs a **4-week Proof of Tech** sprint:
+Our Catalyst Studio runs a **4-6 week Proof of Tech** sprint:
 
 - **Week 1:** Map your highest-value orchestration workflow
 - **Week 2:** Architect the agent team and system integrations
