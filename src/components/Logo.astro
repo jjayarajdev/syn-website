@@ -1,5 +1,5 @@
 ---
-import logoWhite from '../assets/syntegreti-logo-white.png';
+import logoWhite from '../assets/syntegreti-logo-editorial.png';
 
 interface Props {
   size?: 'sm' | 'md' | 'lg';
@@ -10,9 +10,9 @@ interface Props {
 const { size = 'md', glow = false } = Astro.props;
 
 const heights: Record<string, number> = {
-  sm: 70,
-  md: 92,
-  lg: 127,
+  sm: 42,
+  md: 56,
+  lg: 80,
 };
 const h = heights[size];
 const w = Math.round(h * (logoWhite.width / logoWhite.height));
@@ -24,6 +24,5 @@ const w = Math.round(h * (logoWhite.width / logoWhite.height));
     alt="Syntegreti"
     height={h}
     width={w}
-    class="invert"
   />
 </div>
