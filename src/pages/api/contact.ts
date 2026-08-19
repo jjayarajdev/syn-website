@@ -1,4 +1,6 @@
 import type { APIRoute } from 'astro';
+// @ts-ignore — virtual module provided by the Cloudflare Workers runtime
+import { env } from 'cloudflare:workers';
 
 export const prerender = false;
 
@@ -21,7 +23,7 @@ function bad(status: number, error: string) {
   });
 }
 
-export const POST: APIRoute = async ({ request, locals }) => {
+export const POST: APIRoute = async ({ request }) => {
   let data: ContactPayload;
   try {
     data = await request.json();
@@ -57,14 +59,14 @@ export const POST: APIRoute = async ({ request, locals }) => {
     return bad(400, 'One of the fields is too long.');
   }
 
-  const env = (locals as any).runtime?.env;
-  if (!env?.DB) {
+  const db = (env as any)?.DB;
+  if (!db) {
     // Dev server or misconfigured binding — never pretend it worked
     return bad(503, 'Submissions are temporarily unavailable. Please email us directly.');
   }
 
   try {
-    await env.DB.prepare(
+    await db.prepare(
       `INSERT INTO contact_submissions
          (first_name, last_name, email, company, interest, message, user_agent, country)
        VALUES (?, ?, ?, ?, ?, ?, ?, ?)`
