@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Syntegreti — Card 07 Colorways</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap');
+
+:root {
+  --paper:#EFECE4; --surface:#E6E2D8; --rule:#CCC7BA; --rule-strong:#B2AC9D;
+  --ink:#0A0908; --secondary:#4A4741; --muted:#67635A;
+  --forest:#0A250A; --sage:#77896F; --brass:#9C7A2F; --brass-l:#C9A85C;
+  --terra:#A34A2A; --slate:#3E4A52; --slate-l:#8DA0AC;
+  --d:'Fraunces',Georgia,serif; --b:'DM Sans',sans-serif; --m:'DM Mono',monospace;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#DDD8CB; color:var(--ink); font-family:var(--b); padding:56px 48px; }
+h1 { font-family:var(--d); font-weight:900; letter-spacing:-0.03em; font-size:2.6rem; }
+h1 em { font-style:italic; color:var(--forest); }
+.sub { color:var(--muted); font-size:14px; margin:8px 0 48px; max-width:660px; }
+.cw { margin-bottom:56px; }
+.chead { font-family:var(--m); font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin-bottom:14px; display:flex; justify-content:space-between; max-width:1100px; }
+.pair { display:flex; gap:28px; flex-wrap:wrap; }
+.card { width:525px; height:300px; position:relative; overflow:hidden; flex-shrink:0; }
+.side { font-family:var(--m); font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin-top:8px; }
+.cnote { font-size:12.5px; color:var(--secondary); max-width:1080px; margin-top:14px; line-height:1.6; }
+
+/* ── shared card structure; per-colorway vars set on .card ── */
+.card {
+  --bg: var(--paper); --fg: var(--ink); --fg2: var(--secondary); --fgm: var(--muted);
+  --line: var(--rule); --line2: var(--rule-strong); --accent: var(--forest); --tot: var(--ink);
+  background: var(--bg); color: var(--fg); border: 1px solid var(--line);
+}
+
+/* front (interlock bleed) */
+.f .kicker { position:absolute; left:34px; top:28px; font-family:var(--m); font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:var(--fgm); }
+.f img.big { position:absolute; right:-70px; top:50%; transform:translateY(-50%); height:275px; width:auto; }
+.f .info { position:absolute; left:34px; bottom:30px; }
+.f .n { font-family:var(--d); font-weight:900; font-size:26px; letter-spacing:-0.025em; color:var(--fg); }
+.f .n em { font-style:italic; color:var(--accent); }
+.f .e { font-family:var(--m); font-size:10.5px; color:var(--fgm); margin-top:4px; letter-spacing:0.06em; }
+
+/* back (receipt) */
+.r { font-family:var(--m); padding:26px 34px; display:flex; flex-direction:column; }
+.r .h { text-align:center; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; font-weight:500; color:var(--fg); }
+.r .hh { text-align:center; font-size:8.5px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fgm); margin-top:3px; }
+.r .dash { border-top:1px dashed var(--line2); margin:12px 0; }
+.r .row { display:flex; justify-content:space-between; font-size:11px; line-height:2; color:var(--fg2); }
+.r .row b { color:var(--fg); font-weight:500; }
+.r .tot { display:flex; justify-content:space-between; font-size:12px; font-weight:500; line-height:2.2; color:var(--tot); }
+
+.print { border-top:1px solid var(--rule-strong); margin-top:24px; padding-top:20px; max-width:1080px; font-size:13px; color:var(--secondary); line-height:1.8; }
+.print b { font-family:var(--m); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:6px; }
+</style>
+</head>
+<body>
+
+<h1>Card 07, in every <em>voice</em>.</h1>
+<p class="sub">The Interlock Receipt across six colorways — all drawn strictly from the shortlisted palette: paper, ink, forest, brass, terracotta, slate. Same geometry every time; only the ink changes.</p>
+
+<!-- A · PAPER (shortlisted original) -->
+<div class="cw">
+  <div class="chead"><span>A — paper · the shortlisted original</span><span>tri-color mark · benchmark</span></div>
+  <div class="pair">
+    <div>
+      <div class="card f">
+        <span class="kicker">// syntegreti</span>
+        <img class="big" src="../src/assets/syntegreti-mark-editorial.png" alt="">
+        <div class="info">
+          <div class="n">Jay Jayakeerthy</div>
+          <div class="e">jay.jayakeerthy@syntegreti.com · +91 00000 00000</div>
+        </div>
+      </div>
+      <div class="side">front</div>
+    </div>
+    <div>
+      <div class="card r">
+        <div class="h">Syntegreti</div>
+        <div class="hh">AI Studio · Hyderabad → Global · Est. 2012</div>
+        <div class="dash"></div>
+        <div class="row"><span>Platforms, built in-house</span><b>× 8</b></div>
+        <div class="row"><span>Client systems in production</span><b>× 3</b></div>
+        <div class="row"><span>Idea → working proof</span><b>4–6 wks</b></div>
+        <div class="row"><span>Layers, handoffs, decks</span><b>× 0</b></div>
+        <div class="dash"></div>
+        <div class="tot"><span>TOTAL</span><span>PROOF, NOT PROMISES</span></div>
+        <div class="dash"></div>
+        <div class="hh">Thank you — please come again · syntegreti.com</div>
+      </div>
+      <div class="side">back</div>
+    </div>
+  </div>
+  <p class="cnote">The baseline you picked. Warm paper, ink type, the mark carrying all three brand strokes. Judge every variant against this one.</p>
+</div>
+
+<!-- B · INK NOIR -->
+<div class="cw">
+  <div class="chead"><span>b — ink noir · inverse mode</span><span>light mark on near-black</span></div>
+  <div class="pair">
+    <div>
+      <div class="card f" style="--bg:var(--ink); --fg:var(--paper); --fg2:rgba(239,236,228,0.75); --fgm:rgba(239,236,228,0.45); --line:#26241f; --line2:#3a372f; --accent:var(--sage); --tot:var(--paper)">
+        <span class="kicker">// syntegreti</span>
+        <img class="big" src="assets/mark-light.png" alt="">
+        <div class="info">
+          <div class="n">Jay Jayakeerthy</div>
+          <div class="e">jay.jayakeerthy@syntegreti.com · +91 00000 00000</div>
+        </div>
+      </div>
+      <div class="side">front</div>
+    </div>
+    <div>
+      <div class="card r" style="--bg:var(--ink); --fg:var(--paper); --fg2:rgba(239,236,228,0.75); --fgm:rgba(239,236,228,0.45); --line:#26241f; --line2:#3a372f; --tot:var(--sage)">
+        <div class="h">Syntegreti</div>
+        <div class="hh">AI Studio · Hyderabad → Global · Est. 2012</div>
+        <div class="dash"></div>
+        <div class="row"><span>Platforms, built in-house</span><b>× 8</b></div>
+        <div class="row"><span>Client systems in production</span><b>× 3</b></div>
+        <div class="row"><span>Idea → working proof</span><b>4–6 wks</b></div>
+        <div class="row"><span>Layers, handoffs, decks</span><b>× 0</b></div>
+        <div class="dash"></div>
+        <div class="tot"><span>TOTAL</span><span>PROOF, NOT PROMISES</span></div>
+        <div class="dash"></div>
+        <div class="hh">Thank you — please come again · syntegreti.com</div>
+      </div>
+      <div class="side">back</div>
+    </div>
+  </div>
+  <p class="cnote">The site's inverse mode as a card. Mark strokes lift to sage / light brass / light slate so they read on near-black; TOTAL settles in sage. The most dramatic in the hand.</p>
+</div>
+
+<!-- C · FOREST -->
+<div class="cw">
+  <div class="chead"><span>c — forest · the brand color as ground</span><span>ownable</span></div>
+  <div class="pair">
+    <div>
+      <div class="card f" style="--bg:var(--forest); --fg:var(--paper); --fg2:rgba(239,236,228,0.75); --fgm:rgba(239,236,228,0.5); --line:#1d3a20; --line2:#2c4d2f; --accent:var(--brass-l); --tot:var(--paper)">
+        <span class="kicker">// syntegreti</span>
+        <img class="big" src="assets/mark-paper.png" alt="" style="opacity:0.92">
+        <div class="info">
+          <div class="n">Jay Jayakeerthy</div>
+          <div class="e">jay.jayakeerthy@syntegreti.com · +91 00000 00000</div>
+        </div>
+      </div>
+      <div class="side">front</div>
+    </div>
+    <div>
+      <div class="card r" style="--bg:var(--forest); --fg:var(--paper); --fg2:rgba(239,236,228,0.75); --fgm:rgba(239,236,228,0.5); --line:#1d3a20; --line2:#2c4d2f; --tot:var(--brass-l)">
+        <div class="h">Syntegreti</div>
+        <div class="hh">AI Studio · Hyderabad → Global · Est. 2012</div>
+        <div class="dash"></div>
+        <div class="row"><span>Platforms, built in-house</span><b>× 8</b></div>
+        <div class="row"><span>Client systems in production</span><b>× 3</b></div>
+        <div class="row"><span>Idea → working proof</span><b>4–6 wks</b></div>
+        <div class="row"><span>Layers, handoffs, decks</span><b>× 0</b></div>
+        <div class="dash"></div>
+        <div class="tot"><span>TOTAL</span><span>PROOF, NOT PROMISES</span></div>
+        <div class="dash"></div>
+        <div class="hh">Thank you — please come again · syntegreti.com</div>
+      </div>
+      <div class="side">back</div>
+    </div>
+  </div>
+  <p class="cnote">Solid forest green — the one color no competitor is holding. Paper-mono mark keeps it to two inks; the TOTAL line glints in light brass like gold foil on green.</p>
+</div>
+
+<!-- D · LEDGER BRASS -->
+<div class="cw">
+  <div class="chead"><span>d — ledger brass · old accounts book</span><span>proof = gold</span></div>
+  <div class="pair">
+    <div>
+      <div class="card f" style="--accent:var(--brass)">
+        <span class="kicker" style="color:var(--brass)">// syntegreti</span>
+        <img class="big" src="assets/mark-ink.png" alt="" style="opacity:0.9">
+        <div class="info">
+          <div class="n">Jay <em>Jayakeerthy</em></div>
+          <div class="e">jay.jayakeerthy@syntegreti.com · +91 00000 00000</div>
+        </div>
+      </div>
+      <div class="side">front</div>
+    </div>
+    <div>
+      <div class="card r" style="--fg:var(--brass); --fg2:#8a6d2a; --fgm:#a98f4d; --line2:#c2ac72; --tot:var(--ink)">
+        <div class="h">Syntegreti</div>
+        <div class="hh">AI Studio · Hyderabad → Global · Est. 2012</div>
+        <div class="dash"></div>
+        <div class="row"><span>Platforms, built in-house</span><b>× 8</b></div>
+        <div class="row"><span>Client systems in production</span><b>× 3</b></div>
+        <div class="row"><span>Idea → working proof</span><b>4–6 wks</b></div>
+        <div class="row"><span>Layers, handoffs, decks</span><b>× 0</b></div>
+        <div class="dash"></div>
+        <div class="tot"><span>TOTAL</span><span>PROOF, NOT PROMISES</span></div>
+        <div class="dash"></div>
+        <div class="hh">Thank you — please come again · syntegreti.com</div>
+      </div>
+      <div class="side">back</div>
+    </div>
+  </div>
+  <p class="cnote">The receipt printed in brass — an old accounts ledger, because brass is the proof color in your system. Only the TOTAL line drops to ink, so the payoff carries the weight. Ink-mono mark on the front keeps it restrained.</p>
+</div>
+
+<!-- E · TILL RED -->
+<div class="cw">
+  <div class="chead"><span>e — till red · the corner-shop receipt</span><span>terracotta, wittiest</span></div>
+  <div class="pair">
+    <div>
+      <div class="card f" style="--accent:var(--terra)">
+        <span class="kicker">// syntegreti</span>
+        <img class="big" src="../src/assets/syntegreti-mark-editorial.png" alt="">
+        <div class="info">
+          <div class="n">Jay <em>Jayakeerthy</em></div>
+          <div class="e">jay.jayakeerthy@syntegreti.com · +91 00000 00000</div>
+        </div>
+      </div>
+      <div class="side">front</div>
+    </div>
+    <div>
+      <div class="card r" style="--fg:var(--terra); --fg2:#8c4327; --fgm:#b06a4c; --line2:#c98d72; --tot:var(--terra)">
+        <div class="h">Syntegreti</div>
+        <div class="hh">AI Studio · Hyderabad → Global · Est. 2012</div>
+        <div class="dash"></div>
+        <div class="row"><span>Platforms, built in-house</span><b>× 8</b></div>
+        <div class="row"><span>Client systems in production</span><b>× 3</b></div>
+        <div class="row"><span>Idea → working proof</span><b>4–6 wks</b></div>
+        <div class="row"><span>Layers, handoffs, decks</span><b>× 0</b></div>
+        <div class="dash"></div>
+        <div class="tot"><span>TOTAL</span><span>PROOF, NOT PROMISES</span></div>
+        <div class="dash"></div>
+        <div class="hh">Thank you — please come again · syntegreti.com</div>
+      </div>
+      <div class="side">back</div>
+    </div>
+  </div>
+  <p class="cnote">Real till receipts print in red — so this one does too, in terracotta. Front stays the full tri-color original with a terracotta surname. The most playful pairing; the wit of the receipt turned all the way up.</p>
+</div>
+
+<!-- F · ONE-INK LETTERPRESS -->
+<div class="cw">
+  <div class="chead"><span>f — one ink · letterpress purist</span><span>cheapest to print, most editorial</span></div>
+  <div class="pair">
+    <div>
+      <div class="card f" style="--accent:var(--ink)">
+        <span class="kicker">// syntegreti</span>
+        <img class="big" src="assets/mark-ink.png" alt="">
+        <div class="info">
+          <div class="n">Jay Jayakeerthy</div>
+          <div class="e">jay.jayakeerthy@syntegreti.com · +91 00000 00000</div>
+        </div>
+      </div>
+      <div class="side">front</div>
+    </div>
+    <div>
+      <div class="card r">
+        <div class="h">Syntegreti</div>
+        <div class="hh">AI Studio · Hyderabad → Global · Est. 2012</div>
+        <div class="dash"></div>
+        <div class="row"><span>Platforms, built in-house</span><b>× 8</b></div>
+        <div class="row"><span>Client systems in production</span><b>× 3</b></div>
+        <div class="row"><span>Idea → working proof</span><b>4–6 wks</b></div>
+        <div class="row"><span>Layers, handoffs, decks</span><b>× 0</b></div>
+        <div class="dash"></div>
+        <div class="tot"><span>TOTAL</span><span>PROOF, NOT PROMISES</span></div>
+        <div class="dash"></div>
+        <div class="hh">Thank you — please come again · syntegreti.com</div>
+      </div>
+      <div class="side">back</div>
+    </div>
+  </div>
+  <p class="cnote">Everything in one ink — the mark included. Single-plate letterpress on heavy cotton: the cheapest run and arguably the most editorial object of the set. Color becomes texture: the deboss does the talking.</p>
+</div>
+
+<div class="print">
+  <b>// production notes</b>
+  A &amp; E print as standard 4-color or 3 spot inks · C is a 2-spot job (forest + light brass on paper stock, or forest flood + paper showing through) · D is 2 spots (brass + ink) · F is a single plate — best letterpressed · B needs a solid ink flood both sides; ask the printer for Pantone Black 6 C with a matte uncoated finish, no lamination · All: 89 × 51 mm + 3 mm bleed, hairlines ≥ 0.25 pt, sharp corners.
+</div>
+
+</body>
+</html>
