@@ -1,0 +1,151 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const features = [
+  {
+    title: 'AI Field Extraction',
+    description: 'Structured fields pulled from unstructured documents — contracts, filings, reports, listings — by LLM-powered extraction.',
+    detail: 'Bulk ingestion, not one document at a time.',
+  },
+  {
+    title: 'Confidence Scoring',
+    description: 'Every extracted field carries a confidence score. High-confidence data flows through; low-confidence data routes to a human.',
+    detail: 'The system knows what it is unsure about — and says so.',
+  },
+  {
+    title: 'Review & Approval Workflow',
+    description: 'A built-in review queue where your team approves, rejects or corrects extractions — with every edit tracked.',
+    detail: 'Corrections are recorded, so accuracy is measurable and improvable.',
+  },
+  {
+    title: 'Built for Audit',
+    description: 'Extraction with a paper trail: what was extracted, from where, at what confidence, and who approved it.',
+    detail: 'Designed for regulated document flows where "the AI said so" is not an answer.',
+  },
+];
+---
+
+<Layout title="Document Intelligence — AI Extraction with Review Built In | Syntegreti" description="AI document and data extraction designed for auditability: confidence-scored fields, human review and approval workflows, and edit tracking on every correction.">
+
+  <!-- Hero -->
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-20"></div>
+    <div class="absolute top-1/4 -right-32 h-96 w-96 rounded-full bg-amber/5 blur-[120px]"></div>
+
+    <div class="relative z-10 mx-auto max-w-7xl px-6">
+      <div class="max-w-3xl" data-animate>
+        <div class="mb-6 flex items-center gap-3">
+          <span class="inline-flex items-center gap-2 rounded-full border border-amber/20 bg-amber/5 px-4 py-1.5 text-sm font-medium text-amber">
+            Platform
+          </span>
+          <span class="rounded-full border border-border px-3 py-1 text-xs text-text-muted">Regulated document flows</span>
+        </div>
+
+        <h1 class="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+          <span class="gradient-text">Document Intelligence</span>
+        </h1>
+        <p class="mt-2 font-mono text-lg text-text-muted">
+          Extraction, not judgment. Your people stay in the loop.
+        </p>
+        <p class="mt-6 text-lg leading-relaxed text-text-secondary">
+          AI document and data extraction designed for auditability rather than
+          black-box output. Every field is confidence-scored, every uncertain
+          extraction routes to human review, and every correction is tracked —
+          so the output is data your business can actually stand behind.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/contact" class="inline-flex items-center gap-2 rounded-xl bg-accent px-7 py-3.5 text-sm font-semibold text-void transition-all hover:bg-accent-glow hover:shadow-[0_0_30px_rgba(0,232,123,0.3)]">
+            Talk to Us
+          </a>
+          <a href="/products" class="inline-flex items-center gap-2 rounded-xl border border-border px-7 py-3.5 text-sm font-medium text-text-secondary transition-all hover:border-border-light hover:bg-elevated">
+            Back to Products
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="rounded-2xl border border-rose/20 bg-rose/5 p-10" data-animate>
+        <span class="font-mono text-sm text-rose">// the_problem</span>
+        <h2 class="mt-3 text-2xl font-bold">Manual review doesn't scale. Black-box AI doesn't audit.</h2>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            'Teams re-key data from documents into systems, all day',
+            'OCR-and-rules vendors break on every new document layout',
+            'Pure-AI extraction gives answers with no confidence attached',
+            'Nobody can say which extracted values were checked by a human',
+            'Errors are found downstream, where they are expensive',
+            'Regulated workflows need a review trail AI tools don\'t provide',
+          ].map((problem) => (
+            <div class="flex items-start gap-2 text-sm text-text-secondary">
+              <span class="mt-0.5 text-rose">✕</span>
+              {problem}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mb-12" data-animate>
+        <span class="font-mono text-sm text-amber">// what_it_does</span>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+          AI does the reading. Humans keep the judgment.
+        </h2>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2" data-stagger>
+        {features.map((f) => (
+          <div class="glow-card-subtle p-7">
+            <h3 class="text-lg font-bold text-amber">{f.title}</h3>
+            <p class="mt-3 text-sm leading-relaxed text-text-secondary">{f.description}</p>
+            <p class="mt-3 border-t border-border/50 pt-3 text-xs leading-relaxed text-text-muted">{f.detail}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Honest by design -->
+  <section class="py-12">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="rounded-2xl border border-border bg-surface/50 p-10" data-animate>
+        <span class="font-mono text-sm text-amber">// what_it_does_not_do</span>
+        <h2 class="mt-3 text-2xl font-bold">Extraction, not judgment</h2>
+        <p class="mt-4 max-w-3xl text-sm leading-relaxed text-text-secondary">
+          Document Intelligence does not make the decisions your documents feed —
+          it prepares the data those decisions need, and shows its working. Outputs
+          are meant to be reviewed; that is why the review workflow is built into
+          the product rather than left as your problem. If a vendor tells you their
+          extraction needs no human review, ask them what happens in month three.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20">
+    <div class="mx-auto max-w-4xl px-6 text-center" data-animate>
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+        Try it on <span class="gradient-text">your documents</span>
+      </h2>
+      <p class="mx-auto mt-4 max-w-xl text-text-secondary">
+        Extraction accuracy only means something on your document types. Bring a
+        sample set and we'll show you the extraction — confidence scores, review
+        queue and all.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="/contact" class="inline-flex items-center gap-2 rounded-xl bg-accent px-7 py-3.5 text-sm font-semibold text-void transition-all hover:bg-accent-glow hover:shadow-[0_0_30px_rgba(0,232,123,0.3)]">
+          Talk to Us
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

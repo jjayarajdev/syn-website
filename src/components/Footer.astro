@@ -4,9 +4,13 @@ import Logo from './Logo.astro';
 const currentYear = new Date().getFullYear();
 
 const footerLinks = {
-  Products: [
-    { label: 'BetterSDLC', href: '/products/bettersdlc' },
-    { label: 'Workweave', href: '/products/workweave' },
+  Platforms: [
+    { label: 'Contract Intelligence', href: '/products/contract-intelligence' },
+    { label: 'Business Operations', href: '/products/business-operations' },
+    { label: 'AI Governance', href: '/products/ai-governance' },
+    { label: 'Regulatory Reporting', href: '/products/regulatory-reporting' },
+    { label: 'Agent Platform', href: '/products/agent-platform' },
+    { label: 'AI-Assisted SDLC', href: '/products/ai-sdlc' },
     { label: 'Datacenter Solutions', href: '/products/datacenter' },
   ],
   Services: [
@@ -33,16 +37,22 @@ const footerLinks = {
           <Logo size="md" glow={true} />
         </a>
         <p class="mt-4 max-w-sm text-sm leading-relaxed text-text-secondary">
-          AI products and enterprise solutions — built in-house, shipped from
-          Hyderabad to the world. Lean team. Big ambition. Proof in 4 weeks.
+          AI platforms, enterprise projects and embedded engineering teams —
+          built in-house, shipped from Hyderabad to the world. Proof in 4 weeks.
         </p>
-        <div class="mt-6 flex items-center gap-2">
+        <div class="mt-6 flex flex-wrap items-center gap-2">
           <span class="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1 text-xs text-text-muted">
             <span class="h-1.5 w-1.5 rounded-full bg-accent animate-pulse"></span>
             HQ: Hyderabad, India
           </span>
           <span class="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1 text-xs text-text-muted">
             Global Delivery
+          </span>
+          <span class="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1 text-xs text-text-muted">
+            AWS Partner
+          </span>
+          <span class="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1 text-xs text-text-muted">
+            Microsoft Azure Partner
           </span>
         </div>
       </div>

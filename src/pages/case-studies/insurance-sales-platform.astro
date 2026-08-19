@@ -1,0 +1,169 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const scope = [
+  {
+    title: 'AI-Assisted Quoting',
+    desc: 'Agents quote across the carrier panel from one guided workflow — the platform does the comparison work so the conversation stays with the customer.',
+  },
+  {
+    title: 'One Platform, Every Storefront',
+    desc: 'A single sales platform serving a network of 200+ locations, so every office quotes the same way, against the same carrier data, under the same rules.',
+  },
+  {
+    title: 'Carrier Panel at Scale',
+    desc: 'Built for the aggregator model: 35+ carriers shopped per customer, with the platform carrying the complexity that used to live in the agent\'s head.',
+  },
+  {
+    title: 'Built for the Counter',
+    desc: 'Designed for high-volume, walk-in retail insurance sales — speed to quote matters more here than anywhere else in insurance.',
+  },
+];
+---
+
+<Layout title="Insurance Sales Platform — Case Study | Syntegreti" description="An AI-assisted insurance sales platform for a Texas-based insurance aggregator with 200+ locations shopping 35+ carriers.">
+
+  <!-- Hero -->
+  <section class="relative pt-32 pb-16 overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-20"></div>
+    <div class="absolute top-1/4 -right-32 h-96 w-96 rounded-full bg-amber/5 blur-[120px]"></div>
+
+    <div class="relative z-10 mx-auto max-w-7xl px-6">
+      <div class="max-w-3xl" data-animate>
+        <a href="/case-studies" class="inline-flex items-center gap-2 text-sm text-text-muted hover:text-text-secondary transition-colors mb-6">
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          All Case Studies
+        </a>
+
+        <div class="flex flex-wrap items-center gap-3 mb-4">
+          <span class="inline-flex items-center gap-2 rounded-full border border-amber/20 bg-amber/5 px-4 py-1.5 text-sm font-medium text-amber">
+            Insurance Aggregator · Texas
+          </span>
+          <span class="rounded-full border border-accent/30 bg-accent/5 px-3 py-1 text-xs text-accent">In production</span>
+        </div>
+
+        <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">
+          AI-Assisted Insurance Sales Platform
+        </h1>
+        <p class="mt-4 text-lg leading-relaxed text-text-secondary">
+          An AI-assisted sales platform for
+          <strong class="text-text-primary">a Texas-based insurance aggregator</strong>
+          with a network of 200+ locations — where trained
+          agents shop 35+ carriers to fit coverage to each customer's budget.
+          The platform puts the carrier comparison, the quoting workflow and the
+          sales conversation in one place.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fact strip -->
+  <section class="py-8">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="grid grid-cols-2 gap-3 sm:grid-cols-4" data-stagger>
+        {[
+          { value: 'Live', label: 'In production', sub: 'deployed at the client' },
+          { value: '200+', label: 'Retail locations', sub: 'across 45 cities' },
+          { value: '35+', label: 'Carriers shopped', sub: 'per customer quote' },
+          { value: 'TX', label: 'Home market', sub: 'Texas, expanding' },
+        ].map((m) => (
+          <div class="rounded-xl border border-amber/20 bg-amber/5 p-5 text-center">
+            <div class="text-2xl font-bold text-amber">{m.value}</div>
+            <div class="text-xs font-medium text-text-primary">{m.label}</div>
+            {m.sub && <div class="mt-0.5 text-[11px] text-text-secondary">{m.sub}</div>}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- The Challenge -->
+  <section class="py-16">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-2" data-animate>
+          <span class="font-mono text-sm text-rose">// the_challenge</span>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight">
+            35+ carriers.<br />
+            200+ storefronts.<br />
+            <span class="text-rose">One customer at the counter.</span>
+          </h2>
+        </div>
+        <div class="lg:col-span-3" data-animate>
+          <div class="grid gap-4 sm:grid-cols-2">
+            {[
+              { title: 'The aggregator problem', desc: 'Shopping 35+ carriers is the whole value proposition — and the slowest, most error-prone part of every sale.' },
+              { title: 'Speed to quote', desc: 'Walk-in retail insurance is won or lost while the customer is standing at the counter.' },
+              { title: 'Consistency at scale', desc: 'Hundreds of agents across hundreds of locations, each carrying carrier knowledge in their head.' },
+              { title: 'Every quote is a workflow', desc: 'Customer details, carrier appetite, coverage options, price — repeated thousands of times a day.' },
+            ].map((c) => (
+              <div class="rounded-xl border border-border/50 bg-surface/30 p-5">
+                <h3 class="text-sm font-bold text-text-primary">{c.title}</h3>
+                <p class="mt-2 text-sm leading-relaxed text-text-secondary">{c.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Platform -->
+  <section class="py-16">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mb-12" data-animate>
+        <span class="font-mono text-sm text-amber">// the_platform</span>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+          The carrier comparison moves into the platform
+        </h2>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2" data-stagger>
+        {scope.map((s) => (
+          <div class="glow-card-subtle p-7">
+            <h3 class="text-lg font-bold text-amber">{s.title}</h3>
+            <p class="mt-3 text-sm leading-relaxed text-text-secondary">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Accountability -->
+  <section class="py-16">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="rounded-2xl border border-border bg-surface/50 p-10" data-animate>
+        <span class="font-mono text-sm text-amber">// accountability</span>
+        <h2 class="mt-3 text-2xl font-bold">Outcome numbers will be published with the client</h2>
+        <p class="mt-4 max-w-3xl text-sm leading-relaxed text-text-secondary">
+          The platform is deployed and in use. The performance numbers belong to
+          the client's operation, and we publish measured results together with
+          the client — not before. What we can say today is what's above: live,
+          across a 200+ location network, on the aggregator model.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16">
+    <div class="mx-auto max-w-4xl px-6 text-center" data-animate>
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+        Selling through a network? A panel? An aggregator model?
+      </h2>
+      <p class="mx-auto mt-4 max-w-xl text-text-secondary">
+        High-volume, multi-carrier, many-location sales is exactly the shape of
+        problem this platform was built for. Start with a 4-week proof.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="/contact" class="inline-flex items-center gap-2 rounded-xl bg-accent px-7 py-3.5 text-sm font-semibold text-void transition-all hover:bg-accent-glow hover:shadow-[0_0_30px_rgba(0,232,123,0.3)]">
+          Talk to Us
+        </a>
+        <a href="/case-studies" class="inline-flex items-center gap-2 rounded-xl border border-border px-7 py-3.5 text-sm font-medium text-text-secondary transition-all hover:border-border-light hover:bg-elevated">
+          All Case Studies
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

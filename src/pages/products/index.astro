@@ -1,46 +1,134 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+
+const platforms = [
+  {
+    id: 'ai-governance',
+    name: 'AI governance platform',
+    icon: '🛡️',
+    chip: 'bg-rose/5 text-rose',
+    text: 'text-rose',
+    tagline: 'Govern every AI call your enterprise makes',
+    badge: 'Platform',
+    href: '/products/ai-governance',
+    description:
+      'A forward proxy that intercepts and governs all LLM traffic in your enterprise. Policy enforcement per team and per model, local ML-based DLP that catches PII before it leaves your network, and a complete audit log of every AI interaction.',
+    facts: ['Local ML DLP — no data leaves your network', 'Policy enforcement + full audit logging', 'Go gateway, time-series analytics, live dashboard'],
+  },
+  {
+    id: 'regulatory-reporting',
+    name: 'Regulatory reporting platform',
+    icon: '🏛️',
+    chip: 'bg-amber/10 text-amber',
+    text: 'text-amber',
+    tagline: 'Turn regulation into executable filings',
+    badge: 'Platform',
+    href: '/products/regulatory-reporting',
+    description:
+      'Turns regulation PDFs into a knowledge graph, and the knowledge graph into executable filing schemas — with carrier data validation and compliance sign-off workflows. Texas and Florida statistical filings already built, running on Snowflake, DuckDB or Databricks.',
+    facts: ['Regulation → knowledge graph → executable schema', 'TX and FL filings built today', 'Multi-engine: Snowflake / DuckDB / Databricks'],
+  },
+  {
+    id: 'document-intelligence',
+    name: 'Document Intelligence',
+    icon: '📑',
+    chip: 'bg-amber/10 text-amber',
+    text: 'text-amber',
+    tagline: 'From documents to decisions — with review built in',
+    badge: 'Platform',
+    href: '/products/document-intelligence',
+    description:
+      'Document and data extraction designed for auditability: confidence-scored fields, human review and approval workflows, and edit tracking on every correction. Extraction, not judgment — your people stay in the loop by design.',
+    facts: ['Confidence-scored extraction', 'Review / approve / reject workflow', 'Built for regulated document flows'],
+  },
+  {
+    id: 'agent-platform',
+    name: 'Enterprise agent platform',
+    icon: '🔮',
+    chip: 'bg-cyan/10 text-cyan',
+    text: 'text-cyan',
+    tagline: 'Run AI agents across your enterprise systems',
+    badge: 'Platform',
+    href: '/products/agent-platform',
+    description:
+      'The VoltAgent open-source TypeScript agent framework, plus production-built enterprise agents for support deflection and enterprise intelligence — voice and chat, grounded in your own knowledge base.',
+    facts: ['Open-source framework — no platform lock-in', 'ServiceNow + RAG + voice deflection agent', 'OpenTelemetry tracing built in'],
+  },
+  {
+    id: 'ai-sdlc',
+    name: 'AI-assisted SDLC platform',
+    icon: '⚡',
+    chip: 'bg-accent/10 text-accent',
+    text: 'text-accent',
+    tagline: 'Build software with AI — and keep the audit trail',
+    badge: 'Platform',
+    href: '/products/ai-sdlc',
+    description:
+      'Structured AI workflows for the entire SDLC. Five roles, one thread of context, and a full compliance audit trail for every AI-generated artifact. Exports to nine AI coding tools.',
+    facts: ['5 role-based phases with context threading', 'VS Code, Desktop, CLI and MCP server', 'Compliance audit trail: code → prompt → requirement'],
+  },
+  {
+    id: 'test-automation',
+    name: 'AI Test Automation',
+    icon: '🧪',
+    chip: 'bg-cyan/10 text-cyan',
+    text: 'text-cyan',
+    tagline: 'From test case to execution — agent-driven',
+    badge: 'In development',
+    href: null,
+    description:
+      'AI agents that carry testing end to end: requirements become test cases, test cases become executed suites, and failures come back triaged. Generation, execution and maintenance in one loop — so test coverage keeps pace with the code instead of trailing it.',
+    facts: ['Agentic test-case generation from requirements', 'Automated execution with failure triage', 'Self-maintaining suites as the code evolves'],
+  },
+];
 ---
 
-<Layout title="Products — Syntegreti" description="Explore Syntegreti's AI products: BetterSDLC, Workweave, and Datacenter Solutions.">
+<Layout title="Platforms — Syntegreti" description="Explore Syntegreti's platform portfolio: contract intelligence, business operations, AI governance, regulatory reporting, document intelligence, enterprise agents and AI-assisted SDLC — all built in-house by one team.">
   <section class="relative pt-32 pb-20">
     <div class="absolute inset-0 grid-bg opacity-20"></div>
     <div class="absolute top-1/3 -right-32 h-96 w-96 rounded-full bg-accent/5 blur-[120px]"></div>
 
     <div class="relative z-10 mx-auto max-w-7xl px-6">
       <div class="max-w-3xl mb-16" data-animate>
-        <span class="font-mono text-sm text-accent">// our_products</span>
+        <span class="font-mono text-sm text-accent">// our_platforms</span>
         <h1 class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-          Three products.<br />
-          <span class="gradient-text">All ours. All shipping.</span>
+          One team.<br />
+          <span class="gradient-text">One platform stack.</span>
         </h1>
         <p class="mt-6 text-lg leading-relaxed text-text-secondary">
-          Most companies our size pick one lane. We built the whole highway —
-          from developer tools to AI agents to datacenter intelligence.
+          Every platform here is built and run in-house, on one spine — govern,
+          build, operate. Deploy a platform on its own, or bring the engineers
+          who built it onto your project. Same team, either way.
         </p>
       </div>
 
-      <div class="space-y-6" data-stagger>
+      <!-- ============ PLATFORMS ============ -->
+      <div class="mb-10" data-animate>
+        <span class="font-mono text-sm text-accent">// platforms</span>
+      </div>
 
-        <!-- BetterSDLC -->
-        <a href="/products/bettersdlc" class="group glow-card-subtle block p-8 md:p-10">
+      <div class="space-y-6 mb-20" data-stagger>
+
+        <!-- Contract Intelligence -->
+        <a href="/products/contract-intelligence" class="group glow-card-subtle block p-8 md:p-10">
           <div class="grid gap-8 md:grid-cols-2 md:items-center">
             <div>
               <div class="flex items-center gap-3 mb-5">
-                <span class="text-3xl">⚡</span>
-                <span class="rounded-full bg-accent/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-accent">Product</span>
+                <span class="text-3xl">📜</span>
+                <span class="rounded-full bg-accent/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-accent">Platform · Live demo</span>
               </div>
-              <h2 class="text-2xl font-bold text-accent sm:text-3xl">BetterSDLC</h2>
-              <p class="mt-1 font-mono text-xs text-text-muted">Ship better software, faster</p>
+              <h2 class="text-2xl font-bold text-accent sm:text-3xl">Contract Intelligence</h2>
+              <p class="mt-1 font-mono text-xs text-text-muted">Contract lifecycle intelligence + relationship governance</p>
               <p class="mt-4 text-sm leading-relaxed text-text-secondary">
-                Enterprise AI coding workflow optimization that replaces ad-hoc prompting
-                with structured SDLC questionnaires. Every role — from Business Analyst to
-                Tester — gets guided AI interactions that produce consistent, auditable,
-                high-quality code. For a 50-developer team: 40% less rework, 60% faster
-                AI onboarding, and $780k+ in annual developer time saved.
+                AI-native contract lifecycle management that goes beyond the repository.
+                Nine specialised agents extract terms, score risk and track obligations,
+                renewals and SLAs — and a relationship-governance layer scores every
+                vendor relationship against the KPIs you agree. Multi-tenant with
+                per-tenant data isolation, semantic contract search, and full audit
+                tracing of every agent run. A live demo environment is available today.
               </p>
               <div class="mt-6 flex items-center gap-2 text-sm font-medium text-accent">
-                Explore BetterSDLC
+                Explore the platform
                 <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
@@ -48,12 +136,12 @@ import Layout from '../../layouts/Layout.astro';
             </div>
             <div class="grid grid-cols-2 gap-3">
               {[
-                { label: 'SDLC Workflows', desc: '5 role-based phases: BA → Architect → Sr Dev → Dev → Tester' },
-                { label: 'Context Threading', desc: 'Info auto-flows between phases — zero manual handoff' },
-                { label: 'Org Learning', desc: 'Prompts improve based on team outcomes via DSPy' },
-                { label: 'Compliance Audit', desc: 'Full traceability: code → prompt → requirement' },
-                { label: 'VS Code + Desktop', desc: 'Extension, Electron app, CLI, and MCP server' },
-                { label: 'AI-Agnostic', desc: 'OpenAI, Claude, local models — your choice' },
+                { label: 'Contract Intelligence', desc: 'AI extraction + risk analysis by 9 specialised agents' },
+                { label: 'Obligation Tracking', desc: 'Obligations, SLAs and renewals — never missed' },
+                { label: 'Relationship Governance', desc: 'Vendor KPI scoring beyond the contract text' },
+                { label: 'Multi-Tenant', desc: 'Per-tenant data isolation, enterprise-ready' },
+                { label: 'Semantic Search', desc: 'Find any clause across your whole corpus' },
+                { label: 'Full Audit Trace', desc: 'Every agent run traced end to end' },
               ].map((f) => (
                 <div class="rounded-lg border border-border/50 bg-deep/50 px-3 py-2.5">
                   <div class="text-xs font-medium text-text-primary">{f.label}</div>
@@ -64,25 +152,25 @@ import Layout from '../../layouts/Layout.astro';
           </div>
         </a>
 
-        <!-- Workweave -->
-        <a href="/products/workweave" class="group glow-card-subtle block p-8 md:p-10">
+        <!-- Business Operations -->
+        <a href="/products/business-operations" class="group glow-card-subtle block p-8 md:p-10">
           <div class="grid gap-8 md:grid-cols-2 md:items-center">
             <div>
               <div class="flex items-center gap-3 mb-5">
-                <span class="text-3xl">🔮</span>
-                <span class="rounded-full bg-cyan/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-cyan">Product</span>
+                <span class="text-3xl">🧩</span>
+                <span class="rounded-full bg-cyan/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-cyan">Platform</span>
               </div>
-              <h2 class="text-2xl font-bold text-cyan sm:text-3xl">Workweave</h2>
-              <p class="mt-1 font-mono text-xs text-text-muted">Agentic OS for Business</p>
+              <h2 class="text-2xl font-bold text-cyan sm:text-3xl">Business Operations</h2>
+              <p class="mt-1 font-mono text-xs text-text-muted">The AI-native business operations platform</p>
               <p class="mt-4 text-sm leading-relaxed text-text-secondary">
-                An intelligent operating system that orchestrates specialized AI agents
-                across your enterprise systems. Built on the VoltAgent framework, each agent
-                understands your business context, queries Salesforce, ServiceNow, and Snowflake
-                in parallel, and delivers synthesized intelligence in 30 seconds — not 15 minutes.
-                97% faster context gathering. 40-60% ticket reduction. $72K annual savings per 1,000 users.
+                One platform for how a business actually runs: Sales, Marketing, HR,
+                Finance, Projects, Recruitment and ITSM — seven modules in one
+                multi-tenant SaaS. The built-in assistant carries 160 AI actions across
+                four graduated autonomy levels, from suggest-only to fully autonomous,
+                so AI takes on exactly as much as you allow it to.
               </p>
               <div class="mt-6 flex items-center gap-2 text-sm font-medium text-cyan">
-                Explore Workweave
+                Explore the platform
                 <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
@@ -90,12 +178,12 @@ import Layout from '../../layouts/Layout.astro';
             </div>
             <div class="grid grid-cols-2 gap-3">
               {[
-                { label: 'Multi-Agent Orchestration', desc: 'Specialized agents coordinated by a supervisor' },
-                { label: 'VoltAgent Framework', desc: 'TypeScript-native, production-grade agent infra' },
-                { label: 'Enterprise RAG', desc: 'Semantic search across docs, KB, and unstructured data' },
-                { label: 'Voice + Chat', desc: 'VAPI voice, web chat, extendable to Slack/Teams' },
-                { label: 'Smart Escalation', desc: 'Human-in-the-loop with full context handoff' },
-                { label: 'Cross-System Intel', desc: 'Salesforce, ServiceNow, Snowflake, and more' },
+                { label: '7 Business Modules', desc: 'Sales, Marketing, HR, Finance, Projects, Recruitment, ITSM' },
+                { label: 'Built-in AI Assistant', desc: '160 AI actions across the whole platform' },
+                { label: 'Graduated Autonomy', desc: '4 levels — from suggest-only to autonomous' },
+                { label: 'Autonomous Sales Agent', desc: 'Pipeline actions under your autonomy policy' },
+                { label: 'Multi-Tenant SaaS', desc: 'Cloud-deployed with CI/CD' },
+                { label: 'MCP Server', desc: 'Open integration surface for AI assistants' },
               ].map((f) => (
                 <div class="rounded-lg border border-border/50 bg-deep/50 px-3 py-2.5">
                   <div class="text-xs font-medium text-text-primary">{f.label}</div>
@@ -105,49 +193,103 @@ import Layout from '../../layouts/Layout.astro';
             </div>
           </div>
         </a>
+      </div>
 
-        <!-- Datacenter Solutions -->
-        <a href="/products/datacenter" class="group glow-card-subtle block p-8 md:p-10">
-          <div class="grid gap-8 md:grid-cols-2 md:items-center">
-            <div>
-              <div class="flex items-center gap-3 mb-5">
-                <span class="text-3xl">🏗️</span>
-                <span class="rounded-full bg-amber/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-amber">Product</span>
+      <!-- ============ THE PLATFORM STACK ============ -->
+      <div class="mb-10" data-animate>
+        <span class="font-mono text-sm text-accent">// the_platform_stack</span>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight">The platform stack</h2>
+        <p class="mt-3 max-w-2xl text-text-secondary">
+          How enterprises govern AI, stay compliant, understand documents, run
+          agents and build software — each a working platform we deploy inside
+          your environment.
+        </p>
+      </div>
+
+      <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 mb-20" data-stagger>
+        {platforms.map((p) => {
+          const Tag = p.href ? 'a' : 'div';
+          return (
+            <Tag href={p.href ?? undefined} id={p.id} class="group glow-card-subtle p-7 flex flex-col scroll-mt-28">
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-2xl">{p.icon}</span>
+                <span class:list={['rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-wider', p.chip]}>{p.badge}</span>
               </div>
-              <h2 class="text-2xl font-bold text-amber sm:text-3xl">Datacenter Solutions</h2>
-              <p class="mt-1 font-mono text-xs text-text-muted">ExaScale Thermal Intelligence</p>
-              <p class="mt-4 text-sm leading-relaxed text-text-secondary">
-                The world's first AI thermal management system built on real exascale
-                supercomputer operational data. Our ensemble ML engine combines 5 forecasting
-                algorithms to deliver 95% prediction accuracy with 30-60 minute horizons —
-                cutting cooling costs by 15% and saving $2-5M annually per facility.
-                Products: ThermalVault, HeatHarvest, ThermalTwin, CarbonZero.
-              </p>
-              <div class="mt-6 flex items-center gap-2 text-sm font-medium text-amber">
-                Explore ExaScale
-                <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </div>
-            </div>
-            <div class="grid grid-cols-2 gap-3">
-              {[
-                { label: 'Ensemble ML', desc: 'ARIMA+Kalman, FFT, Holt-Winters, physics validation' },
-                { label: 'Digital Twin', desc: 'Real-time thermal state replication + what-if sims' },
-                { label: 'Heat Recovery', desc: 'AI-optimized waste heat → energy revenue' },
-                { label: 'Carbon Zero', desc: 'Automated ESG compliance + carbon credit trading' },
-                { label: '95% Accuracy', desc: '30-60 min forecasts, 4-6x better than competitors' },
-                { label: '$2-5M Savings', desc: 'Per large facility annually, 18-24 mo payback' },
-              ].map((f) => (
-                <div class="rounded-lg border border-border/50 bg-deep/50 px-3 py-2.5">
-                  <div class="text-xs font-medium text-text-primary">{f.label}</div>
-                  <div class="text-[11px] leading-relaxed text-text-secondary">{f.desc}</div>
+              <h3 class:list={['text-lg font-bold leading-snug', p.text]}>{p.tagline}</h3>
+              <p class="mt-1 font-mono text-[11px] text-text-muted">{p.name}</p>
+              <p class="mt-3 text-sm leading-relaxed text-text-secondary flex-1">{p.description}</p>
+              <ul class="mt-4 space-y-1.5 border-t border-border/50 pt-4">
+                {p.facts.map((fact) => (
+                  <li class="flex items-start gap-2 text-[11px] text-text-secondary">
+                    <span class:list={['mt-0.5', p.text]}>▸</span>
+                    {fact}
+                  </li>
+                ))}
+              </ul>
+              {p.href && (
+                <div class:list={['mt-4 flex items-center gap-1 text-xs font-medium opacity-0 transition-opacity group-hover:opacity-100', p.text]}>
+                  Learn more →
                 </div>
-              ))}
+              )}
+            </Tag>
+          );
+        })}
+      </div>
+
+      <!-- ============ DATACENTER ============ -->
+      <div class="mb-10" data-animate>
+        <span class="font-mono text-sm text-amber">// for_data_center_operators</span>
+      </div>
+
+      <a href="/products/datacenter" class="group glow-card-subtle block p-8 md:p-10" data-animate>
+        <div class="grid gap-8 md:grid-cols-2 md:items-center">
+          <div>
+            <div class="flex items-center gap-3 mb-5">
+              <span class="text-3xl">🏗️</span>
+              <span class="rounded-full bg-amber/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-amber">Product</span>
+            </div>
+            <h2 class="text-2xl font-bold text-amber sm:text-3xl">Datacenter Solutions</h2>
+            <p class="mt-1 font-mono text-xs text-text-muted">Thermal intelligence for data centers</p>
+            <p class="mt-4 text-sm leading-relaxed text-text-secondary">
+              AI thermal management built on real exascale supercomputer operational
+              data. Our ensemble ML engine combines 5 forecasting algorithms to
+              deliver 95% prediction accuracy with 30-60 minute horizons — cutting
+              cooling costs by 15% and saving $2-5M annually per facility —
+              with waste-heat recovery, a thermal digital twin and carbon
+              reporting built in.
+            </p>
+            <div class="mt-6 flex items-center gap-2 text-sm font-medium text-amber">
+              Explore the platform
+              <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
             </div>
           </div>
-        </a>
+          <div class="grid grid-cols-2 gap-3">
+            {[
+              { label: 'Ensemble ML', desc: 'ARIMA+Kalman, FFT, Holt-Winters, physics validation' },
+              { label: 'Digital Twin', desc: 'Real-time thermal state replication + what-if sims' },
+              { label: 'Heat Recovery', desc: 'AI-optimized waste heat → energy revenue' },
+              { label: 'Carbon Zero', desc: 'Automated ESG compliance + carbon credit trading' },
+              { label: '95% Accuracy', desc: '30-60 min forecasts, 4-6x better than competitors' },
+              { label: '$2-5M Savings', desc: 'Per large facility annually, 18-24 mo payback' },
+            ].map((f) => (
+              <div class="rounded-lg border border-border/50 bg-deep/50 px-3 py-2.5">
+                <div class="text-xs font-medium text-text-primary">{f.label}</div>
+                <div class="text-[11px] leading-relaxed text-text-secondary">{f.desc}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </a>
 
+      <!-- Proof strip -->
+      <div class="mt-16 rounded-2xl border border-border/50 bg-deep/50 p-8 text-center" data-animate>
+        <p class="text-sm text-text-secondary">
+          Proven in production: our insurance sales, scheduling and service-desk
+          AI runs live for real clients today.
+          <a href="/case-studies" class="text-accent hover:text-accent-glow transition-colors font-medium">See the case studies →</a>
+        </p>
       </div>
     </div>
   </section>

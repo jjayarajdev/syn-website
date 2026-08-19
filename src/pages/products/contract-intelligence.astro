@@ -1,0 +1,215 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const features = [
+  {
+    title: 'Contract Intelligence',
+    description: 'Nine specialised AI agents extract terms, clauses and commitments, and score risk on every contract that enters the platform.',
+    detail: 'Works across your whole corpus from day one — bulk upload, then let the agents read.',
+  },
+  {
+    title: 'Obligation & Renewal Tracking',
+    description: 'Obligations, SLAs and renewal dates tracked automatically. The renewal that used to auto-rollover in silence now surfaces with time to act.',
+    detail: 'Deadlines, deliverables and service levels extracted from the text — not typed in by hand.',
+  },
+  {
+    title: 'Relationship Governance',
+    description: 'The layer no traditional CLM has: score every vendor relationship against the KPIs you agree, alongside what the contract says.',
+    detail: 'Contract performance and relationship performance in one view — renewals become evidence-based decisions.',
+  },
+  {
+    title: 'Semantic Contract Search',
+    description: 'Ask for "termination for convenience clauses with under 30 days notice" and get answers, not keyword noise.',
+    detail: 'Vector search across the full corpus, scoped per tenant.',
+  },
+  {
+    title: 'Multi-Tenant by Design',
+    description: 'Per-tenant data isolation at the platform core — built for enterprise data boundaries, not bolted on later.',
+    detail: 'Every tenant gets its own isolated contract corpus, users and KPI definitions.',
+  },
+  {
+    title: 'Full Audit Trace',
+    description: 'Every agent run is traced end to end. When someone asks why the platform flagged a clause, there is an answer.',
+    detail: 'Complete observability over every AI decision — extraction, scoring and search alike.',
+  },
+];
+
+const honestLimits = [
+  'It does not give legal advice — counsel review stays with counsel',
+  'It does not negotiate on your behalf',
+  'It does not e-sign or execute contracts',
+  'AI-generated risk flags are decision support — your people approve',
+];
+---
+
+<Layout title="Contract Intelligence — AI-Native Contract Lifecycle Management | Syntegreti" description="AI-native contract lifecycle management with relationship governance: nine specialised agents for extraction and risk, plus vendor KPI scoring. Multi-tenant, fully audit-traced, live demo available.">
+
+  <!-- Hero -->
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-20"></div>
+    <div class="absolute top-1/4 -right-32 h-96 w-96 rounded-full bg-accent/5 blur-[120px]"></div>
+
+    <div class="relative z-10 mx-auto max-w-7xl px-6">
+      <div class="max-w-3xl" data-animate>
+        <div class="mb-6 flex items-center gap-3">
+          <span class="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm font-medium text-accent">
+            Platform
+          </span>
+          <span class="rounded-full border border-border px-3 py-1 text-xs text-text-muted">Live demo available</span>
+        </div>
+
+        <h1 class="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+          <span class="gradient-text">Contract Intelligence</span>
+        </h1>
+        <p class="mt-2 font-mono text-lg text-text-muted">
+          Your contracts, read. Your vendor relationships, governed.
+        </p>
+        <p class="mt-6 text-lg leading-relaxed text-text-secondary">
+          AI-native contract lifecycle management that goes beyond the repository.
+          Nine specialised agents extract terms, score risk and track obligations —
+          and a relationship-governance layer scores every vendor relationship
+          against the KPIs you agree. Built AI-first from day one, not a CLM with
+          a chatbot bolted on.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/contact" class="inline-flex items-center gap-2 rounded-xl bg-accent px-7 py-3.5 text-sm font-semibold text-void transition-all hover:bg-accent-glow hover:shadow-[0_0_30px_rgba(0,232,123,0.3)]">
+            Request Live Demo
+          </a>
+          <a href="/contact" class="inline-flex items-center gap-2 rounded-xl border border-border px-7 py-3.5 text-sm font-medium text-text-secondary transition-all hover:border-border-light hover:bg-elevated">
+            Talk to Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="rounded-2xl border border-rose/20 bg-rose/5 p-10" data-animate>
+        <span class="font-mono text-sm text-rose">// the_problem</span>
+        <h2 class="mt-3 text-2xl font-bold">Your CLM knows what the contract says. Not how the relationship performs.</h2>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            'Contracts live in a repository nobody reads until something goes wrong',
+            'Renewals auto-rollover before anyone reviews the terms',
+            'Risk review means outside counsel, per contract, per hour',
+            'Obligations and SLAs tracked in spreadsheets — or not at all',
+            'Vendor performance is invisible at renewal time',
+            'Audit questions take days of manual digging to answer',
+          ].map((problem) => (
+            <div class="flex items-start gap-2 text-sm text-text-secondary">
+              <span class="mt-0.5 text-rose">✕</span>
+              {problem}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mb-12" data-animate>
+        <span class="font-mono text-sm text-accent">// what_it_does</span>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+          Contract intelligence and relationship governance, in one platform
+        </h2>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3" data-stagger>
+        {features.map((f) => (
+          <div class="glow-card-subtle p-7">
+            <h3 class="text-lg font-bold text-accent">{f.title}</h3>
+            <p class="mt-3 text-sm leading-relaxed text-text-secondary">{f.description}</p>
+            <p class="mt-3 border-t border-border/50 pt-3 text-xs leading-relaxed text-text-muted">{f.detail}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Engineering facts -->
+  <section class="py-12">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="glow-card-subtle p-8" data-animate>
+        <span class="font-mono text-sm text-accent">// under_the_hood</span>
+        <div class="mt-6 grid grid-cols-2 gap-8 md:grid-cols-4">
+          {[
+            { value: '9', label: 'Specialised AI agents' },
+            { value: '315+', label: 'API endpoints' },
+            { value: '48', label: 'Data models' },
+            { value: '100%', label: 'Agent runs traced' },
+          ].map((s) => (
+            <div class="text-center">
+              <div class="text-3xl font-bold text-accent">{s.value}</div>
+              <div class="mt-1 text-xs text-text-muted">{s.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What it does not do -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="grid gap-8 lg:grid-cols-2">
+        <div class="rounded-2xl border border-border bg-surface/50 p-10" data-animate>
+          <span class="font-mono text-sm text-amber">// what_it_does_not_do</span>
+          <h2 class="mt-3 text-2xl font-bold">Honest by design</h2>
+          <p class="mt-3 text-sm text-text-secondary">
+            The fastest way to lose trust in month three is to oversell in month one.
+          </p>
+          <ul class="mt-6 space-y-3">
+            {honestLimits.map((limit) => (
+              <li class="flex items-start gap-2 text-sm text-text-secondary">
+                <span class="mt-0.5 text-amber">—</span>
+                {limit}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="rounded-2xl border border-accent/20 bg-accent/5 p-10" data-animate>
+          <span class="font-mono text-sm text-accent">// already_have_a_clm</span>
+          <h2 class="mt-3 text-2xl font-bold">"We already have a CLM."</h2>
+          <p class="mt-4 text-sm leading-relaxed text-text-secondary">
+            Good — keep it as the repository if you like. Our answer is the
+            layer your CLM doesn't have: relationship governance. Legacy CLM tells
+            you what was signed. This platform also tells you how the relationship is
+            performing against it — KPI-scored, continuously, across every vendor.
+            That's the difference between storing contracts and governing them.
+          </p>
+          <p class="mt-4 text-sm leading-relaxed text-text-secondary">
+            And because it's AI-native from day one, extraction, risk and search are
+            the core of the platform — not an add-on module priced per seat.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20">
+    <div class="mx-auto max-w-4xl px-6 text-center" data-animate>
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+        See it on <span class="gradient-text">your contracts</span>
+      </h2>
+      <p class="mx-auto mt-4 max-w-xl text-text-secondary">
+        A live demo environment is running today. Bring a handful of your own
+        contract types and watch the agents read them.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="/contact" class="inline-flex items-center gap-2 rounded-xl bg-accent px-7 py-3.5 text-sm font-semibold text-void transition-all hover:bg-accent-glow hover:shadow-[0_0_30px_rgba(0,232,123,0.3)]">
+          Request Live Demo
+        </a>
+        <a href="/products" class="inline-flex items-center gap-2 rounded-xl border border-border px-7 py-3.5 text-sm font-medium text-text-secondary transition-all hover:border-border-light hover:bg-elevated">
+          Back to Products
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

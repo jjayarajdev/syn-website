@@ -1,0 +1,189 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const modules = [
+  { icon: '📈', name: 'Sales', desc: 'Pipeline, deals and an autonomous sales agent working under your autonomy policy' },
+  { icon: '📣', name: 'Marketing', desc: 'Campaigns and content with AI drafting and analysis built in' },
+  { icon: '👥', name: 'HR', desc: 'People operations from onboarding to reviews' },
+  { icon: '💰', name: 'Finance', desc: 'Invoicing, expenses and financial visibility' },
+  { icon: '📋', name: 'Projects', desc: 'Delivery tracking with AI-assisted planning' },
+  { icon: '🎯', name: 'Recruitment', desc: 'Sourcing to offer, with AI screening assistance' },
+  { icon: '🛠️', name: 'ITSM', desc: 'Tickets and service management for your own stack' },
+];
+
+const autonomyLevels = [
+  { level: 'L1', name: 'Observe', desc: 'AI watches and summarises — it touches nothing.' },
+  { level: 'L2', name: 'Suggest', desc: 'AI drafts and recommends — a human clicks apply.' },
+  { level: 'L3', name: 'Act with approval', desc: 'AI executes routine actions after explicit sign-off.' },
+  { level: 'L4', name: 'Autonomous', desc: 'AI acts within the policy boundaries you define.' },
+];
+---
+
+<Layout title="Business Operations Platform — AI-Native, Seven Modules | Syntegreti" description="Sales, Marketing, HR, Finance, Projects, Recruitment and ITSM in one multi-tenant SaaS — with a built-in AI assistant, 160 AI actions and four graduated autonomy levels.">
+
+  <!-- Hero -->
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-20"></div>
+    <div class="absolute top-1/4 -right-32 h-96 w-96 rounded-full bg-cyan/5 blur-[120px]"></div>
+
+    <div class="relative z-10 mx-auto max-w-7xl px-6">
+      <div class="max-w-3xl" data-animate>
+        <div class="mb-6 flex items-center gap-3">
+          <span class="inline-flex items-center gap-2 rounded-full border border-cyan/20 bg-cyan/5 px-4 py-1.5 text-sm font-medium text-cyan">
+            Platform
+          </span>
+          <span class="rounded-full border border-border px-3 py-1 text-xs text-text-muted">Early access — onboarding design partners</span>
+        </div>
+
+        <h1 class="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+          <span class="gradient-text">Business Operations Platform</span>
+        </h1>
+        <p class="mt-2 font-mono text-lg text-text-muted">
+          One platform. Seven modules. AI in every one of them.
+        </p>
+        <p class="mt-6 text-lg leading-relaxed text-text-secondary">
+          The AI-native business operations platform: Sales, Marketing, HR, Finance,
+          Projects, Recruitment and ITSM in one multi-tenant SaaS. The built-in AI
+          assistant carries 160 AI actions across the platform — under four graduated
+          autonomy levels, so AI takes on exactly as much as you allow it to.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/contact" class="inline-flex items-center gap-2 rounded-xl bg-cyan px-7 py-3.5 text-sm font-semibold text-void transition-all hover:shadow-[0_0_30px_rgba(0,212,255,0.3)]">
+            Become a Design Partner
+          </a>
+          <a href="/contact" class="inline-flex items-center gap-2 rounded-xl border border-border px-7 py-3.5 text-sm font-medium text-text-secondary transition-all hover:border-border-light hover:bg-elevated">
+            Talk to Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="rounded-2xl border border-rose/20 bg-rose/5 p-10" data-animate>
+        <span class="font-mono text-sm text-rose">// the_problem</span>
+        <h2 class="mt-3 text-2xl font-bold">Your business runs on seven systems that don't talk to each other.</h2>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            'A CRM, an HRIS, a finance tool, a PM tool, an ATS, a helpdesk — and none of them share context',
+            'Every SaaS adds its own "AI copilot" that only sees its own silo',
+            'Integration projects cost more than the tools they connect',
+            'Nobody can answer a question that spans two departments',
+            'Per-seat pricing across seven vendors adds up fast',
+            'AI adoption means seven separate vendor conversations',
+          ].map((problem) => (
+            <div class="flex items-start gap-2 text-sm text-text-secondary">
+              <span class="mt-0.5 text-rose">✕</span>
+              {problem}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modules -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mb-12" data-animate>
+        <span class="font-mono text-sm text-cyan">// seven_modules</span>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+          Everything a business runs on
+        </h2>
+        <p class="mt-4 max-w-2xl text-text-secondary">
+          Seven modules on one data model — so the built-in AI assistant sees your
+          whole business, not one department's slice of it.
+        </p>
+      </div>
+
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4" data-stagger>
+        {modules.map((m) => (
+          <div class="glow-card-subtle p-6">
+            <span class="text-2xl">{m.icon}</span>
+            <h3 class="mt-3 text-base font-bold text-cyan">{m.name}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-text-secondary">{m.desc}</p>
+          </div>
+        ))}
+        <div class="rounded-2xl border border-cyan/20 bg-cyan/5 p-6">
+          <span class="text-2xl">✨</span>
+          <h3 class="mt-3 text-base font-bold text-text-primary">The built-in AI assistant</h3>
+          <p class="mt-2 text-sm leading-relaxed text-text-secondary">
+            160 AI actions across every module, plus an MCP server so external AI
+            assistants can work with the platform too.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Graduated autonomy -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mb-12" data-animate>
+        <span class="font-mono text-sm text-cyan">// graduated_autonomy</span>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+          AI that earns trust one level at a time
+        </h2>
+        <p class="mt-4 max-w-2xl text-text-secondary">
+          Every AI action in the platform is classed by autonomy level, and you decide the
+          ceiling — per module, per team. Start at observe-and-suggest, promote to
+          autonomous only where the AI has proven itself.
+        </p>
+      </div>
+
+      <div class="grid gap-4 md:grid-cols-4" data-stagger>
+        {autonomyLevels.map((a, i) => (
+          <div class="glow-card-subtle p-6 relative">
+            <span class="font-mono text-[10px] text-text-muted">{a.level}</span>
+            <h3 class="mt-2 text-base font-bold text-cyan">{a.name}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-text-secondary">{a.desc}</p>
+            {i < 3 && (
+              <span class="absolute -right-3 top-1/2 hidden -translate-y-1/2 text-text-muted md:block">→</span>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Who it's for -->
+  <section class="py-12">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="rounded-2xl border border-cyan/20 bg-cyan/5 p-10" data-animate>
+        <span class="font-mono text-sm text-cyan">// who_its_for</span>
+        <h2 class="mt-3 text-2xl font-bold">Built for growing businesses, not enterprise IT departments</h2>
+        <p class="mt-4 max-w-3xl text-sm leading-relaxed text-text-secondary">
+          This platform is for the business that has outgrown spreadsheets but doesn't want
+          to stitch together — and pay for — seven separate SaaS products. One
+          platform, one data model, one AI assistant that sees all of it. We are
+          onboarding early design partners now: you get a platform shaped around
+          your workflows, and a direct line to the team building it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20">
+    <div class="mx-auto max-w-4xl px-6 text-center" data-animate>
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+        Run your business on <span class="gradient-text">one platform</span>
+      </h2>
+      <p class="mx-auto mt-4 max-w-xl text-text-secondary">
+        Join the early access programme and shape the platform around how your
+        business actually works.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="/contact" class="inline-flex items-center gap-2 rounded-xl bg-cyan px-7 py-3.5 text-sm font-semibold text-void transition-all hover:shadow-[0_0_30px_rgba(0,212,255,0.3)]">
+          Become a Design Partner
+        </a>
+        <a href="/products" class="inline-flex items-center gap-2 rounded-xl border border-border px-7 py-3.5 text-sm font-medium text-text-secondary transition-all hover:border-border-light hover:bg-elevated">
+          Back to Products
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -30,7 +30,7 @@ const industries = [
 
       <div class="grid grid-cols-2 gap-3" data-stagger>
         {[
-          { stat: '3', label: 'Products shipped', detail: 'BetterSDLC, Workweave, ExaScale — built in-house, battle-tested.' },
+          { stat: '8', label: 'Platforms built in-house', detail: 'Contract intelligence, business operations, AI governance, regulatory reporting and more — built and run by this team.' },
           { stat: '40+', label: 'Technologies deep', detail: 'Not resume keywords. Production deployments across six industries.' },
           { stat: '4 wks', label: 'Proof to production', detail: 'Our POT methodology turns "is this possible?" into "here\'s the proof."' },
           { stat: '1', label: 'Team. End to end.', detail: 'Strategy, AI, cloud, apps, infra — no subcontracting, no finger-pointing.' },
@@ -42,6 +42,14 @@ const industries = [
           </div>
         ))}
       </div>
+    </div>
+
+    <!-- Cloud partners -->
+    <div class="mb-6 flex flex-wrap items-center justify-center gap-3 rounded-2xl border border-border/50 bg-deep/30 px-8 py-5" data-animate>
+      <span class="text-sm font-semibold text-text-primary">Cloud partners:</span>
+      <span class="rounded-full border border-border px-4 py-1.5 text-sm text-text-secondary">AWS</span>
+      <span class="rounded-full border border-border px-4 py-1.5 text-sm text-text-secondary">Microsoft Azure</span>
+      <span class="text-sm text-text-muted">We deploy in your cloud, under your controls — not ours.</span>
     </div>
 
     <!-- Industries + constraint -->

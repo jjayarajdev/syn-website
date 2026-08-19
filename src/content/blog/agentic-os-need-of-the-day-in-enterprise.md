@@ -3,7 +3,7 @@ title: "The Agentic OS: Why Every Enterprise Needs an Operating System for AI Ag
 description: "Chatbots were the appetizer. AI agents are the main course. But without an orchestration layer — an Agentic OS — enterprises are building islands of automation that can't talk to each other. Here's why that has to change."
 date: 2026-03-17
 author: "Syntegreti Engineering"
-tags: ["AI Agents", "Enterprise AI", "Workweave", "Agentic OS", "Multi-Agent Systems"]
+tags: ["AI Agents", "Enterprise AI", "Agentic OS", "Multi-Agent Systems"]
 readTime: "8 min read"
 ---
 
@@ -124,13 +124,13 @@ Or you can start with a platform purpose-built for this problem.
 
 ## How We Built Ours
 
-At Syntegreti, we built **Workweave** — our Agentic OS for business — because we kept solving the same orchestration problem for every client.
+At Syntegreti, we built our own Agentic OS for business — an enterprise agent platform — because we kept solving the same orchestration problem for every client.
 
 The Enterprise Intelligence Agent we built for IT support? It needed to coordinate across ServiceNow, Salesforce, Snowflake, and a knowledge base. The Global Mobility Agent? Tax, immigration, payroll, compliance, and HR platforms — five specialized sub-agents orchestrated by a coordinator.
 
 Every project had the same architecture: **an orchestrator coordinating specialist agents with shared memory and unified system access.** So we turned that pattern into a platform.
 
-Workweave is built on the VoltAgent framework with:
+Our agent platform is built on the VoltAgent framework with:
 
 - **Multi-agent orchestration** with supervisor coordination
 - **Typed tools** (Zod schemas) for every enterprise integration
@@ -169,4 +169,4 @@ You'll walk away with a working multi-agent system, connected to your actual ent
 
 ---
 
-*Syntegreti builds AI products and ships enterprise solutions from Hyderabad to the world. Workweave is our Agentic OS for business. [Get in touch](/contact) to see it in action.*
+*Syntegreti builds AI platforms and ships enterprise solutions from Hyderabad to the world. Our agent platform is our Agentic OS for business. [Get in touch](/contact) to see it in action.*

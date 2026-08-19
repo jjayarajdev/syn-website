@@ -1,0 +1,161 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const features = [
+  {
+    title: 'Regulation → Knowledge Graph',
+    description: 'Regulation PDFs are parsed into a queryable knowledge graph — requirements, definitions and relationships, not just text.',
+    detail: 'The regulation stops being a document your team re-reads every filing season.',
+  },
+  {
+    title: 'Executable Filing Schemas',
+    description: 'The knowledge graph compiles into executable schemas that validate your statistical data against the actual filing requirements.',
+    detail: 'Texas and Florida statistical filings are already built and runnable today.',
+  },
+  {
+    title: 'Carrier Data Validation',
+    description: 'Load your statistical data and see exactly which records pass, which fail, and why — traced back to the regulatory requirement.',
+    detail: 'Every validation failure cites the rule it violates.',
+  },
+  {
+    title: 'Compliance Sign-Off',
+    description: 'A structured review and sign-off workflow, so the compliance officer approves what goes out — with the evidence attached.',
+    detail: 'The filing carries its own audit trail.',
+  },
+  {
+    title: 'Runs on Your Engine',
+    description: 'Multi-engine by design: Snowflake, DuckDB or Databricks — the same schemas run wherever your data already lives.',
+    detail: 'The DuckDB engine runs a full pilot with no client infrastructure at all.',
+  },
+  {
+    title: 'Engineering You Can Inspect',
+    description: 'Tagged releases, Docker packaging, CI/CD and end-to-end tests — a platform, not a science project.',
+    detail: 'v1.1 multi-engine is the current tagged release.',
+  },
+];
+---
+
+<Layout title="Regulatory Reporting for US P&C Insurance | Syntegreti" description="A regulatory knowledge-graph platform for US P&C statistical reporting: regulation PDFs become executable filing schemas, with carrier data validation and compliance sign-off. Texas and Florida filings built.">
+
+  <!-- Hero -->
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-20"></div>
+    <div class="absolute top-1/4 -right-32 h-96 w-96 rounded-full bg-amber/5 blur-[120px]"></div>
+
+    <div class="relative z-10 mx-auto max-w-7xl px-6">
+      <div class="max-w-3xl" data-animate>
+        <div class="mb-6 flex items-center gap-3">
+          <span class="inline-flex items-center gap-2 rounded-full border border-amber/20 bg-amber/5 px-4 py-1.5 text-sm font-medium text-amber">
+            Platform
+          </span>
+          <span class="rounded-full border border-border px-3 py-1 text-xs text-text-muted">US P&C insurance · statistical reporting</span>
+        </div>
+
+        <h1 class="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+          <span class="gradient-text">Regulatory Reporting</span>
+        </h1>
+        <p class="mt-2 font-mono text-lg text-text-muted">
+          The regulation, made executable.
+        </p>
+        <p class="mt-6 text-lg leading-relaxed text-text-secondary">
+          A regulatory knowledge-graph platform for US property &amp; casualty
+          statistical reporting. Regulation PDFs become a knowledge graph; the
+          knowledge graph becomes executable filing schemas; your data is validated
+          against them with a compliance sign-off at the end. Texas and Florida
+          filings are already built.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/contact" class="inline-flex items-center gap-2 rounded-xl bg-accent px-7 py-3.5 text-sm font-semibold text-void transition-all hover:bg-accent-glow hover:shadow-[0_0_30px_rgba(0,232,123,0.3)]">
+            Request a Pilot
+          </a>
+          <a href="/products" class="inline-flex items-center gap-2 rounded-xl border border-border px-7 py-3.5 text-sm font-medium text-text-secondary transition-all hover:border-border-light hover:bg-elevated">
+            Back to Products
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="rounded-2xl border border-rose/20 bg-rose/5 p-10" data-animate>
+        <span class="font-mono text-sm text-rose">// the_problem</span>
+        <h2 class="mt-3 text-2xl font-bold">Statistical reporting runs on tribal knowledge and re-reading PDFs.</h2>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            'The filing requirements live in hundred-page regulation PDFs',
+            'Interpretation lives in the heads of one or two veterans',
+            'Validation is spreadsheet checks written years ago',
+            'Every regulation change means re-reading everything',
+            'Errors surface after submission — as regulator queries',
+            'Each state bureau means starting the decoding over again',
+          ].map((problem) => (
+            <div class="flex items-start gap-2 text-sm text-text-secondary">
+              <span class="mt-0.5 text-rose">✕</span>
+              {problem}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mb-12" data-animate>
+        <span class="font-mono text-sm text-amber">// what_it_does</span>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+          From PDF to validated filing
+        </h2>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3" data-stagger>
+        {features.map((f) => (
+          <div class="glow-card-subtle p-7">
+            <h3 class="text-lg font-bold text-amber">{f.title}</h3>
+            <p class="mt-3 text-sm leading-relaxed text-text-secondary">{f.description}</p>
+            <p class="mt-3 border-t border-border/50 pt-3 text-xs leading-relaxed text-text-muted">{f.detail}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Pilot -->
+  <section class="py-12">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="rounded-2xl border border-accent/20 bg-accent/5 p-10" data-animate>
+        <span class="font-mono text-sm text-accent">// the_pilot</span>
+        <h2 class="mt-3 text-2xl font-bold">A pilot that needs nothing from your infrastructure</h2>
+        <p class="mt-4 max-w-3xl text-sm leading-relaxed text-text-secondary">
+          The DuckDB engine runs the full validation pipeline standalone — no
+          Snowflake account, no cloud project, no procurement cycle. Bring a sample
+          of statistical data and a target filing (Texas or Florida are ready
+          today), have a compliance officer run the sign-off, and see the platform
+          against your real reporting within days, not quarters.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20">
+    <div class="mx-auto max-w-4xl px-6 text-center" data-animate>
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+        See your filing <span class="gradient-text">validate itself</span>
+      </h2>
+      <p class="mx-auto mt-4 max-w-xl text-text-secondary">
+        If your carrier files Texas or Florida statistical reports, the fastest way
+        to evaluate our regulatory reporting platform is to run one.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="/contact" class="inline-flex items-center gap-2 rounded-xl bg-accent px-7 py-3.5 text-sm font-semibold text-void transition-all hover:bg-accent-glow hover:shadow-[0_0_30px_rgba(0,232,123,0.3)]">
+          Request a Pilot
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

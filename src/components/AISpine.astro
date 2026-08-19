@@ -1,4 +1,33 @@
 ---
+const spineLayers = [
+  {
+    layer: 'GOVERN',
+    name: 'AI Governance',
+    color: 'rose',
+    href: '/products/ai-governance',
+    tagline: 'How you govern AI',
+    description:
+      'An AI governance platform that intercepts every LLM call in your enterprise — policy enforcement, local ML-based data-loss prevention, and a full audit log of all AI traffic.',
+  },
+  {
+    layer: 'BUILD',
+    name: 'AI-Assisted SDLC',
+    color: 'accent',
+    href: '/products/ai-sdlc',
+    tagline: 'How you build software',
+    description:
+      'AI-guided SDLC workflows across five roles. Context threads between phases automatically, and every AI-generated artifact carries a compliance audit trail.',
+  },
+  {
+    layer: 'OPERATE',
+    name: 'Agent Platform',
+    color: 'cyan',
+    href: '/products/agent-platform',
+    tagline: 'How you run operations',
+    description:
+      'The VoltAgent open-source agent framework plus enterprise agents for support deflection and enterprise intelligence — with OpenTelemetry tracing built in.',
+  },
+];
 ---
 
 <section class="relative py-24" id="ai-spine">
@@ -6,61 +35,122 @@
     <div class="mb-12" data-animate>
       <span class="font-mono text-sm text-accent">// the_ai_spine</span>
       <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-        Two products. One AI spine.
+        One AI spine. Every layer of your enterprise.
       </h2>
       <p class="mt-4 max-w-2xl text-text-secondary">
-        One helps your dev teams build better. The other helps your ops teams
-        resolve faster. Together, they form the AI operating layer for your enterprise.
+        Two flagship platforms run your contracts and your operations. Underneath
+        them, one spine governs how your enterprise adopts AI — how you govern it,
+        how you build with it, and how you operate on it.
       </p>
     </div>
 
-    <!-- Two-product spine -->
-    <div class="glow-card-subtle p-8 md:p-10" data-animate>
-      <div class="grid gap-8 md:gap-0 md:grid-cols-2">
+    <!-- Flagship platforms -->
+    <div class="grid gap-6 md:grid-cols-2" data-stagger>
 
-        <!-- BetterSDLC -->
-        <a href="/products/bettersdlc" class="group md:border-r md:border-border/50 md:pr-10">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="text-2xl">⚡</span>
-            <h3 class="text-xl font-bold text-accent">BetterSDLC</h3>
+      <!-- Contract Intelligence -->
+      <a href="/products/contract-intelligence" class="group glow-card-subtle p-8">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-3">
+            <span class="text-2xl">📜</span>
+            <h3 class="text-xl font-bold text-accent">Contract Intelligence</h3>
           </div>
-          <p class="font-mono text-[11px] text-text-muted mb-3">How you build software</p>
-          <p class="text-sm leading-relaxed text-text-secondary">
-            AI-guided SDLC workflows across five roles. Context threads between
-            phases automatically. Full compliance audit trail for every
-            AI-generated artifact. 40% less rework, $780k+ saved for a 50-dev team.
-          </p>
-          <div class="mt-4 flex items-center gap-1 text-xs font-medium text-accent opacity-0 transition-opacity group-hover:opacity-100">
-            Learn more →
-          </div>
-        </a>
+          <span class="rounded-full border border-accent/20 bg-accent/5 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-accent">Platform · Live demo</span>
+        </div>
+        <p class="font-mono text-[11px] text-text-muted mb-3">Contract lifecycle intelligence + relationship governance</p>
+        <p class="text-sm leading-relaxed text-text-secondary">
+          AI-native contract lifecycle management that goes beyond the repository:
+          nine specialised agents extract, risk-score and track obligations, while a
+          relationship-governance layer scores every vendor relationship against
+          agreed KPIs. Multi-tenant, fully audit-traced, demo-ready today.
+        </p>
+        <div class="mt-4 flex items-center gap-1 text-xs font-medium text-accent opacity-0 transition-opacity group-hover:opacity-100">
+          Explore the platform →
+        </div>
+      </a>
 
-        <!-- Workweave -->
-        <a href="/products/workweave" class="group md:pl-10">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="text-2xl">🔮</span>
-            <h3 class="text-xl font-bold text-cyan">Workweave</h3>
+      <!-- Business Operations -->
+      <a href="/products/business-operations" class="group glow-card-subtle p-8">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-3">
+            <span class="text-2xl">🧩</span>
+            <h3 class="text-xl font-bold text-cyan">Business Operations</h3>
           </div>
-          <p class="font-mono text-[11px] text-text-muted mb-3">How you support users</p>
-          <p class="text-sm leading-relaxed text-text-secondary">
-            AI agents orchestrated across Salesforce, ServiceNow, and Snowflake.
-            30-second resolution instead of 15-minute manual triage.
-            60% fewer L1 tickets, $72k saved per 1,000 users.
-          </p>
-          <div class="mt-4 flex items-center gap-1 text-xs font-medium text-cyan opacity-0 transition-opacity group-hover:opacity-100">
-            Learn more →
-          </div>
-        </a>
+          <span class="rounded-full border border-cyan/20 bg-cyan/5 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-cyan">Platform</span>
+        </div>
+        <p class="font-mono text-[11px] text-text-muted mb-3">The AI-native business operations platform</p>
+        <p class="text-sm leading-relaxed text-text-secondary">
+          Sales, Marketing, HR, Finance, Projects, Recruitment and ITSM in one
+          multi-tenant SaaS — with a built-in assistant and 160 AI actions across
+          four graduated autonomy levels, so AI does as much (or as little) as
+          you allow.
+        </p>
+        <div class="mt-4 flex items-center gap-1 text-xs font-medium text-cyan opacity-0 transition-opacity group-hover:opacity-100">
+          Explore the platform →
+        </div>
+      </a>
+    </div>
 
+    <!-- The spine: govern / build / operate -->
+    <div class="mt-6 glow-card-subtle p-8 md:p-10" data-animate>
+      <div class="grid gap-8 md:grid-cols-3 md:gap-0">
+        {spineLayers.map((item, i) => (
+          <a
+            href={item.href}
+            class:list={[
+              'group',
+              i < spineLayers.length - 1 && 'md:border-r md:border-border/50 md:pr-8',
+              i > 0 && 'md:pl-8',
+            ]}
+          >
+            <span class:list={['font-mono text-[10px] tracking-widest', `text-${item.color}`]}>{item.layer}</span>
+            <h3 class:list={['mt-2 text-lg font-bold', `text-${item.color}`]}>{item.name}</h3>
+            <p class="font-mono text-[11px] text-text-muted mb-3">{item.tagline}</p>
+            <p class="text-sm leading-relaxed text-text-secondary">{item.description}</p>
+            <div class:list={['mt-4 flex items-center gap-1 text-xs font-medium opacity-0 transition-opacity group-hover:opacity-100', `text-${item.color}`]}>
+              Learn more →
+            </div>
+          </a>
+        ))}
       </div>
 
-      <!-- Connecting line -->
       <div class="mt-8 pt-6 border-t border-border/50 text-center">
         <p class="text-sm text-text-secondary">
-          Together, they form the <strong class="text-text-primary">AI spine</strong> for
-          how you build software and support users.
+          Govern, build, operate — the <strong class="text-text-primary">AI spine</strong> that
+          carries every platform we ship.
         </p>
       </div>
+    </div>
+
+    <!-- Domain products — regulated insurance -->
+    <div class="mt-6 grid gap-4 md:grid-cols-2" data-stagger>
+      <a href="/products/regulatory-reporting" class="group glow-card-subtle p-6">
+        <div class="flex items-center gap-3">
+          <span class="text-xl">🏛️</span>
+          <div>
+            <h3 class="text-base font-bold text-amber">Regulatory Reporting</h3>
+            <p class="font-mono text-[11px] text-text-muted">Regulatory reporting for US P&C insurance</p>
+          </div>
+        </div>
+        <p class="mt-3 text-sm leading-relaxed text-text-secondary">
+          Regulation PDFs become a knowledge graph, and the knowledge graph becomes
+          executable filing schemas — with carrier data validation and compliance
+          sign-off. Texas and Florida filings already built.
+        </p>
+      </a>
+      <a href="/products/document-intelligence" class="group glow-card-subtle p-6">
+        <div class="flex items-center gap-3">
+          <span class="text-xl">📑</span>
+          <div>
+            <h3 class="text-base font-bold text-amber">Document Intelligence</h3>
+            <p class="font-mono text-[11px] text-text-muted">AI extraction with review built in</p>
+          </div>
+        </div>
+        <p class="mt-3 text-sm leading-relaxed text-text-secondary">
+          Document and data extraction designed for auditability, not black-box
+          output — confidence-scored fields with human review and approval
+          workflows by design.
+        </p>
+      </a>
     </div>
 
     <!-- Datacenter — separate, different buyer -->
@@ -71,7 +161,7 @@
             <span class="text-2xl">🏗️</span>
             <div>
               <h3 class="text-lg font-bold text-amber">Datacenter Solutions</h3>
-              <p class="font-mono text-[11px] text-text-muted">ExaScale Thermal Intelligence — for data center operators</p>
+              <p class="font-mono text-[11px] text-text-muted">Thermal intelligence — for data center operators</p>
             </div>
           </div>
           <div class="flex items-center gap-6">

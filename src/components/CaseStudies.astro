@@ -1,9 +1,21 @@
 ---
 const patterns = [
   {
+    tag: 'Insurance Aggregator · Texas',
+    title: 'Insurance sales → one platform, 200+ locations',
+    description: 'AI-assisted sales platform for a Texas-based insurance aggregator shopping 35+ carriers per customer. The carrier comparison moved out of agents\' heads and into the platform. In production.',
+    metrics: [
+      { value: 'Live', label: 'In production' },
+      { value: '35+', label: 'Carriers shopped' },
+      { value: '200+', label: 'Locations served' },
+    ],
+    replicable: 'Any multi-carrier agency, panel or aggregator sales network.',
+    href: '/case-studies/insurance-sales-platform',
+  },
+  {
     tag: 'AI Service Desk',
     title: 'IT Support → 60% fewer tickets',
-    description: 'Multi-agent system resolves L1 tickets in 2 minutes instead of 4 hours. ServiceNow + Salesforce + Knowledge Base — orchestrated by Workweave.',
+    description: 'Multi-agent system resolves L1 tickets in 2 minutes instead of 4 hours. ServiceNow + Salesforce + Knowledge Base — orchestrated by our agent platform.',
     metrics: [
       { value: '$72k', label: 'Annual savings' },
       { value: '2 min', label: 'Resolution time' },
@@ -13,16 +25,28 @@ const patterns = [
     href: '/case-studies/ai-it-support',
   },
   {
-    tag: 'AI Operations',
+    tag: 'Field Services · US',
     title: 'Scheduling → Zero wait time',
-    description: 'Omni-channel AI assistant across Voice, Chat, SMS. Weather-aware scheduling, confirm loops, sub-2.5s voice latency. Powered by Claude + DSPy.',
+    description: 'Omni-channel AI assistant for a US field-services platform across Voice, Chat, SMS. Weather-aware scheduling, confirm loops, full audit trail. In production on Claude via AWS Bedrock.',
     metrics: [
-      { value: '$120k', label: 'Annual savings' },
+      { value: 'Live', label: 'In production' },
       { value: '0 min', label: 'Wait time' },
-      { value: '99%', label: 'Availability' },
+      { value: '4', label: 'Channels' },
     ],
     replicable: 'Any scheduling-heavy business with 200+ daily calls.',
     href: '/case-studies/ai-scheduling-assistant',
+  },
+  {
+    tag: 'Home Improvement · Compliance',
+    title: 'RFP → won with a working PoC',
+    description: 'License & contractor compliance platform for one of America\'s largest home-improvement platforms. We won the RFP by shipping a full-stack PoC during the evaluation. Now in delivery.',
+    metrics: [
+      { value: 'RFP win', label: 'Competitive process' },
+      { value: '3-level', label: 'Jurisdictions' },
+      { value: 'In SOW', label: 'AI accuracy SLA' },
+    ],
+    replicable: 'Any contractor-network business with multi-state compliance exposure.',
+    href: '/case-studies/contractor-compliance-platform',
   },
 ];
 ---
@@ -42,7 +66,7 @@ const patterns = [
     </div>
 
     <!-- Pattern cards -->
-    <div class="grid gap-6 lg:grid-cols-2" data-stagger>
+    <div class="grid gap-6 md:grid-cols-2" data-stagger>
       {patterns.map((pattern) => (
         <a href={pattern.href} class="group glow-card-subtle p-8">
           <!-- Tag -->

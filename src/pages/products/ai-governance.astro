@@ -1,0 +1,178 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const features = [
+  {
+    title: 'Forward Proxy for All LLM Traffic',
+    description: 'Every AI call in your enterprise flows through one governed gateway — no shadow AI, no unsanctioned providers.',
+    detail: 'One egress route change puts every team, tool and model behind policy.',
+  },
+  {
+    title: 'Local ML Data-Loss Prevention',
+    description: 'PII, toxicity and sensitive-content detection runs on local ML models inside your network — sensitive data is caught before it ever reaches an external model.',
+    detail: 'Detection happens on your infrastructure. Nothing is sent out to be scanned.',
+  },
+  {
+    title: 'Policy Enforcement',
+    description: 'Define which teams can use which models for which purposes — and the gateway enforces it on every request, automatically.',
+    detail: 'Sanctioned provider lists, per-team rules, and block/redact/allow actions.',
+  },
+  {
+    title: 'Complete Audit Log',
+    description: 'Every prompt, every response, every policy decision — logged with time-series analytics behind a live dashboard.',
+    detail: 'When the regulator asks how AI is used in your business, the answer is a query, not a project.',
+  },
+];
+---
+
+<Layout title="AI Governance Platform | Syntegreti" description="An AI governance forward-proxy that intercepts and governs all LLM traffic: policy enforcement, local ML-based DLP, and full audit logging of every AI interaction.">
+
+  <!-- Hero -->
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-20"></div>
+    <div class="absolute top-1/4 -right-32 h-96 w-96 rounded-full bg-rose/5 blur-[120px]"></div>
+
+    <div class="relative z-10 mx-auto max-w-7xl px-6">
+      <div class="max-w-3xl" data-animate>
+        <div class="mb-6 flex items-center gap-3">
+          <span class="inline-flex items-center gap-2 rounded-full border border-rose/20 bg-rose/5 px-4 py-1.5 text-sm font-medium text-rose">
+            Platform
+          </span>
+          <span class="rounded-full border border-border px-3 py-1 text-xs text-text-muted">For regulated enterprises</span>
+        </div>
+
+        <h1 class="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+          <span class="gradient-text">AI Governance</span>
+        </h1>
+        <p class="mt-2 font-mono text-lg text-text-muted">
+          Every AI call in your enterprise. Governed.
+        </p>
+        <p class="mt-6 text-lg leading-relaxed text-text-secondary">
+          An AI governance platform that sits between your people and the models they
+          use. Every LLM request is intercepted, checked against policy, screened by
+          local ML-based data-loss prevention, and logged — so AI adoption and AI
+          governance stop being opposing forces.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/contact" class="inline-flex items-center gap-2 rounded-xl bg-accent px-7 py-3.5 text-sm font-semibold text-void transition-all hover:bg-accent-glow hover:shadow-[0_0_30px_rgba(0,232,123,0.3)]">
+            Talk to Us
+          </a>
+          <a href="/products" class="inline-flex items-center gap-2 rounded-xl border border-border px-7 py-3.5 text-sm font-medium text-text-secondary transition-all hover:border-border-light hover:bg-elevated">
+            Back to Products
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="rounded-2xl border border-rose/20 bg-rose/5 p-10" data-animate>
+        <span class="font-mono text-sm text-rose">// the_problem</span>
+        <h2 class="mt-3 text-2xl font-bold">Your teams are already using AI. You just can't see it.</h2>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            'Employees paste customer data into public chatbots',
+            'No record of what was sent to which model, by whom',
+            'Every team picks its own AI provider — nobody sanctioned any of them',
+            'Cloud DLP tools mean sending sensitive data out to be scanned',
+            'Blocking AI outright just drives usage underground',
+            'The audit question "how is AI used here?" has no answer',
+          ].map((problem) => (
+            <div class="flex items-start gap-2 text-sm text-text-secondary">
+              <span class="mt-0.5 text-rose">✕</span>
+              {problem}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mb-12" data-animate>
+        <span class="font-mono text-sm text-rose">// what_it_does</span>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+          Enable AI. Keep control.
+        </h2>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2" data-stagger>
+        {features.map((f) => (
+          <div class="glow-card-subtle p-7">
+            <h3 class="text-lg font-bold text-rose">{f.title}</h3>
+            <p class="mt-3 text-sm leading-relaxed text-text-secondary">{f.description}</p>
+            <p class="mt-3 border-t border-border/50 pt-3 text-xs leading-relaxed text-text-muted">{f.detail}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Engineering facts -->
+  <section class="py-12">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="glow-card-subtle p-8" data-animate>
+        <span class="font-mono text-sm text-rose">// under_the_hood</span>
+        <div class="mt-6 grid grid-cols-2 gap-8 md:grid-cols-4">
+          {[
+            { value: 'Go', label: 'High-throughput gateway' },
+            { value: 'Local', label: 'ML DLP — in your network' },
+            { value: '500+', label: 'Stored test cases' },
+            { value: 'Live', label: 'Time-series analytics dashboard' },
+          ].map((s) => (
+            <div class="text-center">
+              <div class="text-3xl font-bold text-rose">{s.value}</div>
+              <div class="mt-1 text-xs text-text-muted">{s.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Getting started -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="rounded-2xl border border-accent/20 bg-accent/5 p-10" data-animate>
+        <span class="font-mono text-sm text-accent">// getting_started</span>
+        <h2 class="mt-3 text-2xl font-bold">Three things, and you're governed</h2>
+        <div class="mt-6 grid gap-6 md:grid-cols-3">
+          {[
+            { num: '01', title: 'Route egress', desc: 'Point your network’s AI traffic at the proxy — one infrastructure change.' },
+            { num: '02', title: 'Define policy', desc: 'Which teams, which models, which data classes. We help you write the first set.' },
+            { num: '03', title: 'Sanction providers', desc: 'List the LLM providers you allow — everything else is blocked by default.' },
+          ].map((s) => (
+            <div>
+              <span class="font-mono text-xs text-accent">{s.num}</span>
+              <h3 class="mt-1 text-base font-bold text-text-primary">{s.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-text-secondary">{s.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20">
+    <div class="mx-auto max-w-4xl px-6 text-center" data-animate>
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+        Adopt AI <span class="gradient-text">without losing the audit trail</span>
+      </h2>
+      <p class="mx-auto mt-4 max-w-xl text-text-secondary">
+        If you're in a regulated industry and your board is asking both "why aren't
+        we using AI?" and "how do we control it?" — this is the answer to both.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="/contact" class="inline-flex items-center gap-2 rounded-xl bg-accent px-7 py-3.5 text-sm font-semibold text-void transition-all hover:bg-accent-glow hover:shadow-[0_0_30px_rgba(0,232,123,0.3)]">
+          Talk to Us
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
