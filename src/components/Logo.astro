@@ -1,5 +1,5 @@
 ---
-import logoWhite from '../assets/syntegreti-logo-editorial.png';
+import mark from '../assets/syntegreti-mark-editorial.png';
 
 interface Props {
   size?: 'sm' | 'md' | 'lg';
@@ -7,22 +7,26 @@ interface Props {
   glow?: boolean;
 }
 
-const { size = 'md', glow = false } = Astro.props;
+const { size = 'md' } = Astro.props;
 
-const heights: Record<string, number> = {
-  sm: 42,
-  md: 56,
-  lg: 80,
+const fontSizes: Record<string, number> = {
+  sm: 26,
+  md: 34,
+  lg: 48,
 };
-const h = heights[size];
-const w = Math.round(h * (logoWhite.width / logoWhite.height));
+const fs = fontSizes[size];
 ---
 
-<div class="inline-flex items-center">
+<!-- Option F — tight interlock: the mark IS the S, leaning into the y -->
+<span
+  class="inline-flex items-baseline whitespace-nowrap font-bold text-text-primary"
+  style={`font-size: ${fs}px; letter-spacing: -0.025em;`}
+>
   <img
-    src={logoWhite.src}
-    alt="Syntegreti"
-    height={h}
-    width={w}
-  />
-</div>
+    src={mark.src}
+    alt="S"
+    height={mark.height}
+    width={mark.width}
+    class="inline-block"
+    style="height: 0.88em; width: auto; transform: translateY(0.05em); margin-right: -0.06em;"
+  />yntegreti</span>
