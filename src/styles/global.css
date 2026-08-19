@@ -21,16 +21,16 @@
   --color-border: #ccc7ba;    /* 1px hairline rules               */
   --color-border-light: #b2ac9d; /* hover / emphasized rules      */
 
-  /* Accent — sage, used sparingly */
-  --color-accent: #77896f;
-  --color-accent-dim: #5c6d55;
-  --color-accent-glow: #5c6d55;
+  /* Accent — dark forest green base; sage is its tint family */
+  --color-accent: #0a250a;
+  --color-accent-dim: #77896f;   /* sage — tints, secondary labels   */
+  --color-accent-glow: #144a1e;  /* hover feedback                   */
 
-  /* Former secondary hues collapse to ink — one accent only */
-  --color-cyan: #0a0908;
-  --color-cyan-dim: #55524b;
-  --color-amber: #0a0908;
-  --color-rose: #77896f;
+  /* Sprinkle palette — heritage complements of forest green */
+  --color-cyan: #3e4a52;      /* deep slate — mono labels, code, metadata */
+  --color-cyan-dim: #5a6a75;
+  --color-amber: #9c7a2f;     /* brass — metric callouts, delivery badges */
+  --color-rose: #a34a2a;      /* terracotta — ✕ marks, pops, warnings     */
 
   /* Text — ink on paper */
   --color-text-primary: #0a0908;
