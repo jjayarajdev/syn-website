@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Syntegreti — Card 07 Press Proof</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap');
+
+:root {
+  --paper:#EFECE4; --rule:#CCC7BA; --rule-strong:#B2AC9D;
+  --ink:#0A0908; --secondary:#4A4741; --muted:#67635A;
+  --forest:#0A250A; --sage:#77896F; --brass:#9C7A2F; --brass-l:#C9A85C; --terra:#A34A2A; --slate:#3E4A52;
+  --d:'Fraunces',Georgia,serif; --b:'DM Sans',sans-serif; --m:'DM Mono',monospace;
+  /* mock space: card 525×300 px ≙ 89×51 mm → print scale 336.4/525 */
+  --bleed: 18px;               /* ≙ 3 mm in mock space */
+  --print-scale: 0.6407;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#D8D3C6; color:var(--ink); font-family:var(--b); padding:48px; }
+h1 { font-family:var(--d); font-weight:900; letter-spacing:-0.03em; font-size:2.4rem; }
+h1 em { font-style:italic; color:var(--forest); }
+.sub { color:var(--muted); font-size:14px; margin:8px 0 40px; max-width:680px; }
+
+.proof { margin-bottom:52px; break-inside:avoid; page-break-inside:avoid; }
+.plabel { font-family:var(--m); font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin-bottom:12px; display:flex; justify-content:space-between; max-width:640px; }
+
+/* bleed canvas: card + 3mm on every side; crop marks sit outside the trim */
+.sheet { position:relative; width:calc(525px + 2*var(--bleed)); height:calc(300px + 2*var(--bleed)); margin:14px 0 6px; }
+.canvas { position:absolute; inset:0; overflow:hidden; }              /* bleed area — background floods this */
+.trim  { position:absolute; inset:var(--bleed); pointer-events:none;
+         outline:1px dashed rgba(163,74,42,0.55); }                    /* trim line (terracotta dashed) */
+.safe  { position:absolute; inset:calc(var(--bleed) + 18px); pointer-events:none;
+         outline:1px dotted rgba(103,99,90,0.5); }                     /* 3mm safe margin */
+/* crop marks */
+.cm { position:absolute; background:var(--ink); }
+.cm.h { width:22px; height:1px; } .cm.v { width:1px; height:22px; }
+
+.legend { display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
+.plate { font-family:var(--m); font-size:9px; letter-spacing:0.1em; text-transform:uppercase; padding:4px 10px; border:1px solid var(--rule-strong); color:var(--secondary); display:inline-flex; align-items:center; gap:6px; background:var(--paper); }
+.plate i { width:10px; height:10px; display:inline-block; border:1px solid rgba(0,0,0,0.15); }
+.key { font-family:var(--m); font-size:9px; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-top:8px; }
+.key s1 { color:#A34A2A; } .key s2 { color:var(--muted); }
+
+/* ── FRONT content (positions offset by bleed so trim matches the mock) ── */
+.fro { }
+.fro .kicker { position:absolute; left:calc(34px + var(--bleed)); top:calc(28px + var(--bleed)); font-family:var(--m); font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); }
+.fro img.big { position:absolute; right:-70px; top:50%; transform:translateY(-50%); height:275px; }
+.fro .info { position:absolute; left:calc(34px + var(--bleed)); bottom:calc(30px + var(--bleed)); }
+.fro .n { font-family:var(--d); font-weight:900; font-size:26px; letter-spacing:-0.025em; }
+.fro .e { font-family:var(--m); font-size:10.5px; color:var(--muted); margin-top:4px; letter-spacing:0.06em; }
+
+/* ── BACK content (receipt) ── */
+.rec { position:absolute; inset:var(--bleed); padding:22px 34px; font-family:var(--m); display:flex; flex-direction:column;
+       --fg:var(--ink); --fg2:var(--secondary); --fgm:var(--muted); --line2:var(--rule-strong); color:var(--fg); }
+.rec .h { text-align:center; font-size:14px; letter-spacing:0.2em; text-transform:uppercase; font-weight:500; color:var(--fg); }
+.rec .hh { text-align:center; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fgm); margin-top:3px; }
+.rec .dash { border-top:1px dashed var(--line2); margin:11px 0; }
+.rec .row { display:flex; justify-content:space-between; font-size:13px; line-height:2; color:var(--fg2); }
+.rec .row b { color:var(--fg); font-weight:500; }
+
+/* print: true size 89×51mm + 3mm bleed via scale; keep inks */
+@media print {
+  body { background:#fff; padding:10mm; }
+  h1, .sub { display:none; }
+  .proofwrap { transform: scale(var(--print-scale)); transform-origin: top left; }
+  .proof { margin-bottom: 10mm; }
+  * { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+}
+</style>
+</head>
+<body>
+
+<h1>Press <em>proof</em> — Card 07</h1>
+<p class="sub">Simulated to production spec: 89 × 51 mm trim (dashed terracotta line) + 3 mm bleed on all sides, crop marks at trim, dotted safe margin. Print this page at 100% scale and each proof comes out at true physical size. The front is identical in every variant and is never altered.</p>
+
+<!-- ═══ FRONT — same plates in every variant ═══ -->
+<div class="proof">
+  <div class="plabel"><span>Front — all variants</span><span>trim 89 × 51 mm · bleed 3 mm</span></div>
+  <div class="proofwrap"><div class="sheet">
+    <div class="canvas fro" style="background:var(--paper)">
+      <span class="kicker">// syntegreti</span>
+      <img class="big" src="../src/assets/syntegreti-mark-editorial.png" alt="">
+      <div class="info">
+        <div class="n">Jay Jayakeerthy</div>
+        <div class="e">jay.jayakeerthy@syntegreti.com · +91 00000 00000</div>
+      </div>
+    </div>
+    <div class="trim"></div><div class="safe"></div>
+    <span class="cm h" style="top:18px; left:-26px"></span><span class="cm v" style="left:18px; top:-26px"></span>
+    <span class="cm h" style="top:18px; right:-26px"></span><span class="cm v" style="right:18px; top:-26px"></span>
+    <span class="cm h" style="bottom:18px; left:-26px"></span><span class="cm v" style="left:18px; bottom:-26px"></span>
+    <span class="cm h" style="bottom:18px; right:-26px"></span><span class="cm v" style="right:18px; bottom:-26px"></span>
+  </div></div>
+  <div class="legend">
+    <span class="plate"><i style="background:var(--forest)"></i>Spot 1 · Forest 0A250A</span>
+    <span class="plate"><i style="background:var(--brass)"></i>Spot 2 · Brass 9C7A2F</span>
+    <span class="plate"><i style="background:var(--slate)"></i>Spot 3 · Slate 3E4A52</span>
+    <span class="plate"><i style="background:var(--ink)"></i>Type · Ink 0A0908</span>
+    <span class="plate"><i style="background:var(--paper)"></i>Stock · uncoated ≈ EFECE4</span>
+  </div>
+  <div class="key"><s1>— — trim</s1> &nbsp; <s2>· · · safe margin — keep type inside</s2> &nbsp; mark bleeds off the right trim by design</div>
+</div>
+
+<!-- ═══ BACK A — paper ═══ -->
+<div class="proof">
+  <div class="plabel"><span>Back A — paper · no extra inks</span><span>reuses ink on stock</span></div>
+  <div class="proofwrap"><div class="sheet">
+    <div class="canvas" style="background:var(--paper)"></div>
+    <div class="rec">
+      <div class="h">Syntegreti</div>
+      <div class="hh">Catalyst Studio · Hyderabad → Global · Est. 2024</div>
+      <div class="dash"></div>
+      <div class="row"><span>Platforms engineered in-house</span><b>× 8</b></div>
+      <div class="row"><span>Systems live in client production</span><b>× 3</b></div>
+      <div class="row"><span>Project delivery, end to end</span><b>fixed scope</b></div>
+      <div class="row"><span>Engineers embedded with your team</span><b>on demand</b></div>
+      <div class="row"><span>Idea → working proof</span><b>4–6 wks</b></div>
+      <div class="dash"></div>
+      <div class="hh">Syntegreti.com&ensp;|&ensp;Lean Teams&ensp;|&ensp;Proven Delivery</div>
+    </div>
+    <div class="trim"></div><div class="safe"></div>
+    <span class="cm h" style="top:18px; left:-26px"></span><span class="cm v" style="left:18px; top:-26px"></span>
+    <span class="cm h" style="top:18px; right:-26px"></span><span class="cm v" style="right:18px; top:-26px"></span>
+    <span class="cm h" style="bottom:18px; left:-26px"></span><span class="cm v" style="left:18px; bottom:-26px"></span>
+    <span class="cm h" style="bottom:18px; right:-26px"></span><span class="cm v" style="right:18px; bottom:-26px"></span>
+  </div></div>
+  <div class="legend">
+    <span class="plate"><i style="background:var(--ink)"></i>Type · Ink (reused)</span>
+  </div>
+</div>
+
+<!-- ═══ BACK B — ink noir ═══ -->
+<div class="proof">
+  <div class="plabel"><span>Back B — ink noir · Pantone Black 6 C flood</span><span>matte uncoated · no lamination</span></div>
+  <div class="proofwrap"><div class="sheet">
+    <div class="canvas" style="background:var(--ink)"></div>
+    <div class="rec" style="--fg:var(--paper); --fg2:rgba(239,236,228,0.75); --fgm:rgba(239,236,228,0.45); --line2:#3a372f">
+      <div class="h">Syntegreti</div>
+      <div class="hh">Catalyst Studio · Hyderabad → Global · Est. 2024</div>
+      <div class="dash"></div>
+      <div class="row"><span>Platforms engineered in-house</span><b>× 8</b></div>
+      <div class="row"><span>Systems live in client production</span><b>× 3</b></div>
+      <div class="row"><span>Project delivery, end to end</span><b>fixed scope</b></div>
+      <div class="row"><span>Engineers embedded with your team</span><b>on demand</b></div>
+      <div class="row"><span>Idea → working proof</span><b>4–6 wks</b></div>
+      <div class="dash"></div>
+      <div class="hh">Syntegreti.com&ensp;|&ensp;Lean Teams&ensp;|&ensp;Proven Delivery</div>
+    </div>
+    <div class="trim"></div><div class="safe"></div>
+    <span class="cm h" style="top:18px; left:-26px"></span><span class="cm v" style="left:18px; top:-26px"></span>
+    <span class="cm h" style="top:18px; right:-26px"></span><span class="cm v" style="right:18px; top:-26px"></span>
+    <span class="cm h" style="bottom:18px; left:-26px"></span><span class="cm v" style="left:18px; bottom:-26px"></span>
+    <span class="cm h" style="bottom:18px; right:-26px"></span><span class="cm v" style="right:18px; bottom:-26px"></span>
+  </div></div>
+  <div class="legend">
+    <span class="plate"><i style="background:var(--ink)"></i>Flood · Pantone Black 6 C</span>
+    <span class="plate"><i style="background:var(--paper)"></i>Type knocks out to stock</span>
+  </div>
+</div>
+
+<!-- ═══ BACK C — forest ═══ -->
+<div class="proof">
+  <div class="plabel"><span>Back C — forest flood + light brass</span><span>2 spots</span></div>
+  <div class="proofwrap"><div class="sheet">
+    <div class="canvas" style="background:var(--forest)"></div>
+    <div class="rec" style="--fg:var(--paper); --fg2:rgba(239,236,228,0.75); --fgm:rgba(239,236,228,0.5); --line2:#2c4d2f">
+      <div class="h">Syntegreti</div>
+      <div class="hh">Catalyst Studio · Hyderabad → Global · Est. 2024</div>
+      <div class="dash"></div>
+      <div class="row"><span>Platforms engineered in-house</span><b>× 8</b></div>
+      <div class="row"><span>Systems live in client production</span><b>× 3</b></div>
+      <div class="row"><span>Project delivery, end to end</span><b>fixed scope</b></div>
+      <div class="row"><span>Engineers embedded with your team</span><b>on demand</b></div>
+      <div class="row"><span>Idea → working proof</span><b>4–6 wks</b></div>
+      <div class="dash"></div>
+      <div class="hh" style="color:var(--brass-l)">Syntegreti.com&ensp;|&ensp;Lean Teams&ensp;|&ensp;Proven Delivery</div>
+    </div>
+    <div class="trim"></div><div class="safe"></div>
+    <span class="cm h" style="top:18px; left:-26px"></span><span class="cm v" style="left:18px; top:-26px"></span>
+    <span class="cm h" style="top:18px; right:-26px"></span><span class="cm v" style="right:18px; top:-26px"></span>
+    <span class="cm h" style="bottom:18px; left:-26px"></span><span class="cm v" style="left:18px; bottom:-26px"></span>
+    <span class="cm h" style="bottom:18px; right:-26px"></span><span class="cm v" style="right:18px; bottom:-26px"></span>
+  </div></div>
+  <div class="legend">
+    <span class="plate"><i style="background:var(--forest)"></i>Flood · Forest 0A250A</span>
+    <span class="plate"><i style="background:var(--brass-l)"></i>Spot · Light brass C9A85C</span>
+    <span class="plate"><i style="background:var(--paper)"></i>Type knocks out to stock</span>
+  </div>
+</div>
+
+<!-- ═══ BACK D — ledger brass ═══ -->
+<div class="proof">
+  <div class="plabel"><span>Back D — ledger brass · reuses brass</span><span>no extra inks</span></div>
+  <div class="proofwrap"><div class="sheet">
+    <div class="canvas" style="background:var(--paper)"></div>
+    <div class="rec" style="--fg:var(--brass); --fg2:#8a6d2a; --fgm:#a98f4d; --line2:#c2ac72">
+      <div class="h">Syntegreti</div>
+      <div class="hh">Catalyst Studio · Hyderabad → Global · Est. 2024</div>
+      <div class="dash"></div>
+      <div class="row"><span>Platforms engineered in-house</span><b>× 8</b></div>
+      <div class="row"><span>Systems live in client production</span><b>× 3</b></div>
+      <div class="row"><span>Project delivery, end to end</span><b>fixed scope</b></div>
+      <div class="row"><span>Engineers embedded with your team</span><b>on demand</b></div>
+      <div class="row"><span>Idea → working proof</span><b>4–6 wks</b></div>
+      <div class="dash"></div>
+      <div class="hh">Syntegreti.com&ensp;|&ensp;Lean Teams&ensp;|&ensp;Proven Delivery</div>
+    </div>
+    <div class="trim"></div><div class="safe"></div>
+    <span class="cm h" style="top:18px; left:-26px"></span><span class="cm v" style="left:18px; top:-26px"></span>
+    <span class="cm h" style="top:18px; right:-26px"></span><span class="cm v" style="right:18px; top:-26px"></span>
+    <span class="cm h" style="bottom:18px; left:-26px"></span><span class="cm v" style="left:18px; bottom:-26px"></span>
+    <span class="cm h" style="bottom:18px; right:-26px"></span><span class="cm v" style="right:18px; bottom:-26px"></span>
+  </div></div>
+  <div class="legend">
+    <span class="plate"><i style="background:var(--brass)"></i>Spot · Brass 9C7A2F (reused from front)</span>
+  </div>
+</div>
+
+<!-- ═══ BACK E — till red ═══ -->
+<div class="proof">
+  <div class="plabel"><span>Back E — till red · adds terracotta</span><span>+1 spot</span></div>
+  <div class="proofwrap"><div class="sheet">
+    <div class="canvas" style="background:var(--paper)"></div>
+    <div class="rec" style="--fg:var(--terra); --fg2:#8c4327; --fgm:#b06a4c; --line2:#c98d72">
+      <div class="h">Syntegreti</div>
+      <div class="hh">Catalyst Studio · Hyderabad → Global · Est. 2024</div>
+      <div class="dash"></div>
+      <div class="row"><span>Platforms engineered in-house</span><b>× 8</b></div>
+      <div class="row"><span>Systems live in client production</span><b>× 3</b></div>
+      <div class="row"><span>Project delivery, end to end</span><b>fixed scope</b></div>
+      <div class="row"><span>Engineers embedded with your team</span><b>on demand</b></div>
+      <div class="row"><span>Idea → working proof</span><b>4–6 wks</b></div>
+      <div class="dash"></div>
+      <div class="hh">Syntegreti.com&ensp;|&ensp;Lean Teams&ensp;|&ensp;Proven Delivery</div>
+    </div>
+    <div class="trim"></div><div class="safe"></div>
+    <span class="cm h" style="top:18px; left:-26px"></span><span class="cm v" style="left:18px; top:-26px"></span>
+    <span class="cm h" style="top:18px; right:-26px"></span><span class="cm v" style="right:18px; top:-26px"></span>
+    <span class="cm h" style="bottom:18px; left:-26px"></span><span class="cm v" style="left:18px; bottom:-26px"></span>
+    <span class="cm h" style="bottom:18px; right:-26px"></span><span class="cm v" style="right:18px; bottom:-26px"></span>
+  </div></div>
+  <div class="legend">
+    <span class="plate"><i style="background:var(--terra)"></i>Spot · Terracotta A34A2A</span>
+  </div>
+</div>
+
+<!-- ═══ BACK F — ink & paper ═══ -->
+<div class="proof">
+  <div class="plabel"><span>Back F — ink &amp; paper · letterpress</span><span>no extra inks</span></div>
+  <div class="proofwrap"><div class="sheet">
+    <div class="canvas" style="background:var(--paper)"></div>
+    <div class="rec">
+      <div class="h">Syntegreti</div>
+      <div class="hh">Catalyst Studio · Hyderabad → Global · Est. 2024</div>
+      <div class="dash"></div>
+      <div class="row"><span>Platforms engineered in-house</span><b>× 8</b></div>
+      <div class="row"><span>Systems live in client production</span><b>× 3</b></div>
+      <div class="row"><span>Project delivery, end to end</span><b>fixed scope</b></div>
+      <div class="row"><span>Engineers embedded with your team</span><b>on demand</b></div>
+      <div class="row"><span>Idea → working proof</span><b>4–6 wks</b></div>
+      <div class="dash"></div>
+      <div class="hh">Syntegreti.com&ensp;|&ensp;Lean Teams&ensp;|&ensp;Proven Delivery</div>
+    </div>
+    <div class="trim"></div><div class="safe"></div>
+    <span class="cm h" style="top:18px; left:-26px"></span><span class="cm v" style="left:18px; top:-26px"></span>
+    <span class="cm h" style="top:18px; right:-26px"></span><span class="cm v" style="right:18px; top:-26px"></span>
+    <span class="cm h" style="bottom:18px; left:-26px"></span><span class="cm v" style="left:18px; bottom:-26px"></span>
+    <span class="cm h" style="bottom:18px; right:-26px"></span><span class="cm v" style="right:18px; bottom:-26px"></span>
+  </div></div>
+  <div class="legend">
+    <span class="plate"><i style="background:var(--ink)"></i>Type · Ink, letterpressed (reused)</span>
+  </div>
+</div>
+
+<p class="sub" style="margin-top:8px">Hairlines here render ≥ 0.25 pt at print scale. Sharp corners throughout. When a variant is chosen, replace the placeholder phone number and hand the printer this page printed at 100% plus the spec paragraph from the colorways sheet.</p>
+
+</body>
+</html>
