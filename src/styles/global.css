@@ -14,12 +14,12 @@
 
 @theme {
   /* Ground — paper replaces the dark void scale */
-  --color-void: #f7f5f0;      /* page background (paper)          */
-  --color-deep: #f2f0ea;      /* slightly recessed panels         */
-  --color-surface: #efede8;   /* cards, zebra rows                */
-  --color-elevated: #e8e5dd;  /* deeper recessed surfaces         */
-  --color-border: #d5d1c8;    /* 1px hairline rules               */
-  --color-border-light: #bcb7ab; /* hover / emphasized rules      */
+  --color-void: #efece4;      /* page background (paper)          */
+  --color-deep: #eae6dd;      /* slightly recessed panels         */
+  --color-surface: #e6e2d8;   /* cards, zebra rows                */
+  --color-elevated: #ded9cd;  /* deeper recessed surfaces         */
+  --color-border: #ccc7ba;    /* 1px hairline rules               */
+  --color-border-light: #b2ac9d; /* hover / emphasized rules      */
 
   /* Accent — vermillion, used sparingly */
   --color-accent: #ff3b00;
