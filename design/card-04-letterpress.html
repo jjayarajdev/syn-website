@@ -2,24 +2,20 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Syntegreti — Card 07 Colorways</title>
+<title>Syntegreti — Card · Letterpress Purist · Paper Study</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap');
 
 :root {
-  --paper:#EFECE4; --surface:#E6E2D8; --rule:#CCC7BA; --rule-strong:#B2AC9D;
+  --paper:#EFECE4; --rule:#CCC7BA; --rule-strong:#B2AC9D;
   --ink:#0A0908; --secondary:#4A4741; --muted:#67635A;
-  --forest:#0A250A; --sage:#77896F; --brass:#9C7A2F; --brass-l:#C9A85C;
-  --terra:#A34A2A; --slate:#3E4A52; --slate-l:#8DA0AC;
+  --forest:#0A250A;
   --d:'Fraunces',Georgia,serif; --b:'DM Sans',sans-serif; --m:'DM Mono',monospace;
 }
 * { margin:0; padding:0; box-sizing:border-box; }
 body { background:#DDD8CB; color:var(--ink); font-family:var(--b); padding:56px 48px; }
-h1 { font-family:var(--d); font-weight:900; letter-spacing:-0.03em; font-size:2.6rem; }
-h1 em { font-style:italic; color:var(--forest); }
-.sub { color:var(--muted); font-size:14px; margin:8px 0 48px; max-width:660px; }
 .cw { margin-bottom:56px; }
 .chead { font-family:var(--m); font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin-bottom:14px; display:flex; justify-content:space-between; max-width:1100px; }
 .pair { display:flex; gap:28px; flex-wrap:wrap; }
@@ -27,11 +23,14 @@ h1 em { font-style:italic; color:var(--forest); }
 .side { font-family:var(--m); font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin-top:8px; }
 .cnote { font-size:12.5px; color:var(--secondary); max-width:1080px; margin-top:14px; line-height:1.6; }
 
-/* ── shared card structure; per-colorway vars set on .card ── */
+/* ── shared card structure; paper set per .card ── */
 .card {
   --bg: var(--paper); --fg: var(--ink); --fg2: var(--secondary); --fgm: var(--muted);
-  --line: var(--rule); --line2: var(--rule-strong); --accent: var(--forest); --tot: var(--ink);
+  --line: var(--rule); --line2: var(--rule-strong); --accent: var(--forest);
   background: var(--bg); color: var(--fg); border: 1px solid var(--line);
+}
+.card.white {
+  --bg:#FFFFFF; --fg2:#4B4B47; --fgm:#6E6E6A; --line:#E0DFDB; --line2:#C6C5C0;
 }
 
 /* front (interlock bleed) */
@@ -42,101 +41,35 @@ h1 em { font-style:italic; color:var(--forest); }
 .f .n em { font-style:italic; color:var(--accent); }
 .f .e { font-family:var(--m); font-size:10.5px; color:var(--fgm); margin-top:4px; letter-spacing:0.06em; }
 
-/* back (receipt) */
-.r { font-family:var(--m); padding:26px 34px; display:flex; flex-direction:column; }
+/* back (receipt, one ink, qr line item) */
+.r { font-family:var(--m); padding:22px 34px; display:flex; flex-direction:column; }
 .r .h { text-align:center; font-size:14px; letter-spacing:0.2em; text-transform:uppercase; font-weight:500; color:var(--fg); }
 .r .hh { text-align:center; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fgm); margin-top:3px; }
-.r .dash { border-top:1px dashed var(--line2); margin:12px 0; }
-.r .row { display:flex; justify-content:space-between; font-size:13px; line-height:2; color:var(--fg2); }
+.r .dash { border-top:1px dashed var(--line2); margin:10px 0; }
+.r .row { display:flex; justify-content:space-between; font-size:13px; line-height:1.8; color:var(--fg2); }
 .r .row b { color:var(--fg); font-weight:500; }
-.r .tot { display:flex; justify-content:space-between; font-size:12px; font-weight:500; line-height:2.2; color:var(--tot); }
+.qr { display:block; color:var(--fg); }
+.qrow { display:flex; justify-content:space-between; align-items:center; margin-top:6px; }
+.qrow span { font-size:13px; color:var(--fg2); }
 
-.print { border-top:1px solid var(--rule-strong); margin-top:24px; padding-top:20px; max-width:1080px; font-size:13px; color:var(--secondary); line-height:1.8; }
-.print b { font-family:var(--m); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:6px; }
-
-/* ── print: keep each concept whole on a page, keep the inks ── */
+/* ── print: keep each study whole on a page, keep the inks ── */
 @media print {
   body { background: #fff; padding: 16px 8px; }
-  .cw, .concept { break-inside: avoid; page-break-inside: avoid; }
+  .cw { break-inside: avoid; page-break-inside: avoid; }
   .pair, .card { break-inside: avoid; page-break-inside: avoid; }
   .card, .card * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  .print { break-inside: avoid; }
-  h1, .sub { break-after: avoid; }
 }
 </style>
 </head>
 <body>
-<!-- D · LEDGER BRASS -->
-<div class="cw">
-  <div class="chead"><span>I— ledger brass · old accounts book</span><span>proof = gold</span></div>
-  <div class="pair">
-    <div>
-      <div class="card f">
-        <span class="kicker">// syntegreti</span>
-        <img class="big" src="../src/assets/syntegreti-mark-editorial.svg" alt="">
-        <div class="info">
-          <div class="n">Jay Jayakeerthy</div>
-          <div class="e">jay.jayakeerthy@syntegreti.com · +91 00000 00000</div>
-        </div>
-      </div>
-      <div class="side">front</div>
-    </div>
-    <div>
-      <div class="card r" style="--fg:var(--brass); --fg2:#8a6d2a; --fgm:#a98f4d; --line2:#c2ac72; --tot:var(--ink)">
-        <div class="h">Syntegreti</div>
-        <div class="hh">Catalyst Studio · Hyderabad → Global · Est. 2024</div>
-        <div class="dash"></div>
-        <div class="row"><span>Platforms engineered in-house</span><b>× 8</b></div>
-        <div class="row"><span>Systems live in client production</span><b>× 3</b></div>
-        <div class="row"><span>Project delivery, end to end</span><b>fixed scope</b></div>
-        <div class="row"><span>Engineers embedded with your team</span><b>on demand</b></div>
-        <div class="row"><span>Idea → working proof</span><b>4–6 wks</b></div>
-        <div class="dash"></div>
-        <div class="hh">Syntegreti.com&ensp;|&ensp;Lean Teams&ensp;|&ensp;Proven Delivery</div>
-      </div>
-      <div class="side">back</div>
-    </div>
-  </div>
-  <p class="cnote">The receipt printed in brass — an old accounts ledger, because brass is the proof color in your system.</p>
-</div>
+<!-- QR mark · encodes https://syntegreti.com · inherits ink via currentColor -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="qrmark" viewBox="0 0 25 25" shape-rendering="crispEdges"><path stroke="currentColor" d="M0 0.5h7m6 0h1m2 0h1m1 0h7M0 1.5h1m5 0h1m2 0h3m3 0h1m2 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m1 0h1m3 0h1m1 0h3m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m1 0h2m1 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m1 0h1m2 0h1m1 0h1m2 0h1m1 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m1 0h2m2 0h5m1 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h2m2 0h1m2 0h2M0 8.5h1m1 0h5m2 0h1m1 0h5m2 0h5M0 9.5h2m6 0h1m1 0h1m5 0h2m1 0h1m3 0h1M2 10.5h2m1 0h2m1 0h2m2 0h2m1 0h1m3 0h3m1 0h2M2 11.5h2m1 0h1m1 0h2m1 0h2m2 0h1m2 0h2m5 0h1M4 12.5h1m1 0h1m1 0h2m1 0h1m1 0h8m1 0h3M0 13.5h3m1 0h2m1 0h3m2 0h2m2 0h1m2 0h1m1 0h1m1 0h1M0 14.5h1m2 0h2m1 0h2m1 0h1m3 0h5m1 0h3m1 0h2M0 15.5h1m1 0h2m5 0h2m1 0h1m1 0h1m1 0h1m2 0h2m3 0h1M0 16.5h1m1 0h1m1 0h4m1 0h2m1 0h9m1 0h1M8 17.5h1m4 0h1m1 0h2m3 0h2M0 18.5h7m3 0h3m1 0h1m1 0h1m1 0h1m1 0h1m1 0h3M0 19.5h1m5 0h1m1 0h1m1 0h2m2 0h1m1 0h1m3 0h2M0 20.5h1m1 0h3m1 0h1m1 0h1m1 0h2m3 0h6m1 0h3M0 21.5h1m1 0h3m1 0h1m1 0h3m1 0h2m3 0h2m1 0h5M0 22.5h1m1 0h3m1 0h1m1 0h1m4 0h2m2 0h1m3 0h2m1 0h1M0 23.5h1m5 0h1m5 0h2m1 0h7m2 0h1M0 24.5h7m1 0h1m3 0h1m1 0h1m3 0h7"/></symbol>
+</svg>
 
-<!-- E · TILL RED -->
+<!-- I · BONE (CURRENT PAPER) -->
 <div class="cw">
-  <div class="chead"><span>II — till red · the corner-shop receipt</span><span>terracotta, wittiest</span></div>
-  <div class="pair">
-    <div>
-      <div class="card f">
-        <span class="kicker">// syntegreti</span>
-        <img class="big" src="../src/assets/syntegreti-mark-editorial.svg" alt="">
-        <div class="info">
-          <div class="n">Jay Jayakeerthy</div>
-          <div class="e">jay.jayakeerthy@syntegreti.com · +91 00000 00000</div>
-        </div>
-      </div>
-      <div class="side">front</div>
-    </div>
-    <div>
-      <div class="card r" style="--fg:var(--terra); --fg2:#8c4327; --fgm:#b06a4c; --line2:#c98d72; --tot:var(--terra)">
-        <div class="h">Syntegreti</div>
-        <div class="hh">Catalyst Studio · Hyderabad → Global · Est. 2024</div>
-        <div class="dash"></div>
-        <div class="row"><span>Platforms engineered in-house</span><b>× 8</b></div>
-        <div class="row"><span>Systems live in client production</span><b>× 3</b></div>
-        <div class="row"><span>Project delivery, end to end</span><b>fixed scope</b></div>
-        <div class="row"><span>Engineers embedded with your team</span><b>on demand</b></div>
-        <div class="row"><span>Idea → working proof</span><b>4–6 wks</b></div>
-        <div class="dash"></div>
-        <div class="hh">Syntegreti.com&ensp;|&ensp;Lean Teams&ensp;|&ensp;Proven Delivery</div>
-      </div>
-      <div class="side">back</div>
-    </div>
-  </div>
-  <p class="cnote">Real till receipts print in red — so this one does too, in terracotta. The most playful back; the wit of the receipt turned all the way up.</p>
-</div>
-
-<!-- F · ONE-INK LETTERPRESS -->
-<div class="cw">
-  <div class="chead"><span>III — ink &amp; paper · letterpress purist</span><span>quietest back</span></div>
+  <div class="chead"><span>I — bone · the current paper (#EFECE4)</span><span>warm cotton stock</span></div>
   <div class="pair">
     <div>
       <div class="card f">
@@ -152,20 +85,56 @@ h1 em { font-style:italic; color:var(--forest); }
     <div>
       <div class="card r">
         <div class="h">Syntegreti</div>
-        <div class="hh">Catalyst Studio · Hyderabad → Global · Est. 2024</div>
+        <div class="hh">Catalyst Studio · Hyderabad → Global</div>
         <div class="dash"></div>
         <div class="row"><span>Platforms engineered in-house</span><b>× 8</b></div>
         <div class="row"><span>Systems live in client production</span><b>× 3</b></div>
         <div class="row"><span>Project delivery, end to end</span><b>fixed scope</b></div>
         <div class="row"><span>Engineers embedded with your team</span><b>on demand</b></div>
         <div class="row"><span>Idea → working proof</span><b>4–6 wks</b></div>
+        <div class="qrow"><span>The rest of the story</span><svg class="qr" style="width:48px;height:48px"><use href="#qrmark"/></svg></div>
         <div class="dash"></div>
-        <div class="hh">Syntegreti.com&ensp;|&ensp;Lean Teams&ensp;|&ensp;Proven Delivery</div>
+        <div class="hh" style="margin-top:auto">Syntegreti.com&ensp;|&ensp;Lean Teams&ensp;|&ensp;Proven Delivery</div>
       </div>
       <div class="side">back</div>
     </div>
   </div>
-  <p class="cnote">The back in plain ink on paper — no color at all. Letterpressed on heavy cotton, the deboss does the talking; the only color on the whole card is the mark itself.</p>
+  <p class="cnote">The shortlisted letterpress purist on the current bone paper — warm, bookish, the receipt feels aged into the stock. Closest press stock: an ecru / natural cotton.</p>
+</div>
+
+<!-- II · PURE WHITE -->
+<div class="cw">
+  <div class="chead"><span>II — white · pure white paper (#FFFFFF)</span><span>bright cotton stock</span></div>
+  <div class="pair">
+    <div>
+      <div class="card f white">
+        <span class="kicker">// syntegreti</span>
+        <img class="big" src="../src/assets/syntegreti-mark-editorial.svg" alt="">
+        <div class="info">
+          <div class="n">Jay Jayakeerthy</div>
+          <div class="e">jay.jayakeerthy@syntegreti.com · +91 00000 00000</div>
+        </div>
+      </div>
+      <div class="side">front</div>
+    </div>
+    <div>
+      <div class="card r white">
+        <div class="h">Syntegreti</div>
+        <div class="hh">Catalyst Studio · Hyderabad → Global</div>
+        <div class="dash"></div>
+        <div class="row"><span>Platforms engineered in-house</span><b>× 8</b></div>
+        <div class="row"><span>Systems live in client production</span><b>× 3</b></div>
+        <div class="row"><span>Project delivery, end to end</span><b>fixed scope</b></div>
+        <div class="row"><span>Engineers embedded with your team</span><b>on demand</b></div>
+        <div class="row"><span>Idea → working proof</span><b>4–6 wks</b></div>
+        <div class="qrow"><span>The rest of the story</span><svg class="qr" style="width:48px;height:48px"><use href="#qrmark"/></svg></div>
+        <div class="dash"></div>
+        <div class="hh" style="margin-top:auto">Syntegreti.com&ensp;|&ensp;Lean Teams&ensp;|&ensp;Proven Delivery</div>
+      </div>
+      <div class="side">back</div>
+    </div>
+  </div>
+  <p class="cnote">The same card on pure white — crisper, more clinical, maximum contrast for both the mark and the QR (best possible scan). Rules and secondary grays cooled to sit on white; the ink and the mark are untouched. Closest press stock: a bright / fluorescent white cotton.</p>
 </div>
 </body>
 </html>
