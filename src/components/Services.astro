@@ -1,7 +1,9 @@
 ---
+import Icon from './Icon.astro';
 const pillars = [
   {
     title: 'Catalyst Studio',
+    icon: 'flame',
     tagline: 'Invent it',
     description: 'Idea to working proof in 4-6 weeks. Our MVP factory with custom LLMs, Agentic RAG, and vision models.',
     href: '/services/catalyst-studio',
@@ -10,6 +12,7 @@ const pillars = [
   },
   {
     title: 'Build & Modernize',
+    icon: 'building-2',
     tagline: 'Build it',
     description: 'Enterprise apps and cloud infrastructure. Salesforce, Workday, custom full-stack, plus AWS/Azure/GCP migration.',
     href: '/services/application-services',
@@ -18,6 +21,7 @@ const pillars = [
   },
   {
     title: 'Data & AI',
+    icon: 'database',
     tagline: 'Power it',
     description: 'From BI pipelines to production GenAI. The entire data stack that makes AI work at enterprise scale.',
     href: '/services/data-ai',
@@ -26,6 +30,7 @@ const pillars = [
   },
   {
     title: 'Operate & Secure',
+    icon: 'shield',
     tagline: 'Protect it',
     description: '24/7 NOC/SOC, cybersecurity, service desk — AI-augmented by our agent platform. We keep it running.',
     href: '/services/infrastructure',
@@ -62,6 +67,7 @@ const pillars = [
           <div class="flex items-center justify-between mb-5">
             <span class="font-mono text-[13px] text-text-secondary opacity-60">{pillar.tagline}</span>
           </div>
+          <span class="inline-flex h-10 w-10 items-center justify-center border border-border bg-deep/30 mb-4"><Icon name={pillar.icon} size={20} class="text-accent" /></span>
           <h3 class={`text-lg font-bold text-${pillar.color}`}>{pillar.title}</h3>
           <p class="mt-3 text-sm leading-relaxed text-text-secondary flex-1">
             {pillar.description}

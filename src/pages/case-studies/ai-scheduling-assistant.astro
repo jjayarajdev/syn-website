@@ -7,7 +7,6 @@ import Layout from '../../layouts/Layout.astro';
   <!-- Hero -->
   <section class="relative pt-24 pb-8 overflow-hidden">
     <div class="absolute inset-0 grid-bg opacity-20"></div>
-    <div class="absolute top-1/4 -right-32 h-96 w-96 rounded-full bg-accent/5 blur-[120px]"></div>
 
     <div class="relative z-10 mx-auto max-w-7xl px-6">
       <div class="max-w-3xl" data-animate>
@@ -143,8 +142,8 @@ import Layout from '../../layouts/Layout.astro';
                 allowing customers to book anytime, anywhere — with one consistent experience.
               </p>
               <div class="mt-4 flex flex-wrap gap-2">
-                <span class="rounded-md bg-accent/10 px-2.5 py-1 font-mono text-xs text-accent">Claude Sonnet 3.5</span>
-                <span class="rounded-md bg-accent/10 px-2.5 py-1 font-mono text-xs text-accent">DSPy Optimization</span>
+                <span class="rounded-md bg-cyan/10 px-2.5 py-1 font-mono text-xs text-cyan">Claude Sonnet 3.5</span>
+                <span class="rounded-md bg-cyan/10 px-2.5 py-1 font-mono text-xs text-cyan">DSPy Optimization</span>
               </div>
             </div>
             <div class="border-b border-border p-8 lg:border-b-0 lg:border-r">
@@ -175,8 +174,8 @@ import Layout from '../../layouts/Layout.astro';
                 Mandatory "Review & Confirm" loop ensures zero double-bookings.
               </p>
               <div class="mt-4 flex flex-wrap gap-2">
-                <span class="rounded-md bg-accent/10 px-2.5 py-1 font-mono text-xs text-accent">Weather API</span>
-                <span class="rounded-md bg-accent/10 px-2.5 py-1 font-mono text-xs text-accent">Confirm Loop</span>
+                <span class="rounded-md bg-cyan/10 px-2.5 py-1 font-mono text-xs text-cyan">Weather API</span>
+                <span class="rounded-md bg-cyan/10 px-2.5 py-1 font-mono text-xs text-cyan">Confirm Loop</span>
               </div>
             </div>
           </div>
@@ -198,10 +197,10 @@ import Layout from '../../layouts/Layout.astro';
         <div class="p-8">
           <div class="grid gap-4 sm:grid-cols-3 lg:grid-cols-5">
             {[
-              { label: 'Channels', items: ['Voice (Phone)', 'Web Chat', 'SMS'], color: 'accent' },
+              { label: 'Channels', items: ['Voice (Phone)', 'Web Chat', 'SMS'], color: 'cyan' },
               { label: 'AI Core', items: ['Claude Sonnet 3.5', 'DSPy Optimizer', 'NLU Pipeline'], color: 'cyan' },
-              { label: 'Intelligence', items: ['Weather API', 'Calendar Engine', 'Conflict Detection'], color: 'amber' },
-              { label: 'Integration', items: ['CRM Sync', 'Notification Engine', 'Audit Logging'], color: 'accent' },
+              { label: 'Intelligence', items: ['Weather API', 'Calendar Engine', 'Conflict Detection'], color: 'cyan' },
+              { label: 'Integration', items: ['CRM Sync', 'Notification Engine', 'Audit Logging'], color: 'cyan' },
               { label: 'Voice Stack', items: ['TTS Engine', 'ASR Processing', 'Latency Optimizer'], color: 'cyan' },
             ].map((group) => (
               <div>
@@ -227,7 +226,7 @@ import Layout from '../../layouts/Layout.astro';
         <h2 class="mt-3 text-3xl font-bold tracking-tight">The Math</h2>
       </div>
 
-      <div class="rounded-2xl border border-accent/10 bg-gradient-to-br from-accent/5 via-surface/30 to-cyan/5 p-10" data-animate>
+      <div class="rounded-2xl border border-accent/10 bg-surface/30 p-10" data-animate>
         <div class="grid gap-8 lg:grid-cols-2">
           <div>
             <h3 class="text-lg font-bold text-text-primary mb-4">Before: The Cost of Manual</h3>
@@ -292,7 +291,7 @@ import Layout from '../../layouts/Layout.astro';
   <!-- CTA -->
   <section class="py-8">
     <div class="mx-auto max-w-7xl px-6">
-      <div class="rounded-2xl border border-accent/20 bg-gradient-to-br from-accent/5 to-surface p-12 text-center" data-animate>
+      <div class="rounded-2xl border border-accent/20 bg-surface/30 p-12 text-center" data-animate>
         <h2 class="text-3xl font-bold tracking-tight">
           Have a similar challenge?
         </h2>
@@ -300,7 +299,7 @@ import Layout from '../../layouts/Layout.astro';
           We can build a proof of concept for your scheduling, customer service, or
           voice automation use case in 4-6 weeks.
         </p>
-        <a href="/contact" class="mt-8 inline-flex items-center gap-2 rounded-xl bg-accent px-8 py-4 text-sm font-semibold text-void transition-all hover:bg-accent-glow hover:shadow-[0_0_30px_rgba(0,232,123,0.3)]">
+        <a href="/contact" class="mt-8 inline-flex items-center gap-2 rounded-xl bg-accent px-8 py-4 text-sm font-semibold text-void transition-all hover:bg-accent-glow">
           Book a 4-6 Week Sprint
         </a>
       </div>

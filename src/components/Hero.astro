@@ -1,28 +1,13 @@
 ---
 ---
 
-<section class="relative min-h-[82vh] flex items-center overflow-hidden pt-24 aurora">
+<section class="relative min-h-[78vh] flex items-center overflow-hidden pt-16 aurora">
   <!-- Background grid -->
   <div class="absolute inset-0 grid-bg opacity-40 z-[1]"></div>
 
-  <!-- Radial gradient fade at bottom -->
-  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-void z-[2]"></div>
-
   <div class="relative z-10 mx-auto max-w-7xl px-6 py-10">
-    <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+    <div class="grid gap-12 lg:grid-cols-2 lg:items-start">
       <div>
-        <!-- Tag -->
-        <div class="mb-8" data-animate>
-          <span class="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-sm">
-            <span class="h-2 w-2 rounded-full bg-accent animate-pulse"></span>
-            <span class="text-text-secondary">AI-first company</span>
-            <span class="text-text-muted">/</span>
-            <span class="text-text-secondary">Platforms · Projects · Teams</span>
-            <span class="text-text-muted">/</span>
-            <span class="text-text-muted">Hyderabad → Global</span>
-          </span>
-        </div>
-
         <!-- Headline -->
         <h1 class="text-5xl font-bold leading-[1.1] tracking-tight sm:text-6xl lg:text-7xl" data-animate>
           Lean team.<br />
@@ -33,7 +18,7 @@
 
         <!-- Subheadline — tightened with "what" and "for whom" -->
         <p class="mt-8 max-w-xl text-lg leading-relaxed text-text-secondary" data-animate>
-          We build AI platforms that run in production at real clients — and the
+          We build AI platforms that run in your enterprise and the
           same engineers deliver your projects and extend your teams. No layers,
           no handoffs — the people who architect it are the people who deploy it.
         </p>
@@ -62,40 +47,21 @@
           </a>
         </div>
 
-        <!-- Social proof strip with counters — one line, never wraps -->
-        <div class="mt-10 flex flex-nowrap items-center justify-between gap-3 sm:gap-6 lg:gap-8 border-t border-border pt-8" data-animate>
-          <div class="min-w-0">
-            <div class="text-lg sm:text-2xl font-bold text-text-primary whitespace-nowrap">100+</div>
-            <div class="text-[11px] sm:text-xs text-text-muted">Years combined<br/>experience</div>
-          </div>
-          <div class="h-10 w-px bg-border shrink-0"></div>
-          <div class="min-w-0">
-            <div class="text-lg sm:text-2xl font-bold text-text-primary whitespace-nowrap" data-counter="8">0</div>
-            <div class="text-[11px] sm:text-xs text-text-muted">Platforms<br/>built in-house</div>
-          </div>
-          <div class="h-10 w-px bg-border shrink-0"></div>
-          <div class="min-w-0">
-            <div class="text-lg sm:text-2xl font-bold text-text-primary whitespace-nowrap">4-6 Weeks</div>
-            <div class="text-[11px] sm:text-xs text-text-muted">Idea to<br/>working proof</div>
-          </div>
-          <div class="h-10 w-px bg-border shrink-0"></div>
-          <div class="min-w-0">
-            <div class="text-lg sm:text-2xl font-bold text-accent whitespace-nowrap" data-counter="3">0</div>
-            <div class="text-[11px] sm:text-xs text-text-muted">Client systems<br/>in production</div>
-          </div>
-        </div>
-
-        <!-- Cloud partners -->
-        <div class="mt-6 flex flex-wrap items-center gap-3" data-animate>
-          <span class="font-mono text-xs text-text-muted">Cloud partners:</span>
-          <span class="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1 text-xs text-text-secondary">AWS</span>
-          <span class="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1 text-xs text-text-secondary">Microsoft Azure</span>
-          <span class="text-xs text-text-muted">— we deploy in your cloud, under your controls.</span>
-        </div>
       </div>
 
-      <!-- Typing Terminal -->
+      <!-- Right column: tag + typing terminal -->
       <div class="hidden lg:block" data-animate>
+        <!-- Tag -->
+        <div class="mb-6 flex justify-end">
+          <span class="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-sm">
+            <span class="h-2 w-2 rounded-full bg-accent"></span>
+            <span class="text-text-secondary">AI-first company</span>
+            <span class="text-text-muted">/</span>
+            <span class="text-text-secondary">Platforms · Projects · Teams</span>
+            <span class="text-text-muted">/</span>
+            <span class="text-text-muted">Hyderabad → Global</span>
+          </span>
+        </div>
         <div class="glow-card-subtle">
           <div class="flex items-center gap-2 px-5 py-3 border-b border-border/50">
             <div class="h-3 w-3 rounded-full bg-rose/60"></div>
@@ -103,11 +69,34 @@
             <div class="h-3 w-3 rounded-full bg-accent/60"></div>
             <span class="ml-2 font-mono text-xs text-text-muted">catalyst-studio — live</span>
           </div>
-          <div class="p-6 font-mono text-sm leading-relaxed min-h-[320px]" id="terminal">
+          <div class="p-6 font-mono text-sm leading-relaxed min-h-[420px]" id="terminal">
             <div id="terminal-output"></div>
             <span id="terminal-cursor" class="typing-cursor"></span>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Proof strip — full-width base under both columns -->
+    <div class="mt-12 flex flex-nowrap items-center justify-between gap-3 sm:gap-6 lg:gap-8 border-t border-border pt-8" data-animate>
+      <div class="min-w-0">
+        <div class="text-lg sm:text-2xl font-bold text-text-primary whitespace-nowrap">100+</div>
+        <div class="text-[11px] sm:text-xs text-text-muted">Years combined<br/>experience</div>
+      </div>
+      <div class="h-10 w-px bg-border shrink-0"></div>
+      <div class="min-w-0">
+        <div class="text-lg sm:text-2xl font-bold text-text-primary whitespace-nowrap" data-counter="8">0</div>
+        <div class="text-[11px] sm:text-xs text-text-muted">Platforms<br/>built in-house</div>
+      </div>
+      <div class="h-10 w-px bg-border shrink-0"></div>
+      <div class="min-w-0">
+        <div class="text-lg sm:text-2xl font-bold text-text-primary whitespace-nowrap">4-6 Weeks</div>
+        <div class="text-[11px] sm:text-xs text-text-muted">Idea to<br/>working proof</div>
+      </div>
+      <div class="h-10 w-px bg-border shrink-0"></div>
+      <div class="min-w-0">
+        <div class="text-lg sm:text-2xl font-bold text-accent whitespace-nowrap" data-counter="3">0</div>
+        <div class="text-[11px] sm:text-xs text-text-muted">Client systems<br/>in production</div>
       </div>
     </div>
   </div>

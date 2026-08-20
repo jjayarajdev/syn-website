@@ -1,11 +1,11 @@
 ---
+import Icon from './Icon.astro';
 const industries = [
-  { name: 'Manufacturing' },
-  { name: 'Lifesciences' },
-  { name: 'Healthcare' },
-  { name: 'Engineering' },
-  { name: 'Insurance' },
-  { name: 'Banking' },
+  { name: 'Retail', icon: 'shopping-cart' },
+  { name: 'Government', icon: 'landmark' },
+  { name: 'Engineering', icon: 'cog' },
+  { name: 'Insurance', icon: 'shield' },
+  { name: 'Banking', icon: 'landmark' },
 ];
 ---
 
@@ -55,16 +55,17 @@ const industries = [
     <!-- Industries + constraint -->
     <div class="glow-card-subtle p-10" data-animate>
       <div class="text-center mb-8">
-        <h3 class="text-xl font-bold">Six industries. All hard. All regulated.</h3>
+        <h3 class="text-xl font-bold">Five industries. All hard. All regulated.</h3>
         <p class="mt-2 text-sm text-text-secondary">
           We don't do everything for everyone. We go deep on the stacks our
-          six industries actually run in production.
+          five industries actually run in production.
         </p>
       </div>
 
-      <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+      <div class="flex flex-wrap justify-center gap-3">
         {industries.map((industry) => (
-          <div class="flex flex-col items-center gap-2 rounded-lg border border-border/50 bg-deep/30 p-4 text-center transition-all hover:border-border-light hover:bg-elevated/30">
+          <div class="flex w-40 flex-col items-center justify-center gap-2 rounded-lg border border-border/50 bg-deep/30 p-4 text-center transition-all hover:border-border-light hover:bg-elevated/30">
+            <Icon name={industry.icon} size={18} class="text-text-muted" />
             <span class="text-xs font-medium text-text-secondary">{industry.name}</span>
           </div>
         ))}

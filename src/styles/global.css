@@ -123,6 +123,60 @@ h1 { line-height: 0.95; }
 
 .glow-text { /* glow removed by design */ }
 
+/* ===== COLOR BANDS — full-section grounds for emphasis ===== */
+/* Wrap any section: <div class="band-ink"><Section /></div>.
+   Components adapt automatically because utilities read these vars. */
+
+.band-ink {
+  background: #0a0908;
+  color: #efece4;
+  --color-void: #0a0908;
+  --color-deep: #141311;
+  --color-surface: #171512;
+  --color-elevated: #1e1b17;
+  --color-border: #26241f;
+  --color-border-light: #3a372f;
+  --color-text-primary: #efece4;
+  --color-text-secondary: rgba(239, 236, 228, 0.78);
+  --color-text-muted: rgba(239, 236, 228, 0.5);
+  --color-accent: #9db38f;      /* sage-light — forest is invisible on ink */
+  --color-accent-dim: #77896f;
+  --color-accent-glow: #b5c9a8;
+  --color-amber: #c9a85c;       /* brass-light for metrics on dark */
+  --color-cyan: #8da0ac;        /* slate-light */
+  --color-rose: #c97757;        /* terracotta-light */
+}
+
+.band-forest {
+  background: #0a250a;
+  color: #efece4;
+  --color-void: #0a250a;
+  --color-deep: #10300f;
+  --color-surface: #123312;
+  --color-elevated: #1a3f19;
+  --color-border: #1d3a20;
+  --color-border-light: #2c4d2f;
+  --color-text-primary: #efece4;
+  --color-text-secondary: rgba(239, 236, 228, 0.78);
+  --color-text-muted: rgba(239, 236, 228, 0.52);
+  --color-accent: #c9a85c;      /* brass-light carries highlights on green */
+  --color-accent-dim: #9c7a2f;
+  --color-accent-glow: #ddc084;
+  --color-amber: #c9a85c;
+  --color-cyan: #9fb5a0;
+  --color-rose: #d08a6d;
+}
+
+.band-surface {
+  background: #e6e2d8;
+  --color-void: #e6e2d8;
+  --color-deep: #dfdacd;
+  --color-surface: #d9d4c5;
+  --color-elevated: #d2ccbb;
+  --color-border: #bfb9a9;
+  --color-border-light: #a8a190;
+}
+
 /* ===== GRID BACKGROUNDS ===== */
 
 /* Faint dot grid on paper */

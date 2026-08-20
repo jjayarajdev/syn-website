@@ -1,31 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-
-const stack = [
-  { name: 'Admin + Contractor Portals', tech: 'Next.js 15 · React 19 · Mapbox GL JS' },
-  { name: 'Platform API', tech: 'NestJS 11 · PostgreSQL 16 · Redis' },
-  { name: 'AI / OCR Service', tech: 'FastAPI · GPT-4o document extraction' },
-  { name: 'Workflow Orchestration', tech: 'Temporal.io — durable monitoring pipelines' },
-];
-
-const scope = [
-  {
-    title: 'Jurisdiction Monitoring',
-    desc: 'Licensing requirements tracked across state, county and city jurisdictions — with durable Temporal workflows watching the authoritative sources for change.',
-  },
-  {
-    title: 'AI Document Verification',
-    desc: 'Licenses and certificates of insurance read by AI/OCR extraction, with accuracy targets agreed in the contract — not marketing copy.',
-  },
-  {
-    title: 'Compliance Status Engine',
-    desc: 'Contractor compliance is pre-computed at write time, so the answer to "can this contractor work this job in this county?" is instant.',
-  },
-  {
-    title: 'Two Portals, One Platform',
-    desc: 'An admin portal for the compliance team and a self-service portal for contractors — onboarding, document upload, and status in one place.',
-  },
-];
 ---
 
 <Layout title="License & Contractor Compliance Platform — Case Study | Syntegreti" description="Building the License & Contractor Compliance Platform for one of America's largest home-improvement platforms — jurisdiction monitoring, AI document verification, and a pre-computed compliance engine, delivered against contractual milestones.">
@@ -33,7 +7,6 @@ const scope = [
   <!-- Hero -->
   <section class="relative pt-24 pb-8 overflow-hidden">
     <div class="absolute inset-0 grid-bg opacity-20"></div>
-    <div class="absolute top-1/4 -right-32 h-96 w-96 rounded-full bg-accent/5 blur-[120px]"></div>
 
     <div class="relative z-10 mx-auto max-w-7xl px-6">
       <div class="max-w-3xl" data-animate>
@@ -67,7 +40,7 @@ const scope = [
     </div>
   </section>
 
-  <!-- Why this is here without metrics -->
+  <!-- Fact strip -->
   <section class="py-8">
     <div class="mx-auto max-w-7xl px-6">
       <div class="grid grid-cols-2 gap-3 sm:grid-cols-4" data-stagger>
@@ -77,8 +50,8 @@ const scope = [
           { value: '3-level', label: 'Jurisdiction coverage', sub: 'state · county · city' },
           { value: 'In SOW', label: 'AI accuracy SLA', sub: 'contractual, not claimed' },
         ].map((m) => (
-          <div class="rounded-xl border border-amber/20 bg-amber/5 p-5 text-center">
-            <div class="text-2xl font-bold text-amber">{m.value}</div>
+          <div class="rounded-xl border border-accent/20 bg-accent/5 p-5 text-center">
+            <div class="text-2xl font-bold text-accent">{m.value}</div>
             <div class="text-xs font-medium text-text-primary">{m.label}</div>
             {m.sub && <div class="mt-0.5 text-[13px] text-text-secondary">{m.sub}</div>}
           </div>
@@ -106,10 +79,10 @@ const scope = [
               { title: 'Manual verification', desc: 'Licenses and certificates of insurance checked by hand, document by document.' },
               { title: 'Expiry risk', desc: 'A lapsed license found late means stopped jobs and real regulatory exposure.' },
               { title: 'No single answer', desc: '"Is this contractor compliant for this job, here, today?" took research, not a lookup.' },
-            ].map((c) => (
-              <div class="rounded-xl border border-border/50 bg-surface/30 p-5">
-                <h3 class="text-sm font-bold text-text-primary">{c.title}</h3>
-                <p class="mt-2 text-sm leading-relaxed text-text-secondary">{c.desc}</p>
+            ].map((challenge) => (
+              <div class="rounded-xl border border-rose/20 bg-rose/5 p-6">
+                <h3 class="text-sm font-semibold text-text-primary">{challenge.title}</h3>
+                <p class="mt-2 text-xs leading-relaxed text-text-muted">{challenge.desc}</p>
               </div>
             ))}
           </div>
@@ -118,47 +91,121 @@ const scope = [
     </div>
   </section>
 
-  <!-- What we're building -->
+  <!-- The Solution -->
   <section class="py-8">
     <div class="mx-auto max-w-7xl px-6">
       <div class="mb-8" data-animate>
-        <span class="font-mono text-sm text-accent">// the_platform</span>
-        <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-          Compliance as a lookup, not a project
+        <span class="font-mono text-sm text-accent">// the_solution</span>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight">
+          What We Built
         </h2>
       </div>
-      <div class="grid gap-6 md:grid-cols-2" data-stagger>
-        {scope.map((s) => (
-          <div class="glow-card-subtle p-7">
-            <h3 class="text-lg font-bold text-accent">{s.title}</h3>
-            <p class="mt-3 text-sm leading-relaxed text-text-secondary">{s.desc}</p>
+
+      <div class="space-y-6" data-stagger>
+        <div class="rounded-2xl border border-border bg-surface/20 overflow-hidden">
+          <div class="grid lg:grid-cols-2">
+            <!-- Solution 1 -->
+            <div class="border-b border-border p-8 lg:border-r">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-accent/20 bg-accent/5">
+                  <span class="font-mono text-sm font-bold text-accent">01</span>
+                </div>
+                <h3 class="text-lg font-bold text-text-primary">Jurisdiction Monitoring</h3>
+              </div>
+              <p class="text-sm leading-relaxed text-text-secondary">
+                Licensing requirements tracked across <strong>state, county and city jurisdictions</strong> —
+                with durable Temporal workflows watching the authoritative sources for change.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-md bg-cyan/10 px-2.5 py-1 font-mono text-xs text-cyan">Temporal.io</span>
+              </div>
+            </div>
+            <!-- Solution 2 -->
+            <div class="border-b border-border p-8">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-accent/20 bg-accent/5">
+                  <span class="font-mono text-sm font-bold text-accent">02</span>
+                </div>
+                <h3 class="text-lg font-bold text-text-primary">AI Document Verification</h3>
+              </div>
+              <p class="text-sm leading-relaxed text-text-secondary">
+                Licenses and certificates of insurance read by <strong>AI/OCR extraction</strong>,
+                with accuracy targets agreed in the contract — not marketing copy.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-md bg-cyan/10 px-2.5 py-1 font-mono text-xs text-cyan">GPT-4o</span>
+                <span class="rounded-md bg-cyan/10 px-2.5 py-1 font-mono text-xs text-cyan">FastAPI</span>
+              </div>
+            </div>
+            <!-- Solution 3 -->
+            <div class="border-b border-border p-8 lg:border-b-0 lg:border-r">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-accent/20 bg-accent/5">
+                  <span class="font-mono text-sm font-bold text-accent">03</span>
+                </div>
+                <h3 class="text-lg font-bold text-text-primary">Compliance Status Engine</h3>
+              </div>
+              <p class="text-sm leading-relaxed text-text-secondary">
+                Contractor compliance is <strong>pre-computed at write time</strong>, so the answer to
+                "can this contractor work this job in this county?" is instant.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-md bg-cyan/10 px-2.5 py-1 font-mono text-xs text-cyan">NestJS</span>
+                <span class="rounded-md bg-cyan/10 px-2.5 py-1 font-mono text-xs text-cyan">PostgreSQL</span>
+                <span class="rounded-md bg-cyan/10 px-2.5 py-1 font-mono text-xs text-cyan">Redis</span>
+              </div>
+            </div>
+            <!-- Solution 4 -->
+            <div class="p-8">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-accent/20 bg-accent/5">
+                  <span class="font-mono text-sm font-bold text-accent">04</span>
+                </div>
+                <h3 class="text-lg font-bold text-text-primary">Two Portals, One Platform</h3>
+              </div>
+              <p class="text-sm leading-relaxed text-text-secondary">
+                An <strong>admin portal for the compliance team</strong> and a self-service portal
+                for contractors — onboarding, document upload, and status in one place.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-md bg-cyan/10 px-2.5 py-1 font-mono text-xs text-cyan">Next.js</span>
+                <span class="rounded-md bg-cyan/10 px-2.5 py-1 font-mono text-xs text-cyan">Mapbox</span>
+              </div>
+            </div>
           </div>
-        ))}
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- How the project started -->
+  <!-- Architecture -->
   <section class="py-8">
     <div class="mx-auto max-w-7xl px-6">
-      <div class="rounded-2xl border border-accent/20 bg-accent/5 p-10" data-animate>
-        <span class="font-mono text-sm text-accent">// how_it_started</span>
-        <h2 class="mt-3 text-2xl font-bold">The project started with working software, not a deck.</h2>
-        <p class="mt-4 max-w-3xl text-sm leading-relaxed text-text-secondary">
-          Before any contract, we built a full-stack proof of concept: both
-          portals, the API, the AI/OCR extraction service and the Temporal
-          workflow engine, running end to end. The client evaluated a system
-          they could click through — then engaged us to build it out. That PoC
-          became the foundation of the platform now in delivery, with the same
-          team carrying it from proof to production.
-        </p>
-        <div class="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {stack.map((s) => (
-            <div class="rounded-lg border border-border/50 bg-deep/50 px-4 py-3">
-              <div class="text-xs font-medium text-text-primary">{s.name}</div>
-              <div class="mt-1 font-mono text-[13px] text-text-secondary">{s.tech}</div>
-            </div>
-          ))}
+      <div class="rounded-2xl border border-border bg-deep p-1" data-animate>
+        <div class="flex items-center gap-2 px-4 py-3 border-b border-border">
+          <div class="h-3 w-3 rounded-full bg-rose/60"></div>
+          <div class="h-3 w-3 rounded-full bg-amber/60"></div>
+          <div class="h-3 w-3 rounded-full bg-accent/60"></div>
+          <span class="ml-2 font-mono text-xs text-text-muted">architecture — contractor-compliance-platform</span>
+        </div>
+        <div class="p-8">
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { label: 'Portals', items: ['Next.js 15', 'React 19', 'Mapbox GL JS'], color: 'cyan' },
+              { label: 'Platform API', items: ['NestJS 11', 'PostgreSQL 16', 'Redis'], color: 'cyan' },
+              { label: 'AI-OCR Service', items: ['FastAPI', 'GPT-4o Extraction'], color: 'cyan' },
+              { label: 'Orchestration', items: ['Temporal.io', 'Durable Monitoring Pipelines'], color: 'cyan' },
+            ].map((group) => (
+              <div>
+                <span class={`block text-xs font-semibold uppercase tracking-wider text-${group.color} mb-3`}>{group.label}</span>
+                <div class="space-y-1.5">
+                  {group.items.map((item) => (
+                    <div class="rounded-md border border-border bg-void/50 px-3 py-2 font-mono text-xs text-text-muted">{item}</div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
@@ -167,7 +214,7 @@ const scope = [
   <!-- Accountability -->
   <section class="py-8">
     <div class="mx-auto max-w-7xl px-6">
-      <div class="rounded-2xl border border-border bg-surface/50 p-10" data-animate>
+      <div class="rounded-2xl border border-accent/10 bg-surface/30 p-10" data-animate>
         <span class="font-mono text-sm text-accent">// accountability</span>
         <h2 class="mt-3 text-2xl font-bold">Results will be reported when they're real</h2>
         <p class="mt-4 max-w-3xl text-sm leading-relaxed text-text-secondary">
@@ -181,23 +228,49 @@ const scope = [
     </div>
   </section>
 
+  <!-- Methodology -->
+  <section class="py-8">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="rounded-2xl border border-border bg-surface/20 p-8" data-animate>
+        <span class="font-mono text-sm text-accent">// how_we_delivered</span>
+        <h3 class="mt-3 text-lg font-bold text-text-primary">The project started with working software, not a deck.</h3>
+        <p class="mt-3 text-sm text-text-secondary max-w-2xl">
+          Before any contract, we built a full-stack proof of concept: both
+          portals, the API, the AI/OCR extraction service and the Temporal
+          workflow engine, running end to end. The client evaluated a system
+          they could click through — then engaged us to build it out. That PoC
+          became the foundation of the platform now in delivery, with the same
+          team carrying it from proof to production.
+        </p>
+        <a href="/services/catalyst-studio" class="mt-4 inline-flex items-center gap-1 text-sm font-medium text-accent hover:text-accent-glow transition-colors">
+          Learn about our Catalyst Studio
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="py-8">
-    <div class="mx-auto max-w-4xl px-6 text-center" data-animate>
-      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
-        Have a compliance problem that looks like this?
-      </h2>
-      <p class="mx-auto mt-4 max-w-xl text-text-secondary">
-        Regulated, jurisdiction-heavy, document-driven — this is the work we pick
-        first. Start with a 4-6 week proof.
-      </p>
-      <div class="mt-8 flex flex-wrap justify-center gap-4">
-        <a href="/contact" class="inline-flex items-center gap-2 rounded-xl bg-accent px-7 py-3.5 text-sm font-semibold text-void transition-all hover:bg-accent-glow hover:shadow-[0_0_30px_rgba(0,232,123,0.3)]">
-          Talk to Us
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="rounded-2xl border border-accent/20 bg-surface/30 p-12 text-center" data-animate>
+        <h2 class="text-3xl font-bold tracking-tight">
+          Have a compliance problem that looks like this?
+        </h2>
+        <p class="mx-auto mt-4 max-w-lg text-text-secondary">
+          Regulated, jurisdiction-heavy, document-driven — this is the work we pick
+          first. Start with a 4-6 week proof.
+        </p>
+        <a href="/contact" class="mt-8 inline-flex items-center gap-2 rounded-xl bg-accent px-8 py-4 text-sm font-semibold text-void transition-all hover:bg-accent-glow">
+          Book a 4-6 Week Sprint
         </a>
-        <a href="/case-studies" class="inline-flex items-center gap-2 rounded-xl border border-border px-7 py-3.5 text-sm font-medium text-text-secondary transition-all hover:border-border-light hover:bg-elevated">
-          All Case Studies
-        </a>
+        <div class="mt-6">
+          <a href="/case-studies" class="text-sm text-text-muted hover:text-text-secondary transition-colors">
+            All Case Studies
+          </a>
+        </div>
       </div>
     </div>
   </section>

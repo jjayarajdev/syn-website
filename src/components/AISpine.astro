@@ -1,7 +1,9 @@
 ---
+import Icon from './Icon.astro';
 const spineLayers = [
   {
     layer: 'GOVERN',
+    icon: 'shield-check',
     name: 'AI Governance',
     color: 'accent',
     href: '/products/ai-governance',
@@ -11,6 +13,7 @@ const spineLayers = [
   },
   {
     layer: 'BUILD',
+    icon: 'git-branch',
     name: 'AI-Assisted SDLC',
     color: 'accent',
     href: '/products/ai-sdlc',
@@ -20,6 +23,7 @@ const spineLayers = [
   },
   {
     layer: 'OPERATE',
+    icon: 'workflow',
     name: 'Agent Platform',
     color: 'accent',
     href: '/products/agent-platform',
@@ -51,6 +55,7 @@ const spineLayers = [
       <a href="/products/contract-intelligence" class="group glow-card-subtle p-8">
         <div class="flex items-center justify-between mb-4">
           <div class="flex items-center gap-3">
+            <span class="inline-flex h-10 w-10 items-center justify-center border border-border bg-deep/30"><Icon name="file-text" size={20} class="text-accent" /></span>
             <h3 class="text-xl font-bold text-accent">Contract Intelligence</h3>
           </div>
           <span class="rounded-full border border-accent/20 bg-accent/5 px-3 py-1 text-[12px] font-semibold uppercase tracking-wider text-accent">Platform · Live demo</span>
@@ -71,6 +76,7 @@ const spineLayers = [
       <a href="/products/business-operations" class="group glow-card-subtle p-8">
         <div class="flex items-center justify-between mb-4">
           <div class="flex items-center gap-3">
+            <span class="inline-flex h-10 w-10 items-center justify-center border border-border bg-deep/30"><Icon name="layout-grid" size={20} class="text-accent" /></span>
             <h3 class="text-xl font-bold text-accent">Business Operations</h3>
           </div>
           <span class="rounded-full border border-accent/20 bg-accent/5 px-3 py-1 text-[12px] font-semibold uppercase tracking-wider text-accent">Platform</span>
@@ -100,7 +106,7 @@ const spineLayers = [
               i > 0 && 'md:pl-8',
             ]}
           >
-            <span class:list={['font-mono text-[12px] tracking-widest', `text-${item.color}`]}>{item.layer}</span>
+            <span class:list={['font-mono text-[12px] tracking-widest', `text-${item.color}`]}><Icon name={item.icon} size={14} class="inline -mt-0.5" /> {item.layer}</span>
             <h3 class:list={['mt-2 text-lg font-bold', `text-${item.color}`]}>{item.name}</h3>
             <p class="font-mono text-[13px] text-text-muted mb-3">{item.tagline}</p>
             <p class="text-sm leading-relaxed text-text-secondary">{item.description}</p>
@@ -123,6 +129,7 @@ const spineLayers = [
     <div class="mt-6 grid gap-4 md:grid-cols-2" data-stagger>
       <a href="/products/regulatory-reporting" class="group glow-card-subtle p-6">
         <div class="flex items-center gap-3">
+          <Icon name="landmark" size={18} class="text-accent" />
           <div>
             <h3 class="text-base font-bold text-accent">Regulatory Reporting</h3>
             <p class="font-mono text-[13px] text-text-muted">Regulatory reporting for US P&C insurance</p>
@@ -136,6 +143,7 @@ const spineLayers = [
       </a>
       <a href="/products/document-intelligence" class="group glow-card-subtle p-6">
         <div class="flex items-center gap-3">
+          <Icon name="file-search" size={18} class="text-accent" />
           <div>
             <h3 class="text-base font-bold text-accent">Document Intelligence</h3>
             <p class="font-mono text-[13px] text-text-muted">AI extraction with review built in</p>
@@ -154,6 +162,7 @@ const spineLayers = [
       <a href="/products/datacenter" class="group glow-card-subtle block p-6 md:p-8">
         <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div class="flex items-center gap-4">
+            <Icon name="server" size={18} class="text-accent" />
             <div>
               <h3 class="text-lg font-bold text-accent">Datacenter Solutions</h3>
               <p class="font-mono text-[13px] text-text-muted">Thermal intelligence — for data center operators</p>

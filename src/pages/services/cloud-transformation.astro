@@ -1,24 +1,29 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/Icon.astro';
 
 const journey = [
   {
     phase: 'Assess',
+    icon: 'search',
     title: 'Cloud Strategy & Roadmap',
     desc: 'We audit your current state, map dependencies, and build a migration roadmap that accounts for risk, cost, and business continuity.',
   },
   {
     phase: 'Migrate',
+    icon: 'rocket',
     title: 'Re-architect & Modernize',
     desc: 'Lift-and-shift is a myth for complex systems. We re-architect for cloud-native — containers, serverless, managed services.',
   },
   {
     phase: 'Operate',
+    icon: 'shield',
     title: 'Security & Governance',
     desc: 'IAM policies, encryption at rest and in transit, compliance frameworks, cost optimization — baked in, not bolted on.',
   },
   {
     phase: 'Optimize',
+    icon: 'trending-up',
     title: 'Continuous Improvement',
     desc: 'Cloud Testing & QA, performance tuning, cost anomaly detection, and architecture evolution as your needs grow.',
   },
@@ -30,9 +35,6 @@ const journey = [
   <!-- Hero -->
   <section class="relative pt-24 pb-10 overflow-hidden">
     <div class="absolute inset-0 grid-bg opacity-20"></div>
-    <!-- Animated gradient orbs -->
-    <div class="absolute top-20 left-1/4 h-72 w-72 rounded-full bg-accent/5 blur-[100px] animate-pulse"></div>
-    <div class="absolute bottom-20 right-1/4 h-72 w-72 rounded-full bg-accent/5 blur-[100px] animate-pulse" style="animation-delay: 1s;"></div>
 
     <div class="relative z-10 mx-auto max-w-7xl px-6">
       <div class="max-w-3xl" data-animate>
@@ -90,7 +92,7 @@ const journey = [
 
       <div class="relative">
         <!-- Connection line desktop -->
-        <div class="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-accent/50 via-accent/30 to-transparent lg:hidden"></div>
+        <div class="absolute left-8 top-0 bottom-0 w-px bg-border lg:hidden"></div>
 
         <div class="space-y-8 lg:space-y-0 lg:grid lg:grid-cols-4 lg:gap-6" data-stagger>
           {journey.map((step, i) => (
@@ -104,6 +106,7 @@ const journey = [
 
               <div class="rounded-2xl border border-border bg-surface/30 p-6 transition-all card-hover">
                 <div class="flex items-center gap-3 mb-4">
+                  <Icon name={step.icon} size={18} class="text-accent" />
                   <div>
                     <span class="font-mono text-xs text-accent">Phase {i + 1}</span>
                     <span class="ml-2 text-xs text-text-muted">·</span>
@@ -188,7 +191,7 @@ const journey = [
   <!-- CTA -->
   <section class="py-10">
     <div class="mx-auto max-w-7xl px-6">
-      <div class="rounded-2xl border border-accent/20 bg-gradient-to-br from-accent/5 to-surface p-12 text-center" data-animate>
+      <div class="rounded-2xl border border-accent/20 bg-surface/30 p-12 text-center" data-animate>
         <h2 class="text-3xl font-bold tracking-tight">
           Cloud done right<br />
           <span class="gradient-text">costs less than cloud done twice.</span>

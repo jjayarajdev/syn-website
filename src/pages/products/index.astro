@@ -1,9 +1,11 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/Icon.astro';
 
 const platforms = [
   {
     id: 'ai-governance',
+    icon: 'shield-check',
     name: 'AI governance platform',
     chip: 'bg-accent/5 text-accent',
     text: 'text-accent',
@@ -16,6 +18,7 @@ const platforms = [
   },
   {
     id: 'regulatory-reporting',
+    icon: 'landmark',
     name: 'Regulatory reporting platform',
     chip: 'bg-accent/10 text-accent',
     text: 'text-accent',
@@ -28,6 +31,7 @@ const platforms = [
   },
   {
     id: 'document-intelligence',
+    icon: 'file-search',
     name: 'Document Intelligence',
     chip: 'bg-accent/10 text-accent',
     text: 'text-accent',
@@ -40,6 +44,7 @@ const platforms = [
   },
   {
     id: 'agent-platform',
+    icon: 'workflow',
     name: 'Enterprise agent platform',
     chip: 'bg-accent/10 text-accent',
     text: 'text-accent',
@@ -52,6 +57,7 @@ const platforms = [
   },
   {
     id: 'ai-sdlc',
+    icon: 'git-branch',
     name: 'AI-assisted SDLC platform',
     chip: 'bg-accent/10 text-accent',
     text: 'text-accent',
@@ -64,6 +70,7 @@ const platforms = [
   },
   {
     id: 'test-automation',
+    icon: 'flask-conical',
     name: 'AI Test Automation',
     chip: 'bg-accent/10 text-accent',
     text: 'text-accent',
@@ -80,7 +87,6 @@ const platforms = [
 <Layout title="Platforms — Syntegreti" description="Explore Syntegreti's platform portfolio: contract intelligence, business operations, AI governance, regulatory reporting, document intelligence, enterprise agents and AI-assisted SDLC — all built in-house by one team.">
   <section class="relative pt-24 pb-10">
     <div class="absolute inset-0 grid-bg opacity-20"></div>
-    <div class="absolute top-1/3 -right-32 h-96 w-96 rounded-full bg-accent/5 blur-[120px]"></div>
 
     <div class="relative z-10 mx-auto max-w-7xl px-6">
       <div class="max-w-3xl mb-10" data-animate>
@@ -108,6 +114,7 @@ const platforms = [
           <div class="grid gap-8 md:grid-cols-2 md:items-center">
             <div>
               <div class="flex items-center gap-3 mb-5">
+                <span class="inline-flex h-10 w-10 items-center justify-center border border-border bg-deep/30"><Icon name="file-text" size={20} class="text-accent" /></span>
                 <span class="rounded-full bg-accent/10 px-3 py-1 text-[12px] font-semibold uppercase tracking-wider text-accent">Platform · Live demo</span>
               </div>
               <h2 class="text-2xl font-bold text-accent sm:text-3xl">Contract Intelligence</h2>
@@ -150,6 +157,7 @@ const platforms = [
           <div class="grid gap-8 md:grid-cols-2 md:items-center">
             <div>
               <div class="flex items-center gap-3 mb-5">
+                <span class="inline-flex h-10 w-10 items-center justify-center border border-border bg-deep/30"><Icon name="layout-grid" size={20} class="text-accent" /></span>
                 <span class="rounded-full bg-accent/10 px-3 py-1 text-[12px] font-semibold uppercase tracking-wider text-accent">Platform</span>
               </div>
               <h2 class="text-2xl font-bold text-accent sm:text-3xl">Business Operations</h2>
@@ -204,6 +212,7 @@ const platforms = [
           return (
             <Tag href={p.href ?? undefined} id={p.id} class="group glow-card-subtle p-7 flex flex-col scroll-mt-28">
               <div class="flex items-center justify-between mb-4">
+                <span class="inline-flex h-10 w-10 items-center justify-center border border-border bg-deep/30"><Icon name={p.icon} size={20} class="text-accent" /></span>
                 <span class:list={['rounded-full px-3 py-1 text-[12px] font-semibold uppercase tracking-wider', p.chip]}>{p.badge}</span>
               </div>
               <h3 class:list={['text-lg font-bold leading-snug', p.text]}>{p.tagline}</h3>
@@ -236,6 +245,7 @@ const platforms = [
         <div class="grid gap-8 md:grid-cols-2 md:items-center">
           <div>
             <div class="flex items-center gap-3 mb-5">
+              <span class="inline-flex h-10 w-10 items-center justify-center border border-border bg-deep/30"><Icon name="server" size={20} class="text-accent" /></span>
               <span class="rounded-full bg-accent/10 px-3 py-1 text-[12px] font-semibold uppercase tracking-wider text-accent">Product</span>
             </div>
             <h2 class="text-2xl font-bold text-accent sm:text-3xl">Datacenter Solutions</h2>

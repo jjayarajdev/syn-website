@@ -12,9 +12,23 @@ import CTA from '../components/CTA.astro';
 <Layout title="Syntegreti — Small Team. Big AI. Proven in 4 to 6 Weeks.">
   <Hero />
   <AISpine />
-  <CaseStudies />
+
+  <!-- The proof — the one section every visitor must register -->
+  <div class="band-ink">
+    <CaseStudies />
+  </div>
+
   <CatalystStudio />
-  <Services />
+
+  <!-- Services on a recessed tint so the offer reads as its own chapter -->
+  <div class="band-surface">
+    <Services />
+  </div>
+
   <WhyUs />
-  <CTA />
+
+  <!-- The close — brand green, impossible to scroll past -->
+  <div class="band-forest">
+    <CTA />
+  </div>
 </Layout>

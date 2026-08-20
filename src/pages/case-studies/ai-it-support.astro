@@ -7,7 +7,6 @@ import Layout from '../../layouts/Layout.astro';
   <!-- Hero -->
   <section class="relative pt-24 pb-8 overflow-hidden">
     <div class="absolute inset-0 grid-bg opacity-20"></div>
-    <div class="absolute top-1/4 -left-32 h-96 w-96 rounded-full bg-accent/5 blur-[120px]"></div>
 
     <div class="relative z-10 mx-auto max-w-7xl px-6">
       <div class="max-w-3xl" data-animate>
@@ -37,7 +36,7 @@ import Layout from '../../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- Impact metrics -->
+  <!-- Impact metrics - hero strip -->
   <section class="py-8">
     <div class="mx-auto max-w-7xl px-6">
       <div class="grid grid-cols-2 gap-3 sm:grid-cols-5" data-stagger>
@@ -48,8 +47,8 @@ import Layout from '../../layouts/Layout.astro';
           { value: '24/7', label: 'Availability', sub: 'zero downtime' },
           { value: '6-8 wks', label: 'Implementation', sub: 'discovery to launch' },
         ].map((m) => (
-          <div class="rounded-xl border border-amber/20 bg-amber/5 p-5 text-center">
-            <div class="text-2xl font-bold text-amber">{m.value}</div>
+          <div class="rounded-xl border border-accent/20 bg-accent/5 p-5 text-center">
+            <div class="text-2xl font-bold text-accent">{m.value}</div>
             <div class="text-xs font-medium text-text-primary">{m.label}</div>
             {m.sub && <div class="mt-0.5 text-[13px] text-text-secondary">{m.sub}</div>}
           </div>
@@ -74,24 +73,29 @@ import Layout from '../../layouts/Layout.astro';
           <div class="grid gap-4 sm:grid-cols-2">
             {[
               {
+                stat: '',
                 title: 'High Ticket Volume',
                 desc: 'L1 support teams overwhelmed with tickets, unable to meet SLAs during peak hours.',
               },
               {
-                title: '60-70% Repetitive',
+                stat: '60-70%',
+                title: 'Repetitive Tickets',
                 desc: 'The majority of tickets were common questions that wasted skilled engineer time.',
               },
               {
-                title: 'Slow Response Times',
+                stat: '4 hrs',
+                title: 'Average Resolution',
                 desc: 'Productivity loss across the org. No help available after hours or on weekends.',
               },
               {
+                stat: '',
                 title: 'Knowledge Silos',
                 desc: 'Information scattered across ServiceNow KB, wikis, Slack threads, and tribal knowledge.',
               },
             ].map((challenge) => (
               <div class="rounded-xl border border-rose/20 bg-rose/5 p-6">
-                <h3 class="mt-2 text-sm font-semibold text-text-primary">{challenge.title}</h3>
+                {challenge.stat && <div class="text-2xl font-bold text-rose">{challenge.stat}</div>}
+                <h3 class="mt-1 text-sm font-semibold text-text-primary">{challenge.title}</h3>
                 <p class="mt-2 text-xs leading-relaxed text-text-muted">{challenge.desc}</p>
               </div>
             ))}
@@ -101,13 +105,13 @@ import Layout from '../../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- The Solution: Multi-Agent Architecture -->
+  <!-- The Solution -->
   <section class="py-8">
     <div class="mx-auto max-w-7xl px-6">
       <div class="mb-8" data-animate>
         <span class="font-mono text-sm text-accent">// the_solution</span>
         <h2 class="mt-3 text-3xl font-bold tracking-tight">
-          Multi-Agent Orchestration
+          What We Built
         </h2>
         <p class="mt-4 max-w-2xl text-text-secondary">
           Not one monolithic chatbot — a team of specialized AI agents, each
@@ -115,19 +119,84 @@ import Layout from '../../layouts/Layout.astro';
         </p>
       </div>
 
-      <!-- Agent architecture visualization -->
+      <div class="space-y-6" data-stagger>
+        <!-- Solution 1 -->
+        <div class="rounded-2xl border border-border bg-surface/20 overflow-hidden">
+          <div class="grid lg:grid-cols-3">
+            <div class="border-b border-border p-8 lg:border-b-0 lg:border-r">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-accent/20 bg-accent/5">
+                  <span class="font-mono text-sm font-bold text-accent">01</span>
+                </div>
+                <h3 class="text-lg font-bold text-text-primary">Intelligent Orchestration</h3>
+              </div>
+              <p class="text-sm leading-relaxed text-text-secondary">
+                The <strong>VoltAgent framework</strong> coordinates specialized agents using GPT-4o for
+                reasoning. Each query is analyzed and routed to the right specialist —
+                ServiceNow for tickets, RAG for docs, escalation for complex issues.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-md bg-cyan/10 px-2.5 py-1 font-mono text-xs text-cyan">VoltAgent</span>
+                <span class="rounded-md bg-cyan/10 px-2.5 py-1 font-mono text-xs text-cyan">GPT-4o</span>
+                <span class="rounded-md bg-cyan/10 px-2.5 py-1 font-mono text-xs text-cyan">ServiceNow</span>
+              </div>
+            </div>
+            <div class="border-b border-border p-8 lg:border-b-0 lg:border-r">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-accent/20 bg-accent/5">
+                  <span class="font-mono text-sm font-bold text-accent">02</span>
+                </div>
+                <h3 class="text-lg font-bold text-text-primary">Omni-Channel Support</h3>
+              </div>
+              <p class="text-sm leading-relaxed text-text-secondary">
+                Seamless support via <strong>Voice (VAPI)</strong> and <strong>Web Chat</strong>,
+                extendable to Slack and Teams. Unified knowledge search across
+                ServiceNow KB, company wikis, and internal documentation.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-md bg-cyan/10 px-2.5 py-1 font-mono text-xs text-cyan">VAPI Voice</span>
+                <span class="rounded-md bg-cyan/10 px-2.5 py-1 font-mono text-xs text-cyan">Web Chat</span>
+                <span class="rounded-md bg-cyan/10 px-2.5 py-1 font-mono text-xs text-cyan">RAG Search</span>
+              </div>
+            </div>
+            <div class="p-8">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-accent/20 bg-accent/5">
+                  <span class="font-mono text-sm font-bold text-accent">03</span>
+                </div>
+                <h3 class="text-lg font-bold text-text-primary">Smart Escalation</h3>
+              </div>
+              <p class="text-sm leading-relaxed text-text-secondary">
+                Auto-escalates complex issues to human agents with <strong>full context
+                preservation</strong> — customer history, diagnostic steps already taken,
+                relevant KB articles, and similar past incidents. Humans start at step 5, not step 1.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-md bg-cyan/10 px-2.5 py-1 font-mono text-xs text-cyan">Context Handoff</span>
+                <span class="rounded-md bg-cyan/10 px-2.5 py-1 font-mono text-xs text-cyan">Auto-Escalation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture -->
+  <section class="py-8">
+    <div class="mx-auto max-w-7xl px-6">
       <div class="rounded-2xl border border-border bg-deep p-1" data-animate>
         <div class="flex items-center gap-2 px-4 py-3 border-b border-border">
           <div class="h-3 w-3 rounded-full bg-rose/60"></div>
           <div class="h-3 w-3 rounded-full bg-amber/60"></div>
           <div class="h-3 w-3 rounded-full bg-accent/60"></div>
-          <span class="ml-2 font-mono text-xs text-text-muted">agent-orchestration — live</span>
+          <span class="ml-2 font-mono text-xs text-text-muted">architecture — ai-it-support</span>
         </div>
         <div class="p-8">
           <!-- Orchestrator -->
           <div class="mb-8 text-center">
             <div class="inline-flex items-center gap-3 rounded-2xl border border-cyan/30 bg-cyan/5 px-8 py-4">
-              <span class="h-3 w-3 rounded-full bg-cyan animate-pulse"></span>
+              <span class="h-3 w-3 rounded-full bg-cyan"></span>
               <div>
                 <div class="text-sm font-bold text-cyan">Orchestrator Agent</div>
                 <div class="text-xs text-text-muted">VoltAgent + GPT-4o — Routes, coordinates, synthesizes</div>
@@ -137,10 +206,10 @@ import Layout from '../../layouts/Layout.astro';
 
           <!-- Connection lines (visual) -->
           <div class="flex justify-center mb-4">
-            <div class="h-8 w-px bg-gradient-to-b from-cyan/50 to-border"></div>
+            <div class="h-8 w-px bg-border"></div>
           </div>
           <div class="flex justify-center mb-6">
-            <div class="h-px w-2/3 bg-gradient-to-r from-transparent via-border to-transparent"></div>
+            <div class="h-px w-2/3 bg-border"></div>
           </div>
 
           <!-- Specialist agents -->
@@ -149,7 +218,7 @@ import Layout from '../../layouts/Layout.astro';
               {
                 name: 'ServiceNow Agent',
                 desc: 'Queries KB articles, searches incident history, finds similar resolved tickets',
-                color: 'accent',
+                color: 'cyan',
                 badge: 'ITSM',
               },
               {
@@ -161,88 +230,25 @@ import Layout from '../../layouts/Layout.astro';
               {
                 name: 'Ticket Agent',
                 desc: 'Creates, updates, and escalates tickets with full context preservation',
-                color: 'amber',
+                color: 'cyan',
                 badge: 'Workflow',
               },
               {
                 name: 'Escalation Agent',
                 desc: 'Routes complex issues to human agents with complete diagnostic context',
-                color: 'rose',
+                color: 'cyan',
                 badge: 'Human Loop',
               },
             ].map((agent) => (
               <div class={`rounded-xl border border-${agent.color}/20 bg-${agent.color}/5 p-5`}>
                 <div class="flex items-center justify-between mb-3">
                   <span class={`rounded-full bg-${agent.color}/10 px-2 py-0.5 text-[12px] font-medium text-${agent.color}`}>{agent.badge}</span>
-                  <span class={`h-2 w-2 rounded-full bg-${agent.color} animate-pulse`}></span>
+                  <span class={`h-2 w-2 rounded-full bg-${agent.color}`}></span>
                 </div>
                 <h3 class="text-sm font-bold text-text-primary">{agent.name}</h3>
                 <p class="mt-2 text-xs leading-relaxed text-text-muted">{agent.desc}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Three pillars of the solution -->
-  <section class="py-8">
-    <div class="mx-auto max-w-7xl px-6">
-      <div class="grid gap-6 lg:grid-cols-3" data-stagger>
-        <div class="rounded-2xl border border-border bg-surface/20 p-8 transition-all card-hover">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-accent/20 bg-accent/5">
-              <span class="font-mono text-sm font-bold text-accent">01</span>
-            </div>
-            <h3 class="text-lg font-bold text-text-primary">Intelligent Orchestration</h3>
-          </div>
-          <p class="text-sm leading-relaxed text-text-secondary">
-            The VoltAgent framework coordinates specialized agents using GPT-4o for
-            reasoning. Each query is analyzed and routed to the right specialist —
-            ServiceNow for tickets, RAG for docs, escalation for complex issues.
-          </p>
-          <div class="mt-4 flex flex-wrap gap-2">
-            <span class="rounded-md bg-elevated px-2.5 py-1 font-mono text-xs text-text-muted">VoltAgent</span>
-            <span class="rounded-md bg-elevated px-2.5 py-1 font-mono text-xs text-text-muted">GPT-4o</span>
-            <span class="rounded-md bg-elevated px-2.5 py-1 font-mono text-xs text-text-muted">ServiceNow</span>
-          </div>
-        </div>
-
-        <div class="rounded-2xl border border-border bg-surface/20 p-8 transition-all card-hover">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-accent/20 bg-accent/5">
-              <span class="font-mono text-sm font-bold text-accent">02</span>
-            </div>
-            <h3 class="text-lg font-bold text-text-primary">Omni-Channel Support</h3>
-          </div>
-          <p class="text-sm leading-relaxed text-text-secondary">
-            Seamless support via <strong>Voice (VAPI)</strong> and <strong>Web Chat</strong>,
-            extendable to Slack and Teams. Unified knowledge search across
-            ServiceNow KB, company wikis, and internal documentation.
-          </p>
-          <div class="mt-4 flex flex-wrap gap-2">
-            <span class="rounded-md bg-elevated px-2.5 py-1 font-mono text-xs text-text-muted">VAPI Voice</span>
-            <span class="rounded-md bg-elevated px-2.5 py-1 font-mono text-xs text-text-muted">Web Chat</span>
-            <span class="rounded-md bg-elevated px-2.5 py-1 font-mono text-xs text-text-muted">RAG Search</span>
-          </div>
-        </div>
-
-        <div class="rounded-2xl border border-border bg-surface/20 p-8 transition-all card-hover">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-accent/20 bg-accent/5">
-              <span class="font-mono text-sm font-bold text-accent">03</span>
-            </div>
-            <h3 class="text-lg font-bold text-text-primary">Smart Escalation</h3>
-          </div>
-          <p class="text-sm leading-relaxed text-text-secondary">
-            Auto-escalates complex issues to human agents with <strong>full context
-            preservation</strong> — customer history, diagnostic steps already taken,
-            relevant KB articles, and similar past incidents. Humans start at step 5, not step 1.
-          </p>
-          <div class="mt-4 flex flex-wrap gap-2">
-            <span class="rounded-md bg-elevated px-2.5 py-1 font-mono text-xs text-text-muted">Context Handoff</span>
-            <span class="rounded-md bg-elevated px-2.5 py-1 font-mono text-xs text-text-muted">Auto-Escalation</span>
           </div>
         </div>
       </div>
@@ -257,7 +263,7 @@ import Layout from '../../layouts/Layout.astro';
         <h2 class="mt-3 text-3xl font-bold tracking-tight">The Math</h2>
       </div>
 
-      <div class="rounded-2xl border border-accent/10 bg-gradient-to-br from-accent/5 via-surface/30 to-accent/5 p-10" data-animate>
+      <div class="rounded-2xl border border-accent/10 bg-surface/30 p-10" data-animate>
         <div class="grid gap-8 lg:grid-cols-2">
           <div>
             <h3 class="text-lg font-bold text-text-primary mb-4">Before: The Hidden Cost</h3>
@@ -306,7 +312,7 @@ import Layout from '../../layouts/Layout.astro';
               { label: 'Annual savings', value: '$72,000', detail: 'Per 1K users' },
             ].map((calc) => (
               <div class="text-center">
-                <div class="text-lg font-bold text-amber">{calc.value}</div>
+                <div class="text-lg font-bold text-accent">{calc.value}</div>
                 <div class="text-xs font-medium text-text-primary">{calc.label}</div>
                 <div class="text-[13px] text-text-secondary">{calc.detail}</div>
               </div>
@@ -317,64 +323,43 @@ import Layout from '../../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- Timeline -->
+  <!-- Methodology -->
   <section class="py-8">
     <div class="mx-auto max-w-7xl px-6">
       <div class="rounded-2xl border border-border bg-surface/20 p-8" data-animate>
-        <span class="font-mono text-sm text-accent">// implementation_timeline</span>
-        <h3 class="mt-3 text-lg font-bold text-text-primary">6-8 Weeks: Discovery to Launch</h3>
-        <div class="mt-6 grid gap-3 sm:grid-cols-4">
-          {[
-            { week: 'Weeks 1-2', phase: 'Discovery', desc: 'Understand ticket patterns, map knowledge sources, define success metrics' },
-            { week: 'Weeks 3-4', phase: 'Build', desc: 'Agent architecture, ServiceNow integration, RAG pipeline, voice setup' },
-            { week: 'Weeks 5-6', phase: 'Test', desc: 'Live ticket testing, accuracy tuning, escalation flow validation' },
-            { week: 'Weeks 7-8', phase: 'Launch', desc: 'Phased rollout, monitoring setup, handover and documentation' },
-          ].map((step) => (
-            <div class="rounded-xl border border-border bg-deep/50 p-5">
-              <span class="font-mono text-xs text-accent">{step.week}</span>
-              <h4 class="mt-1 text-sm font-bold text-text-primary">{step.phase}</h4>
-              <p class="mt-2 text-xs leading-relaxed text-text-muted">{step.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Agent platform connection -->
-  <section class="py-8">
-    <div class="mx-auto max-w-7xl px-6">
-      <a href="/products/agent-platform" class="group block rounded-2xl border border-accent/20 bg-accent/5 p-8 transition-all hover:border-accent/40 hover:bg-accent/10" data-animate>
-        <div class="flex items-center justify-between">
-          <div>
-            <span class="font-mono text-xs text-accent">Built on our agent platform</span>
-            <h3 class="mt-1 text-xl font-bold text-text-primary">This solution runs on our agent platform</h3>
-            <p class="mt-2 max-w-lg text-sm text-text-secondary">
-              Our agentic OS for business — purpose-built for multi-agent
-              orchestration across enterprise systems. See what else it can do.
-            </p>
-          </div>
-          <svg class="h-6 w-6 shrink-0 text-accent transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <span class="font-mono text-sm text-accent">// how_we_delivered</span>
+        <h3 class="mt-3 text-lg font-bold text-text-primary">Delivered Through Catalyst Studio</h3>
+        <p class="mt-3 text-sm text-text-secondary max-w-2xl">
+          This project ran discovery to launch in 6-8 weeks. Weeks 1-2: discovery —
+          understand ticket patterns, map knowledge sources, define success metrics.
+          Weeks 3-4: build — agent architecture, ServiceNow integration, RAG pipeline,
+          voice setup. Weeks 5-6: test — live ticket testing, accuracy tuning, escalation
+          flow validation. Weeks 7-8: launch — phased rollout, monitoring setup, handover
+          and documentation.
+        </p>
+        <a href="/services/catalyst-studio" class="mt-4 inline-flex items-center gap-1 text-sm font-medium text-accent hover:text-accent-glow transition-colors">
+          Learn about our Catalyst Studio
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
-        </div>
-      </a>
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- CTA -->
   <section class="py-8">
     <div class="mx-auto max-w-7xl px-6">
-      <div class="rounded-2xl border border-accent/20 bg-gradient-to-br from-accent/5 to-surface p-12 text-center" data-animate>
+      <div class="rounded-2xl border border-accent/20 bg-surface/30 p-12 text-center" data-animate>
         <h2 class="text-3xl font-bold tracking-tight">
           Your L1 team deserves<br />
-          <span class="bg-gradient-to-r from-accent to-accent-glow bg-clip-text text-transparent">better problems to solve.</span>
+          <span class="gradient-text">better problems to solve.</span>
         </h2>
         <p class="mx-auto mt-4 max-w-lg text-text-secondary">
           Let AI handle the repetitive 60%. Free your engineers for the work that
           actually needs a human brain.
         </p>
-        <a href="/contact" class="mt-8 inline-flex items-center gap-2 rounded-xl bg-accent px-8 py-4 text-sm font-semibold text-void transition-all hover:shadow-[0_0_30px_rgba(0,232,123,0.3)]">
+        <a href="/contact" class="mt-8 inline-flex items-center gap-2 rounded-xl bg-accent px-8 py-4 text-sm font-semibold text-void transition-all hover:bg-accent-glow">
           Book a 4-6 Week Sprint
         </a>
       </div>
