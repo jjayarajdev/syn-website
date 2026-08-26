@@ -251,28 +251,39 @@ h1 { line-height: 0.95; }
 
 /* ===== ANIMATE ON SCROLL ===== */
 
-[data-animate] {
+/* Hidden states only apply when JS is running (html.js set in Layout head),
+   so content stays visible without JavaScript */
+.js [data-animate] {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
-[data-animate].visible {
+.js [data-animate].visible {
   opacity: 1;
   transform: translateY(0);
 }
 
 /* Stagger children */
-[data-stagger] > * {
+.js [data-stagger] > * {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
-[data-stagger].visible > *:nth-child(1) { transition-delay: 0ms; opacity: 1; transform: translateY(0); }
-[data-stagger].visible > *:nth-child(2) { transition-delay: 100ms; opacity: 1; transform: translateY(0); }
-[data-stagger].visible > *:nth-child(3) { transition-delay: 200ms; opacity: 1; transform: translateY(0); }
-[data-stagger].visible > *:nth-child(4) { transition-delay: 300ms; opacity: 1; transform: translateY(0); }
-[data-stagger].visible > *:nth-child(5) { transition-delay: 400ms; opacity: 1; transform: translateY(0); }
-[data-stagger].visible > *:nth-child(6) { transition-delay: 500ms; opacity: 1; transform: translateY(0); }
+.js [data-stagger].visible > * { transition-delay: 500ms; opacity: 1; transform: translateY(0); }
+.js [data-stagger].visible > *:nth-child(1) { transition-delay: 0ms; }
+.js [data-stagger].visible > *:nth-child(2) { transition-delay: 100ms; }
+.js [data-stagger].visible > *:nth-child(3) { transition-delay: 200ms; }
+.js [data-stagger].visible > *:nth-child(4) { transition-delay: 300ms; }
+.js [data-stagger].visible > *:nth-child(5) { transition-delay: 400ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .js [data-animate],
+  .js [data-stagger] > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
 
 /* ===== SCROLLBAR ===== */
 

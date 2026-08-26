@@ -78,18 +78,30 @@ const navLinks = [
 </header>
 
 <script>
-  // Scroll effect - add background on scroll
+  // Scroll effect - add background on scroll, hide on scroll down / reveal on scroll up
   const navbar = document.getElementById('navbar');
   const navInner = document.getElementById('nav-inner');
 
+  let lastY = window.scrollY;
+
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
+    const y = window.scrollY;
+
+    if (y > 50) {
       navInner!.classList.add('glass');
       navInner!.classList.remove('bg-transparent', 'border-transparent');
     } else {
       navInner!.classList.remove('glass');
       navInner!.classList.add('bg-transparent', 'border-transparent');
     }
+
+    const menuOpen = !document.getElementById('mobile-menu')?.classList.contains('hidden');
+    if (y > 400 && y > lastY && !menuOpen) {
+      navbar!.classList.add('-translate-y-full');
+    } else {
+      navbar!.classList.remove('-translate-y-full');
+    }
+    lastY = y;
   });
 
   // Mobile menu toggle

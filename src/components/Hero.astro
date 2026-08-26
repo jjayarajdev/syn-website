@@ -32,7 +32,7 @@
         <div class="mt-10 flex flex-wrap items-center gap-4" data-animate>
           <a
             href="/contact"
-            class="group inline-flex items-center gap-2 rounded-xl bg-accent px-7 py-3.5 text-sm font-semibold text-void transition-all hover:bg-accent-glow hover:shadow-[0_0_30px_rgba(0,232,123,0.3)]"
+            class="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-accent px-7 py-3.5 text-sm font-semibold text-void transition-all hover:bg-accent-glow hover:shadow-[0_0_30px_rgba(0,232,123,0.3)] sm:w-auto"
           >
             Book a 4-6 Week Sprint
             <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -41,7 +41,7 @@
           </a>
           <a
             href="#proof"
-            class="inline-flex items-center gap-2 rounded-xl glass px-7 py-3.5 text-sm font-medium text-text-secondary transition-all hover:text-text-primary"
+            class="inline-flex w-full items-center justify-center gap-2 rounded-xl glass px-7 py-3.5 text-sm font-medium text-text-secondary transition-all hover:text-text-primary sm:w-auto"
           >
             See the Proof
           </a>
@@ -105,23 +105,23 @@
 <script>
   // Terminal typing animation
   const lines = [
-    { text: '$ catalyst init --sprint 4-6-weeks', color: 'text-accent', delay: 40 },
-    { text: '', color: '', delay: 300 },
-    { text: '  Scanning enterprise systems...', color: 'text-text-muted', delay: 20 },
-    { text: '  ✓ Connected: Salesforce, ServiceNow, Snowflake', color: 'text-text-muted', delay: 20 },
-    { text: '', color: '', delay: 200 },
-    { text: '$ catalyst deploy --agent support-desk', color: 'text-accent', delay: 40 },
-    { text: '', color: '', delay: 400 },
-    { text: '  Orchestrating agents...', color: 'text-text-muted', delay: 20 },
-    { text: '  ├─ ServiceNow Agent  [READY]', color: 'text-cyan', delay: 25 },
-    { text: '  ├─ RAG Agent         [READY]', color: 'text-cyan', delay: 25 },
-    { text: '  └─ Escalation Agent  [READY]', color: 'text-cyan', delay: 25 },
-    { text: '', color: '', delay: 200 },
-    { text: '  Tickets resolved:    847/mo', color: 'text-text-secondary', delay: 20 },
-    { text: '  Avg resolution:      2 min (was 4 hrs)', color: 'text-text-secondary', delay: 20 },
-    { text: '  Annual savings:      $72,000', color: 'text-accent', delay: 30 },
-    { text: '', color: '', delay: 300 },
-    { text: '  Status: SHIPPED ✓', color: 'text-accent', delay: 30 },
+    { text: '$ catalyst init --sprint 4-6-weeks', color: 'text-accent', delay: 22 },
+    { text: '', color: '', delay: 180 },
+    { text: '  Scanning enterprise systems...', color: 'text-text-muted', delay: 12 },
+    { text: '  ✓ Connected: Salesforce, ServiceNow, Snowflake', color: 'text-text-muted', delay: 12 },
+    { text: '', color: '', delay: 120 },
+    { text: '$ catalyst deploy --agent support-desk', color: 'text-accent', delay: 22 },
+    { text: '', color: '', delay: 240 },
+    { text: '  Orchestrating agents...', color: 'text-text-muted', delay: 12 },
+    { text: '  ├─ ServiceNow Agent  [READY]', color: 'text-cyan', delay: 14 },
+    { text: '  ├─ RAG Agent         [READY]', color: 'text-cyan', delay: 14 },
+    { text: '  └─ Escalation Agent  [READY]', color: 'text-cyan', delay: 14 },
+    { text: '', color: '', delay: 120 },
+    { text: '  Tickets resolved:    847/mo', color: 'text-text-secondary', delay: 12 },
+    { text: '  Avg resolution:      2 min (was 4 hrs)', color: 'text-text-secondary', delay: 12 },
+    { text: '  Annual savings:      $72,000', color: 'text-accent', delay: 16 },
+    { text: '', color: '', delay: 180 },
+    { text: '  Status: SHIPPED ✓', color: 'text-accent', delay: 16 },
   ];
 
   const output = document.getElementById('terminal-output');
@@ -168,7 +168,7 @@
   const terminalObserver = new IntersectionObserver(
     (entries) => {
       if (entries[0].isIntersecting) {
-        setTimeout(type, 800);
+        setTimeout(type, 300);
         terminalObserver.disconnect();
       }
     },
