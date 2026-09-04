@@ -21,7 +21,7 @@ const offerings = [
 ];
 ---
 
-<Layout title="Application Services — Syntegreti" description="End-to-end application development, modernization, and managed services across Salesforce, Workday, Java, .NET, and MERN stack.">
+<Layout title="Application Services — Syntegreti" description="End-to-end application development, modernization, and managed services across ServiceNow, Salesforce, Workday, Oracle, SAP, Zoho, and custom Java, .NET and MERN stacks.">
 
   <!-- Hero with terminal aesthetic -->
   <section class="relative pt-24 pb-10 overflow-hidden">
@@ -36,7 +36,7 @@ const offerings = [
             <span class="gradient-text">Ship it fast.</span>
           </h1>
           <p class="mt-6 text-lg leading-relaxed text-text-secondary">
-            From Salesforce implementations to custom full-stack development — we build,
+            From COTS platform implementations to custom full-stack development — we build,
             modernize, and manage enterprise applications that your business actually
             depends on. No throwaway code. No technical debt surprises.
           </p>
@@ -106,27 +106,31 @@ const offerings = [
   <section class="py-10">
     <div class="mx-auto max-w-7xl px-6">
       <div class="mb-8" data-animate>
-        <span class="font-mono text-sm text-accent">// platforms_we_command</span>
+        <span class="font-mono text-sm text-accent">// any_platform_you_run</span>
         <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
           Deep Platform Expertise
         </h2>
+        <p class="mt-4 max-w-2xl text-text-secondary">
+          Whatever your enterprise runs on, we implement it, integrate it, and
+          put AI to work inside it — with the same engineers end to end.
+        </p>
       </div>
 
       <div class="grid gap-6 md:grid-cols-3" data-stagger>
         {[
           {
-            platform: 'Salesforce',
-            desc: 'Sales Cloud, Service Cloud, Marketing Cloud, CPQ, Mulesoft integrations, Lightning development.',
+            platform: 'COTS Platforms',
+            desc: 'ServiceNow, Salesforce, Workday, Oracle, SAP and Zoho — implementation, configuration, integration and extension of the enterprise platforms you already run. We work inside your existing estate, not around it.',
             color: 'accent',
           },
           {
-            platform: 'Workday',
-            desc: 'HCM, Financial Management, Adaptive Planning, integrations, and tenant configuration.',
+            platform: 'Integration & AI Enablement',
+            desc: 'MuleSoft, REST and GraphQL APIs, event streams — connecting COTS platforms to each other, to your data, and to AI agents that act inside them with governance and an audit trail.',
             color: 'accent',
           },
           {
             platform: 'Custom Stack',
-            desc: 'Java, .NET, MERN, React Native — full-stack development for when off-the-shelf doesn\'t cut it.',
+            desc: 'Java, .NET, MERN, React Native — full-stack development for when off-the-shelf doesn\'t cut it, built to sit alongside the platforms above.',
             color: 'accent',
           },
         ].map((p) => (
@@ -143,7 +147,7 @@ const offerings = [
       <div class="mt-12 rounded-2xl border border-border bg-surface/20 p-8" data-animate>
         <span class="block text-xs font-semibold uppercase tracking-wider text-text-muted mb-4">Full Technology Stack</span>
         <div class="flex flex-wrap gap-2">
-          {['Java', '.NET', 'React', 'Node.js', 'TypeScript', 'React Native', 'MERN Stack', 'Salesforce', 'Workday', 'Mulesoft', 'REST APIs', 'GraphQL', 'PostgreSQL', 'MongoDB', 'Redis'].map((t) => (
+          {['ServiceNow', 'Salesforce', 'Workday', 'Oracle', 'SAP', 'Zoho', 'MuleSoft', 'REST APIs', 'GraphQL', 'Java', '.NET', 'React', 'Node.js', 'TypeScript', 'React Native', 'MERN Stack', 'PostgreSQL', 'MongoDB', 'Redis'].map((t) => (
             <span class="rounded-lg border border-border bg-deep px-3 py-1.5 font-mono text-xs text-text-secondary transition-colors hover:border-accent/30 hover:text-accent">{t}</span>
           ))}
         </div>

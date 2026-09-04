@@ -1,0 +1,376 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/Icon.astro';
+
+const pillars = [
+  {
+    icon: 'pen-line',
+    title: 'Author with AI',
+    description:
+      'Describe a journey in plain English — or let the suite discover journeys from your live app. It writes grounded, runnable steps and declares the data they need.',
+  },
+  {
+    icon: 'play',
+    title: 'Run resiliently',
+    description:
+      'A real Chromium browser executes the journey. Selectors self-heal when the app changes. Every step carries severity, before/after screenshots and a full trace.',
+  },
+  {
+    icon: 'database-zap',
+    title: 'Verify the truth',
+    description:
+      'Assert what the user sees and reconcile it with the row in the database or the API response — on a schedule, with alerting and shareable reports.',
+  },
+];
+
+const features = [
+  {
+    title: 'Plain-English authoring',
+    description:
+      'Give it a description, a target application and module, and it generates a runnable test case — steps written, data fields auto-declared, values parameterised. Review, edit, activate.',
+    detail: 'Manual step-by-step authoring is there too, with 15 action types and every modern locator syntax.',
+  },
+  {
+    title: 'Discovery-driven calibration',
+    description:
+      'Generation can guess. Calibration makes it real. The suite visits the live pages with a real browser, resolves every selector against the actual DOM, discovers the real form fields, and gates waits on real navigation.',
+    detail: 'Progress streams live: each step shows OK, Healed, Timing-gated or Needs review.',
+  },
+  {
+    title: 'App Discovery and onboarding',
+    description:
+      'One click explores a registered environment read-only and hands back an editable app description, a flow catalog with confidence scores, and draft tests for the journeys you select.',
+    detail: 'Handles single-page-app logins, so discovery reaches the real post-login journeys. It never submits a form.',
+  },
+  {
+    title: 'Self-healing selectors',
+    description:
+      'When a selector stops matching, the engine tries the primary, then author-provided fallbacks, then an AI heal from a screenshot and pruned DOM — in priority order, at run time.',
+    detail: 'Healing only relocates a drifted element. It never rewrites an expected value.',
+  },
+  {
+    title: 'One rule for whole classes of UI',
+    description:
+      'A generic widget engine handles common patterns once. A single ANSWER_ALL step answers an entire questionnaire of any length, ticks required consents, and re-scans for conditionally revealed follow-ups.',
+    detail: 'Custom radios, date-pickers and masked inputs are handled the same way — no bespoke code per site.',
+  },
+  {
+    title: 'Data-driven by design',
+    description:
+      'Typed data fields define the schema; named data sets drive the steps. AI generates realistic data sets from the discovered fields — dates as dates, enums from the real options.',
+    detail: 'Import and export as CSV or JSON. One test, many scenarios.',
+  },
+  {
+    title: 'A severity model that means something',
+    description:
+      'Each step is critical or soft. A soft failure is a warning and the run continues to gather full signal. A critical failure fails the run. Calibration marks unvalidated assertions soft automatically.',
+    detail: 'An AI-guessed expected value cannot turn a real run red until a human confirms it.',
+  },
+  {
+    title: 'Unattended monitoring',
+    description:
+      'Scheduled runs on a cron, email alerts on failed, errored and passed-with-warnings outcomes, and a notification log of what was sent and when.',
+    detail: 'Your critical journeys become a continuous synthetic monitor across every environment.',
+  },
+  {
+    title: 'Reports people actually read',
+    description:
+      'Run summaries, self-healing effectiveness, test health, failure root-cause, module coverage, cross-run comparison and DB reconciliation — each with an AI-written narrative.',
+    detail: 'Scheduled delivery, server-rendered PDF export, and tokenised read-only share links for stakeholders without platform access.',
+  },
+];
+
+const validationSteps = [
+  { step: '01', title: 'Introspect', text: 'The suite reads the schema or entity sets of the connected data source.' },
+  { step: '02', title: 'Propose', text: 'AI drafts a read-only SELECT or OData query and maps results to the values expected on screen.' },
+  { step: '03', title: 'Dry-run', text: 'The query runs read-only against real data. You review the reconciliation before it goes anywhere near a test.' },
+  { step: '04', title: 'Approve and freeze', text: 'The runtime uses a frozen, parameterised, read-only query. No LLM is involved when the test runs.' },
+];
+
+const security = [
+  { title: 'Row-level security, forced', text: 'Every tenant table has RLS enabled and forced, keyed on the current tenant. Queries also carry an explicit tenant filter, so isolation never depends on RLS alone.' },
+  { title: 'Encrypted secrets, never returned', text: 'Credentials use per-tenant key derivation, per-record salt and AES-256-GCM. The API never returns a secret, and run logs mask them.' },
+  { title: 'Read-only, enforced in layers', text: 'A SELECT-only query guard, read-only database roles, statement timeouts and row caps. Validation can never mutate your source.' },
+  { title: 'Credentials stay in your network', text: 'A customer-hosted Connector holds production credentials locally and dials outbound. The platform stores only a routing id and enrollment identity.' },
+  { title: 'Deterministic runtime', text: 'Author-time is agentic; run-time is frozen. No LLM executes during a run, so every execution is fast, repeatable and reviewable.' },
+  { title: 'Immutable audit log', text: 'Sensitive and cross-tenant actions are audited to an append-only log. Role-based permissions gate every capability.' },
+];
+
+const proof = [
+  'AI authored the test from a plain-English description of the journey.',
+  'It calibrated against the live site — real selectors, real form fields discovered.',
+  'A data set supplied the applicant profile. The ~60-question medical questionnaire was answered generically by one ANSWER_ALL step.',
+  'The test ran end-to-end in a real browser, self-healing where needed, with a screenshot at every step.',
+  'It reached the genuine outcome the site returns for that profile — the same result a real applicant would see — and asserted it. Green.',
+];
+
+const stack = ['Playwright / Chromium', 'Node.js + Express', 'React + Vite', 'PostgreSQL', 'Redis + BullMQ', 'Docker + CI/CD'];
+---
+
+<Layout title="AI Testing Suite — AI-Native End-to-End Test Automation | Syntegreti" description="Author tests in plain English, calibrate them against the live app, self-heal at run time, and verify the data behind every screen. Multi-tenant, read-only by design, pilot available.">
+
+  <!-- Hero -->
+  <section class="relative pt-24 pb-10 overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-20"></div>
+
+    <div class="relative z-10 mx-auto max-w-7xl px-6">
+      <div class="max-w-3xl" data-animate>
+        <div class="mb-6 flex items-center gap-3">
+          <span class="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm font-medium text-accent">
+            Platform
+          </span>
+        </div>
+
+        <h1 class="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+          <span class="gradient-text">AI Testing Suite</span>
+        </h1>
+        <p class="mt-2 font-mono text-lg text-text-muted">
+          Author in English. Run against reality. Verify the data behind the screen.
+        </p>
+        <p class="mt-6 text-lg leading-relaxed text-text-secondary">
+          An AI-native, end-to-end test automation platform for web applications.
+          Teams describe a journey in plain English, the suite calibrates it against
+          the live site, and the tests keep working as the application changes —
+          because they heal their own selectors instead of waiting for someone to
+          fix a script. Then it goes one step further than the screen: it checks
+          that the system actually did the right thing in the database.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/contact" class="inline-flex items-center gap-2 rounded-xl bg-accent px-7 py-3.5 text-sm font-semibold text-void transition-all hover:bg-accent-glow hover:shadow-[0_0_30px_rgba(0,232,123,0.3)]">
+            Request a Pilot
+          </a>
+          <a href="/products" class="inline-flex items-center gap-2 rounded-xl border border-border px-7 py-3.5 text-sm font-medium text-text-secondary transition-all hover:border-border-light hover:bg-elevated">
+            Back to Products
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Three pillars -->
+  <section class="py-10">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="grid gap-6 md:grid-cols-3" data-stagger>
+        {pillars.map((p) => (
+          <div class="glow-card-subtle p-7">
+            <span class="inline-flex h-10 w-10 items-center justify-center border border-border bg-deep/30"><Icon name={p.icon} size={20} class="text-accent" /></span>
+            <h3 class="mt-4 text-lg font-bold text-accent">{p.title}</h3>
+            <p class="mt-3 text-sm leading-relaxed text-text-secondary">{p.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <section class="py-10">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="rounded-2xl border border-rose/20 bg-rose/5 p-10" data-animate>
+        <span class="font-mono text-sm text-rose">// the_problem</span>
+        <h2 class="mt-3 text-2xl font-bold">Test scripts break faster than teams can fix them.</h2>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            'Every UI change turns yesterday\'s green suite into a wall of red',
+            'Hand-written selectors are guesses that drift the moment the DOM moves',
+            'A 60-question form means 60 hand-mapped steps that rot together',
+            '"The page looked right" says nothing about what the system actually stored',
+            'Record-and-replay tools need someone to re-record after every release',
+            'AI test tools that run an LLM at execution time are slow, non-deterministic and unauditable',
+          ].map((problem) => (
+            <div class="flex items-start gap-2 text-sm text-text-secondary">
+              <span class="mt-0.5 text-rose">✕</span>
+              {problem}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="py-10">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mb-8" data-animate>
+        <span class="font-mono text-sm text-accent">// what_it_does</span>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+          A script that looks plausible is not a script that runs.
+        </h2>
+        <p class="mt-4 max-w-2xl text-text-secondary">
+          Everything below exists to close the gap between a test that was generated
+          and a test that passes against the site as it renders today.
+        </p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3" data-stagger>
+        {features.map((f) => (
+          <div class="glow-card-subtle p-7">
+            <h3 class="text-lg font-bold text-accent">{f.title}</h3>
+            <p class="mt-3 text-sm leading-relaxed text-text-secondary">{f.description}</p>
+            <p class="mt-3 border-t border-border/50 pt-3 text-xs leading-relaxed text-text-muted">{f.detail}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Data Validation Agent -->
+  <section class="py-10">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="glow-card-subtle p-8 md:p-10" data-animate>
+        <div class="grid gap-10 lg:grid-cols-5">
+          <div class="lg:col-span-2">
+            <span class="font-mono text-sm text-accent">// the_differentiator</span>
+            <h2 class="mt-3 text-2xl font-bold sm:text-3xl">Verify the data behind the UI</h2>
+            <p class="mt-4 text-sm leading-relaxed text-text-secondary">
+              The Data Validation Agent confirms that a UI action produced the right
+              data, reconciled against what the screen shows. It validates database
+              or API state behind an action — not just pixels.
+            </p>
+            <p class="mt-4 text-sm leading-relaxed text-text-secondary">
+              At run time, a DB_VALIDATE step resolves its bindings — including the
+              extracted row-identity key that answers <em>which</em> row — executes the
+              frozen read-only query, and reconciles the returned values against the
+              on-screen expected values. Results land as a reconciliation table on the
+              run and in a dedicated report.
+            </p>
+            <div class="mt-5 flex flex-wrap gap-1.5">
+              {['PostgreSQL', 'MySQL', 'API / OData', 'Direct or Connector'].map((s) => (
+                <span class="rounded-md bg-cyan/10 px-2.5 py-1 text-xs text-cyan">{s}</span>
+              ))}
+            </div>
+          </div>
+          <div class="lg:col-span-3">
+            <p class="font-mono text-[12px] tracking-widest text-text-muted mb-4">AUTHOR-TIME AGENTIC · RUN-TIME FROZEN</p>
+            <div class="grid gap-4 sm:grid-cols-2">
+              {validationSteps.map((s) => (
+                <div class="rounded-xl border border-border bg-deep/30 p-5">
+                  <span class="font-mono text-xs text-accent">{s.step}</span>
+                  <h3 class="mt-1 text-sm font-bold text-text-primary">{s.title}</h3>
+                  <p class="mt-2 text-xs leading-relaxed text-text-secondary">{s.text}</p>
+                </div>
+              ))}
+            </div>
+            <div class="mt-5 rounded-xl border border-amber/20 bg-amber/5 p-5">
+              <h3 class="text-sm font-bold text-amber">On-prem data, without moving secrets</h3>
+              <p class="mt-2 text-xs leading-relaxed text-text-secondary">
+                For data that must never leave your network, a customer-hosted Connector
+                runs inside your environment. It holds the real credentials locally, dials
+                outbound so no inbound firewall change is needed, runs the same read-only
+                adapter and query guard, and returns only capped result rows over an
+                authenticated channel.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security & multi-tenancy -->
+  <section class="py-10">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mb-8" data-animate>
+        <span class="font-mono text-sm text-accent">// isolation_and_security</span>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+          Every customer is an isolated workspace.
+        </h2>
+        <p class="mt-4 max-w-2xl text-text-secondary">
+          Isolation is enforced in depth — in the database, in the query layer, and
+          in where your credentials are allowed to live.
+        </p>
+      </div>
+      <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3" data-stagger>
+        {security.map((s) => (
+          <div class="rounded-xl border border-border bg-surface/20 p-6">
+            <div class="flex items-start gap-3">
+              <Icon name="lock" size={16} class="mt-0.5 shrink-0 text-accent" />
+              <div>
+                <h3 class="text-sm font-bold text-text-primary">{s.title}</h3>
+                <p class="mt-2 text-xs leading-relaxed text-text-secondary">{s.text}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Proof -->
+  <section class="py-10">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="rounded-2xl border border-border bg-surface/50 p-10" data-animate>
+        <span class="font-mono text-sm text-accent">// proven_in_one_run</span>
+        <h2 class="mt-3 text-2xl font-bold">A live public insurance buy-online journey, end to end</h2>
+        <p class="mt-4 max-w-3xl text-sm leading-relaxed text-text-secondary">
+          The suite was proven against a live, public, bot-defended insurance
+          purchase journey — a multi-step application with a ~60-question medical
+          questionnaire. No bespoke code was written for the site.
+        </p>
+        <ol class="mt-6 grid gap-3 md:grid-cols-5">
+          {proof.map((p, i) => (
+            <li class="rounded-xl border border-border bg-deep/30 p-4">
+              <span class="font-mono text-xs text-accent">0{i + 1}</span>
+              <p class="mt-2 text-xs leading-relaxed text-text-secondary">{p}</p>
+            </li>
+          ))}
+        </ol>
+        <p class="mt-6 text-sm text-text-secondary">
+          That is the whole thesis in one run: <strong class="text-text-primary">author with AI,
+          run resiliently against reality, and verify the true outcome</strong> — with tenant
+          isolation and read-only safety throughout.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture -->
+  <section class="py-10">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="glow-card-subtle p-8" data-animate>
+        <div class="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+          <div class="max-w-xl">
+            <span class="font-mono text-sm text-accent">// under_the_hood</span>
+            <h2 class="mt-3 text-xl font-bold">Built to be extended</h2>
+            <p class="mt-3 text-sm leading-relaxed text-text-secondary">
+              Action types, widget handlers, data-source adapters and report types are
+              all pluggable building blocks. Data adapters are one shared library used
+              by both the platform and the customer-hosted connector, so read-only
+              enforcement is identical on both paths.
+            </p>
+          </div>
+          <div>
+            <span class="block text-xs font-semibold uppercase tracking-wider text-text-muted mb-2">Stack</span>
+            <div class="flex flex-wrap gap-1.5 md:max-w-xs md:justify-end">
+              {stack.map((s) => (
+                <span class="rounded-md bg-cyan/10 px-2.5 py-1 text-xs text-cyan">{s}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-10">
+    <div class="mx-auto max-w-4xl px-6 text-center" data-animate>
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+        Run a pilot on <span class="gradient-text">your application</span>
+      </h2>
+      <p class="mx-auto mt-4 max-w-xl text-text-secondary">
+        Point the suite at one environment. Watch it discover the journeys, write
+        the tests, calibrate them against your real pages, and verify the data
+        behind them.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="/contact" class="inline-flex items-center gap-2 rounded-xl bg-accent px-7 py-3.5 text-sm font-semibold text-void transition-all hover:bg-accent-glow hover:shadow-[0_0_30px_rgba(0,232,123,0.3)]">
+          Request a Pilot
+        </a>
+        <a href="/products" class="inline-flex items-center gap-2 rounded-xl border border-border px-7 py-3.5 text-sm font-medium text-text-secondary transition-all hover:border-border-light hover:bg-elevated">
+          Back to Products
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

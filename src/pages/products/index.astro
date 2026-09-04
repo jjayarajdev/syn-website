@@ -2,295 +2,270 @@
 import Layout from '../../layouts/Layout.astro';
 import Icon from '../../components/Icon.astro';
 
-const platforms = [
+// One card shape for every platform on the page.
+// name    — the product name (heading)
+// tagline — one line under the name
+// layer   — optional spine label (GOVERN / BUILD / VERIFY)
+// facts   — three proof points
+
+const flagships = [
+  {
+    id: 'contract-intelligence',
+    icon: 'file-text',
+    name: 'Contract Intelligence',
+    tagline: 'Your contracts, read. Your vendor relationships, governed.',
+    href: '/products/contract-intelligence',
+    description:
+      'AI-native contract lifecycle management that goes beyond the repository. Nine specialised agents extract terms, score risk and track obligations, renewals and SLAs — and a relationship-governance layer scores every vendor relationship against the KPIs you agree.',
+    facts: [
+      'Nine specialised agents for extraction, risk and obligations',
+      'Vendor KPI scoring beyond the contract text',
+      'Multi-tenant, semantic search, every agent run audit-traced',
+    ],
+  },
+  {
+    id: 'business-operations',
+    icon: 'layout-grid',
+    name: 'Business Operations',
+    tagline: 'One platform for how a business actually runs.',
+    href: '/products/business-operations',
+    description:
+      'Sales, Marketing, HR, Finance, Projects, Recruitment and ITSM — seven modules in one multi-tenant SaaS. The built-in assistant carries 160 AI actions across four graduated autonomy levels, from suggest-only to fully autonomous, so AI takes on exactly as much as you allow.',
+    facts: [
+      'Seven business modules, one data model',
+      '160 AI actions across four autonomy levels',
+      'Autonomous sales agent under your policy, MCP server built in',
+    ],
+  },
+];
+
+const spine = [
   {
     id: 'ai-governance',
+    layer: 'GOVERN',
     icon: 'shield-check',
-    name: 'AI governance platform',
-    chip: 'bg-accent/5 text-accent',
-    text: 'text-accent',
-    tagline: 'Govern every AI call your enterprise makes',
-    badge: 'Platform',
+    name: 'AI Governance',
+    tagline: 'Govern every AI call your enterprise makes.',
     href: '/products/ai-governance',
     description:
-      'A forward proxy that intercepts and governs all LLM traffic in your enterprise. Policy enforcement per team and per model, local ML-based DLP that catches PII before it leaves your network, and a complete audit log of every AI interaction.',
-    facts: ['Local ML DLP — no data leaves your network', 'Policy enforcement + full audit logging', 'Go gateway, time-series analytics, live dashboard'],
-  },
-  {
-    id: 'regulatory-reporting',
-    icon: 'landmark',
-    name: 'Regulatory reporting platform',
-    chip: 'bg-accent/10 text-accent',
-    text: 'text-accent',
-    tagline: 'Turn regulation into executable filings',
-    badge: 'Platform',
-    href: '/products/regulatory-reporting',
-    description:
-      'Turns regulation PDFs into a knowledge graph, and the knowledge graph into executable filing schemas — with carrier data validation and compliance sign-off workflows. Texas and Florida statistical filings already built, running on Snowflake, DuckDB or Databricks.',
-    facts: ['Regulation → knowledge graph → executable schema', 'TX and FL filings built today', 'Multi-engine: Snowflake / DuckDB / Databricks'],
-  },
-  {
-    id: 'document-intelligence',
-    icon: 'file-search',
-    name: 'Document Intelligence',
-    chip: 'bg-accent/10 text-accent',
-    text: 'text-accent',
-    tagline: 'From documents to decisions — with review built in',
-    badge: 'Platform',
-    href: '/products/document-intelligence',
-    description:
-      'Document and data extraction designed for auditability: confidence-scored fields, human review and approval workflows, and edit tracking on every correction. Extraction, not judgment — your people stay in the loop by design.',
-    facts: ['Confidence-scored extraction', 'Review / approve / reject workflow', 'Built for regulated document flows'],
-  },
-  {
-    id: 'agent-platform',
-    icon: 'workflow',
-    name: 'Enterprise agent platform',
-    chip: 'bg-accent/10 text-accent',
-    text: 'text-accent',
-    tagline: 'Run AI agents across your enterprise systems',
-    badge: 'Platform',
-    href: '/products/agent-platform',
-    description:
-      'The VoltAgent open-source TypeScript agent framework, plus production-built enterprise agents for support deflection and enterprise intelligence — voice and chat, grounded in your own knowledge base.',
-    facts: ['Open-source framework — no platform lock-in', 'ServiceNow + RAG + voice deflection agent', 'OpenTelemetry tracing built in'],
+      'A forward proxy that intercepts and governs all LLM traffic. Policy enforcement per team and per model, local ML-based DLP that catches PII before it leaves your network, and a complete audit log of every AI interaction.',
+    facts: [
+      'Local ML DLP — no data leaves your network',
+      'Policy enforcement per team and per model',
+      'Full audit log, time-series analytics, live dashboard',
+    ],
   },
   {
     id: 'ai-sdlc',
+    layer: 'BUILD',
     icon: 'git-branch',
-    name: 'AI-assisted SDLC platform',
-    chip: 'bg-accent/10 text-accent',
-    text: 'text-accent',
-    tagline: 'Build software with AI — and keep the audit trail',
-    badge: 'Platform',
+    name: 'AI-Assisted SDLC',
+    tagline: 'Build software with AI and keep the audit trail.',
     href: '/products/ai-sdlc',
     description:
       'Structured AI workflows for the entire SDLC. Five roles, one thread of context, and a full compliance audit trail for every AI-generated artifact. Exports to nine AI coding tools.',
-    facts: ['5 role-based phases with context threading', 'VS Code, Desktop, CLI and MCP server', 'Compliance audit trail: code → prompt → requirement'],
+    facts: [
+      'Five role-based phases with context threading',
+      'VS Code, Desktop, CLI and MCP server',
+      'Audit trail from code to prompt to requirement',
+    ],
   },
   {
-    id: 'test-automation',
+    id: 'testing-suite',
+    layer: 'VERIFY',
     icon: 'flask-conical',
-    name: 'AI Test Automation',
-    chip: 'bg-accent/10 text-accent',
-    text: 'text-accent',
-    tagline: 'From test case to execution — agent-driven',
-    badge: 'In development',
-    href: null,
+    name: 'AI Testing Suite',
+    tagline: 'Author in English. Run against reality. Verify the data.',
+    href: '/products/testing-suite',
     description:
-      'AI agents that carry testing end to end: requirements become test cases, test cases become executed suites, and failures come back triaged. Generation, execution and maintenance in one loop — so test coverage keeps pace with the code instead of trailing it.',
-    facts: ['Agentic test-case generation from requirements', 'Automated execution with failure triage', 'Self-maintaining suites as the code evolves'],
+      'AI-native end-to-end test automation. Tests are authored in plain English, calibrated against the live site and self-heal at run time — and a data validation agent reconciles what the screen shows with the row in the database.',
+    facts: [
+      'Plain-English authoring and live-app discovery',
+      'Self-healing selectors, deterministic LLM-free runtime',
+      'Database and API validation behind every screen',
+    ],
+  },
+];
+
+const industry = [
+  {
+    id: 'regulatory-reporting',
+    icon: 'landmark',
+    name: 'Regulatory Reporting',
+    tagline: 'For US P&C insurance carriers.',
+    href: '/products/regulatory-reporting',
+    description:
+      'Regulation PDFs become a knowledge graph, and the knowledge graph becomes executable filing schemas — with carrier data validation and compliance sign-off. Texas and Florida statistical filings already built, running on Snowflake, DuckDB or Databricks.',
+    facts: [
+      'Regulation to knowledge graph to executable schema',
+      'Texas and Florida filings built today',
+      'Runs on Snowflake, DuckDB or Databricks',
+    ],
+  },
+  {
+    id: 'datacenter',
+    icon: 'server',
+    name: 'Datacenter Solutions',
+    tagline: 'For data center operators.',
+    href: '/products/datacenter',
+    description:
+      'AI thermal management built on real exascale supercomputer operational data. An ensemble of five forecasting models predicts temperature 30-60 minutes ahead at 95% accuracy — with a thermal digital twin, waste-heat recovery and carbon reporting built in.',
+    facts: [
+      '95% forecast accuracy, 30-60 minute horizon',
+      '15% cooling cut, $2-5M saved per facility per year',
+      'Digital twin, heat recovery and ESG reporting',
+    ],
   },
 ];
 ---
 
-<Layout title="Platforms — Syntegreti" description="Explore Syntegreti's platform portfolio: contract intelligence, business operations, AI governance, regulatory reporting, document intelligence, enterprise agents and AI-assisted SDLC — all built in-house by one team.">
+<Layout title="Platforms — Syntegreti" description="Seven working platforms built in-house by one team: Contract Intelligence and Business Operations to run the business; AI Governance, AI-Assisted SDLC and AI Testing Suite to adopt AI safely; Regulatory Reporting and Datacenter Solutions built for your industry.">
   <section class="relative pt-24 pb-10">
     <div class="absolute inset-0 grid-bg opacity-20"></div>
 
     <div class="relative z-10 mx-auto max-w-7xl px-6">
-      <div class="max-w-3xl mb-10" data-animate>
+
+      <!-- ============ HERO ============ -->
+      <div class="max-w-3xl mb-14" data-animate>
         <span class="font-mono text-sm text-accent">// our_platforms</span>
         <h1 class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-          One team.<br />
-          <span class="gradient-text">One platform stack.</span>
+          Seven platforms.<br />
+          <span class="gradient-text">One team. One spine.</span>
         </h1>
         <p class="mt-6 text-lg leading-relaxed text-text-secondary">
-          Every platform here is built and run in-house, on one spine — govern,
-          build, operate. Deploy a platform on its own, or bring the engineers
-          who built it onto your project. Same team, either way.
+          Two platforms run the business. Three govern how you adopt AI —
+          govern, build, verify. Two are built for a specific industry.
+          Every one is working software, built in-house, deployed inside your
+          environment, with a pilot available today.
         </p>
       </div>
 
-      <!-- ============ PLATFORMS ============ -->
-      <div class="mb-10" data-animate>
-        <span class="font-mono text-sm text-accent">// platforms</span>
-      </div>
-
-      <div class="space-y-6 mb-8" data-stagger>
-
-        <!-- Contract Intelligence -->
-        <a href="/products/contract-intelligence" class="group glow-card-subtle block p-8 md:p-10">
-          <div class="grid gap-8 md:grid-cols-2 md:items-center">
-            <div>
-              <div class="flex items-center gap-3 mb-5">
-                <span class="inline-flex h-10 w-10 items-center justify-center border border-border bg-deep/30"><Icon name="file-text" size={20} class="text-accent" /></span>
-                <span class="rounded-full bg-accent/10 px-3 py-1 text-[12px] font-semibold uppercase tracking-wider text-accent">Platform · Live demo</span>
-              </div>
-              <h2 class="text-2xl font-bold text-accent sm:text-3xl">Contract Intelligence</h2>
-              <p class="mt-1 font-mono text-xs text-text-muted">Contract lifecycle intelligence + relationship governance</p>
-              <p class="mt-4 text-sm leading-relaxed text-text-secondary">
-                AI-native contract lifecycle management that goes beyond the repository.
-                Nine specialised agents extract terms, score risk and track obligations,
-                renewals and SLAs — and a relationship-governance layer scores every
-                vendor relationship against the KPIs you agree. Multi-tenant with
-                per-tenant data isolation, semantic contract search, and full audit
-                tracing of every agent run. A live demo environment is available today.
-              </p>
-              <div class="mt-6 flex items-center gap-2 text-sm font-medium text-accent">
-                Explore the platform
-                <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </div>
-            </div>
-            <div class="grid grid-cols-2 gap-3">
-              {[
-                { label: 'Contract Intelligence', desc: 'AI extraction + risk analysis by 9 specialised agents' },
-                { label: 'Obligation Tracking', desc: 'Obligations, SLAs and renewals — never missed' },
-                { label: 'Relationship Governance', desc: 'Vendor KPI scoring beyond the contract text' },
-                { label: 'Multi-Tenant', desc: 'Per-tenant data isolation, enterprise-ready' },
-                { label: 'Semantic Search', desc: 'Find any clause across your whole corpus' },
-                { label: 'Full Audit Trace', desc: 'Every agent run traced end to end' },
-              ].map((f) => (
-                <div class="rounded-lg border border-border/50 bg-deep/50 px-3 py-2.5">
-                  <div class="text-xs font-medium text-text-primary">{f.label}</div>
-                  <div class="text-[13px] leading-relaxed text-text-secondary">{f.desc}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </a>
-
-        <!-- Business Operations -->
-        <a href="/products/business-operations" class="group glow-card-subtle block p-8 md:p-10">
-          <div class="grid gap-8 md:grid-cols-2 md:items-center">
-            <div>
-              <div class="flex items-center gap-3 mb-5">
-                <span class="inline-flex h-10 w-10 items-center justify-center border border-border bg-deep/30"><Icon name="layout-grid" size={20} class="text-accent" /></span>
-                <span class="rounded-full bg-accent/10 px-3 py-1 text-[12px] font-semibold uppercase tracking-wider text-accent">Platform</span>
-              </div>
-              <h2 class="text-2xl font-bold text-accent sm:text-3xl">Business Operations</h2>
-              <p class="mt-1 font-mono text-xs text-text-muted">The AI-native business operations platform</p>
-              <p class="mt-4 text-sm leading-relaxed text-text-secondary">
-                One platform for how a business actually runs: Sales, Marketing, HR,
-                Finance, Projects, Recruitment and ITSM — seven modules in one
-                multi-tenant SaaS. The built-in assistant carries 160 AI actions across
-                four graduated autonomy levels, from suggest-only to fully autonomous,
-                so AI takes on exactly as much as you allow it to.
-              </p>
-              <div class="mt-6 flex items-center gap-2 text-sm font-medium text-accent">
-                Explore the platform
-                <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </div>
-            </div>
-            <div class="grid grid-cols-2 gap-3">
-              {[
-                { label: '7 Business Modules', desc: 'Sales, Marketing, HR, Finance, Projects, Recruitment, ITSM' },
-                { label: 'Built-in AI Assistant', desc: '160 AI actions across the whole platform' },
-                { label: 'Graduated Autonomy', desc: '4 levels — from suggest-only to autonomous' },
-                { label: 'Autonomous Sales Agent', desc: 'Pipeline actions under your autonomy policy' },
-                { label: 'Multi-Tenant SaaS', desc: 'Cloud-deployed with CI/CD' },
-                { label: 'MCP Server', desc: 'Open integration surface for AI assistants' },
-              ].map((f) => (
-                <div class="rounded-lg border border-border/50 bg-deep/50 px-3 py-2.5">
-                  <div class="text-xs font-medium text-text-primary">{f.label}</div>
-                  <div class="text-[13px] leading-relaxed text-text-secondary">{f.desc}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <!-- ============ THE PLATFORM STACK ============ -->
-      <div class="mb-10" data-animate>
-        <span class="font-mono text-sm text-accent">// the_platform_stack</span>
-        <h2 class="mt-3 text-3xl font-bold tracking-tight">The platform stack</h2>
+      <!-- ============ 1. RUN THE BUSINESS ============ -->
+      <div class="mb-8" data-animate>
+        <span class="font-mono text-sm text-accent">// 01_run_the_business</span>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight">Run the business</h2>
         <p class="mt-3 max-w-2xl text-text-secondary">
-          How enterprises govern AI, stay compliant, understand documents, run
-          agents and build software — each a working platform we deploy inside
-          your environment.
+          The two flagship platforms — one for the contracts your business signs,
+          one for the operations it runs every day.
         </p>
       </div>
 
-      <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 mb-8" data-stagger>
-        {platforms.map((p) => {
-          const Tag = p.href ? 'a' : 'div';
-          return (
-            <Tag href={p.href ?? undefined} id={p.id} class="group glow-card-subtle p-7 flex flex-col scroll-mt-28">
-              <div class="flex items-center justify-between mb-4">
-                <span class="inline-flex h-10 w-10 items-center justify-center border border-border bg-deep/30"><Icon name={p.icon} size={20} class="text-accent" /></span>
-                <span class:list={['rounded-full px-3 py-1 text-[12px] font-semibold uppercase tracking-wider', p.chip]}>{p.badge}</span>
-              </div>
-              <h3 class:list={['text-lg font-bold leading-snug', p.text]}>{p.tagline}</h3>
-              <p class="mt-1 font-mono text-[13px] text-text-muted">{p.name}</p>
-              <p class="mt-3 text-sm leading-relaxed text-text-secondary flex-1">{p.description}</p>
-              <ul class="mt-4 space-y-1.5 border-t border-border/50 pt-4">
-                {p.facts.map((fact) => (
-                  <li class="flex items-start gap-2 text-[13px] text-text-secondary">
-                    <span class:list={['mt-0.5', p.text]}>▸</span>
-                    {fact}
-                  </li>
-                ))}
-              </ul>
-              {p.href && (
-                <div class:list={['mt-4 flex items-center gap-1 text-xs font-medium opacity-0 transition-opacity group-hover:opacity-100', p.text]}>
-                  Learn more →
-                </div>
-              )}
-            </Tag>
-          );
-        })}
+      <div class="grid gap-6 md:grid-cols-2 mb-16" data-stagger>
+        {flagships.map((p) => (
+          <a href={p.href} id={p.id} class="group glow-card-subtle p-8 flex flex-col scroll-mt-28">
+            <div class="flex items-center justify-between mb-5">
+              <span class="inline-flex h-10 w-10 items-center justify-center border border-border bg-deep/30"><Icon name={p.icon} size={20} class="text-accent" /></span>
+              <span class="rounded-full border border-accent/20 bg-accent/5 px-3 py-1 text-[12px] font-semibold uppercase tracking-wider text-accent">Platform</span>
+            </div>
+            <h3 class="text-2xl font-bold text-accent">{p.name}</h3>
+            <p class="mt-1 font-mono text-[13px] text-text-muted">{p.tagline}</p>
+            <p class="mt-4 text-sm leading-relaxed text-text-secondary flex-1">{p.description}</p>
+            <ul class="mt-5 space-y-1.5 border-t border-border/50 pt-4">
+              {p.facts.map((fact) => (
+                <li class="flex items-start gap-2 text-[13px] text-text-secondary">
+                  <span class="mt-0.5 text-accent">▸</span>
+                  {fact}
+                </li>
+              ))}
+            </ul>
+            <div class="mt-5 flex items-center gap-1 text-xs font-medium text-accent opacity-0 transition-opacity group-hover:opacity-100">
+              Explore the platform →
+            </div>
+          </a>
+        ))}
       </div>
 
-      <!-- ============ DATACENTER ============ -->
-      <div class="mb-10" data-animate>
-        <span class="font-mono text-sm text-accent">// for_data_center_operators</span>
+      <!-- ============ 2. ADOPT AI SAFELY ============ -->
+      <div class="mb-8" data-animate>
+        <span class="font-mono text-sm text-accent">// 02_adopt_ai_safely</span>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight">Adopt AI safely</h2>
+        <p class="mt-3 max-w-2xl text-text-secondary">
+          The AI spine. How you govern AI, how you build with it, and how you
+          verify what you ship — the same three layers every platform we make
+          runs on.
+        </p>
       </div>
 
-      <a href="/products/datacenter" class="group glow-card-subtle block p-8 md:p-10" data-animate>
-        <div class="grid gap-8 md:grid-cols-2 md:items-center">
-          <div>
-            <div class="flex items-center gap-3 mb-5">
-              <span class="inline-flex h-10 w-10 items-center justify-center border border-border bg-deep/30"><Icon name="server" size={20} class="text-accent" /></span>
-              <span class="rounded-full bg-accent/10 px-3 py-1 text-[12px] font-semibold uppercase tracking-wider text-accent">Product</span>
+      <div class="grid gap-6 md:grid-cols-3 mb-16" data-stagger>
+        {spine.map((p) => (
+          <a href={p.href} id={p.id} class="group glow-card-subtle p-7 flex flex-col scroll-mt-28">
+            <div class="flex items-center justify-between mb-5">
+              <span class="font-mono text-[12px] tracking-widest text-accent"><Icon name={p.icon} size={14} class="inline -mt-0.5" /> {p.layer}</span>
+              <span class="rounded-full border border-accent/20 bg-accent/5 px-3 py-1 text-[12px] font-semibold uppercase tracking-wider text-accent">Platform</span>
             </div>
-            <h2 class="text-2xl font-bold text-accent sm:text-3xl">Datacenter Solutions</h2>
-            <p class="mt-1 font-mono text-xs text-text-muted">Thermal intelligence for data centers</p>
-            <p class="mt-4 text-sm leading-relaxed text-text-secondary">
-              AI thermal management built on real exascale supercomputer operational
-              data. Our ensemble ML engine combines 5 forecasting algorithms to
-              deliver 95% prediction accuracy with 30-60 minute horizons — cutting
-              cooling costs by 15% and saving $2-5M annually per facility —
-              with waste-heat recovery, a thermal digital twin and carbon
-              reporting built in.
-            </p>
-            <div class="mt-6 flex items-center gap-2 text-sm font-medium text-accent">
-              Explore the platform
-              <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+            <h3 class="text-xl font-bold text-accent">{p.name}</h3>
+            <p class="mt-1 font-mono text-[13px] text-text-muted">{p.tagline}</p>
+            <p class="mt-4 text-sm leading-relaxed text-text-secondary flex-1">{p.description}</p>
+            <ul class="mt-5 space-y-1.5 border-t border-border/50 pt-4">
+              {p.facts.map((fact) => (
+                <li class="flex items-start gap-2 text-[13px] text-text-secondary">
+                  <span class="mt-0.5 text-accent">▸</span>
+                  {fact}
+                </li>
+              ))}
+            </ul>
+            <div class="mt-5 flex items-center gap-1 text-xs font-medium text-accent opacity-0 transition-opacity group-hover:opacity-100">
+              Explore the platform →
             </div>
-          </div>
-          <div class="grid grid-cols-2 gap-3">
-            {[
-              { label: 'Ensemble ML', desc: 'ARIMA+Kalman, FFT, Holt-Winters, physics validation' },
-              { label: 'Digital Twin', desc: 'Real-time thermal state replication + what-if sims' },
-              { label: 'Heat Recovery', desc: 'AI-optimized waste heat → energy revenue' },
-              { label: 'Carbon Zero', desc: 'Automated ESG compliance + carbon credit trading' },
-              { label: '95% Accuracy', desc: '30-60 min forecasts, 4-6x better than competitors' },
-              { label: '$2-5M Savings', desc: 'Per large facility annually, 18-24 mo payback' },
-            ].map((f) => (
-              <div class="rounded-lg border border-border/50 bg-deep/50 px-3 py-2.5">
-                <div class="text-xs font-medium text-text-primary">{f.label}</div>
-                <div class="text-[13px] leading-relaxed text-text-secondary">{f.desc}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </a>
+          </a>
+        ))}
+      </div>
 
-      <!-- Proof strip -->
+      <!-- ============ 3. BUILT FOR YOUR INDUSTRY ============ -->
+      <div class="mb-8" data-animate>
+        <span class="font-mono text-sm text-accent">// 03_built_for_your_industry</span>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight">Built for your industry</h2>
+        <p class="mt-3 max-w-2xl text-text-secondary">
+          Two platforms that solve one hard, specific problem for one kind of
+          buyer — on the same spine as everything above.
+        </p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 mb-10" data-stagger>
+        {industry.map((p) => (
+          <a href={p.href} id={p.id} class="group glow-card-subtle p-7 flex flex-col scroll-mt-28">
+            <div class="flex items-center justify-between mb-5">
+              <span class="inline-flex h-10 w-10 items-center justify-center border border-border bg-deep/30"><Icon name={p.icon} size={20} class="text-accent" /></span>
+              <span class="rounded-full border border-accent/20 bg-accent/5 px-3 py-1 text-[12px] font-semibold uppercase tracking-wider text-accent">Platform</span>
+            </div>
+            <h3 class="text-xl font-bold text-accent">{p.name}</h3>
+            <p class="mt-1 font-mono text-[13px] text-text-muted">{p.tagline}</p>
+            <p class="mt-4 text-sm leading-relaxed text-text-secondary flex-1">{p.description}</p>
+            <ul class="mt-5 space-y-1.5 border-t border-border/50 pt-4">
+              {p.facts.map((fact) => (
+                <li class="flex items-start gap-2 text-[13px] text-text-secondary">
+                  <span class="mt-0.5 text-accent">▸</span>
+                  {fact}
+                </li>
+              ))}
+            </ul>
+            <div class="mt-5 flex items-center gap-1 text-xs font-medium text-accent opacity-0 transition-opacity group-hover:opacity-100">
+              Explore the platform →
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <!-- ============ CTA ============ -->
       <div class="mt-10 rounded-2xl border border-border/50 bg-deep/50 p-8 text-center" data-animate>
-        <p class="text-sm text-text-secondary">
-          Proven in production: our insurance sales, scheduling and service-desk
-          AI runs live for real clients today.
-          <a href="/case-studies" class="text-accent hover:text-accent-glow transition-colors font-medium">See the case studies →</a>
+        <h2 class="text-2xl font-bold tracking-tight">
+          Every platform here has a <span class="gradient-text">pilot</span>.
+        </h2>
+        <p class="mx-auto mt-3 max-w-xl text-sm text-text-secondary">
+          Pick the one closest to your problem. We scope the pilot to your
+          systems, run it inside your environment, and you judge it on your own
+          data.
         </p>
+        <div class="mt-6 flex flex-wrap justify-center gap-4">
+          <a href="/contact" class="inline-flex items-center gap-2 rounded-xl bg-accent px-7 py-3.5 text-sm font-semibold text-void transition-all hover:bg-accent-glow hover:shadow-[0_0_30px_rgba(0,232,123,0.3)]">
+            Request a Pilot
+          </a>
+          <a href="/case-studies" class="inline-flex items-center gap-2 rounded-xl border border-border px-7 py-3.5 text-sm font-medium text-text-secondary transition-all hover:border-border-light hover:bg-elevated">
+            See what's already in production
+          </a>
+        </div>
       </div>
+
     </div>
   </section>
 </Layout>

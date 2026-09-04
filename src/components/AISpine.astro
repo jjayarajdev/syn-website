@@ -22,14 +22,14 @@ const spineLayers = [
       'AI-guided SDLC workflows across five roles. Context threads between phases automatically, and every AI-generated artifact carries a compliance audit trail.',
   },
   {
-    layer: 'OPERATE',
-    icon: 'workflow',
-    name: 'Agent Platform',
+    layer: 'VERIFY',
+    icon: 'flask-conical',
+    name: 'AI Testing Suite',
     color: 'accent',
-    href: '/products/agent-platform',
-    tagline: 'How you run operations',
+    href: '/products/testing-suite',
+    tagline: 'How you verify what you ship',
     description:
-      'The VoltAgent open-source agent framework plus enterprise agents for support deflection and enterprise intelligence — with OpenTelemetry tracing built in.',
+      'Tests authored in plain English, calibrated against the live app, self-healing at run time — and a data validation agent that checks the database behind every screen.',
   },
 ];
 ---
@@ -44,7 +44,7 @@ const spineLayers = [
       <p class="mt-4 max-w-2xl text-text-secondary">
         Two flagship platforms run your contracts and your operations. Underneath
         them, one spine governs how your enterprise adopts AI — how you govern it,
-        how you build with it, and how you operate on it.
+        how you build with it, and how you verify what you ship.
       </p>
     </div>
 
@@ -58,14 +58,14 @@ const spineLayers = [
             <span class="inline-flex h-10 w-10 items-center justify-center border border-border bg-deep/30"><Icon name="file-text" size={20} class="text-accent" /></span>
             <h3 class="text-xl font-bold text-accent">Contract Intelligence</h3>
           </div>
-          <span class="rounded-full border border-accent/20 bg-accent/5 px-3 py-1 text-[12px] font-semibold uppercase tracking-wider text-accent">Platform · Live demo</span>
+          <span class="rounded-full border border-accent/20 bg-accent/5 px-3 py-1 text-[12px] font-semibold uppercase tracking-wider text-accent">Platform</span>
         </div>
         <p class="font-mono text-[13px] text-text-muted mb-3">Contract lifecycle intelligence + relationship governance</p>
         <p class="text-sm leading-relaxed text-text-secondary">
           AI-native contract lifecycle management that goes beyond the repository:
           nine specialised agents extract, risk-score and track obligations, while a
           relationship-governance layer scores every vendor relationship against
-          agreed KPIs. Multi-tenant, fully audit-traced, demo-ready today.
+          agreed KPIs. Multi-tenant, fully audit-traced, pilot-ready today.
         </p>
         <div class="mt-4 flex items-center gap-1 text-xs font-medium text-accent opacity-0 transition-opacity group-hover:opacity-100">
           Explore the platform →
@@ -94,7 +94,7 @@ const spineLayers = [
       </a>
     </div>
 
-    <!-- The spine: govern / build / operate -->
+    <!-- The spine: govern / build / verify -->
     <div class="mt-6 glow-card-subtle p-8 md:p-10" data-animate>
       <div class="grid gap-8 md:grid-cols-3 md:gap-0">
         {spineLayers.map((item, i) => (
@@ -119,13 +119,13 @@ const spineLayers = [
 
       <div class="mt-8 pt-6 border-t border-border/50 text-center">
         <p class="text-sm text-text-secondary">
-          Govern, build, operate — the <strong class="text-text-primary">AI spine</strong> that
+          Govern, build, verify — the <strong class="text-text-primary">AI spine</strong> that
           carries every platform we ship.
         </p>
       </div>
     </div>
 
-    <!-- Domain products — regulated insurance -->
+    <!-- Domain platforms — regulated insurance and data centers -->
     <div class="mt-6 grid gap-4 md:grid-cols-2" data-stagger>
       <a href="/products/regulatory-reporting" class="group glow-card-subtle p-6">
         <div class="flex items-center gap-3">
@@ -140,46 +140,25 @@ const spineLayers = [
           executable filing schemas — with carrier data validation and compliance
           sign-off. Texas and Florida filings already built.
         </p>
+        <div class="mt-4 flex items-center gap-1 text-xs font-medium text-accent opacity-0 transition-opacity group-hover:opacity-100">
+          Learn more →
+        </div>
       </a>
-      <a href="/products/document-intelligence" class="group glow-card-subtle p-6">
+      <a href="/products/datacenter" class="group glow-card-subtle p-6">
         <div class="flex items-center gap-3">
-          <Icon name="file-search" size={18} class="text-accent" />
+          <Icon name="server" size={18} class="text-accent" />
           <div>
-            <h3 class="text-base font-bold text-accent">Document Intelligence</h3>
-            <p class="font-mono text-[13px] text-text-muted">AI extraction with review built in</p>
+            <h3 class="text-base font-bold text-accent">Datacenter Solutions</h3>
+            <p class="font-mono text-[13px] text-text-muted">Thermal intelligence — for data center operators</p>
           </div>
         </div>
         <p class="mt-3 text-sm leading-relaxed text-text-secondary">
-          Document and data extraction designed for auditability, not black-box
-          output — confidence-scored fields with human review and approval
-          workflows by design.
+          Predictive thermal forecasting 30-60 minutes ahead, a real-time thermal
+          digital twin, and AI-optimised waste-heat recovery — so operators cut
+          cooling spend before the hotspot forms.
         </p>
-      </a>
-    </div>
-
-    <!-- Datacenter — separate, different buyer -->
-    <div class="mt-6" data-animate>
-      <a href="/products/datacenter" class="group glow-card-subtle block p-6 md:p-8">
-        <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <div class="flex items-center gap-4">
-            <Icon name="server" size={18} class="text-accent" />
-            <div>
-              <h3 class="text-lg font-bold text-accent">Datacenter Solutions</h3>
-              <p class="font-mono text-[13px] text-text-muted">Thermal intelligence — for data center operators</p>
-            </div>
-          </div>
-          <div class="flex items-center gap-6">
-            <div class="flex gap-4">
-              <span class="text-sm font-bold text-amber">95% accuracy</span>
-              <span class="text-text-muted">·</span>
-              <span class="text-sm font-bold text-amber">$2-5M saved/yr</span>
-              <span class="text-text-muted">·</span>
-              <span class="text-sm font-bold text-amber">15% cooling cut</span>
-            </div>
-            <svg class="h-5 w-5 text-accent opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-1 shrink-0 hidden md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </div>
+        <div class="mt-4 flex items-center gap-1 text-xs font-medium text-accent opacity-0 transition-opacity group-hover:opacity-100">
+          Learn more →
         </div>
       </a>
     </div>
