@@ -4,24 +4,17 @@ import Layout from '../../layouts/Layout.astro';
 const agents = [
   {
     name: 'Enterprise Intelligence Agent',
-    description: 'Processes P1/P2 critical incidents by automatically querying Salesforce, Snowflake, ServiceNow, and your knowledge base — then synthesizes everything into actionable work notes in 30 seconds.',
+    description: 'Processes P1/P2 critical incidents by automatically querying Salesforce, Snowflake, Zoho, and your knowledge base — then synthesizes everything into actionable work notes in 30 seconds.',
     impact: '97% faster context gathering',
     tech: ['VoltAgent', 'GPT-4o', 'RAG', 'LibSQL'],
-    systems: ['Salesforce', 'Snowflake', 'ServiceNow', 'Knowledge Base'],
+    systems: ['Salesforce', 'Snowflake', 'Zoho', 'Knowledge Base'],
   },
   {
     name: 'Support Deflection Agent',
-    description: 'Multi-agent system that deflects IT support tickets with instant answers from ServiceNow KB and company documents. Unified parallel search across all knowledge sources with voice (VAPI) and web chat interfaces.',
+    description: 'Multi-agent system that deflects IT support tickets with instant answers from Zoho KB and company documents. Unified parallel search across all knowledge sources with voice (VAPI) and web chat interfaces.',
     impact: '40-60% ticket reduction',
     tech: ['VoltAgent', 'GPT-4o', 'RAG', 'VAPI'],
-    systems: ['ServiceNow KMS', 'Company Docs', 'VectorDB', 'Voice/Chat'],
-  },
-  {
-    name: 'Global Mobility Agent',
-    description: 'Multi-agent system with domain specialists for Tax, Immigration, Payroll, Compliance, and Policy — orchestrating complex global mobility workflows for international employee assignments.',
-    impact: 'Cross-border compliance automation',
-    tech: ['VoltAgent', 'Multi-Agent Orchestration', 'Domain LLMs'],
-    systems: ['Tax Systems', 'Immigration', 'Payroll', 'HR Platforms'],
+    systems: ['Zoho KB', 'Company Docs', 'VectorDB', 'Voice/Chat'],
   },
 ];
 
@@ -58,7 +51,7 @@ const beforeAfter = [
         </p>
         <p class="mt-6 text-lg leading-relaxed text-text-secondary">
           Our enterprise agent platform orchestrates specialized AI agents that work across your enterprise
-          systems — Salesforce, ServiceNow, Snowflake, and beyond. Built on the VoltAgent
+          systems — Salesforce, Zoho, Snowflake, and beyond. Built on the VoltAgent
           framework with full TypeScript type safety, each agent understands your business
           context, queries multiple systems in parallel, and delivers synthesized
           intelligence in seconds instead of hours.
