@@ -1,8 +1,34 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import RelatedProof from '../../components/RelatedProof.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AI IT Support Assistant — Case Study",
+  "description": "How Syntegreti built a multi-agent IT support system that reduces tickets by 60%, resolves issues in 2 minutes, and saves $72K annually.",
+  "url": "https://syntegreti.com/case-studies/ai-it-support/",
+  "mainEntityOfPage": "https://syntegreti.com/case-studies/ai-it-support/",
+  "author": {
+    "@type": "Organization",
+    "name": "Syntegreti",
+    "url": "https://syntegreti.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Syntegreti",
+    "url": "https://syntegreti.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://syntegreti.com/favicon.svg"
+    }
+  },
+  "image": "https://syntegreti.com/og-image.png",
+  "about": "Enterprise AI case study"
+};
 ---
 
-<Layout title="AI IT Support Assistant — Case Study | Syntegreti" description="How Syntegreti built a multi-agent IT support system that reduces tickets by 60%, resolves issues in 2 minutes, and saves $72K annually.">
+<Layout schema={schema} title="AI IT Support Assistant — Case Study | Syntegreti" description="How Syntegreti built a multi-agent IT support system that reduces tickets by 60%, resolves issues in 2 minutes, and saves $72K annually.">
 
   <!-- Hero -->
   <section class="relative pt-24 pb-8 overflow-hidden">
@@ -346,6 +372,16 @@ import Layout from '../../layouts/Layout.astro';
       </div>
     </div>
   </section>
+
+  <RelatedProof
+  eyebrow="// related_platform"
+  title="The platform behind this pattern"
+  description="Orchestrator, specialist agents, shared memory and typed integrations — the architecture from this project became our Agent Platform, the Agentic OS for business."
+  href="/products/agent-platform"
+  linkLabel="Explore the Agent Platform"
+  secondaryHref="/products"
+  secondaryLabel="All platforms"
+  />
 
   <!-- CTA -->
   <section class="py-8">

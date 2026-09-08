@@ -1,5 +1,27 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import RelatedProof from '../../components/RelatedProof.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "AI Governance Platform",
+  "headline": "AI Governance Platform",
+  "description": "An AI governance forward-proxy that intercepts and governs all LLM traffic: policy enforcement, local ML-based DLP, and full audit logging of every AI interaction.",
+  "url": "https://syntegreti.com/products/ai-governance/",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Cloud, on-premises or in your VPC",
+  "provider": {
+    "@type": "Organization",
+    "name": "Syntegreti",
+    "url": "https://syntegreti.com"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Syntegreti",
+    "url": "https://syntegreti.com"
+  }
+};
 
 const features = [
   {
@@ -25,7 +47,7 @@ const features = [
 ];
 ---
 
-<Layout title="AI Governance Platform | Syntegreti" description="An AI governance forward-proxy that intercepts and governs all LLM traffic: policy enforcement, local ML-based DLP, and full audit logging of every AI interaction.">
+<Layout schema={schema} title="AI Governance Platform | Syntegreti" description="An AI governance forward-proxy that intercepts and governs all LLM traffic: policy enforcement, local ML-based DLP, and full audit logging of every AI interaction.">
 
   <!-- Hero -->
   <section class="relative pt-24 pb-10 overflow-hidden">
@@ -57,7 +79,7 @@ const features = [
             Talk to Us
           </a>
           <a href="/products" class="inline-flex items-center gap-2 rounded-xl border border-border px-7 py-3.5 text-sm font-medium text-text-secondary transition-all hover:border-border-light hover:bg-elevated">
-            Back to Products
+            Back to Platforms
           </a>
         </div>
       </div>
@@ -155,6 +177,16 @@ const features = [
       </div>
     </div>
   </section>
+
+  <RelatedProof
+  eyebrow="// how_we_deliver"
+  title="See the work behind the platforms"
+  description="Four client systems built by the same team — IT support, field-service scheduling, insurance sales and contractor compliance. Real numbers wherever clients have released them."
+  href="/case-studies"
+  linkLabel="Read the case studies"
+  secondaryHref="/services/catalyst-studio"
+  secondaryLabel="How a 4-6 week sprint works"
+  />
 
   <!-- CTA -->
   <section class="py-10">

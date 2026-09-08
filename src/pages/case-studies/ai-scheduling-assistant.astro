@@ -1,8 +1,34 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import RelatedProof from '../../components/RelatedProof.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AI Scheduling Assistant — Case Study",
+  "description": "How Syntegreti built an omni-channel AI scheduling assistant for a US field-services platform — in production across Voice, Web Chat and SMS, eliminating wait times for field-service scheduling.",
+  "url": "https://syntegreti.com/case-studies/ai-scheduling-assistant/",
+  "mainEntityOfPage": "https://syntegreti.com/case-studies/ai-scheduling-assistant/",
+  "author": {
+    "@type": "Organization",
+    "name": "Syntegreti",
+    "url": "https://syntegreti.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Syntegreti",
+    "url": "https://syntegreti.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://syntegreti.com/favicon.svg"
+    }
+  },
+  "image": "https://syntegreti.com/og-image.png",
+  "about": "Enterprise AI case study"
+};
 ---
 
-<Layout title="AI Scheduling Assistant — Case Study | Syntegreti" description="How Syntegreti built an omni-channel AI scheduling assistant for a US field-services platform — in production across Voice, Web Chat and SMS, eliminating wait times for field-service scheduling.">
+<Layout schema={schema} title="AI Scheduling Assistant — Case Study | Syntegreti" description="How Syntegreti built an omni-channel AI scheduling assistant for a US field-services platform — in production across Voice, Web Chat and SMS, eliminating wait times for field-service scheduling.">
 
   <!-- Hero -->
   <section class="relative pt-24 pb-8 overflow-hidden">
@@ -287,6 +313,16 @@ import Layout from '../../layouts/Layout.astro';
       </div>
     </div>
   </section>
+
+  <RelatedProof
+  eyebrow="// related_platform"
+  title="Voice, chat and SMS agents, packaged as a platform"
+  description="Omni-channel agents with escalation, audit logging and enterprise system integrations are what the Agent Platform provides for any workflow, not just scheduling."
+  href="/products/agent-platform"
+  linkLabel="Explore the Agent Platform"
+  secondaryHref="/products"
+  secondaryLabel="All platforms"
+  />
 
   <!-- CTA -->
   <section class="py-8">

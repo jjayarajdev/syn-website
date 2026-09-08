@@ -124,9 +124,9 @@ Or you can start with a platform purpose-built for this problem.
 
 ## How We Built Ours
 
-At Syntegreti, we built our own Agentic OS for business — an enterprise agent platform — because we kept solving the same orchestration problem for every client.
+At Syntegreti, we built our own Agentic OS for business — the [Agent Platform](/products/agent-platform) — because we kept solving the same orchestration problem for every client.
 
-The Enterprise Intelligence Agent we built for IT support? It needed to coordinate across ServiceNow, Salesforce, Snowflake, and a knowledge base. The Global Mobility Agent? Tax, immigration, payroll, compliance, and HR platforms — five specialized sub-agents orchestrated by a coordinator.
+The Enterprise Intelligence Agent we built for [IT support](/case-studies/ai-it-support)? It needed to coordinate across ServiceNow, Salesforce, Snowflake, and a knowledge base. The Global Mobility Agent? Tax, immigration, payroll, compliance, and HR platforms — five specialized sub-agents orchestrated by a coordinator.
 
 Every project had the same architecture: **an orchestrator coordinating specialist agents with shared memory and unified system access.** So we turned that pattern into a platform.
 
@@ -158,7 +158,7 @@ Most enterprises in 2026 are at Level 1-2. The jump from 2 to 3 is where the exp
 
 If this resonates, you don't need a 6-month strategy engagement to find out if an Agentic OS works for you.
 
-Our Catalyst Studio runs a **4-6 week Proof of Tech** sprint:
+Our [Catalyst Studio](/services/catalyst-studio) runs a **4-6 week Proof of Tech** sprint:
 
 - **Week 1:** Map your highest-value orchestration workflow
 - **Week 2:** Architect the agent team and system integrations
@@ -169,4 +169,4 @@ You'll walk away with a working multi-agent system, connected to your actual ent
 
 ---
 
-*Syntegreti builds AI platforms and ships enterprise solutions from Hyderabad to the world. Our agent platform is our Agentic OS for business. [Get in touch](/contact) to see it in action.*
+*Syntegreti builds AI platforms and ships enterprise solutions from Hyderabad to the world. Our [Agent Platform](/products/agent-platform) is our Agentic OS for business — see it running in the [IT support case study](/case-studies/ai-it-support), or [get in touch](/contact) to see it on your systems.*

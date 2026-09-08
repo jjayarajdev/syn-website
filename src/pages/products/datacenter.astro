@@ -1,5 +1,27 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import RelatedProof from '../../components/RelatedProof.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Datacenter Thermal Intelligence",
+  "headline": "Datacenter Thermal Intelligence",
+  "description": "AI thermal intelligence built on real supercomputer data. 95% prediction accuracy, 15% cooling cost reduction.",
+  "url": "https://syntegreti.com/products/datacenter/",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Cloud, on-premises or in your VPC",
+  "provider": {
+    "@type": "Organization",
+    "name": "Syntegreti",
+    "url": "https://syntegreti.com"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Syntegreti",
+    "url": "https://syntegreti.com"
+  }
+};
 
 const products = [
   {
@@ -44,7 +66,7 @@ const forecasting = [
 ];
 ---
 
-<Layout title="Datacenter Thermal Intelligence | Syntegreti" description="AI thermal intelligence built on real supercomputer data. 95% prediction accuracy, 15% cooling cost reduction.">
+<Layout schema={schema} title="Datacenter Thermal Intelligence | Syntegreti" description="AI thermal intelligence built on real supercomputer data. 95% prediction accuracy, 15% cooling cost reduction.">
 
   <!-- Hero -->
   <section class="relative pt-24 pb-10 overflow-hidden">
@@ -147,6 +169,16 @@ const forecasting = [
       </div>
     </div>
   </section>
+
+  <RelatedProof
+  eyebrow="// how_we_deliver"
+  title="See the work behind the platforms"
+  description="Four client systems built by the same team — IT support, field-service scheduling, insurance sales and contractor compliance. Real numbers wherever clients have released them."
+  href="/case-studies"
+  linkLabel="Read the case studies"
+  secondaryHref="/services/catalyst-studio"
+  secondaryLabel="How a 4-6 week sprint works"
+  />
 
   <!-- CTA -->
   <section class="py-10">

@@ -1,5 +1,27 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import RelatedProof from '../../components/RelatedProof.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "AI Testing Suite",
+  "headline": "AI Testing Suite — AI-Native End-to-End Test Automation",
+  "description": "Author tests in plain English, calibrate them against the live app, self-heal at run time, and verify the data behind every screen. Multi-tenant, read-only by design, pilot available.",
+  "url": "https://syntegreti.com/products/testing-suite/",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Cloud, on-premises or in your VPC",
+  "provider": {
+    "@type": "Organization",
+    "name": "Syntegreti",
+    "url": "https://syntegreti.com"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Syntegreti",
+    "url": "https://syntegreti.com"
+  }
+};
 import Icon from '../../components/Icon.astro';
 
 const pillars = [
@@ -107,7 +129,7 @@ const proof = [
 const stack = ['Playwright / Chromium', 'Node.js + Express', 'React + Vite', 'PostgreSQL', 'Redis + BullMQ', 'Docker + CI/CD'];
 ---
 
-<Layout title="AI Testing Suite — AI-Native End-to-End Test Automation | Syntegreti" description="Author tests in plain English, calibrate them against the live app, self-heal at run time, and verify the data behind every screen. Multi-tenant, read-only by design, pilot available.">
+<Layout schema={schema} title="AI Testing Suite — AI-Native End-to-End Test Automation | Syntegreti" description="Author tests in plain English, calibrate them against the live app, self-heal at run time, and verify the data behind every screen. Multi-tenant, read-only by design, pilot available.">
 
   <!-- Hero -->
   <section class="relative pt-24 pb-10 overflow-hidden">
@@ -141,7 +163,7 @@ const stack = ['Playwright / Chromium', 'Node.js + Express', 'React + Vite', 'Po
             Request a Pilot
           </a>
           <a href="/products" class="inline-flex items-center gap-2 rounded-xl border border-border px-7 py-3.5 text-sm font-medium text-text-secondary transition-all hover:border-border-light hover:bg-elevated">
-            Back to Products
+            Back to Platforms
           </a>
         </div>
       </div>
@@ -352,6 +374,16 @@ const stack = ['Playwright / Chromium', 'Node.js + Express', 'React + Vite', 'Po
     </div>
   </section>
 
+  <RelatedProof
+  eyebrow="// how_we_deliver"
+  title="See the work behind the platforms"
+  description="Four client systems built by the same team — IT support, field-service scheduling, insurance sales and contractor compliance. Real numbers wherever clients have released them."
+  href="/case-studies"
+  linkLabel="Read the case studies"
+  secondaryHref="/services/catalyst-studio"
+  secondaryLabel="How a 4-6 week sprint works"
+  />
+
   <!-- CTA -->
   <section class="py-10">
     <div class="mx-auto max-w-4xl px-6 text-center" data-animate>
@@ -368,7 +400,7 @@ const stack = ['Playwright / Chromium', 'Node.js + Express', 'React + Vite', 'Po
           Request a Pilot
         </a>
         <a href="/products" class="inline-flex items-center gap-2 rounded-xl border border-border px-7 py-3.5 text-sm font-medium text-text-secondary transition-all hover:border-border-light hover:bg-elevated">
-          Back to Products
+          Back to Platforms
         </a>
       </div>
     </div>

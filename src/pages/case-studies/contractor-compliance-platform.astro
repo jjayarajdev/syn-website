@@ -1,8 +1,34 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import RelatedProof from '../../components/RelatedProof.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "License & Contractor Compliance Platform — Case Study",
+  "description": "Building the License & Contractor Compliance Platform for one of America's largest home-improvement platforms — jurisdiction monitoring, AI document verification, and a pre-computed compliance engine, delivered against contractual milestones.",
+  "url": "https://syntegreti.com/case-studies/contractor-compliance-platform/",
+  "mainEntityOfPage": "https://syntegreti.com/case-studies/contractor-compliance-platform/",
+  "author": {
+    "@type": "Organization",
+    "name": "Syntegreti",
+    "url": "https://syntegreti.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Syntegreti",
+    "url": "https://syntegreti.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://syntegreti.com/favicon.svg"
+    }
+  },
+  "image": "https://syntegreti.com/og-image.png",
+  "about": "Enterprise AI case study"
+};
 ---
 
-<Layout title="License & Contractor Compliance Platform — Case Study | Syntegreti" description="Building the License & Contractor Compliance Platform for one of America's largest home-improvement platforms — jurisdiction monitoring, AI document verification, and a pre-computed compliance engine, delivered against contractual milestones.">
+<Layout schema={schema} title="License & Contractor Compliance Platform — Case Study | Syntegreti" description="Building the License & Contractor Compliance Platform for one of America's largest home-improvement platforms — jurisdiction monitoring, AI document verification, and a pre-computed compliance engine, delivered against contractual milestones.">
 
   <!-- Hero -->
   <section class="relative pt-24 pb-8 overflow-hidden">
@@ -251,6 +277,16 @@ import Layout from '../../layouts/Layout.astro';
       </div>
     </div>
   </section>
+
+  <RelatedProof
+  eyebrow="// related_platform"
+  title="Document Intelligence does the verification work"
+  description="Confidence-scored extraction, human review and approval workflows, and edit tracking on every correction — the capabilities that keep licenses and insurance documents verified here."
+  href="/products/document-intelligence"
+  linkLabel="Explore Document Intelligence"
+  secondaryHref="/products"
+  secondaryLabel="All platforms"
+  />
 
   <!-- CTA -->
   <section class="py-8">

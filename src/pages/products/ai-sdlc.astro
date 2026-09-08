@@ -1,5 +1,27 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import RelatedProof from '../../components/RelatedProof.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "AI-Assisted SDLC",
+  "headline": "AI-Assisted SDLC — Workflow Optimization",
+  "description": "Stop vibe coding. Our SDLC platform provides structured AI workflows across the entire software development lifecycle — from BA to Tester.",
+  "url": "https://syntegreti.com/products/ai-sdlc/",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Cloud, on-premises or in your VPC",
+  "provider": {
+    "@type": "Organization",
+    "name": "Syntegreti",
+    "url": "https://syntegreti.com"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Syntegreti",
+    "url": "https://syntegreti.com"
+  }
+};
 
 const phases = [
   { num: '01', role: 'Business Analyst', desc: 'Requirements, acceptance criteria, user stories' },
@@ -40,7 +62,7 @@ const surfaces = [
 ];
 ---
 
-<Layout title="AI-Assisted SDLC — Workflow Optimization | Syntegreti" description="Stop vibe coding. Our SDLC platform provides structured AI workflows across the entire software development lifecycle — from BA to Tester.">
+<Layout schema={schema} title="AI-Assisted SDLC — Workflow Optimization | Syntegreti" description="Stop vibe coding. Our SDLC platform provides structured AI workflows across the entire software development lifecycle — from BA to Tester.">
 
   <!-- Hero -->
   <section class="relative pt-24 pb-10 overflow-hidden">
@@ -209,6 +231,16 @@ const surfaces = [
       </div>
     </div>
   </section>
+
+  <RelatedProof
+  eyebrow="// how_we_deliver"
+  title="See the work behind the platforms"
+  description="Four client systems built by the same team — IT support, field-service scheduling, insurance sales and contractor compliance. Real numbers wherever clients have released them."
+  href="/case-studies"
+  linkLabel="Read the case studies"
+  secondaryHref="/services/catalyst-studio"
+  secondaryLabel="How a 4-6 week sprint works"
+  />
 
   <!-- CTA -->
   <section class="py-10">

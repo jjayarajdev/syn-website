@@ -1,5 +1,27 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import RelatedProof from '../../components/RelatedProof.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Agent Platform",
+  "headline": "Agent Platform — Agentic OS for Business",
+  "description": "Our enterprise agent platform orchestrates AI agents across your enterprise systems. From incident resolution to compliance — automate the complex, not just the simple.",
+  "url": "https://syntegreti.com/products/agent-platform/",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Cloud, on-premises or in your VPC",
+  "provider": {
+    "@type": "Organization",
+    "name": "Syntegreti",
+    "url": "https://syntegreti.com"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Syntegreti",
+    "url": "https://syntegreti.com"
+  }
+};
 
 const agents = [
   {
@@ -28,7 +50,7 @@ const beforeAfter = [
 ];
 ---
 
-<Layout title="Agent Platform — Agentic OS for Business | Syntegreti" description="Our enterprise agent platform orchestrates AI agents across your enterprise systems. From incident resolution to compliance — automate the complex, not just the simple.">
+<Layout schema={schema} title="Agent Platform — Agentic OS for Business | Syntegreti" description="Our enterprise agent platform orchestrates AI agents across your enterprise systems. From incident resolution to compliance — automate the complex, not just the simple.">
 
   <!-- Hero -->
   <section class="relative pt-24 pb-10 overflow-hidden">
@@ -213,6 +235,16 @@ const beforeAfter = [
       </div>
     </div>
   </section>
+
+  <RelatedProof
+  eyebrow="// proof_in_production"
+  title="In production: a multi-agent IT support desk"
+  description="Specialist agents on Zoho with RAG and escalation — 60% fewer tickets, 2-minute resolutions, $72K saved a year. The same orchestration pattern runs an omni-channel scheduling assistant across voice, web chat and SMS."
+  href="/case-studies/ai-it-support"
+  linkLabel="Read the IT support case study"
+  secondaryHref="/case-studies/ai-scheduling-assistant"
+  secondaryLabel="Scheduling assistant case study"
+  />
 
   <!-- CTA -->
   <section class="py-10">

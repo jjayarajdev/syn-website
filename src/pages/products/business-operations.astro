@@ -1,5 +1,27 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import RelatedProof from '../../components/RelatedProof.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Business Operations Platform",
+  "headline": "Business Operations Platform — AI-Native, Seven Modules",
+  "description": "Sales, Marketing, HR, Finance, Projects, Recruitment and ITSM in one multi-tenant SaaS — with a built-in AI assistant, 160 AI actions and four graduated autonomy levels.",
+  "url": "https://syntegreti.com/products/business-operations/",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Cloud, on-premises or in your VPC",
+  "provider": {
+    "@type": "Organization",
+    "name": "Syntegreti",
+    "url": "https://syntegreti.com"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Syntegreti",
+    "url": "https://syntegreti.com"
+  }
+};
 
 const modules = [
   { name: 'Sales', desc: 'Pipeline, deals and an autonomous sales agent working under your autonomy policy' },
@@ -19,7 +41,7 @@ const autonomyLevels = [
 ];
 ---
 
-<Layout title="Business Operations Platform — AI-Native, Seven Modules | Syntegreti" description="Sales, Marketing, HR, Finance, Projects, Recruitment and ITSM in one multi-tenant SaaS — with a built-in AI assistant, 160 AI actions and four graduated autonomy levels.">
+<Layout schema={schema} title="Business Operations Platform — AI-Native, Seven Modules | Syntegreti" description="Sales, Marketing, HR, Finance, Projects, Recruitment and ITSM in one multi-tenant SaaS — with a built-in AI assistant, 160 AI actions and four graduated autonomy levels.">
 
   <!-- Hero -->
   <section class="relative pt-24 pb-10 overflow-hidden">
@@ -162,6 +184,16 @@ const autonomyLevels = [
     </div>
   </section>
 
+  <RelatedProof
+  eyebrow="// related_work"
+  title="Related work: an AI-assisted insurance sales platform"
+  description="One sales platform for an insurance aggregator with 30+ locations — carrier comparison, quoting workflow and the sales conversation in one place. In production."
+  href="/case-studies/insurance-sales-platform"
+  linkLabel="Read the insurance sales case study"
+  secondaryHref="/case-studies"
+  secondaryLabel="All case studies"
+  />
+
   <!-- CTA -->
   <section class="py-10">
     <div class="mx-auto max-w-4xl px-6 text-center" data-animate>
@@ -177,7 +209,7 @@ const autonomyLevels = [
           Become a Design Partner
         </a>
         <a href="/products" class="inline-flex items-center gap-2 rounded-xl border border-border px-7 py-3.5 text-sm font-medium text-text-secondary transition-all hover:border-border-light hover:bg-elevated">
-          Back to Products
+          Back to Platforms
         </a>
       </div>
     </div>

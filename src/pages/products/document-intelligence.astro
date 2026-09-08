@@ -1,5 +1,27 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import RelatedProof from '../../components/RelatedProof.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Document Intelligence",
+  "headline": "Document Intelligence — AI Extraction with Review Built In",
+  "description": "AI document and data extraction designed for auditability: confidence-scored fields, human review and approval workflows, and edit tracking on every correction.",
+  "url": "https://syntegreti.com/products/document-intelligence/",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Cloud, on-premises or in your VPC",
+  "provider": {
+    "@type": "Organization",
+    "name": "Syntegreti",
+    "url": "https://syntegreti.com"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Syntegreti",
+    "url": "https://syntegreti.com"
+  }
+};
 
 const features = [
   {
@@ -25,7 +47,7 @@ const features = [
 ];
 ---
 
-<Layout title="Document Intelligence — AI Extraction with Review Built In | Syntegreti" description="AI document and data extraction designed for auditability: confidence-scored fields, human review and approval workflows, and edit tracking on every correction.">
+<Layout schema={schema} title="Document Intelligence — AI Extraction with Review Built In | Syntegreti" description="AI document and data extraction designed for auditability: confidence-scored fields, human review and approval workflows, and edit tracking on every correction.">
 
   <!-- Hero -->
   <section class="relative pt-24 pb-10 overflow-hidden">
@@ -58,7 +80,7 @@ const features = [
             Talk to Us
           </a>
           <a href="/products" class="inline-flex items-center gap-2 rounded-xl border border-border px-7 py-3.5 text-sm font-medium text-text-secondary transition-all hover:border-border-light hover:bg-elevated">
-            Back to Products
+            Back to Platforms
           </a>
         </div>
       </div>
@@ -128,6 +150,16 @@ const features = [
       </div>
     </div>
   </section>
+
+  <RelatedProof
+  eyebrow="// in_delivery"
+  title="In delivery: license and contractor compliance at national scale"
+  description="Thousands of contractor licenses and insurance documents verified across state, county and city jurisdictions for one of America’s largest home-improvement platforms — the extraction, review and audit capabilities this platform packages."
+  href="/case-studies/contractor-compliance-platform"
+  linkLabel="Read the compliance case study"
+  secondaryHref="/case-studies"
+  secondaryLabel="All case studies"
+  />
 
   <!-- CTA -->
   <section class="py-10">

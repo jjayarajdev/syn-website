@@ -1,5 +1,27 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import RelatedProof from '../../components/RelatedProof.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Regulatory Reporting for US P&C Insurance",
+  "headline": "Regulatory Reporting for US P&C Insurance",
+  "description": "A regulatory knowledge-graph platform for US P&C statistical reporting: regulation PDFs become executable filing schemas, with carrier data validation and compliance sign-off. Texas and Florida filings built.",
+  "url": "https://syntegreti.com/products/regulatory-reporting/",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Cloud, on-premises or in your VPC",
+  "provider": {
+    "@type": "Organization",
+    "name": "Syntegreti",
+    "url": "https://syntegreti.com"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Syntegreti",
+    "url": "https://syntegreti.com"
+  }
+};
 
 const features = [
   {
@@ -35,7 +57,7 @@ const features = [
 ];
 ---
 
-<Layout title="Regulatory Reporting for US P&C Insurance | Syntegreti" description="A regulatory knowledge-graph platform for US P&C statistical reporting: regulation PDFs become executable filing schemas, with carrier data validation and compliance sign-off. Texas and Florida filings built.">
+<Layout schema={schema} title="Regulatory Reporting for US P&C Insurance | Syntegreti" description="A regulatory knowledge-graph platform for US P&C statistical reporting: regulation PDFs become executable filing schemas, with carrier data validation and compliance sign-off. Texas and Florida filings built.">
 
   <!-- Hero -->
   <section class="relative pt-24 pb-10 overflow-hidden">
@@ -68,7 +90,7 @@ const features = [
             Request a Pilot
           </a>
           <a href="/products" class="inline-flex items-center gap-2 rounded-xl border border-border px-7 py-3.5 text-sm font-medium text-text-secondary transition-all hover:border-border-light hover:bg-elevated">
-            Back to Products
+            Back to Platforms
           </a>
         </div>
       </div>
@@ -138,6 +160,16 @@ const features = [
       </div>
     </div>
   </section>
+
+  <RelatedProof
+  eyebrow="// related_work"
+  title="Related work in insurance"
+  description="Our other insurance build: an AI-assisted sales platform for a multi-carrier aggregator, in production across 30+ locations."
+  href="/case-studies/insurance-sales-platform"
+  linkLabel="Read the insurance sales case study"
+  secondaryHref="/case-studies"
+  secondaryLabel="All case studies"
+  />
 
   <!-- CTA -->
   <section class="py-10">

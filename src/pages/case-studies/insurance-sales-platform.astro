@@ -1,5 +1,31 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import RelatedProof from '../../components/RelatedProof.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Insurance Sales Platform — Case Study",
+  "description": "An AI-assisted insurance sales platform for a Middle East-based insurance aggregator with 30+ locations shopping 35+ carriers.",
+  "url": "https://syntegreti.com/case-studies/insurance-sales-platform/",
+  "mainEntityOfPage": "https://syntegreti.com/case-studies/insurance-sales-platform/",
+  "author": {
+    "@type": "Organization",
+    "name": "Syntegreti",
+    "url": "https://syntegreti.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Syntegreti",
+    "url": "https://syntegreti.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://syntegreti.com/favicon.svg"
+    }
+  },
+  "image": "https://syntegreti.com/og-image.png",
+  "about": "Enterprise AI case study"
+};
 
 const scope = [
   {
@@ -21,7 +47,7 @@ const scope = [
 ];
 ---
 
-<Layout title="Insurance Sales Platform — Case Study | Syntegreti" description="An AI-assisted insurance sales platform for a Middle East-based insurance aggregator with 30+ locations shopping 35+ carriers.">
+<Layout schema={schema} title="Insurance Sales Platform — Case Study | Syntegreti" description="An AI-assisted insurance sales platform for a Middle East-based insurance aggregator with 30+ locations shopping 35+ carriers.">
 
   <!-- Hero -->
   <section class="relative pt-24 pb-8 overflow-hidden">
@@ -157,6 +183,16 @@ const scope = [
       </div>
     </div>
   </section>
+
+  <RelatedProof
+  eyebrow="// related_platforms"
+  title="Related platforms for insurance and sales"
+  description="The Business Operations Platform brings sales, marketing and finance into one AI-native SaaS. Regulatory Reporting turns US P&C regulation PDFs into executable filing schemas."
+  href="/products/business-operations"
+  linkLabel="Explore the Business Operations Platform"
+  secondaryHref="/products/regulatory-reporting"
+  secondaryLabel="Regulatory Reporting"
+  />
 
   <!-- CTA -->
   <section class="py-8">
