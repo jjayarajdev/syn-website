@@ -2,6 +2,63 @@
 import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
 
+// Photos present under public/team/ (resolved at build time; empty until files are added)
+const teamPhotos = Object.keys(import.meta.glob('/public/team/*.{jpg,jpeg,png,webp}'));
+
+// Leadership — what each person does at Syntegreti (not a CV). Drop a photo at
+// public/team/<slug>.jpg to replace the initials avatar automatically.
+const leaders = [
+  {
+    name: 'Jay Jayakeerthy',
+    slug: 'jay-jayakeerthy',
+    role: 'Thinker · Tinkerer · Doer',
+    owns: 'Platforms, delivery, clients',
+    bio: 'Architects and ships the platforms and runs delivery, mostly for regulated industries where AI has to respect controls, not just answer questions.',
+    linkedin: 'https://www.linkedin.com/in/jjayakeerthy/',
+  },
+  {
+    name: 'Karthik Jayaraman',
+    slug: 'karthik-jayaraman',
+    role: 'AI and Technology Officer',
+    owns: 'AI, business operations, delivery',
+    bio: 'Architects and ships the AI that runs business operations: the agentic RAG, the cloud-first architecture, and the governance that keeps it working in production.',
+    linkedin: 'https://www.linkedin.com/in/karthik-jayaraman-73909084/',
+  },
+  {
+    name: 'Manish Davda',
+    slug: 'manish-davda',
+    role: 'Partnership Architect',
+    owns: 'Partnerships, accounts, relationships',
+    bio: 'Brings in the partnerships and looks after every account: the first conversation, the sprint scope, and the relationship once the system is live.',
+    linkedin: 'https://www.linkedin.com/in/manish-davda-7993975/',
+  },
+].map((l) => {
+  const match = teamPhotos.find((f) => f.includes(`/team/${l.slug}.`));
+  return {
+    ...l,
+    photo: match ? match.replace(/^\/public/, '') : null,
+    initials: l.name.split(' ').map((w) => w[0]).join(''),
+  };
+});
+
+// Proof — one line per client system, pulled from the case studies
+const shipped = [
+  { tag: 'Insurance Aggregator · Middle East', title: 'AI-assisted insurance sales platform', metric: 'Live · 30+ locations · 35+ carriers', href: '/case-studies/insurance-sales-platform' },
+  { tag: 'Enterprise IT', title: 'Multi-agent IT support desk', metric: '60% fewer tickets · 2-min resolution · $72K/yr saved', href: '/case-studies/ai-it-support' },
+  { tag: 'Field Services · US', title: 'Omni-channel AI scheduling assistant', metric: 'Live · voice, web chat and SMS · zero wait time', href: '/case-studies/ai-scheduling-assistant' },
+  { tag: 'Home Improvement · Nationwide US', title: 'License & contractor compliance platform', metric: 'In delivery · state, county and city jurisdictions', href: '/case-studies/contractor-compliance-platform' },
+];
+
+const schema = leaders.map((l) => ({
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: l.name,
+  jobTitle: l.role,
+  description: l.bio,
+  sameAs: [l.linkedin],
+  worksFor: { '@type': 'Organization', name: 'Syntegreti', url: 'https://syntegreti.com' },
+}));
+
 const values = [
   {
     title: 'Build First, Pitch Second',
@@ -27,32 +84,34 @@ const values = [
 
 const timeline = [
   {
-    phase: 'Foundation',
-    description: 'Started as an enterprise IT services company with deep roots in application development, cloud transformation, and infrastructure management.',
+    phase: 'Enterprise IT roots',
+    description: 'Decades spent inside enterprise application development, cloud transformation and infrastructure. We know how large systems are actually run, and what breaks them.',
   },
   {
-    phase: 'AI Pivot',
-    description: 'Recognized the transformative potential of AI/ML early. Built internal capabilities in classical ML, data engineering, and business intelligence.',
+    phase: 'ML and data discipline',
+    description: 'Classical machine learning, data engineering and business intelligence, built before generative AI made it fashionable. The habits of measuring before believing came from here.',
   },
   {
-    phase: 'GenAI Era',
-    description: 'Went all-in on generative AI. Developed Catalyst Studio, our proprietary accelerator platform with custom domain LLMs, agentic RAG, and vision models.',
+    phase: 'GenAI and Catalyst Studio',
+    description: 'Went all-in on generative AI: custom domain LLMs, agentic RAG and vision models, packaged into Catalyst Studio, the accelerator behind every 4-6 week sprint.',
   },
   {
-    phase: 'Products',
-    description: 'Shipped seven platforms built in-house on one AI spine — Contract Intelligence and Business Operations to run the business; AI Governance, AI-Assisted SDLC and AI Testing Suite to adopt AI safely; Regulatory Reporting and Datacenter Solutions built for their industries. Every one deployed inside the client\'s environment, with a pilot available.',
+    phase: 'Seven platforms',
+    description: 'Working software built in-house on one AI spine, deployed inside client environments, each with a pilot available today.',
+    href: '/products',
+    linkLabel: 'See the platforms',
   },
-];
+]
 
 const stats = [
-  { value: '100+', label: 'Years combined leadership experience' },
-  { value: '7', label: 'Platforms built in-house' },
-  { value: '6', label: 'Industries where we\'ve delivered' },
-  { value: '4-6 wks', label: 'From "can we?" to "here\'s the proof"' },
+  { value: '100+', label: 'Years combined leadership experience', href: '#leadership' },
+  { value: '7', label: 'Platforms built in-house', href: '/products' },
+  { value: '6', label: 'Industries where we\'ve delivered', href: '/case-studies' },
+  { value: '4-6 wks', label: 'From "can we?" to "here\'s the proof"', href: '/services/catalyst-studio' },
 ];
 ---
 
-<Layout title="About — Syntegreti" description="Syntegreti is an AI-first company building products and delivering services that transform how enterprises operate. HQ in Hyderabad, delivering globally.">
+<Layout schema={schema} title="About — Syntegreti" description="Meet the people behind Syntegreti: a lean Hyderabad team that builds AI platforms and ships enterprise systems — seven platforms in-house, client systems in production, proof in 4-6 weeks.">
   <!-- Hero -->
   <section class="relative pt-24 pb-10">
     <div class="absolute inset-0 grid-bg opacity-20"></div>
@@ -80,12 +139,85 @@ const stats = [
     <div class="mx-auto max-w-7xl px-6">
       <div class="grid grid-cols-2 gap-6 lg:grid-cols-4" data-stagger>
         {stats.map((stat) => (
-          <div class="rounded-2xl border border-border bg-surface/30 p-8 text-center">
+          <a href={stat.href} class="group rounded-2xl border border-border bg-surface/30 p-8 text-center transition-all card-hover">
             <div class="text-3xl font-bold text-accent">{stat.value}</div>
-            <div class="mt-2 text-sm text-text-muted">{stat.label}</div>
+            <div class="mt-2 text-sm text-text-muted underline-offset-2 group-hover:underline">{stat.label}</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership -->
+  <section class="py-10" id="leadership">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mb-8" data-animate>
+        <span class="font-mono text-sm text-accent">// who_you_talk_to</span>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">The people on the other end of the call</h2>
+        <p class="mt-4 max-w-2xl text-lg text-text-secondary">
+          Two of us build and deliver everything. One of us keeps the relationships.
+          Nobody in between.
+        </p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-3" data-stagger>
+        {leaders.map((l) => (
+          <div class="flex flex-col gap-6 rounded-2xl border border-border bg-surface/20 p-8">
+            {l.photo ? (
+              <img src={l.photo} alt={l.name} width="112" height="112" loading="lazy" class="h-28 w-28 shrink-0 object-cover grayscale" />
+            ) : (
+              <div class="flex h-28 w-28 shrink-0 items-center justify-center border border-border bg-deep font-display text-3xl font-bold text-accent" aria-hidden="true">
+                {l.initials}
+              </div>
+            )}
+            <div class="min-w-0">
+              <h3 class="text-xl font-bold text-text-primary">{l.name}</h3>
+              <div class="mt-1 font-mono text-xs text-accent">{l.role}</div>
+              <div class="mt-1 text-sm text-text-muted">{l.owns}</div>
+              <p class="mt-4 text-sm leading-relaxed text-text-secondary">{l.bio}</p>
+              <a href={l.linkedin} target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-glow">
+                <Icon name="linkedin" size={16} />
+                LinkedIn
+                <Icon name="arrow-up-right" size={14} />
+              </a>
+            </div>
           </div>
         ))}
       </div>
+    </div>
+  </section>
+
+  <!-- Shipped -->
+  <section class="py-10">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mb-8 flex flex-wrap items-end justify-between gap-4" data-animate>
+        <div>
+          <span class="font-mono text-sm text-accent">// what_we_have_shipped</span>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Four client systems. Real numbers where we can share them.</h2>
+        </div>
+        <a href="/case-studies" class="inline-flex items-center gap-1 text-sm font-medium text-text-secondary transition-colors hover:text-text-primary">
+          All case studies
+          <Icon name="arrow-right" size={16} />
+        </a>
+      </div>
+
+      <div class="grid gap-4 md:grid-cols-2" data-stagger>
+        {shipped.map((c) => (
+          <a href={c.href} class="group rounded-2xl border border-border bg-surface/20 p-6 transition-all card-hover">
+            <div class="font-mono text-xs text-text-muted">{c.tag}</div>
+            <h3 class="mt-2 text-lg font-bold text-text-primary">{c.title}</h3>
+            <div class="mt-3 text-sm text-accent">{c.metric}</div>
+            <div class="mt-4 inline-flex items-center gap-1 text-sm text-text-secondary transition-colors group-hover:text-text-primary">
+              Read the case study
+              <Icon name="arrow-right" size={14} />
+            </div>
+          </a>
+        ))}
+      </div>
+      <p class="mt-6 text-sm text-text-muted">
+        Plus <a href="/products" class="text-text-secondary underline underline-offset-2 hover:text-text-primary">seven platforms</a>
+        built in-house and deployed inside client environments, each with a pilot available.
+      </p>
     </div>
   </section>
 
@@ -100,15 +232,18 @@ const stats = [
             can outbuild companies 100x their size. AI makes that bet
             a sure thing."
           </blockquote>
-          <div class="mt-6 flex items-center justify-center gap-4 text-sm text-text-muted">
+          <div class="mt-6 flex flex-wrap items-center justify-center gap-3 text-sm text-text-muted">
             <span class="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1">
-              Custom Solutions
+              HQ Hyderabad, India
             </span>
             <span class="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1">
-              Strategic Partnerships
+              Global delivery
             </span>
             <span class="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1">
-              Continuous Improvement
+              AWS Partner
+            </span>
+            <span class="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1">
+              Microsoft Azure Partner
             </span>
           </div>
         </div>
@@ -136,33 +271,32 @@ const stats = [
     </div>
   </section>
 
-  <!-- Journey -->
+  <!-- What we brought with us (indicative, not a dated history) -->
   <section class="py-10">
     <div class="mx-auto max-w-7xl px-6">
       <div class="mb-8" data-animate>
-        <span class="font-mono text-sm text-accent">// our_journey</span>
-        <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">How We Got Here</h2>
+        <span class="font-mono text-sm text-accent">// what_we_brought</span>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">What We Arrived With</h2>
+        <p class="mt-4 max-w-2xl text-lg text-text-secondary">
+          The company is new. The people are not. Four things this team brought with them on day one.
+        </p>
       </div>
 
-      <div class="relative" data-animate>
-        <!-- Vertical line -->
-        <div class="absolute left-6 top-0 bottom-0 w-px bg-border lg:left-1/2"></div>
-
-        <div class="space-y-12">
+      <!-- Horizontal strip: rule across the top, one step per column -->
+      <div class="relative" data-stagger>
+        <div class="absolute left-0 right-0 top-[5px] hidden h-px bg-border lg:block" aria-hidden="true"></div>
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {timeline.map((item, i) => (
-            <div class={`relative flex items-start gap-8 ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
-              {/* Dot */}
-              <div class="absolute left-6 -translate-x-1/2 lg:left-1/2">
-                <div class="flex h-3 w-3 items-center justify-center rounded-full border-2 border-accent bg-void"></div>
-              </div>
-
-              {/* Content */}
-              <div class={`ml-12 lg:ml-0 lg:w-1/2 ${i % 2 === 0 ? 'lg:pr-16 lg:text-right' : 'lg:pl-16'}`}>
-                <div class="rounded-xl border border-border bg-surface/20 p-6">
-                  <span class="font-mono text-xs text-accent">{item.phase}</span>
-                  <p class="mt-2 text-sm leading-relaxed text-text-secondary">{item.description}</p>
-                </div>
-              </div>
+            <div class="relative border-l border-border pl-5 lg:border-l-0 lg:pl-0 lg:pt-8">
+              <div class="absolute -left-[6.5px] top-0 h-3 w-3 border-2 border-accent bg-void lg:left-0" aria-hidden="true"></div>
+              <span class="font-mono text-xs text-accent">0{i + 1} · {item.phase}</span>
+              <p class="mt-2 text-sm leading-relaxed text-text-secondary">{item.description}</p>
+              {item.href && (
+                <a href={item.href} class="mt-3 inline-flex items-center gap-1 text-sm font-medium text-accent transition-colors hover:text-accent-glow">
+                  {item.linkLabel}
+                  <Icon name="arrow-right" size={14} />
+                </a>
+              )}
             </div>
           ))}
         </div>
@@ -183,7 +317,7 @@ const stats = [
       </div>
       <div class="rounded-2xl border border-border bg-surface/20 p-12 text-center" data-animate>
         <div class="mx-auto max-w-lg">
-          <h2 class="text-3xl font-bold tracking-tight">Engineers & Specialists — and Growing</h2>
+          <h3 class="text-3xl font-bold tracking-tight">Engineers & Specialists — and Growing</h3>
           <p class="mt-3 text-sm leading-relaxed text-text-secondary">
             Full-stack developers, AI/ML engineers, cloud architects, data scientists.
             Everyone codes. Everyone ships. Everyone talks to clients.
@@ -211,12 +345,20 @@ const stats = [
           We're a small team — so we're picky about what we take on. But if your
           problem is interesting, we'll move faster than you expect.
         </p>
-        <a
-          href="/contact"
-          class="mt-8 inline-flex items-center gap-2 rounded-xl bg-accent px-8 py-4 text-sm font-semibold text-void transition-all hover:bg-accent-glow hover:shadow-[0_0_30px_rgba(0,232,123,0.3)]"
-        >
-          Get in Touch
-        </a>
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <a
+            href="/contact"
+            class="inline-flex items-center gap-2 rounded-xl bg-accent px-8 py-4 text-sm font-semibold text-void transition-all hover:bg-accent-glow hover:shadow-[0_0_30px_rgba(0,232,123,0.3)]"
+          >
+            Get in Touch
+          </a>
+          <a
+            href="/case-studies"
+            class="inline-flex items-center gap-2 rounded-xl border border-border px-8 py-4 text-sm font-medium text-text-secondary transition-all hover:border-border-light hover:bg-elevated hover:text-text-primary"
+          >
+            See What We've Shipped
+          </a>
+        </div>
       </div>
     </div>
   </section>
