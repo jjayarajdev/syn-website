@@ -1,127 +1,254 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Icon from '../../components/Icon.astro';
+import CTA from '../../components/CTA.astro';
 
-const pillars = [
+// How to engage — the question a buyer arrives with
+const engagements = [
   {
-    title: 'Catalyst Studio',
-    icon: 'flame',
-    tagline: 'Our MVP Factory',
-    description: 'Idea to working proof in 4-6 weeks. We de-risk your AI investment with a proprietary toolkit and a Go/No-Go gate before you scale.',
+    icon: 'zap',
+    name: '4-6 week sprint',
+    who: 'One problem, two or three systems, and a budget decision that needs proof first.',
+    get: 'Working software on your systems, real metrics, and an honest Go/No-Go at week four. Fixed scope, fixed fee.',
     href: '/services/catalyst-studio',
-    color: 'accent',
-    features: [
-      '4-6 Week Proof of Tech',
-      'Custom Domain LLMs',
-      'Agentic RAG',
-      'Vision Models (YOLO)',
-      'Smart Prompts',
-      'Full Source Handover',
-    ],
+    label: 'How the sprint works',
+    start: true,
   },
   {
-    title: 'Build & Modernize',
-    icon: 'building-2',
-    tagline: 'Apps + Cloud',
-    description: 'Enterprise applications and cloud infrastructure — built right the first time. Salesforce, Workday, custom full-stack, plus strategy-led migration on AWS, Azure, and GCP.',
-    href: '/services/application-services',
-    color: 'accent',
-    features: [
-      'Salesforce & Workday',
-      'Custom Full-Stack',
-      'Cloud Migration',
-      'Re-architecture',
-      'Kubernetes & Terraform',
-      'Managed Services',
-    ],
+    icon: 'users',
+    name: 'Project team',
+    who: 'A scoped build or modernisation with a deadline and a definition of done.',
+    get: 'An architect-led team that designs, builds and deploys. Milestones you sign off against, full handover at the end.',
+    href: '/contact',
+    label: 'Scope a project',
   },
   {
-    title: 'Data & AI',
-    icon: 'database',
-    tagline: 'Intelligence at Scale',
-    description: 'The heart of everything we do. From BI pipelines to production GenAI — we build the entire data infrastructure that makes AI work at enterprise scale.',
-    href: '/services/data-ai',
-    color: 'accent',
-    features: [
-      'GenAI & LLM Solutions',
-      'Data Pipelines & ETL',
-      'Retrieval-Augmented Gen',
-      'Classical ML Models',
-      'BI & Analytics',
-      'MLOps & Monitoring',
-    ],
-  },
-  {
-    title: 'Operate & Secure',
-    icon: 'shield',
-    tagline: 'Infra + Cybersecurity',
-    description: '24/7 operations, cybersecurity, and service desk — AI-augmented by our agent platform. We keep it running so your team can focus on what\'s next.',
-    href: '/services/infrastructure',
-    color: 'accent',
-    features: [
-      '24/7 NOC & SOC',
-      'Cybersecurity',
-      'Service Desk (L0-L3)',
-      'AI Ticket Triage',
-      'Data Center Ops',
-      'Infrastructure Advisory',
-    ],
+    icon: 'git-merge',
+    name: 'Embedded engineers',
+    who: 'A team that needs more people who ship, without a vendor layer in between.',
+    get: 'Engineers inside your repos, your standups and your cloud, under your controls. Yours for as long as you need them.',
+    href: '/contact',
+    label: 'Extend your team',
   },
 ];
+
+// The four pillars — one funnel, in order
+const pillars = [
+  {
+    num: '01',
+    name: 'Catalyst Studio',
+    verb: 'Invent it',
+    href: '/services/catalyst-studio',
+    lead: 'Where every engagement starts. Idea to working proof in 4-6 weeks, with a Go/No-Go gate before anyone scales anything.',
+    does: 'Custom domain LLMs, agentic RAG, vision models and a toolkit we built ourselves, so the first four weeks go to your problem rather than plumbing. Full source handover, whichever way the gate goes.',
+    proof: { text: 'Discovery to launch in eight weeks: a multi-agent support desk cutting tickets 60%', href: '/case-studies/ai-it-support' },
+    start: true,
+  },
+  {
+    num: '02',
+    name: 'Build & Modernize',
+    verb: 'Build it',
+    href: '/services/application-services',
+    lead: 'Enterprise applications and the cloud they run on, built by the people who designed them.',
+    does: 'Salesforce and Workday, custom full-stack systems, and strategy-led migration to AWS, Azure or GCP: re-architecture, Kubernetes and Terraform, managed services once it is live.',
+    proof: { text: 'One AI-assisted sales platform for an insurance aggregator, in production across 30+ locations', href: '/case-studies/insurance-sales-platform' },
+  },
+  {
+    num: '03',
+    name: 'Data & AI',
+    verb: 'Power it',
+    href: '/services/data-ai',
+    lead: 'The data infrastructure that makes AI work at enterprise scale, from BI pipelines to production GenAI.',
+    does: 'Data pipelines and ETL, retrieval-augmented generation, classical ML where it fits better than an LLM, analytics, and the MLOps and monitoring that keep models honest after launch.',
+    proof: { text: 'Omni-channel AI scheduling agents live across voice, web chat and SMS', href: '/case-studies/ai-scheduling-assistant' },
+  },
+  {
+    num: '04',
+    name: 'Operate & Secure',
+    verb: 'Protect it',
+    href: '/services/infrastructure',
+    lead: 'Round-the-clock operations, security and service desk, augmented by our own agent platform.',
+    does: '24/7 NOC and SOC, cybersecurity, an L0 to L3 service desk with AI ticket triage, data centre operations and infrastructure advisory. We keep it running so your team can work on what is next.',
+    proof: { text: 'AI triage on a live service desk: two-minute resolutions, $72K a year saved', href: '/case-studies/ai-it-support' },
+  },
+];
+
+// The sprint itself — mirrors the phases on the Catalyst Studio page
+const sprint = [
+  { name: 'Ideation', when: 'Week 1', text: 'Align stakeholders, pick the use case, define what success looks like in numbers.' },
+  { name: 'Tech stack', when: 'Week 2', text: 'Architecture, model selection and benchmarking, environments and data pipeline design.' },
+  { name: 'Rapid build', when: 'Weeks 2-3', text: 'Prototype with our toolkit, integrate with your systems, demo to stakeholders as we go.' },
+  { name: 'Toll gate', when: 'Week 4', text: 'Go/No-Go with real metrics. If Go: a production roadmap. Either way: full documentation and handover.' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Syntegreti services',
+  itemListElement: pillars.map((p, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'Service',
+      name: p.name,
+      description: p.lead,
+      url: `https://syntegreti.com${p.href}/`,
+      provider: { '@type': 'Organization', name: 'Syntegreti', url: 'https://syntegreti.com' },
+    },
+  })),
+};
 ---
 
-<Layout title="Services — Syntegreti" description="Enterprise AI and IT services: Catalyst Studio (4-6 week MVP factory), Build & Modernize, Data & AI, Operate & Secure.">
+<Layout schema={schema} title="Services — Syntegreti" description="Three ways to work with Syntegreti: a 4-6 week sprint, a project team, or embedded engineers. Four pillars, one funnel: Catalyst Studio, Build & Modernize, Data & AI, Operate & Secure.">
+  <!-- Hero -->
   <section class="relative pt-24 pb-10">
     <div class="absolute inset-0 grid-bg opacity-20"></div>
 
     <div class="relative z-10 mx-auto max-w-7xl px-6">
-      <div class="max-w-3xl mb-10" data-animate>
-        <span class="font-mono text-sm text-accent">// service_portfolio</span>
+      <div class="max-w-3xl" data-animate>
+        <span class="font-mono text-sm text-accent">// services</span>
         <h1 class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
           Four pillars.<br />
-          <span class="gradient-text">One team.</span>
+          <span class="gradient-text">One team. One funnel.</span>
         </h1>
         <p class="mt-6 text-lg leading-relaxed text-text-secondary">
-          Invent it. Build it. Power it. Protect it. Most companies our size
-          do one of these. We do all four — because that's what enterprises need.
+          Every engagement starts with a 4-6 week sprint that proves the idea on your
+          systems. Build, Data &amp; AI and Operate follow from a proof that worked,
+          delivered by the same people who ran the sprint.
+        </p>
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <a href="/contact" class="inline-flex items-center gap-2 rounded-xl bg-accent px-7 py-3.5 text-sm font-semibold text-void transition-all hover:bg-accent-glow">
+            Book a 4-6 Week Sprint
+            <Icon name="arrow-right" size={16} />
+          </a>
+          <a href="/case-studies" class="inline-flex items-center gap-2 rounded-xl glass px-7 py-3.5 text-sm font-medium text-text-secondary transition-all hover:text-text-primary">
+            Read the Case Studies
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Three ways to engage -->
+  <section class="py-10">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mb-8" data-animate>
+        <span class="font-mono text-sm text-accent">// how_to_engage</span>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Three ways to work with us</h2>
+      </div>
+
+      <div class="grid gap-4 md:grid-cols-3" data-stagger>
+        {engagements.map((e) => (
+          <div class="flex flex-col rounded-2xl border border-border bg-surface/20 p-8">
+            <div class="flex items-center justify-between">
+              <span class="inline-flex h-10 w-10 items-center justify-center border border-border bg-deep/30">
+                <Icon name={e.icon} size={20} class="text-accent" />
+              </span>
+              {e.start && <span class="font-mono text-xs text-accent">start here</span>}
+            </div>
+            <h3 class="mt-5 text-xl font-bold text-text-primary">{e.name}</h3>
+            <dl class="mt-4 space-y-4 text-sm leading-relaxed">
+              <div>
+                <dt class="font-mono text-xs text-text-muted">For</dt>
+                <dd class="mt-1 text-text-secondary">{e.who}</dd>
+              </div>
+              <div>
+                <dt class="font-mono text-xs text-text-muted">You get</dt>
+                <dd class="mt-1 text-text-secondary">{e.get}</dd>
+              </div>
+            </dl>
+            <a href={e.href} class="mt-auto inline-flex items-center gap-1 pt-6 text-sm font-medium text-accent transition-colors hover:text-accent-glow">
+              {e.label}
+              <Icon name="arrow-right" size={14} />
+            </a>
+          </div>
+        ))}
+      </div>
+      <p class="mt-6 text-sm text-text-muted">
+        AWS and Microsoft Azure partners. We work in your cloud, under your controls, whichever model you choose.
+      </p>
+    </div>
+  </section>
+
+  <!-- Four pillars — editorial rows -->
+  <section class="py-10">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mb-4" data-animate>
+        <span class="font-mono text-sm text-accent">// the_four_pillars</span>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Invent it. Build it. Power it. Protect it.</h2>
+        <p class="mt-4 max-w-2xl text-lg text-text-secondary">
+          Most companies our size do one of these. We do all four, in that order, because
+          that is the order an enterprise actually needs them.
         </p>
       </div>
 
-      <!-- 4 Pillars -->
-      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4" data-stagger>
-        {pillars.map((pillar) => (
-          <a
-            href={pillar.href}
-            class="group glow-card-subtle p-7 flex flex-col"
-          >
-            <div class="mb-5">
-              <span class="inline-flex h-10 w-10 items-center justify-center border border-border bg-deep/30"><Icon name={pillar.icon} size={20} class="text-accent" /></span>
+      <div class="divide-y divide-border border-y border-border">
+        {pillars.map((p) => (
+          <article class="grid gap-6 py-10 lg:grid-cols-12 lg:gap-10" data-animate>
+            <div class="lg:col-span-4">
+              <div class="flex items-center gap-3 font-mono text-xs text-accent">
+                <span>{p.num}</span>
+                <span class="text-text-muted">·</span>
+                <span>{p.verb}</span>
+                {p.start && <span class="ml-auto border border-accent/30 px-2 py-0.5 text-accent">start here</span>}
+              </div>
+              <h3 class="mt-3 text-2xl font-bold tracking-tight text-text-primary sm:text-3xl">
+                <a href={p.href} class="transition-colors hover:text-accent">{p.name}</a>
+              </h3>
+              <p class="mt-3 text-text-secondary">{p.lead}</p>
             </div>
-
-            <h2 class={`text-lg font-bold text-${pillar.color}`}>{pillar.title}</h2>
-            <p class="mt-1 font-mono text-[13px] text-text-secondary">{pillar.tagline}</p>
-
-            <p class="mt-3 text-xs leading-relaxed text-text-secondary flex-1">
-              {pillar.description}
-            </p>
-
-            <div class="mt-5 pt-4 border-t border-border/50 space-y-1.5">
-              {pillar.features.map((f) => (
-                <div class="rounded-md bg-deep/60 px-2.5 py-1.5 text-[13px] text-text-secondary text-center">
-                  {f}
-                </div>
-              ))}
+            <div class="lg:col-span-8">
+              <p class="text-sm leading-relaxed text-text-secondary sm:text-base">{p.does}</p>
+              <div class="mt-6 flex flex-col gap-4 border-t border-border/60 pt-5 sm:flex-row sm:items-start sm:justify-between">
+                <a href={p.proof.href} class="group inline-flex max-w-xl items-start gap-2 text-sm text-text-secondary transition-colors hover:text-text-primary">
+                  <span class="mt-0.5 font-mono text-xs text-accent">proof</span>
+                  <span class="underline decoration-border underline-offset-4 group-hover:decoration-text-primary">{p.proof.text}</span>
+                </a>
+                <a href={p.href} class="inline-flex shrink-0 items-center gap-1 text-sm font-medium text-accent transition-colors hover:text-accent-glow">
+                  {p.name} in detail
+                  <Icon name="arrow-right" size={14} />
+                </a>
+              </div>
             </div>
-
-<div class={`mt-5 flex items-center justify-center gap-1 text-xs font-medium text-${pillar.color} opacity-0 transition-opacity group-hover:opacity-100`}>
-              Explore
-              <svg class="h-3 w-3 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </div>
-          </a>
+          </article>
         ))}
       </div>
     </div>
   </section>
+
+  <!-- How a sprint runs -->
+  <section class="py-10">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mb-8 flex flex-wrap items-end justify-between gap-4" data-animate>
+        <div>
+          <span class="font-mono text-sm text-accent">// how_a_sprint_runs</span>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Four weeks, one gate</h2>
+        </div>
+        <a href="/services/catalyst-studio" class="inline-flex items-center gap-1 text-sm font-medium text-text-secondary transition-colors hover:text-text-primary">
+          Full sprint details
+          <Icon name="arrow-right" size={16} />
+        </a>
+      </div>
+
+      <div class="relative" data-stagger>
+        <div class="absolute left-0 right-0 top-[5px] hidden h-px bg-border lg:block" aria-hidden="true"></div>
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {sprint.map((s, i) => (
+            <div class="relative border-l border-border pl-5 lg:border-l-0 lg:pl-0 lg:pt-8">
+              <div class="absolute -left-[6.5px] top-0 h-3 w-3 border-2 border-accent bg-void lg:left-0" aria-hidden="true"></div>
+              <div class="flex items-baseline gap-3">
+                <span class="font-mono text-xs text-accent">0{i + 1} · {s.name}</span>
+                <span class="font-mono text-xs text-text-muted">{s.when}</span>
+              </div>
+              <p class="mt-2 text-sm leading-relaxed text-text-secondary">{s.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="band-forest">
+    <CTA />
+  </div>
 </Layout>
