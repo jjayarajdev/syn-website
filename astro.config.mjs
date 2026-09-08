@@ -2,11 +2,14 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import cloudflare from '@astrojs/cloudflare';
+import sitemap from '@astrojs/sitemap';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://syntegreti.com',
+  integrations: [sitemap()],
   redirects: {
     '/products/controlplane': '/products/ai-governance',
     '/products/praetor': '/products/ai-governance',

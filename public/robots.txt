@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://syntegreti.com/sitemap.xml
+Sitemap: https://syntegreti.com/sitemap-index.xml
 
 # Welcome AI crawlers
 User-agent: GPTBot
